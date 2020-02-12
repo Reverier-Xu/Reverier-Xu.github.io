@@ -1,0 +1,1124 @@
+
+
+
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="复制">
+      
+        <meta name="lang:clipboard.copied" content="已复制">
+      
+        <meta name="lang:search.language" content="jp">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="没有找到符合条件的结果">
+      
+        <meta name="lang:search.result.one" content="找到 1 个符合条件的结果">
+      
+        <meta name="lang:search.result.other" content="# 个符合条件的结果">
+      
+        <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
+    
+    
+      
+        <title>第二章 - Reverier 的博客</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.adb8469c.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#2196f3">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.86422ebf.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="blue" data-md-color-accent="red">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#-" tabindex="0" class="md-skip">
+        跳转至
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="Reverier 的博客" aria-label="Reverier 的博客" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Reverier 的博客
+            </span>
+            <span class="md-header-nav__topic">
+              
+                第二章
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            键入以开始搜索
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." class="md-tabs__link">
+        欢迎!
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../算法/网络流学习/" class="md-tabs__link">
+          算法
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../操作系统学习/程序员脱发指南-操作系统/" class="md-tabs__link">
+          操作系统学习
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../Chapter-1/" class="md-tabs__link md-tabs__link--active">
+          程序起源
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../杂记/买苹果流程-程序运行思路/" class="md-tabs__link">
+          杂记
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../在Linux上优雅的堕落/Chapter-1/" class="md-tabs__link">
+          在Linux上优雅的堕落
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../CTF题解与杂记/MoeCTF简记之初识CTF/" class="md-tabs__link">
+          CTF题解与杂记
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Linux常见小问题收集/KDE上TIM无法打开文件所在位置的解决方案/" class="md-tabs__link">
+          Linux常见小问题收集
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../links/" class="md-tabs__link">
+          友情链接
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="Reverier 的博客" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Reverier 的博客
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="欢迎!" class="md-nav__link">
+      欢迎!
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      算法
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        算法
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../算法/网络流学习/" title="网络流学习" class="md-nav__link">
+      网络流学习
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      操作系统学习
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        操作系统学习
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../操作系统学习/程序员脱发指南-操作系统/" title="程序员脱发指南-操作系统" class="md-nav__link">
+      程序员脱发指南-操作系统
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      程序起源
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        程序起源
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Chapter-1/" title="第一章" class="md-nav__link">
+      第一章
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        第二章
+      </label>
+    
+    <a href="./" title="第二章" class="md-nav__link md-nav__link--active">
+      第二章
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    前言
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    编译器
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    设计输入输出时的麻烦
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    数组
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    指针
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    字符串
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    库和预编译指令
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    输出的实现
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    预告
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      杂记
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        杂记
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../杂记/买苹果流程-程序运行思路/" title="买苹果" class="md-nav__link">
+      买苹果
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../杂记/使用GitHub和HEXO的博客搭建过程/" title="使用GitHub和Hexo的博客搭建过程" class="md-nav__link">
+      使用GitHub和Hexo的博客搭建过程
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../杂记/用Next美化-HEXO-GitHub-博客/" title="用Next美化HEXO-GitHub博客" class="md-nav__link">
+      用Next美化HEXO-GitHub博客
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../杂记/生物医学工程报告/" title="生物医学工程报告" class="md-nav__link">
+      生物医学工程报告
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../杂记/The-Elementary-Of-Programming-Style/" title="The Elementary Of Programming Style" class="md-nav__link">
+      The Elementary Of Programming Style
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../杂记/Waiting-for-PWN/" title="Waiting for PWN" class="md-nav__link">
+      Waiting for PWN
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../杂记/hello-world/" title="Hello World" class="md-nav__link">
+      Hello World
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      在Linux上优雅的堕落
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        在Linux上优雅的堕落
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../在Linux上优雅的堕落/Chapter-1/" title="第一章" class="md-nav__link">
+      第一章
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../在Linux上优雅的堕落/Chapter-2/" title="第二章" class="md-nav__link">
+      第二章
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      CTF题解与杂记
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        CTF题解与杂记
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CTF题解与杂记/MoeCTF简记之初识CTF/" title="MoeCTF简记之初识CTF" class="md-nav__link">
+      MoeCTF简记之初识CTF
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CTF题解与杂记/moeCTF-2019-题解/" title="moeCTF-2019-题解" class="md-nav__link">
+      moeCTF-2019-题解
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CTF题解与杂记/记一次狗屎的HTTP请求头/" title="记一次狗屎的HTTP请求头" class="md-nav__link">
+      记一次狗屎的HTTP请求头
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      Linux常见小问题收集
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        Linux常见小问题收集
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Linux常见小问题收集/KDE上TIM无法打开文件所在位置的解决方案/" title="KDE上TIM无法打开文件所在位置的解决方案" class="md-nav__link">
+      KDE上TIM无法打开文件所在位置的解决方案
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      友情链接
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        友情链接
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../links/" title="友情链接" class="md-nav__link">
+      友情链接
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    前言
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    编译器
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    设计输入输出时的麻烦
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    数组
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    指针
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    字符串
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    库和预编译指令
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    输出的实现
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    预告
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="-">程序起源 - 第二章<a class="headerlink" href="#-" title="Permanent link">&para;</a></h1>
+<h2 id="_1">前言<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>上一章我们讲述了程序语言发展的基本框架, 有了自定义函数, 代码块, 作用域, 变量类型, 分隔符等概念, 而且涉及到了一点点操作系统的知识. 这一章我们尝试着继续根据程序语言发展的时间线来描述语言发展的历程.</p>
+<!--more-->
+
+<h2 id="_2">编译器<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>随着计算器的不断改良, 越来越多的人开始使用这样一种可以进行数学运算的语言. 但是呢, 由于新的标准与规定, 计算器程序为了支持这些新的标准也变得越来越庞大. 随着计算机的大量普及, 互联网的发展却并没有那么迅速. 在每一台计算机上都安装一个这样的计算器逐渐变得有些不太可能. 为了解决这个麻烦, 人们开始了另一些大胆的想法.</p>
+<p>所有的程序都是在机器指令和基于机器指令翻译的汇编语言的基础上编写出来的, 那我们可不可以设计一种新的程序, 直接把这种数学语言翻译成机器代码执行呢? 这样就可以脱离计算器而将编写好的程序在任何计算机上执行.</p>
+<p>开发者们突然想到, 如果这样说, 那么这门数学语言就正式转变成了一门编程语言了! 这个任务开始热火朝天的进行起来, 最终开发者们编写了另一个程序, 他可以把这种语言进行语义分析, 然后经过一系列过程把它转化成一个可以直接在计算机上运行的程序. 为了区别之前的计算器程序, 开发者们把之前计算器那种一边输入一边执行或者一边读取一边执行的程序叫做**解释器**, 把这种可以把代码变成程序的叫做**编译器**.</p>
+<h2 id="_3">设计输入输出时的麻烦<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>在开发编译器的过程中遇到了一些问题, 比如说, 还延续之前解释器那样, 每计算一次就打印一次结果嘛..? 这样搞感觉程序的实用性很低, 一个稍微复杂点的过程就会输出一大堆莫名其妙的东西. 这样搞感觉有点智障. 开发者们想着, 能不能按照函数的方式, 组织一个专门用来打印信息的函数出来, 只有编写者调用这个函数的时候才输出特定的信息呢? 这个函数很快就设计好了, 使用的是汇编语言 + 数学语言定义的方式, 混杂着实现了出来. 但是怎么调用这个函数呢? 开发者为这个函数写了一个声明, 取<code>print format</code>的意思, 把这个函数命名为<code>printf</code>, 但是怎么样才能设计出来一个使用方便的输出函数而又不失输出时格式的灵活性呢? 或者说, 如果我想打印一句话, 应该怎么告诉这个函数呢? 开发者由抽象到具体, 发现原有的设计体系并不足够支撑起这么一个任务, 于是开发者们只好继续增加这个语言的复杂度, 设计一些新的东西同时尽量保持语言的统一性, 不参杂进去太多的元素.</p>
+<p>最终经过一大堆设计和实现, 开发者们实现了这个函数, 它的函数原型是这个样子:</p>
+<div class="codehilite"><pre><span></span><code><span class="kt">int</span> <span class="nf">printf</span> <span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">__format</span><span class="p">,</span> <span class="p">...)</span>
+<span class="p">{</span>
+    <span class="k">register</span> <span class="kt">int</span> <span class="n">__retval</span><span class="p">;</span>
+    <span class="n">__builtin_va_list</span> <span class="n">__local_argv</span><span class="p">;</span> <span class="n">__builtin_va_start</span><span class="p">(</span> <span class="n">__local_argv</span><span class="p">,</span> <span class="n">__format</span> <span class="p">);</span>
+    <span class="n">__retval</span> <span class="o">=</span> <span class="n">__mingw_vprintf</span><span class="p">(</span> <span class="n">__format</span><span class="p">,</span> <span class="n">__local_argv</span> <span class="p">);</span>
+    <span class="n">__builtin_va_end</span><span class="p">(</span> <span class="n">__local_argv</span> <span class="p">);</span>
+    <span class="k">return</span> <span class="n">__retval</span><span class="p">;</span>
+    <span class="cm">/* 在VSCode里面, 你可以通过在你编写的代码里使用printf, 然后右键点击printf, 选择查看定义,</span>
+<span class="cm">    就可以看见这个定义. VSCode提供了定义查询的功能, 不仅适用于库函数的查询, 如果你自己写</span>
+<span class="cm">    了很长的代码, 里面有若干个自定义函数, 在你使用的时候不想把代码翻到开头看函数定义再</span>
+<span class="cm">    翻回来继续写代码, 就可以先写出这个函数的名字, 然后右键, 查看定义, 就可以在不翻来翻去的</span>
+<span class="cm">    情况下快速查看这个函数的定义.*/</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>这个函数的定义是不是看起来很奇怪? 他里面写了一大堆乱七八糟的东西. 那些都属于函数, 开发者们为了使程序易于阅读和重用, 编写了许多可以相互使用的函数, <code>printf</code>实际上是一系列函数的包装, 这一系列的函数会处理整个像屏幕上打印特定格式的特定字符的复杂过程.</p>
+<p>我们不用去理解<code>printf</code>里面那些长得和乱码并没有什么去别的东西, 我们只需要看见第一行的声明就可以了.</p>
+<p><code>int printf(const char * __format, ...)</code></p>
+<p>就是这一行. 为了弄明白这个输入输出函数是什么鬼, 我们还需要知道, 开发者们又在这门数学语言里面加入了什么骚操作.</p>
+<h2 id="_4">数组<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>开发者们为了能一次性的输出大量数据, 同时为了解决人们对于大量同类数据计算的需求, 比如一年的每个月都有多少天这种问题, 设计了一个叫做数组的概念. 所谓数组, 就是一堆同类型的变量组成的一个集合. 我们可以通过像声明变量那样简单而快速的声明一个数组进行使用.</p>
+<p>声明一个数组, 我们只需要:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&lt;</span><span class="err">变量类型</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="err">变量名称</span><span class="o">&gt;</span><span class="p">[</span><span class="o">&lt;</span><span class="err">数组里面同类变量的个数</span><span class="o">&gt;</span><span class="p">];</span> <span class="c1">// 人们通常把同类变量的个数叫做数组大小.</span>
+<span class="kt">int</span> <span class="n">x</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span> <span class="c1">// x是一个包含10个整数类型元素的数组</span>
+<span class="c1">// 其他的类型都可以这么做</span>
+</code></pre></div>
+
+<p>使用起来也挺简单的. 最开始, 开发者们希望按照数学上的习惯, 如果用户编写<code>x[7]</code>, 就代表x里面的第7个元素. 但是在开发者们在编译器里面实现这个功能的时候, 发现事情并不像想象中的那么简单. 比如说产生了以下几个问题:</p>
+<blockquote>
+<p>1, 如果x[10]是一个有十个元素的数组, 那么只写x, 这个x是代表什么呢?
+2, 我们根据用户的输入, 在内存里创造了一连串同样的变量, 应该怎么快速有效的读取到用户指定的那个变量呢? 难道按照顺序, 如果用户编写<code>x[100]</code>, 就顺着第一个元素找99次找到第100个变量吗? 那如果我声明了一个大小为一亿的数组呢? 按照遍历的方式运算时间会很令人感动的.</p>
+</blockquote>
+<p>还有一些问题这里不再列举. 为了结局这个新的问题, 开发者们又设计了一个新东西.</p>
+<h2 id="_5">指针<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>开发者们想到, 变量是存储在内存之中的, 而内存的每个固定大小的空间都像住户一样被分配了门牌号. 开发者将内存里这个门牌号定义为<code>unsigned int</code>类型 (因为没有变量会住在负内存里), 然后数组就有了一种新的解决方案.</p>
+<p>当用户输入<code>int x[100]</code>来定义一个数组的时候, 首先在内存里开辟出来一块连在一起的内存, 大小是100个整数变量的大小. 然后另外声明一个<code>unsigned int</code>类型的变量, 里面存储这块大内存里第一个变量的内存地址. 这样, 当用户使用<code>x[75]</code>的时候, 编译器就可以先计算75个int类型变量的大小, 然后计算x中储存的第一个元素的内存地址和75个变量大小的和, 得到了一个新的地址, 这个新的地址就是第75个元素所在的地址, 直接从内存里取出这个变量就可以了.</p>
+<p>经过这样的设计, 数组终于被实现了出来. 人们重新设计了乘号, 也就是<code>'*'</code>, 如果<code>x</code>代表内存地址, 那么<code>*x</code>就代表从这个内存地址上的变量. 同样的, 人们也设计了<code>'&amp;'</code>号, 如果<code>x</code>是一个变量, 那么<code>&amp;x</code>就代表<code>x</code>所在的内存地址. 开发者们把这个存储内存地址的变量形象的称为指针. 指针顾名思义, 就是指向某个特定类型的变量的内存地址的变量, 这句话有点长, 小理解一下问题不大. 关于指针的关系我们可以这么理解:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">pig</span> <span class="n">LYQ</span><span class="p">;</span> <span class="c1">// 在内存中声明了一个pig类型的变量LYQ</span>
+<span class="n">pig</span> <span class="o">*</span><span class="n">LYQdeHome</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">LYQ</span><span class="p">;</span> <span class="c1">// 先找到LYQ, 然后把他住的地方的地址存在LYQdeHome之中</span>
+<span class="n">Go</span><span class="p">(</span><span class="n">LYQdeHome</span><span class="p">);</span> <span class="c1">// 去LYQ家, 这一句等同于 go(&amp;LYQ); 这里的go()函数以及上面的pig类型都是假定的.</span>
+<span class="n">EatWith</span><span class="p">(</span><span class="n">LYQ</span><span class="p">);</span> <span class="c1">// 和LYQ一块儿吃饭, 等同于EatWith(*LYQdeHome);</span>
+</code></pre></div>
+
+<p>这里有一个小小的趣事, 也就是, 如果按照<code>指针地址 + 偏移地址 = 数组内第N个元素的地址</code>的方式来设计数组, 那么我们可以把<code>x[75]</code>解释成 <code>*(x + 75)</code>. 但是...这么做往往是错的..因为, 如果你想要取出数组里面的第一个元素, 按照这个办法应该是<code>x[1]</code>, 解释成地址也就是<code>*(x + 1)</code>, 但是x储存的就是第一个元素的地址啊, 正确答案应该是<code>*x</code>. 那么写成数组的表示方式, 也就是<code>x[0]</code>. 于是开发者们爆发了一场口头战争, 关于数组编号 (更专业点的叫法叫**数组下标**) 应该从0开始还是从1开始.</p>
+<blockquote>
+<p>"按照中庸的思想, 如果我们对于一个问题争执不下, 我们可以考虑以折衷的思想来处理这个问题. 对于数组下标应当从0开始还是从1开始, 我给出的折中方案是用0.5作为数组下标的开始, 可是两派人士都不加思考的就否决了, 然后把我打了一顿并赶出了实验室."
+------一位参与了编译器开发的程序员, 躺在医院里接受采访时如是说</p>
+</blockquote>
+<p>最终为了保持指针的有效性, 人们最终决定数组下标应当从0开始, <code>x[75]</code>依旧会被解释成<code>*(x + 75)</code>, 但是它表示的是数组里面第76个元素.</p>
+<h2 id="_6">字符串<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>在上一章里面, 开发者们设计了一个叫做char的字符类型, 但是全章好像都没有用过, 在数学计算的过程里面好像也用不着这么一个设计. 没错, 这个变量就是专门为了输入输出而设计的. 一个英文句子, 可以看成是一个由一堆字符组成的数组吧? 开发者们找到了计算机协会, 计算机协会的一群大佬思索了很久给出了一张表, 也就是传说中的ASCII, 美国标准信息交换码查询表. 里面给128个字符进行了编号, 从0 - 127. 这些字符里面包括了大小写字母, 数字, 常用标点符号, 以及一些可以控制计算机的字符, 比如用某些字符来表示换行, 另一些字符可以让计算机的蜂鸣器"滴~"的响一声. 有了这张表, 开发者们实现字符就简单了, 只需要往char类型里面存储数字就可以了, 计算过程和处理过程中处理的也都是数字, 只有最终显示的时候, 再对照着ASCII表来查询char变量里面存储的那个数字对应什么字符.</p>
+<p>但是, 在代码里面用整数操作字符也太难为人了吧, 难不成每个程序员都要背一遍查询表? 开发者们表示他们已经解决了, 他们在编译器里面内置了一张查询表, 编写者可以在代码里面用单引号括起来一个字符: <code>'x'</code>, 编译器遇到这个x的时候就会自动按照查询表将其翻译成数字.这样一来, 我们就可以按照:</p>
+<div class="codehilite"><pre><span></span><code><span class="kt">char</span> <span class="n">a</span> <span class="o">=</span> <span class="sc">&#39;x&#39;</span><span class="p">;</span>
+<span class="n">a</span> <span class="o">=</span> <span class="sc">&#39;y&#39;</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">number</span> <span class="o">=</span> <span class="n">a</span> <span class="o">-</span> <span class="sc">&#39;a&#39;</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// 计算y在字母表里面是第几个字母</span>
+</code></pre></div>
+
+<p>来对字符进行操作了. 为了表示那些表示不出来的字符, 比如换行符, 开发者表示可以采用转义的方式, 比如用<code>'\n'</code>来表示换行的字符.</p>
+<p>于是我们就可以用数组的形式来表示一句话. 但是一个小问题, 我们怎么表示一句话的结尾呢? 鉴于所有的字符都有表示出来的价值, 所以把哪个字符定义成字符串的结尾呢? 开发者们想了想, 不如就把数值0定义成字符串的结尾吧. 在ASCII表里面, 0所对应的字符是一个空字符, 没有任何含义, 用来当作字符串的结尾刚刚好!</p>
+<p>于是, 就这么决定了, 每一个字符数组的末尾加上一个<code>'\0'</code>字符, 就可以组成一个合法的字符串. 为了表示的方便, 开发者们规定可以用双引号括起来的一串话来表示字符串. 例如:</p>
+<div class="codehilite"><pre><span></span><code><span class="s">&quot;Hello World!&quot;</span>
+</code></pre></div>
+
+<p>这种表示方法是默认字符串结尾有<code>\0</code>字符的, 不用显式地把它写出来也可以运作.</p>
+<p>开发者们还很贴心的重新设计了等于号的作用, 支持把一个字符串通过指针赋值到一个char类型的数组里面. 就像这样:</p>
+<div class="codehilite"><pre><span></span><code><span class="kt">char</span> <span class="n">x</span><span class="p">[</span><span class="mi">13</span><span class="p">];</span>
+<span class="n">x</span> <span class="o">=</span> <span class="s">&quot;Hello World&quot;</span><span class="p">;</span>
+</code></pre></div>
+
+<p>这种方便的形式受到了编写者的一致好评. 但是有一点是需要注意的, <code>"Hello World!"</code>里面包括空格和感叹号, 总共有十二个字符, 但是由于<code>""</code>表示的字符串结尾自带一个<code>'\0'</code>, 所以我们要声明一个拥有13个元素的数组才可以存下这个字符串. 没有<code>\0</code>结尾的字符数组只能被称为是字符数组, 并不能被称之为一个字符串, 输入输出函数碰到字符数组的时候也会寻找<code>'\0'</code>作为字符串的结尾, 一个没有结尾的字符数组并不能被正确的处理, 会出一些问题.</p>
+<p>另一个问题, <code>"Hello World!"</code>本身的值是什么呢? 其实, 直接写出来的字符串, 编译器会默认分配一个常量的位置给他们. 意思也就是使用到<code>"Hello World!"</code>的时候, 内存里会多出来一个名字叫aHelloWorld的变量, 他的定义如下:</p>
+<p><div class="codehilite"><pre><span></span><code><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">aHelloWorld</span> <span class="o">=</span> <span class="p">{</span><span class="sc">&#39;H&#39;</span><span class="p">,</span><span class="sc">&#39;e&#39;</span><span class="p">,</span><span class="sc">&#39;l&#39;</span><span class="p">,</span><span class="sc">&#39;l&#39;</span><span class="p">,</span><span class="sc">&#39;o&#39;</span><span class="p">,</span><span class="sc">&#39; &#39;</span><span class="p">,</span><span class="sc">&#39;W&#39;</span><span class="p">,</span><span class="sc">&#39;o&#39;</span><span class="p">,</span><span class="sc">&#39;r&#39;</span><span class="p">,</span><span class="sc">&#39;l&#39;</span><span class="p">,</span><span class="sc">&#39;d&#39;</span><span class="p">,</span><span class="sc">&#39;!&#39;</span><span class="p">,</span><span class="sc">&#39;\0&#39;</span><span class="p">};</span>
+</code></pre></div>
+const是另一个关键字, 可以放在任何变量类型前面当修饰, 表示这个变量是个常量, 其值不可被改变.</p>
+<p>因此我们使用到<code>"Hello World!"</code>的时候, 实际上我们写的代码是<code>char x[13] = aHelloWorld</code>, 因此不难理解, "Hello World!"这个字符串其实传递的, 也是一个指针, 指向常量aHelloWorld的第一个元素, 也就是字母'H'. 不过由于是在给一个字符数组赋值, 所以等号会用这个指针把aHelloWorld的值扫描一遍, 然后逐个复制给x[].</p>
+<h2 id="_7">库和预编译指令<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p>好了, 经过千辛万苦和一大堆乱七八糟的定义, <code>printf</code>函数终于被定义好了. 但是问题来了, 编写者难不成每一次都要把这个函数的所有定义都复制到自己的代码里面嘛? 那样会严重降低程序的可读性..而且这样搞成本太高了. 开发者们本想把这个函数调用内置到编译器里面, 但是那样内置之后, <code>printf</code>就变成了一个只有声明没有定义的函数了.. 这么破坏规矩可并不是人们想看到的.</p>
+<p>于是开发者们想了好久, 最终决定写一种预处理的机制, 用户可以下载开发者们写好的函数库, 里面包含了各种函数的定义, 如果编写者想使用这些函数, 只需要用预处理指令来包含这个库, 编译器在编译之前就会首先把这个库里面相关的函数定义复制到用户所写的代码前面组成一份包含完整定义的新代码文件, 这个时候再进行编译, 就方便的多了.</p>
+<p>预处理指令首先设计了两个, 一个是 <code>#include</code>, 另一个是 <code>#define</code>.</p>
+<p><code>#include &lt;包含文件&gt;</code>这样编写之后, 编译器就会在系统库目录里面寻找这个文件并把这个文件里面的函数复制到用户的代码里面. 如果写<code>#include "包含文件"</code>, 那么编译器会在用户当前的文件夹里面寻找这个文件. 这样的设计给了用户很大的自由, 让用户也可以编写自己的库.</p>
+<p><code>#define sign string</code>指令用来取别名, 我们可以用sign来代替后面的string, 编译器在执行之前就可以扫描一遍代码, 然后把所有出现sign的部分全部都用string来替换. 这个指令其实还有一些很骚气的用法, 比如...</p>
+<div class="codehilite"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<span class="cp">#define BEGIN int main() {</span>
+<span class="cp">#define END }</span>
+
+<span class="n">BEGIN</span>
+    <span class="nf">printf</span><span class="p">(</span><span class="s">&quot;Hello World!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="n">END</span>
+</code></pre></div>
+
+<p>这个代码真的可以运行!</p>
+<h2 id="_8">输出的实现<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<p>从上面的代码里面我们大概看见了输入输出应该怎么去做. 还记得第二章开头贴出来的那个printf函数的生命吗? 我们重新贴出来看看:</p>
+<div class="codehilite"><pre><span></span><code><span class="kt">int</span> <span class="nf">printf</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">__format</span><span class="p">,</span> <span class="p">...)</span> <span class="p">{</span><span class="n">balabala</span><span class="p">...;}</span>
+</code></pre></div>
+
+<p>从这个函数的参数列表上面我们就可以发现这个函数应当怎么用.</p>
+<p>首先, 我们看见了<code>printf</code>的第一个参数<code>const char * __format</code>, 这是一个名字为<code>__format</code>的参数, 类型是<code>char *</code>, 是个指针. 这告诉我们这个函数会接受一个字符串, 我们只需要把字符串的首位地址传入进去就可以了. 根据之前讲述的, 字符串本质上也是指向真实字符串的一个指针, 所以我们可以很方便的用<code>prinf("Hello World!");</code>, 这样就可以在屏幕上打印出来一句<code>Hello World!</code>.</p>
+<p>但是我们发现printf的参数并不只是只有一个<code>__format</code>啊? 后面那个省略号是什么? 省略号表示参数的数量是不确定的, 意思也就是printf可以接受若干个变量当参数. 这个是开发者们为了使printf更加灵活而设计的. 我们有时候需要在一个句子里面输出一些变量的值, 在开发者们的设计之下, <code>printf</code>里面用<code>%&lt;字母&gt;</code>的形式来表示占位符, 占位符的数量和类型与printf省略掉的参数列表应当是相匹配的. 占位符的使用建议百度, 此处不再赘述. 这样, 我们就可以通过<code>printf("The Result is: %d\n", x);</code>来进行输出了.</p>
+<p>我们发现, printf这个函数和其他的函数一样, 是有返回值的 (这一点很重要! 因为几乎所有的C语言教材都不会讲到这个, 但是这个返回值真的存在!). 返回值是输出的字符串的长度. 考虑一句printf的用处:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="mi">43</span><span class="p">)));</span>
+</code></pre></div>
+
+<p>你猜猜他会输出什么?</p>
+<h2 id="_9">预告<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<p>下期会接着讲述一些库函数, 在紧接着的设计过程中, 数学家们发现了一些新的逻辑结构, 希望开发者们能顶着秃头的压力开发出来......开发出来</p>
+                
+                  
+                
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../Chapter-1/" title="第一章" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  上一页
+                </span>
+                第一章
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../../杂记/买苹果流程-程序运行思路/" title="买苹果" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  下一页
+                </span>
+                买苹果
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.c33a9706.js"></script>
+      
+        
+        
+          
+          <script src="../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+              
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1317 @@
+
+
+
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="复制">
+      
+        <meta name="lang:clipboard.copied" content="已复制">
+      
+        <meta name="lang:search.language" content="jp">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="没有找到符合条件的结果">
+      
+        <meta name="lang:search.result.one" content="找到 1 个符合条件的结果">
+      
+        <meta name="lang:search.result.other" content="# 个符合条件的结果">
+      
+        <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
+    
+    
+      
+        <title>如何在Linux上优雅地堕落</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.adb8469c.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#2196f3">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.86422ebf.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="blue" data-md-color-accent="red">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#_1" tabindex="0" class="md-skip">
+        跳转至
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="Reverier 的博客" aria-label="Reverier 的博客" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Reverier 的博客
+            </span>
+            <span class="md-header-nav__topic">
+              
+                如何在Linux上优雅地堕落
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            键入以开始搜索
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." class="md-tabs__link">
+        欢迎!
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../算法/网络流学习/" class="md-tabs__link">
+          算法
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../操作系统学习/程序员脱发指南-操作系统/" class="md-tabs__link">
+          操作系统学习
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../程序起源/Chapter-1/" class="md-tabs__link">
+          程序起源
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../杂记/买苹果流程-程序运行思路/" class="md-tabs__link">
+          杂记
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="./" class="md-tabs__link md-tabs__link--active">
+          在Linux上优雅的堕落
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../CTF题解与杂记/MoeCTF简记之初识CTF/" class="md-tabs__link">
+          CTF题解与杂记
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Linux常见小问题收集/KDE上TIM无法打开文件所在位置的解决方案/" class="md-tabs__link">
+          Linux常见小问题收集
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../links/" class="md-tabs__link">
+          友情链接
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="Reverier 的博客" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Reverier 的博客
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="欢迎!" class="md-nav__link">
+      欢迎!
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      算法
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        算法
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../算法/网络流学习/" title="网络流学习" class="md-nav__link">
+      网络流学习
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      操作系统学习
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        操作系统学习
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../操作系统学习/程序员脱发指南-操作系统/" title="程序员脱发指南-操作系统" class="md-nav__link">
+      程序员脱发指南-操作系统
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      程序起源
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        程序起源
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../程序起源/Chapter-1/" title="第一章" class="md-nav__link">
+      第一章
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../程序起源/Chapter-2/" title="第二章" class="md-nav__link">
+      第二章
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      杂记
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        杂记
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../杂记/买苹果流程-程序运行思路/" title="买苹果" class="md-nav__link">
+      买苹果
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../杂记/使用GitHub和HEXO的博客搭建过程/" title="使用GitHub和Hexo的博客搭建过程" class="md-nav__link">
+      使用GitHub和Hexo的博客搭建过程
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../杂记/用Next美化-HEXO-GitHub-博客/" title="用Next美化HEXO-GitHub博客" class="md-nav__link">
+      用Next美化HEXO-GitHub博客
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../杂记/生物医学工程报告/" title="生物医学工程报告" class="md-nav__link">
+      生物医学工程报告
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../杂记/The-Elementary-Of-Programming-Style/" title="The Elementary Of Programming Style" class="md-nav__link">
+      The Elementary Of Programming Style
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../杂记/Waiting-for-PWN/" title="Waiting for PWN" class="md-nav__link">
+      Waiting for PWN
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../杂记/hello-world/" title="Hello World" class="md-nav__link">
+      Hello World
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
+    
+    <label class="md-nav__link" for="nav-6">
+      在Linux上优雅的堕落
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        在Linux上优雅的堕落
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        第一章
+      </label>
+    
+    <a href="./" title="第一章" class="md-nav__link md-nav__link--active">
+      第一章
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    前言
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    正文
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    安装
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    基本配置
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    软件源
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    网络加速
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    基本软件
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    开发环境
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shell-fish" class="md-nav__link">
+    Shell: Fish
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#yay" class="md-nav__link">
+    包管理器: yay
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vim" class="md-nav__link">
+    终端编辑器: Vim
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chrome" class="md-nav__link">
+    浏览器: Chrome
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gui-visual-studio-code" class="md-nav__link">
+    GUI代码编辑器: Visual Studio Code
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    扩展软件
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tilda" class="md-nav__link">
+    下拉式终端: Tilda
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#latte-dock" class="md-nav__link">
+    应用程序启动器: Latte-Dock
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fcitx-pinyin" class="md-nav__link">
+    输入法: Fcitx-pinyin
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Chapter-2/" title="第二章" class="md-nav__link">
+      第二章
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      CTF题解与杂记
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        CTF题解与杂记
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CTF题解与杂记/MoeCTF简记之初识CTF/" title="MoeCTF简记之初识CTF" class="md-nav__link">
+      MoeCTF简记之初识CTF
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CTF题解与杂记/moeCTF-2019-题解/" title="moeCTF-2019-题解" class="md-nav__link">
+      moeCTF-2019-题解
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CTF题解与杂记/记一次狗屎的HTTP请求头/" title="记一次狗屎的HTTP请求头" class="md-nav__link">
+      记一次狗屎的HTTP请求头
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      Linux常见小问题收集
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        Linux常见小问题收集
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Linux常见小问题收集/KDE上TIM无法打开文件所在位置的解决方案/" title="KDE上TIM无法打开文件所在位置的解决方案" class="md-nav__link">
+      KDE上TIM无法打开文件所在位置的解决方案
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      友情链接
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        友情链接
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../links/" title="友情链接" class="md-nav__link">
+      友情链接
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    前言
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    正文
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    安装
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    基本配置
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    软件源
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    网络加速
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    基本软件
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    开发环境
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shell-fish" class="md-nav__link">
+    Shell: Fish
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#yay" class="md-nav__link">
+    包管理器: yay
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vim" class="md-nav__link">
+    终端编辑器: Vim
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chrome" class="md-nav__link">
+    浏览器: Chrome
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gui-visual-studio-code" class="md-nav__link">
+    GUI代码编辑器: Visual Studio Code
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    扩展软件
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tilda" class="md-nav__link">
+    下拉式终端: Tilda
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#latte-dock" class="md-nav__link">
+    应用程序启动器: Latte-Dock
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fcitx-pinyin" class="md-nav__link">
+    输入法: Fcitx-pinyin
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>第一章</h1>
+                
+                <h2 id="_1">前言<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>为什么折腾了这么久<code>Linux</code>, 才想起来整一个博文呢? 这要感谢<code>Arch Linux</code>的日常崩溃<!--more-->, 导致我每次重新配置环境都要想半天, 我之前那个软件是怎么装上的. 后来实在受不了, 索性抛弃了<code>Arch</code>转向了稍微友好一点的<code>Manjaro</code>. 于是我决定写一篇博文, 免得<code>Manjaro</code>哪天抽风了又要忙活好久. 不过还是得感叹一下<code>Manjaro</code>的稳定性.</p>
+<h2 id="_2">正文<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="_3">安装<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>由于某些软件和游戏的原因, 暂时还是脱离不了<code>Windows</code>的怀抱. 虚拟机的体验太差了, 于是经过多方面考虑, 最终决定采用双系统的办法. 首先在<code>Windows</code>上用自带的磁盘管理或者其他的分区工具找好地方, 开辟一个<code>100GB</code>左右的空间出来, 然后从镜像站嫖来最新版的<code>Snapshot</code>镜像, 用<code>Ultra ISO</code>以<code>RAW</code>的格式写进一个空间足够大的U盘里, 开机从U盘启动, 安装过程一切顺利. <code>UEFI</code>的启动方式需要把硬盘上第一个<code>FAT32</code>分区挂载到<code>/boot/efi</code>上, 千万不要手抖选择格式化, 否则你就要失去亲爱的<code>Windows</code>了.</p>
+<p>其他的设置无需多说了, Office套件我选择的是<code>Libre Office</code>, 毕竟从现在来说这个发行版是最稳定的, 没有其他一些奇奇怪怪的问题, 同时也比<code>Open Office</code>颜值高那么一点.</p>
+<p>桌面环境当然首选<code>KDE</code>啊, 使用不习惯<code>Gnome</code>的操作逻辑. 并且既然是要配置一个自己舒服的桌面环境, 高度可配置的<code>KDE</code>当然是第一选择.</p>
+<h3 id="_4">基本配置<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h4 id="_5">软件源<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<p>因为校内网有镜像站, 所以需要修改一下软件源, 这样就可以很方便的安装软件, 进行后面的配置.</p>
+<div class="codehilite"><pre><span></span><code>$ sudo vi /etc/pacman.d/mirrorlist
+</code></pre></div>
+
+<p>在最上面按照格式添加学校的镜像站, 然后打开<code>/etc/pacman.conf</code>添加<code>Archlinuxcn</code>源:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">[archlinuxcn]</span>
+<span class="na">Server</span> <span class="o">=</span> <span class="s">https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch</span>
+</code></pre></div>
+
+<p>然后执行</p>
+<div class="codehilite"><pre><span></span><code>$ sudo pacman -Syy
+</code></pre></div>
+
+<p>来刷新软件源缓存, 然后</p>
+<div class="codehilite"><pre><span></span><code>$ sudo pacman -Syu
+</code></pre></div>
+
+<p>来将系统更新到最新的版本.</p>
+<h4 id="_6">网络加速<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<p>因为配置过程中需要大量使用<code>GitHub</code>, 所以我们修改一下<code>/etc/hosts</code>文件, 以更快的从<code>GitHub</code>下载软件.</p>
+<div class="codehilite"><pre><span></span><code>$ sudo nano /etc/hosts
+</code></pre></div>
+
+<p>然后用<code>dig</code>或者<code>nslookup</code>指令找出<code>GitHub</code>相关域名的IP地址. 2019年11月3日可用的IP如下:</p>
+<div class="codehilite"><pre><span></span><code># GitHub Start
+192.30.253.112 github.com
+192.30.253.119 gist.github.com
+185.199.108.153 assets-cdn.github.com
+151.101.128.133 raw.githubusercontent.com
+151.101.128.133 gist.githubusercontent.com
+151.101.128.133 cloud.githubusercontent.com
+151.101.128.133 camo.githubusercontent.com
+151.101.128.133 avatars0.githubusercontent.com
+151.101.128.133 avatars1.githubusercontent.com
+151.101.128.133 avatars2.githubusercontent.com
+151.101.128.133 avatars3.githubusercontent.com
+151.101.128.133 avatars4.githubusercontent.com
+151.101.128.133 avatars5.githubusercontent.com
+151.101.128.133 avatars6.githubusercontent.com
+151.101.128.133 avatars7.githubusercontent.com
+151.101.128.133 avatars8.githubusercontent.com
+# GitHub End
+</code></pre></div>
+
+<p>当然啦, 我可不保证你看到这篇文章的时候这个还管用. 所以找一份最新的, 或者自己用工具找到相关IP才是正确的做法.</p>
+<h4 id="_7">基本软件<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
+<h5 id="_8">开发环境<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h5>
+<p>这里的开发环境指的是各种语言的编译环境.</p>
+<p>使用以下指令安装几个比较常见的编译工具:</p>
+<div class="codehilite"><pre><span></span><code>$ sudo pacman -S gcc clang python python2
+</code></pre></div>
+
+<p>java可以用</p>
+<div class="codehilite"><pre><span></span><code>yay jdk
+</code></pre></div>
+
+<p>来选择自己想用的版本. 博主用的是openjdk1.8.0, 因为Minecraft可以用这个版本跑起来 ( 手动狗头 )</p>
+<h5 id="shell-fish">Shell: Fish<a class="headerlink" href="#shell-fish" title="Permanent link">&para;</a></h5>
+<p>对, 你没有看错, 这是一条鱼. 笔者的<code>Shell</code>使用本来受到<code>Arch Linux</code>的习惯影响, 是使用<code>zsh</code>作为自己的<code>Shell</code>的, 但是经过<code>Konge</code>学长的推荐, 尝试了这个号称宇宙第一<code>Shell</code>的<code>Fish</code>. 果不其然, 用户体验良好, 准备常驻了.</p>
+<p>要安装<code>Fish</code>, 只需要:</p>
+<div class="codehilite"><pre><span></span><code>$ sudo pacman -S fish
+</code></pre></div>
+
+<p>然后在终端里输入<code>fish</code>就可以进入然后开启快乐旅程了.</p>
+<p>我们把<code>fish</code>设为默认的<code>Shell</code>. 首先打开<code>Konsole</code>的配置方案管理, 编辑配置方案, 启动命令从<code>/bin/bash</code>换成<code>/bin/fish</code>. 接着重启<code>Konsole</code>. 然后把用户的默认<code>shell</code>也换成<code>fish</code>:</p>
+<div class="codehilite"><pre><span></span><code>$ sudo chsh -s /usr/bin/fish root
+$ sudo chsh -s /usr/bin/fish <span class="o">[</span>username<span class="o">]</span>
+</code></pre></div>
+
+<p><code>fish</code>每次启动时都会有打招呼内容, 我们用以下命令来自定义这句话:</p>
+<div class="codehilite"><pre><span></span><code>$ <span class="nb">set</span> fish_greeting <span class="s1">&#39;Your Greeting Words&#39;</span>
+</code></pre></div>
+
+<p>对<code>fish</code>进行配置是十分人性化的, 只需要输入<code>fish_config</code>就可以了, 然后<code>fish</code>会打开本地的一个端口并启动浏览器, 以可视化的方式呈现出<code>fish</code>的各项配置. 功能设置十分的详细. 按照自己的喜好调整好就可了.</p>
+<h5 id="yay">包管理器: yay<a class="headerlink" href="#yay" title="Permanent link">&para;</a></h5>
+<p>要充分发挥<code>Arch</code>系Linux的强大之处, 没有<code>AUR</code>怎么能行呢? 所以我们安装<code>yay</code>作为辅助<code>pacman</code>的包管理器.</p>
+<div class="codehilite"><pre><span></span><code>$ sudo pacman -S yay
+</code></pre></div>
+
+<p>今后安装软件如果不清楚名称, 就可以</p>
+<div class="codehilite"><pre><span></span><code>$ yay <span class="o">[</span>Package Name<span class="o">]</span>
+</code></pre></div>
+
+<p>来进行搜索, 然后很方便的安装了.</p>
+<h5 id="vim">终端编辑器: Vim<a class="headerlink" href="#vim" title="Permanent link">&para;</a></h5>
+<div class="codehilite"><pre><span></span><code>$ sudo pacman -S vim
+</code></pre></div>
+
+<p>即可安装<code>vim</code>. 我大概不用介绍<code>vim</code>了吧... 这可是一个很知名的编辑器呀.</p>
+<p>为了让<code>vim</code>更加的好用, 我们可以使用<a href="https://spacevim.org/cn/">SpaceVim</a>来改善自己的用户体验. 如何安装请参照官网使用指南, 在此不再赘述.</p>
+<h5 id="chrome">浏览器: Chrome<a class="headerlink" href="#chrome" title="Permanent link">&para;</a></h5>
+<div class="codehilite"><pre><span></span><code>$ sudo pacman -S google-chrome
+</code></pre></div>
+
+<p>用<code>Chrome</code>完全是笔者的个人习惯, <code>Manjaro</code>自带的<code>FireFox</code>十分的优秀, 如果对浏览器没什么习惯的用<code>FireFox</code>完全可以.</p>
+<h5 id="gui-visual-studio-code">GUI代码编辑器: Visual Studio Code<a class="headerlink" href="#gui-visual-studio-code" title="Permanent link">&para;</a></h5>
+<p>经过微软的开源和诸多开发者的贡献之后, Visual Studio Code现在已经无愧于最强代码编辑器的称号了. (当然, 博主并不是在这里引战, 如果你非要用Sublime或者Atom也莫得关系) ArchlinuxCN源中有vscode的二进制版.</p>
+<div class="codehilite"><pre><span></span><code>$ sudo pacman -S visual-studio-code-bin
+</code></pre></div>
+
+<p>装好之后打开插件搜索chinese装一下中文包, 英语超级优秀的同学请忽略此句.</p>
+<p>我一般会对VSCode进行一点小配置, 然后装一些插件. 这里推荐使用Fira Code作为字体并开启字体连字, 某些符号看起来真的无比舒服.</p>
+<p><img alt="firacode.png" src="https://www.hanselman.com/blog/content/binary/Windows-Live-Writer/06e959c4fe7a_BA10/image_db854752-00fd-46d9-adb4-95292dece6a4.png" /></p>
+<p>还有一些插件, 博主大一学习, 装的插件有C/C++, Red Hat提供的java扩展, python,  intellicode, LeetCode, DailyAnime和VSC Netease music.</p>
+<h4 id="_9">扩展软件<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
+<h5 id="tilda">下拉式终端: Tilda<a class="headerlink" href="#tilda" title="Permanent link">&para;</a></h5>
+<p>本来<code>Manjaro</code>是自带了一个<code>Yakuake</code>下拉式终端, 但是我实在是用不习惯, 并且它的显示有时候会出些问题. 因此我卸载了<code>Yakuake</code>装了<code>Tilda</code>. 打开设置, 在设置 &gt; 开机和关机 &gt; 自动启动里添加启动项, 并选择应用程序, 输入<code>Tilda</code>并开启.</p>
+<p>在桌面上直接敲<code>Tilda</code>, 可以从KDE的快速启动器中启动<code>Tilda</code>. 启动后我们可以进行一些设置, 比如透明度, 颜色, 启动命令, 延迟, 自动隐藏规则等等.</p>
+<h5 id="latte-dock">应用程序启动器: Latte-Dock<a class="headerlink" href="#latte-dock" title="Permanent link">&para;</a></h5>
+<p>虽然我没有用过<code>Mac OS X</code>, 但是对其高效的桌面念念不忘. 同时我又想节省一下空间, <code>Windows</code>下面, 厚重的任务栏就占去了一部分屏幕, 标题栏又削一层, 菜单栏又削一层... 最后留给应用程序的显示空间就少了不必要的一部分. 于是我想找到一种办法, 把菜单, 标题, 状态栏集中在一个<code>bar</code>上面, 任务栏没办法, 要保证同时可用性, 就只能弄一个<code>dock</code>当任务栏, 在窗口活动时自动隐藏了. <code>Latte Dock</code>原生和KDE集成在一起, 通过它可以享受很棒的<code>dock</code>.</p>
+<div class="codehilite"><pre><span></span><code>$ sudo pacman -S latte-dock
+</code></pre></div>
+
+<p>按照和<code>tilda</code>同样的方法把<code>latte-dock</code>也设置为自动启动, 然后在快速启动器里面输入<code>latte</code>并回车, 就可以看见<code>dock</code>了. 然后把任务栏拖动到屏幕上方, 右键任务栏配置面板, 把开始菜单和任务管理器, 虚拟桌面都删掉, 留下显示桌面和状态栏即可. 然后在面板左侧添加空白. 然后添加控件, 选择全屏的应用程序启动面板, 并拖动到<code>Latte-Dock</code>的第一个位置. <code>Latte-Dock</code>的默认隐藏策略就很智能, 无需单独配置. 在添加控件的侧栏下方安装新控件, 搜索<code>Application Title</code>并安装, 然后配置任务栏那一行, 拖动全局菜单到最左侧, 旁边插入空白, 再插入<code>Application Title</code>, 再插入空白, 最后是状态栏等控件.</p>
+<p>最后我们想办法, 把最大化窗口的标题栏去掉. 在<code>./.config/kwinrc</code>中找到<code>[Windows]</code>的选项, 然后按照以下方式配置:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">[Windows]</span>
+<span class="na">BorderlessMaximizedWindows</span><span class="o">=</span><span class="s">true</span>
+<span class="na">ElectricBorderCooldown</span><span class="o">=</span><span class="s">350</span>
+<span class="na">ElectricBorderCornerRatio</span><span class="o">=</span><span class="s">0.25</span>
+<span class="na">ElectricBorderDelay</span><span class="o">=</span><span class="s">150</span>
+<span class="na">ElectricBorderMaximize</span><span class="o">=</span><span class="s">true</span>
+<span class="na">ElectricBorderTiling</span><span class="o">=</span><span class="s">true</span>
+<span class="na">ElectricBorders</span><span class="o">=</span><span class="s">1</span>
+<span class="na">RollOverDesktops</span><span class="o">=</span><span class="s">true</span>
+</code></pre></div>
+
+<p>配置完成后的效果大概如图所示.</p>
+<p><img alt="blog2.png" src="https://i.loli.net/2019/11/03/39OkRIvcPWSyeHp.png" /></p>
+<p><img alt="blog3.png" src="https://i.loli.net/2019/11/03/hr6Ea92FSNxWKQ1.png" /></p>
+<p><img alt="blog1.png" src="https://i.loli.net/2019/11/03/1xjCIT9O7YlNewS.png" /></p>
+<p><img alt="blog4.png" src="https://i.loli.net/2019/11/03/ja5GEbLqzo73yxn.png" /></p>
+<h5 id="fcitx-pinyin">输入法: Fcitx-pinyin<a class="headerlink" href="#fcitx-pinyin" title="Permanent link">&para;</a></h5>
+<p>作为中国人, 配置了这么久才发现自己连中文输入都不能... 那怎么能行, 当然要装一下中文输入法了.</p>
+<div class="codehilite"><pre><span></span><code>$ sudo pacman -S fcitx-im fcitx-configtool
+</code></pre></div>
+
+<p>这条指令会安装<code>fcitx</code>和<code>fcitx</code>的图形化管理界面. 但是安装好后依旧无法输入中文, 这个时候先把<code>fcitx</code>设为开机启动, 然后终端输入<code>fcitx-diagnose</code>运行诊断, 然后按照诊断来进行配置和修复. 一般情况下你只要配置一下<code>$HOME/.xprofile</code>这个文件就好了, 在下面添加如下内容 ( 如果没有这个文件就新建一个 ):</p>
+<div class="codehilite"><pre><span></span><code><span class="na">export GTK_IM_MODULE</span><span class="o">=</span><span class="s">fcitx</span>
+<span class="na">export QT_IM_MODULE</span><span class="o">=</span><span class="s">fcitx</span>
+<span class="na">export XMODIFIERS</span><span class="o">=</span><span class="s">&quot;@im=fcitx&quot;</span>
+<span class="na">export SAL_USE_VCLPLUGIN</span><span class="o">=</span><span class="s">gtk</span>
+<span class="na">export LC_ALL</span><span class="o">=</span><span class="s">&quot;zh_CN.UTF-8&quot;</span>
+</code></pre></div>
+
+<p>注销后重新登录就可以使用了.</p>
+<p>画个节点, 过两天继续更新.</p>
+                
+                  
+                
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../../杂记/hello-world/" title="Hello World" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  上一页
+                </span>
+                Hello World
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../Chapter-2/" title="第二章" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  下一页
+                </span>
+                第二章
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.c33a9706.js"></script>
+      
+        
+        
+          
+          <script src="../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+              
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+    
+  </body>
+</html>

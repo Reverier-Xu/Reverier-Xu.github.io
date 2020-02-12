@@ -1,0 +1,1224 @@
+
+
+
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="复制">
+      
+        <meta name="lang:clipboard.copied" content="已复制">
+      
+        <meta name="lang:search.language" content="jp">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="没有找到符合条件的结果">
+      
+        <meta name="lang:search.result.one" content="找到 1 个符合条件的结果">
+      
+        <meta name="lang:search.result.other" content="# 个符合条件的结果">
+      
+        <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
+    
+    
+      
+        <title>程序员脱发指南-操作系统 - Reverier 的博客</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.adb8469c.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#2196f3">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.86422ebf.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="blue" data-md-color-accent="red">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#_1" tabindex="0" class="md-skip">
+        跳转至
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="Reverier 的博客" aria-label="Reverier 的博客" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Reverier 的博客
+            </span>
+            <span class="md-header-nav__topic">
+              
+                程序员脱发指南-操作系统
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            键入以开始搜索
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." class="md-tabs__link">
+        欢迎!
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../算法/网络流学习/" class="md-tabs__link">
+          算法
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="./" class="md-tabs__link md-tabs__link--active">
+          操作系统学习
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../程序起源/Chapter-1/" class="md-tabs__link">
+          程序起源
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../杂记/买苹果流程-程序运行思路/" class="md-tabs__link">
+          杂记
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../在Linux上优雅的堕落/Chapter-1/" class="md-tabs__link">
+          在Linux上优雅的堕落
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../CTF题解与杂记/MoeCTF简记之初识CTF/" class="md-tabs__link">
+          CTF题解与杂记
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Linux常见小问题收集/KDE上TIM无法打开文件所在位置的解决方案/" class="md-tabs__link">
+          Linux常见小问题收集
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../links/" class="md-tabs__link">
+          友情链接
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="Reverier 的博客" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Reverier 的博客
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="欢迎!" class="md-nav__link">
+      欢迎!
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      算法
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        算法
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../算法/网络流学习/" title="网络流学习" class="md-nav__link">
+      网络流学习
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      操作系统学习
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        操作系统学习
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        程序员脱发指南-操作系统
+      </label>
+    
+    <a href="./" title="程序员脱发指南-操作系统" class="md-nav__link md-nav__link--active">
+      程序员脱发指南-操作系统
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    前言
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    正文
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    分层的思想
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    接口是什么
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    操作系统 - 多个程序是怎么运行起来的
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    分时系统
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    多任务系统
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-_1" class="md-nav__link">
+    操作系统 - 程序需要什么
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    一个独立的环境
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    问题
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    分段
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    分页
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    互相协作, 同时运行的能力
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    问题
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    解决方案 线程
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    结尾
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      程序起源
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        程序起源
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../程序起源/Chapter-1/" title="第一章" class="md-nav__link">
+      第一章
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../程序起源/Chapter-2/" title="第二章" class="md-nav__link">
+      第二章
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      杂记
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        杂记
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../杂记/买苹果流程-程序运行思路/" title="买苹果" class="md-nav__link">
+      买苹果
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../杂记/使用GitHub和HEXO的博客搭建过程/" title="使用GitHub和Hexo的博客搭建过程" class="md-nav__link">
+      使用GitHub和Hexo的博客搭建过程
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../杂记/用Next美化-HEXO-GitHub-博客/" title="用Next美化HEXO-GitHub博客" class="md-nav__link">
+      用Next美化HEXO-GitHub博客
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../杂记/生物医学工程报告/" title="生物医学工程报告" class="md-nav__link">
+      生物医学工程报告
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../杂记/The-Elementary-Of-Programming-Style/" title="The Elementary Of Programming Style" class="md-nav__link">
+      The Elementary Of Programming Style
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../杂记/Waiting-for-PWN/" title="Waiting for PWN" class="md-nav__link">
+      Waiting for PWN
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../杂记/hello-world/" title="Hello World" class="md-nav__link">
+      Hello World
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      在Linux上优雅的堕落
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        在Linux上优雅的堕落
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../在Linux上优雅的堕落/Chapter-1/" title="第一章" class="md-nav__link">
+      第一章
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../在Linux上优雅的堕落/Chapter-2/" title="第二章" class="md-nav__link">
+      第二章
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      CTF题解与杂记
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        CTF题解与杂记
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CTF题解与杂记/MoeCTF简记之初识CTF/" title="MoeCTF简记之初识CTF" class="md-nav__link">
+      MoeCTF简记之初识CTF
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CTF题解与杂记/moeCTF-2019-题解/" title="moeCTF-2019-题解" class="md-nav__link">
+      moeCTF-2019-题解
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CTF题解与杂记/记一次狗屎的HTTP请求头/" title="记一次狗屎的HTTP请求头" class="md-nav__link">
+      记一次狗屎的HTTP请求头
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      Linux常见小问题收集
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        Linux常见小问题收集
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Linux常见小问题收集/KDE上TIM无法打开文件所在位置的解决方案/" title="KDE上TIM无法打开文件所在位置的解决方案" class="md-nav__link">
+      KDE上TIM无法打开文件所在位置的解决方案
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      友情链接
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        友情链接
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../links/" title="友情链接" class="md-nav__link">
+      友情链接
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    前言
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    正文
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    分层的思想
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    接口是什么
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    操作系统 - 多个程序是怎么运行起来的
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    分时系统
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    多任务系统
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-_1" class="md-nav__link">
+    操作系统 - 程序需要什么
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    一个独立的环境
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    问题
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    分段
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    分页
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    互相协作, 同时运行的能力
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    问题
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    解决方案 线程
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    结尾
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>程序员脱发指南-操作系统</h1>
+                
+                <h2 id="_1">前言<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>上周可能熬夜熬多了,, 头发掉了些.. 于是想找本修身养性的书. <!--more-->上淘宝翻了很久, 又经过师傅推荐最后买了本</p>
+<p>&lt;&lt;程序员的自我修养&gt;&gt; 回来...... emmmm...... 翻开书一看画风不太对劲, 这不是一本讲修心炼丹的书么...</p>
+<p>z ? 为什么挂着修炼的牌子讲操作系统? ( 正合我意 ) 本文大致可以看成学习笔记..? 我并不想把书抄一遍...</p>
+<p><img alt="Screenshot.png" src="https://i.loli.net/2019/10/20/kdlYfPxsINJCLwH.png" /></p>
+<p>( 没错, 就这本.. )</p>
+<h2 id="_2">正文<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="_3">分层的思想<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>分层在计算机领域是一个很重要的手段, 通过分层可以解决许多许多问题. 整个计算机体系结构就是按照层次来组织的.</p>
+<p><img alt="2019_10_20.jpg" src="https://i.loli.net/2019/10/20/anm6tDQiYfVl1bp.jpg" /></p>
+<p>( 图片来自于&lt;&lt;程序员的自我修养&gt;&gt; )</p>
+<h4 id="_4">接口是什么<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<p>每个层次之间并不是完全隔离的, 层次之间当然是要互相通信的啦, 所以我们有了**接口**这个定义, 所谓**接口**, 就是不同层次之间通信的协议. 接口下面那层是接口的提供者, 由他定义接口; 接口上面那层是接口的使用者, 他使用该接口来实现所需要的功能. 在层次的体系当中, 接口是被精心设计过的, 尽量保持不变, 就像你换了个家, 换了室内的装修, 升级了家具, 但是你的手机号码永远不变一样, 保证即使我不去改变我自己的联系方式依旧可以联系上你. 这就是层次的精妙之处, 只要层次之间遵循这个接口, 任何一个层都可以被任意修改和替换.</p>
+<h3 id="-">操作系统 - 多个程序是怎么运行起来的<a class="headerlink" href="#-" title="Permanent link">&para;</a></h3>
+<h4 id="_5">分时系统<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<p>最初的CPU是单线程的, 昂贵的价格使其计算资源对于人们来说无比宝贵. 想充分利用CPU的性能, 即不要让CPU停下来, 就要想办法让CPU一刻不停的运转起来.</p>
+<p>怎么办才好呢? 于是产生了一种简单的分时系统, 即编写一个简单的监控程序, 当一个程序在一段时间内不需要使用CPU的时候, 就将其他的程序调动起来, 使CPU的资源得到充分的利用. 但是这样一来有问题, 就是这个监控程序是不分轻重缓急的, 有些需要及时响应的程序可能很久很久之后才能分配到CPU的使用时间. 如果某个程序一直占用着CPU不放, 那么别的程序就只能一直等待, 从而造成死机的现象. 这种情况对需要及时响应的用户界面程序来说尤为致命.</p>
+<p>后来这个监控程序经过一点改进, 逐渐演化成了一种多程序协作模式, 即每个程序运行一段时间之后都主动让出CPU让别的程序运行一段时间. 这个时候的监控程序已经比当时的复杂很多了, 这种多程序协作模式叫做**分时系统**. 早期的操作系统都使用分时系统来当作程序的调度模式. 操作系统会监控程序的行为, 如果程序调用了获取信息, 打印信息等等函数时, 就会试图暂停程序, 然后启动其他的程序. 这对于需要高响应的交互式程序尤为重要.</p>
+<h4 id="_6">多任务系统<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<p>但是分时系统也还是有问题的.. 问题就出现在, 如果程序不主动让出CPU, 比如程序陷入了死循环或者在进行一些很好时间的大型计算, 霸占着CPU不放, 那么操作系统也没有办法, 只能等待这个程序执行. 这样一来如果程序里面出了bug陷入了循环, 然后整个系统就全部死机了, 正在看的番, 正在写的实验报告, 差1%就能创造新世界记录的 OSU! , 差一个平A就能拿到手的五杀, 就因为一个小BUG, 全没了... 这显然是不能接受的 ( 这个例子举的不太恰当... 就当玩笑啦 ).</p>
+<p>问题还不仅如此, 编写每一个程序的程序员都得操心什么时候让出控制权什么时候应该使劲儿计算------导致的后果就是程序员更容易猝死了 ( 误 ) 于是为了解决这个问题, 在当时拥有更高端计算机的组织和公司早就开始研究一种全新的解决方案了------那就是多任务系统. 操作系统接管了所有CPU的资源并且运行在受硬件保护的级别上, 而其他的程序都以进程的形式运行在一个更低的权限上, 并且每一个程序都拥有自己独立的内存空间, 从而和别的程序相隔离开. 这样以来操作系统就有更为强大的时间管理权限了. CPU由操作系统统一进行分配, 每个进程按照优先级的高低都有机会得到CPU的使用时间. 如果一个程序运行超过了一定的时间, 操作系统就会强制令其休眠, 并将CPU资源分配给其他正在等待的进程. 这种CPU的分配方式即为传说中的**抢占式**, 操作系统可以强行剥夺CPU资源并分配给他认为目前最需要的进程. 如果操作系统分配给每个进程的时间都很短, 那么从宏观上看来就好像是许多进程同时在运行啦!</p>
+<p>目前主流的操作系统都采用了这种分配的方式...</p>
+<h3 id="-_1">操作系统 - 程序需要什么<a class="headerlink" href="#-_1" title="Permanent link">&para;</a></h3>
+<h4 id="_7">一个独立的环境<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
+<h5 id="_8">问题<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h5>
+<p>旧的运行方式问题有哪些呢?</p>
+<blockquote>
+<p>1, 地址空间不隔离
+2, 内存使用效率低
+3, 程序运行地址不确定</p>
+</blockquote>
+<p>相关解释如下:</p>
+<p>1, 最开始最开始, 所有的程序都直接运行在物理内存上, 这么着按理说只要程序需要的内存不超过物理内存的大小就好了.. 但是事实远不止这么简单, 多个程序同时在一块物理内存上直接运行, 不把物理内存隔离开的话,, 就会出现各种各样的错误, 打个小比方就是...... 你家的猪把隔壁的白菜拱了之类的.. 这还是小事, 万一某个不长心眼的程序或者说某个人别有用心的写了个恶意程序, 去修改操作系统所在的内存地址, 其效果就类似于你家的一堆猪撞开了全副武装的士兵, 然后把核弹控制基地的开关拱了.</p>
+<p>2, 因为没有内存管理机制, 所以程序执行时, 一般都是由Loader直接将完整的程序装载进内存中执行. 这样的话, 如果事先已经有程序A, B占满了内存空间, 如果想运行C程序的话, 就必须将A或者B的空间腾挪出来, 具体做法也就是在硬盘上建立一块A或者B的内存镜像, 然后再把腾挪出来的空间给C来运行.. 这样搞, 就相当于是把硬盘当低速内存来用, 还是经常读取的那种低速内存... 其速度不亚于你把洗漱用的东西放在高档保险箱里然后早上起来刷牙洗脸时的感受相仿... 无比麻烦还慢...</p>
+<p>3, 程序运行地址不确定. 因为要运行多个程序, 而何时需要打开哪个程序是个未知数. 差不多就相当于, 一个小宾馆把固定的房间承包给了固定的客人, 但是总有客人要求住同一间屋子, 这样一来就会造成麻烦. 所以需要使用虚拟地址的方法, 让程序之关心算法运行的是否正确, 地址转换和内存分配这烂摊子事就扔给操作系统去做吧!</p>
+<p>所以! 操作系统采用隔离的手段, 先保证一个程序有自己独立的, 简单的执行环境, 有一个单一的地址空间, 有自己的CPU, 就好像这个程序占有了整个计算机而不用担心其他的程序会干扰, 就类似于你可以在你家里随意瞎搞没人管一样. 当然啦, 门窗电话电视什么的还是需要的 ( 类比于程序之间通信的接口 ).</p>
+<p>从内存方面来说, 操作系统负责将分配给程序的虚拟地址映射到物理地址上, 这样就通过操作系统来保证不同的程序之间互相不干扰, 只要映射到毫不相干的内存位置就好了.</p>
+<h5 id="_9">分段<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h5>
+<p>为了解决这个问题, 起初采用了一种叫做分段的办法, 直接把不同的程序映射到不同的物理空间, 给每一个程序独立的虚拟运行地址. 这个做法很好的解决了问题1和3......但是把日用品放保险箱的问题还是没有解决...... 那应该怎么办呢?</p>
+<h5 id="_10">分页<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h5>
+<p>人当然不能坐以待毙啊, 于是有人提出了另外一种办法, 简而言之, 操作系统多干活就好了. 于是有人就很巧秒的提出了一种叫做**分页**的办法, 很好的解决了内存不够用需要频繁读写硬盘的问题. 简而言之, 把内存分成一片片的, 称之为页, 每个程序的运行空间由许多页组成, 就像切片面包一样, CPU嘴巴小, 一次只吃得下一片, 所以就可以通过划分页的办法将一个程序割成面包片, 然后就可以合理的分配内存空间了. 页的大小是操作系统负责分配的. 一般主流操作系统的实现都将页的大小分得很小, 事实上, 大部分都是以4KB作为页的大小的. 这样一来就可以把内存完整高效的利用起来. 一个应用程序如果被腰斩了怎么办呢? 一个被切成片的夹心面包的一部分切片放在CPU面前的盘子里, 另一部分在锅里保温, 现在操作系统想吃一片带鸡的, 结果盘子里没有, 会怎么办呢? 这时候会产生一个叫做页错误的东西, 大意就是CPU告诉操作系统: z? 带个鸡? ( 划掉 ) 我想吃得切片不在盘子里. 于是操作系统就会把这个带鸡的切片取出来给CPU, 然后CPU继续吃 ( 干活 )</p>
+<h4 id="_11">互相协作, 同时运行的能力<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
+<h5 id="_12">问题<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h5>
+<p>当然啦,一个程序不可能在一段时间里只干一件事, 这样的话当程序开始进行一些耗时的计算时, 他就会像死机了一样. 这样当然不信啊, 比如一个软件安装程序, 至少得能在安装的时候可以展示一些帮助信息啥的吧. 或者我想一边安装一边安抚客户放点小电影怎么办 ( 逃 )</p>
+<p>这时你可以说我多写几个程序让他们组合起来运行不就可了么?</p>
+<p>可是我的软件安装数据和小电影放在一起了啊, 如果分程序来组织的话, 不同程序之间内存地址隔离, 这样我怎么愉快的编写这个程序啊...? 总不能像入室抢劫一样打破操作系统的规则然后读取其他进程的数据吧..?</p>
+<p>什么? 你说可以用通讯接口? 你杀了我吧, 这么简单一件事还要这样麻烦的写代码头会秃的......</p>
+<h5 id="_13">解决方案 线程<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h5>
+<p>于是**线程 ( Thread ) **这个概念就登场了. 多线程现在是每个人都多多少少听说过的词了 ( 连七大姑八大姨都知道什么化妆品会多线程的呵护肌肤, 一边祛痘一边美白什么的, just 吐槽 ) . 线程又称之为轻量级进程, 不过它和进程可不一样, 首先属于同一个进程的不同线程可以互不干扰的同时进行, 其次这些住在一个家里的线程共享进程的全局变量和堆的数据. 线程的出现不仅解决了高性能程序需要同时进行计算和用户交互的任务, 程序的执行还可以有效的利用等待的时间, 比如网络响应的时间里程序还可以干一些其他的事情而不用在那里傻等着......而且像种子下载软件, 本身就需要进行多端下载, 线程的出现很好的促进了这类软件的出现.</p>
+<h2 id="_14">结尾<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
+<p>先到这里吧, 写博客的速度追不上看书的速度, 后面的内容...... 暂时写不好, 可能因为理解还不够透彻吧...... 等期中考试结束了再写......</p>
+<p>如果有知识性错误欢迎带师傅们指正..........</p>
+                
+                  
+                
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../../算法/网络流学习/" title="网络流学习" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  上一页
+                </span>
+                网络流学习
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../../程序起源/Chapter-1/" title="第一章" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  下一页
+                </span>
+                第一章
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.c33a9706.js"></script>
+      
+        
+        
+          
+          <script src="../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+              
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1257 @@
+
+
+
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="复制">
+      
+        <meta name="lang:clipboard.copied" content="已复制">
+      
+        <meta name="lang:search.language" content="jp">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="没有找到符合条件的结果">
+      
+        <meta name="lang:search.result.one" content="找到 1 个符合条件的结果">
+      
+        <meta name="lang:search.result.other" content="# 个符合条件的结果">
+      
+        <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
+    
+    
+      
+        <title>使用GitHub和HEXO的博客搭建过程</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.adb8469c.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#2196f3">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.86422ebf.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="blue" data-md-color-accent="red">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#_1" tabindex="0" class="md-skip">
+        跳转至
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="Reverier 的博客" aria-label="Reverier 的博客" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Reverier 的博客
+            </span>
+            <span class="md-header-nav__topic">
+              
+                使用GitHub和HEXO的博客搭建过程
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            键入以开始搜索
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." class="md-tabs__link">
+        欢迎!
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../算法/网络流学习/" class="md-tabs__link">
+          算法
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../操作系统学习/程序员脱发指南-操作系统/" class="md-tabs__link">
+          操作系统学习
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../程序起源/Chapter-1/" class="md-tabs__link">
+          程序起源
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../买苹果流程-程序运行思路/" class="md-tabs__link md-tabs__link--active">
+          杂记
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../在Linux上优雅的堕落/Chapter-1/" class="md-tabs__link">
+          在Linux上优雅的堕落
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../CTF题解与杂记/MoeCTF简记之初识CTF/" class="md-tabs__link">
+          CTF题解与杂记
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Linux常见小问题收集/KDE上TIM无法打开文件所在位置的解决方案/" class="md-tabs__link">
+          Linux常见小问题收集
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../links/" class="md-tabs__link">
+          友情链接
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="Reverier 的博客" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Reverier 的博客
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="欢迎!" class="md-nav__link">
+      欢迎!
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      算法
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        算法
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../算法/网络流学习/" title="网络流学习" class="md-nav__link">
+      网络流学习
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      操作系统学习
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        操作系统学习
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../操作系统学习/程序员脱发指南-操作系统/" title="程序员脱发指南-操作系统" class="md-nav__link">
+      程序员脱发指南-操作系统
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      程序起源
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        程序起源
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../程序起源/Chapter-1/" title="第一章" class="md-nav__link">
+      第一章
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../程序起源/Chapter-2/" title="第二章" class="md-nav__link">
+      第二章
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+    
+    <label class="md-nav__link" for="nav-5">
+      杂记
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        杂记
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../买苹果流程-程序运行思路/" title="买苹果" class="md-nav__link">
+      买苹果
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        使用GitHub和Hexo的博客搭建过程
+      </label>
+    
+    <a href="./" title="使用GitHub和Hexo的博客搭建过程" class="md-nav__link md-nav__link--active">
+      使用GitHub和Hexo的博客搭建过程
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    废话
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    准备工作
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#git" class="md-nav__link">
+    Git
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nodejs" class="md-nav__link">
+    Node.js
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github" class="md-nav__link">
+    GitHub账号配置
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    正式开始
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hexo" class="md-nav__link">
+    安装HEXO
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    初始化博客
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    本地预览博客
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hexo_1" class="md-nav__link">
+    HEXO的正确使用姿势
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github_1" class="md-nav__link">
+    发布到GitHub
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    日常使用
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    未完待续~
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../用Next美化-HEXO-GitHub-博客/" title="用Next美化HEXO-GitHub博客" class="md-nav__link">
+      用Next美化HEXO-GitHub博客
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../生物医学工程报告/" title="生物医学工程报告" class="md-nav__link">
+      生物医学工程报告
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../The-Elementary-Of-Programming-Style/" title="The Elementary Of Programming Style" class="md-nav__link">
+      The Elementary Of Programming Style
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Waiting-for-PWN/" title="Waiting for PWN" class="md-nav__link">
+      Waiting for PWN
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../hello-world/" title="Hello World" class="md-nav__link">
+      Hello World
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      在Linux上优雅的堕落
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        在Linux上优雅的堕落
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../在Linux上优雅的堕落/Chapter-1/" title="第一章" class="md-nav__link">
+      第一章
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../在Linux上优雅的堕落/Chapter-2/" title="第二章" class="md-nav__link">
+      第二章
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      CTF题解与杂记
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        CTF题解与杂记
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CTF题解与杂记/MoeCTF简记之初识CTF/" title="MoeCTF简记之初识CTF" class="md-nav__link">
+      MoeCTF简记之初识CTF
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CTF题解与杂记/moeCTF-2019-题解/" title="moeCTF-2019-题解" class="md-nav__link">
+      moeCTF-2019-题解
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CTF题解与杂记/记一次狗屎的HTTP请求头/" title="记一次狗屎的HTTP请求头" class="md-nav__link">
+      记一次狗屎的HTTP请求头
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      Linux常见小问题收集
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        Linux常见小问题收集
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Linux常见小问题收集/KDE上TIM无法打开文件所在位置的解决方案/" title="KDE上TIM无法打开文件所在位置的解决方案" class="md-nav__link">
+      KDE上TIM无法打开文件所在位置的解决方案
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      友情链接
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        友情链接
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../links/" title="友情链接" class="md-nav__link">
+      友情链接
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    废话
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    准备工作
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#git" class="md-nav__link">
+    Git
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nodejs" class="md-nav__link">
+    Node.js
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github" class="md-nav__link">
+    GitHub账号配置
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    正式开始
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hexo" class="md-nav__link">
+    安装HEXO
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    初始化博客
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    本地预览博客
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hexo_1" class="md-nav__link">
+    HEXO的正确使用姿势
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github_1" class="md-nav__link">
+    发布到GitHub
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    日常使用
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    未完待续~
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>使用GitHub和Hexo的博客搭建过程</h1>
+                
+                <h2 id="_1">废话<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>作为一个小白,在WEB方面的小白,搭建一个简单的静态博客确实费了许多精力.其中参考了无数资料,有官方的,非官方的......反正搭建不易,现在就详述一下,博客是怎么搭建起来的.</p>
+<!--more-->
+
+<p>没错,看到这个一级标题了吧,这篇文章里面不是一个水到渠成的方法,我会把我所踩过的坑以及踩坑用的方法写进来,所以......😜</p>
+<p>噢,笔者很穷,用不起Mac,所以就不会Mac的做法咯~</p>
+<p>原创,转载请注明来源</p>
+<h2 id="_2">准备工作<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="git">Git<a class="headerlink" href="#git" title="Permanent link">&para;</a></h3>
+<p>准备什么咧?因为我们的博客是建在GitHub上啦,所以你需要一个Git. <a href="https://git-scm.com/">Git 下载地址</a></p>
+<p>按照Windows下面装软件的惯例,就 下一步 下一步 下一步 我同意 下一步 下一步 安装 完成 就装好啦~</p>
+<p>如果是Linux, Git 应该已经集成到大部分的系统里啦~如果没有,就</p>
+<p>DEB系: Debian, Ubuntu, Deepin, Linux Mint以及各种衍生版本,包括Kali Linux和Parrot Sec Linux</p>
+<div class="codehilite"><pre><span></span><code>$ sudo apt-get install git
+</code></pre></div>
+
+<p>RedHat系: Fedora, RHEL, CentOS</p>
+<div class="codehilite"><pre><span></span><code>$ sudo dnf install git
+</code></pre></div>
+
+<p>emmm如果是CentOS这种万年不更新的系统的话,用yum就好啦:</p>
+<div class="codehilite"><pre><span></span><code>$ sudo yum install git
+</code></pre></div>
+
+<p>Open SUSE: 没办法,SUSE自成一派,不过 YasT 确实好用,笔者电脑上就是Windows 10 + Open SUSE</p>
+<div class="codehilite"><pre><span></span><code>$ sudo zypper install git
+</code></pre></div>
+
+<p>Arch系:Arch Linux, Manjaro, Gentoo</p>
+<div class="codehilite"><pre><span></span><code>$ sudo pacman -S git
+</code></pre></div>
+
+<p>我猜装个git不需要用AUR吧😨</p>
+<p>(别问笔者为啥各大Linux的安装包管理器背的这么熟练,说出来都是泪)</p>
+<h3 id="nodejs">Node.js<a class="headerlink" href="#nodejs" title="Permanent link">&para;</a></h3>
+<p>好了,Git 装完了,接下来装Hexo(我们的主角)的必备依赖!</p>
+<p>他就是Node.js!(反正笔者也没学过,感觉很厉害就是了) <a href="http://nodejs.cn/download/">Node.js下载地址</a></p>
+<h3 id="github">GitHub账号配置<a class="headerlink" href="#github" title="Permanent link">&para;</a></h3>
+<p>接下来我们得注册一个GitHub 账号...... 喂,这么重要的东西,应该早就有了吧(手动滑稽</p>
+<p>咳</p>
+<p>注册完后,我们继续......</p>
+<p>现在我们来配置一下Git (什么?Hexo还没装呢?就先配置Git? )</p>
+<p>Windows用户:</p>
+<p>装好Git后,会有一个叫做Git Bash的东东出现在你的桌面上 ( Linux用户:不存在的 )</p>
+<p>然后...... 你可以找个清闲的地方 ( 不是叫你喝茶 ) ,新建一个文件夹,取一个喜欢的名字. ( 喂,不是给女儿起名字,那么认真干嘛 ) 然后右键,选择Git Bash Here.</p>
+<p>Linux用户:</p>
+<div class="codehilite"><pre><span></span><code>$ mkdir ./MyBlog <span class="c1">##你喜欢就好</span>
+$ <span class="nb">cd</span> ./MyBlog <span class="c1">##进入这个目录</span>
+</code></pre></div>
+
+<p>然后,现在我们就可以把Windows和Linux统一起来说啦.</p>
+<p>先配置一下你刚注册的账户~</p>
+<div class="codehilite"><pre><span></span><code>$ git config --global user.name <span class="s2">&quot;你的GitHub用户名&quot;</span>
+$ git config --global user.email <span class="s2">&quot;你的GitHub注册邮箱&quot;</span>
+</code></pre></div>
+
+<p>( 啥? 没有一个叫 你的GitHub用户名 的用户? 不至于吧,我说的是你的GitHub的用户名,不是叫"你的GitHub用户名"的用户😓)</p>
+<p>我们为了避免每次使用都要输入密码登录,可以配置一个叫SSH Key的东西:</p>
+<div class="codehilite"><pre><span></span><code>$ ssh-keygen -t rsa -C <span class="s2">&quot;你的GitHub注册邮箱&quot;</span>
+</code></pre></div>
+
+<p>( 你不至于连open-ssh都没有吧......那得是一个多么精简的系统 )</p>
+<p>接下来会让你输入各种信息,啥都不输,无脑回车就行了.</p>
+<p>然后找到生成的.ssh的文件夹中的id_rsa.pub密钥，将内容全部复制.</p>
+<p>再然后...... ( 我为哈说啥都要带个然后 )</p>
+<p>打开<a href="https://github.com/settings/keys">GitHub_Settings_keys</a> 页面，新建new SSH Key</p>
+<p>为了保证访问速度......我就不在博客上添加图片了哈,不然GitHub该生气了(手动滑稽</p>
+<p>Title随便写,想写啥写啥,然后把刚刚复制的id_rsa.pub的内容粘贴到下面的Key里面,点击 Add SSH key,就OK啦!</p>
+<p>然后我们回到Bash ( Linux用户别抬杠, 是个shell都可以, 笔者用的是zsh )</p>
+<div class="codehilite"><pre><span></span><code>$ ssh git@github.com
+</code></pre></div>
+
+<p>如果出现了 Hi XXXX! You've successfully......balabala......就说明配置成功啦! 具体原理如下:</p>
+<p>引自知乎 <a href="https://zhuanlan.zhihu.com/p/26625249">吴润的文章</a></p>
+<blockquote>
+<p>这里之所以设置GitHub密钥原因是，通过非对称加密的公钥与私钥来完成加密，公钥放置在GitHub上，私钥放置在自己的电脑里。GitHub要求每次推送代码都是合法用户，所以每次推送都需要输入账号密码验证推送用户是否是合法用户，为了省去每次输入密码的步骤，采用了ssh，当你推送的时候，git就会匹配你的私钥跟GitHub上面的公钥是否是配对的，若是匹配就认为你是合法用户，则允许推送。这样可以保证每次的推送都是正确合法的。</p>
+</blockquote>
+<h2 id="_3">正式开始<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="hexo">安装HEXO<a class="headerlink" href="#hexo" title="Permanent link">&para;</a></h3>
+<p>当当当! 我们的主角HEXO要登场啦!</p>
+<div class="codehilite"><pre><span></span><code>$ npm install -g hexo-cli
+</code></pre></div>
+
+<p>在我们的Git Bash里使用这条指令来安装hexo!安装会 <del>比较</del> 狠 慢! 因为......我们有伟大的万里长城防火墙啊...... ( 逃</p>
+<h3 id="_4">初始化博客<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>安装好之后,检查一下你当前的路径是不是刚刚让你找的清闲之地------一个你想把博客布置起来的空文件夹.</p>
+<p>怎么检查?</p>
+<div class="codehilite"><pre><span></span><code>$ <span class="nb">pwd</span>
+</code></pre></div>
+
+<p>然后看输出的路径是不是 xxx/MyBlog 或者其他你取的名字.</p>
+<p>确认完毕后,输入:</p>
+<div class="codehilite"><pre><span></span><code>$ hexo init
+</code></pre></div>
+
+<p>开始初始化你的博客吧!</p>
+<p>然后一屏令人目眩的代码飞过......</p>
+<p>我们现在打开你的博客文件夹,就能看见下面多出了很多文件啦!</p>
+<h3 id="_5">本地预览博客<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>输入:</p>
+<div class="codehilite"><pre><span></span><code>$ hexo g
+$ hexo s
+</code></pre></div>
+
+<p>然后在浏览器点开 <a href="http://localhost:4000">本地博客</a> 就能看见我们的博客啦!</p>
+<h3 id="hexo_1">HEXO的正确使用姿势<a class="headerlink" href="#hexo_1" title="Permanent link">&para;</a></h3>
+<p>现在我们瞅一眼 hexo 的正确使用姿势:</p>
+<div class="codehilite"><pre><span></span><code>$ npm install hexo -g <span class="c1">#安装Hexo</span>
+$ npm update hexo -g <span class="c1">#升级</span>
+$ hexo init <span class="c1">#初始化博客</span>
+</code></pre></div>
+
+<p>命令简写:</p>
+<div class="codehilite"><pre><span></span><code>$ hexo n <span class="s2">&quot;文章名称&quot;</span> <span class="o">==</span> hexo new <span class="s2">&quot;文章名称&quot;</span> <span class="c1">#新建文章,注意,&quot;&quot;里面是你的文章名称,不是 文章名称 ......</span>
+$ hexo <span class="nv">g</span> <span class="o">==</span> hexo generate <span class="c1">#生成本地文件</span>
+$ hexo <span class="nv">s</span> <span class="o">==</span> hexo server <span class="c1">#启动服务预览</span>
+$ hexo <span class="nv">d</span> <span class="o">==</span> hexo deploy <span class="c1">#部署到远程服务器</span>
+$ hexo server <span class="c1">#Hexo会监视文件变动并自动更新，无须重启服务器</span>
+$ hexo server -s <span class="c1">#静态模式</span>
+$ hexo server -p <span class="m">5000</span> <span class="c1">#更改端口</span>
+$ hexo server -i <span class="m">192</span>.168.1.1 <span class="c1">#自定义 IP</span>
+$ hexo clean <span class="c1">#清除缓存，若是网页正常情况下可以忽略这条命令</span>
+</code></pre></div>
+
+<p>就这样, 我们就可以掌握 hexo 的用法啦!</p>
+<h3 id="github_1">发布到GitHub<a class="headerlink" href="#github_1" title="Permanent link">&para;</a></h3>
+<p>看我们刚搭好的博客, 是不是有些激动?</p>
+<p>什么? 嫌丑?</p>
+<p>那不是现在要操心的事情......应当操心的是,如何才能发布到网站上?</p>
+<p>这个时候,GitHub就要大显神威了. 打开你的GitHub页面, 然后新建一个仓库......仓库取名叫</p>
+<div class="codehilite"><pre><span></span><code>你的用户名.github.io
+</code></pre></div>
+
+<p>我也不知道为啥非要写用户名,但是不写用户名后面的配置会出各种各样的奇怪问题......</p>
+<p>然后创建就可以啦.</p>
+<p>然后! 用Visual Studio Code / Vim / Emacs / Sublime / Atom / Kate / Notepad ...... ( 是个编辑器都行 ) 打开位于博客文件夹下的_config.yml, 然后把光标扯到最下面, 看到尾端有一个deploy的东东,编辑一下:</p>
+<div class="codehilite"><pre><span></span><code># Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+  type: git
+  repository: git@github.com:你的用户名/你的用户名.github.io.git
+  branch: master
+</code></pre></div>
+
+<p>回到Bash, 输入下面的指令安装部署插件:</p>
+<div class="codehilite"><pre><span></span><code>$ npm install hexo-deployer-git --save
+</code></pre></div>
+
+<p>然后! 我们就可以很方便的部署网站啦! 两条指令搞定!</p>
+<div class="codehilite"><pre><span></span><code>$ hexo clean <span class="c1">#清除上次的缓存</span>
+$ hexo g -d <span class="c1">#等价于执行hexo g 后再执行一次 hexo d , 这两个指令已经介绍过了.</span>
+</code></pre></div>
+
+<p>打开 你的用户名.github.io,你的网站就已经部署好啦!</p>
+<h2 id="_6">日常使用<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>那我们怎么写博客呢?</p>
+<p>只要打开Git Bash, cd到你的博客文件夹 ( Windows用户可以点开博客文件夹,右键 Git Bash Here)然后输入:</p>
+<div class="codehilite"><pre><span></span><code>$ hexo new post <span class="s2">&quot;文章名称&quot;</span>
+</code></pre></div>
+
+<p>就能新建一篇文章啦!</p>
+<p>你可以去下载一个 <a href="https://typora.io/">Typora</a> ,一款很好用的MarkDown编辑器–-----好用到你根本不会觉得你在写一个叫做MarkDown的标记语言…....事实上, 笔者现在仍旧对MarkDown保持着一股生疏感.安装好Typora之后,你可以打开设置,然后就可以设置每次打开的文件夹啦! 我们把文件夹设置为:</p>
+<div class="codehilite"><pre><span></span><code>MyBlog\source\_posts
+</code></pre></div>
+
+<p>以后写的文章就可以保存在这里啦!</p>
+<p>想更新到GitHub的话,就是:</p>
+<div class="codehilite"><pre><span></span><code>$ hexo clean
+$ hexo g -d
+</code></pre></div>
+
+<p>然后打开你的博客地址 : 你的用户名.github.io就可以看见你刚写的文章啦!</p>
+<p>PS: 由于GitHub Pages需要每次重建,所以你可能不会很快的看见自己的文章咯~这样的话最好等上两分钟,你的文章就会出现在博客列表里啦!</p>
+<h2 id="_7">未完待续~<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p>下集预告:安装Next主题, 配置我的博客!</p>
+                
+                  
+                
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../买苹果流程-程序运行思路/" title="买苹果" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  上一页
+                </span>
+                买苹果
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../用Next美化-HEXO-GitHub-博客/" title="用Next美化HEXO-GitHub博客" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  下一页
+                </span>
+                用Next美化HEXO-GitHub博客
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.c33a9706.js"></script>
+      
+        
+        
+          
+          <script src="../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+              
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+    
+  </body>
+</html>

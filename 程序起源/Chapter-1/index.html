@@ -1,0 +1,1141 @@
+
+
+
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="复制">
+      
+        <meta name="lang:clipboard.copied" content="已复制">
+      
+        <meta name="lang:search.language" content="jp">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="没有找到符合条件的结果">
+      
+        <meta name="lang:search.result.one" content="找到 1 个符合条件的结果">
+      
+        <meta name="lang:search.result.other" content="# 个符合条件的结果">
+      
+        <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
+    
+    
+      
+        <title>第一章 - Reverier 的博客</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.adb8469c.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#2196f3">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.86422ebf.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="blue" data-md-color-accent="red">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#_1" tabindex="0" class="md-skip">
+        跳转至
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="Reverier 的博客" aria-label="Reverier 的博客" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Reverier 的博客
+            </span>
+            <span class="md-header-nav__topic">
+              
+                第一章
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            键入以开始搜索
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." class="md-tabs__link">
+        欢迎!
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../算法/网络流学习/" class="md-tabs__link">
+          算法
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../操作系统学习/程序员脱发指南-操作系统/" class="md-tabs__link">
+          操作系统学习
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="./" class="md-tabs__link md-tabs__link--active">
+          程序起源
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../杂记/买苹果流程-程序运行思路/" class="md-tabs__link">
+          杂记
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../在Linux上优雅的堕落/Chapter-1/" class="md-tabs__link">
+          在Linux上优雅的堕落
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../CTF题解与杂记/MoeCTF简记之初识CTF/" class="md-tabs__link">
+          CTF题解与杂记
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Linux常见小问题收集/KDE上TIM无法打开文件所在位置的解决方案/" class="md-tabs__link">
+          Linux常见小问题收集
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../links/" class="md-tabs__link">
+          友情链接
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="Reverier 的博客" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Reverier 的博客
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="欢迎!" class="md-nav__link">
+      欢迎!
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      算法
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        算法
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../算法/网络流学习/" title="网络流学习" class="md-nav__link">
+      网络流学习
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      操作系统学习
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        操作系统学习
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../操作系统学习/程序员脱发指南-操作系统/" title="程序员脱发指南-操作系统" class="md-nav__link">
+      程序员脱发指南-操作系统
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      程序起源
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        程序起源
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        第一章
+      </label>
+    
+    <a href="./" title="第一章" class="md-nav__link md-nav__link--active">
+      第一章
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    计算机的本质
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    程序语言
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    雏形
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    变量
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    分隔符
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    函数与作用域
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    操作系统的横空出世
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    预告
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Chapter-2/" title="第二章" class="md-nav__link">
+      第二章
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      杂记
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        杂记
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../杂记/买苹果流程-程序运行思路/" title="买苹果" class="md-nav__link">
+      买苹果
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../杂记/使用GitHub和HEXO的博客搭建过程/" title="使用GitHub和Hexo的博客搭建过程" class="md-nav__link">
+      使用GitHub和Hexo的博客搭建过程
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../杂记/用Next美化-HEXO-GitHub-博客/" title="用Next美化HEXO-GitHub博客" class="md-nav__link">
+      用Next美化HEXO-GitHub博客
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../杂记/生物医学工程报告/" title="生物医学工程报告" class="md-nav__link">
+      生物医学工程报告
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../杂记/The-Elementary-Of-Programming-Style/" title="The Elementary Of Programming Style" class="md-nav__link">
+      The Elementary Of Programming Style
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../杂记/Waiting-for-PWN/" title="Waiting for PWN" class="md-nav__link">
+      Waiting for PWN
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../杂记/hello-world/" title="Hello World" class="md-nav__link">
+      Hello World
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      在Linux上优雅的堕落
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        在Linux上优雅的堕落
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../在Linux上优雅的堕落/Chapter-1/" title="第一章" class="md-nav__link">
+      第一章
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../在Linux上优雅的堕落/Chapter-2/" title="第二章" class="md-nav__link">
+      第二章
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      CTF题解与杂记
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        CTF题解与杂记
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CTF题解与杂记/MoeCTF简记之初识CTF/" title="MoeCTF简记之初识CTF" class="md-nav__link">
+      MoeCTF简记之初识CTF
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CTF题解与杂记/moeCTF-2019-题解/" title="moeCTF-2019-题解" class="md-nav__link">
+      moeCTF-2019-题解
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CTF题解与杂记/记一次狗屎的HTTP请求头/" title="记一次狗屎的HTTP请求头" class="md-nav__link">
+      记一次狗屎的HTTP请求头
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      Linux常见小问题收集
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        Linux常见小问题收集
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Linux常见小问题收集/KDE上TIM无法打开文件所在位置的解决方案/" title="KDE上TIM无法打开文件所在位置的解决方案" class="md-nav__link">
+      KDE上TIM无法打开文件所在位置的解决方案
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      友情链接
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        友情链接
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../links/" title="友情链接" class="md-nav__link">
+      友情链接
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    计算机的本质
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    程序语言
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    雏形
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    变量
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    分隔符
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    函数与作用域
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    操作系统的横空出世
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    预告
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="_1">程序起源 第一章<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>这篇文章并不是真的介绍程序真正的起源过程!! 仅仅只是一部类小说的入门教程...</p>
+<!--more-->
+
+<h2 id="_2">计算机的本质<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>计算机的本质是什么呢? 顾名思义, 当然是一个计算工具了. 不过得益于计算机的可扩展设计, 他所能做的不仅仅只是像一个计算器那样进行简单的计算, 而是在程序语言的基础上干更多的事情, 从而支撑起这个日渐丰富的信息化世界.</p>
+<h2 id="_3">程序语言<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>最初的计算机确实是用来进行一些计算工作的, 比如计算导弹的弹道轨迹等. 但是计算机刚发明的时候, 没有键盘, 甚至没有屏幕, 因此人们只能使用穿孔卡带, 对照着机器指令表一条一条的把指令输入进去, 用0和1来计算. 当计算机技术发展到一定程度的时候, 人们就迫切的需要设计一种更高级的方式, 从机器语言之中解脱出来, 提高生产效率. 这个时候, 汇编语言成为了一个跳板. 人人们通过翻译的方式, 把一些指令包装成了一些易于记忆的单词, 写完程序之后让编译器根据指令表把源代码翻译成指令, 产生最终的程序.</p>
+<p>但是这样远远不够, 特别是对于一些只想潜心研究数学物理而不想把时间浪费在编写繁杂的汇编指令上的科学家们.</p>
+<h2 id="_4">雏形<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>首先, 人们想到的, 是让计算机可以执行一些简单的计算指令, 例如:</p>
+<div class="codehilite"><pre><span></span><code>2 + 3
+(3 / 2) + 5 * (3 + 4)
+</code></pre></div>
+
+<p>这种简单的算式.</p>
+<p>这种类似于计算器的程序, 可以通过一些算法很轻易的实现.</p>
+<p>不过为了执行的方便, 制定了一些规定:</p>
+<blockquote>
+<p>1, 不同对象之间必须以明确的运算符号相分割, 不允许出现 2(3 + 4)这种情况, 虽然几乎所有学过数学的人都默认2和括号之间是乘法运算关系.
+2, 括号内的内容被优先执行, 表达式基本符合先加减后乘除的基本运算法则, 但是在优先度相同的内容之间尽量从左往右执行, 但不保证一定是这样.</p>
+</blockquote>
+<p>于是根据这几个小规定以及简单的计算需求, 人们研究出来一种简单的计算器程序, 用户每输入一个式子, 程序就会进行计算并将结果呈现在屏幕上. 人们把这种可以被正确执行的, 完整的式子称作一条合法的**表达式语句**.</p>
+<h2 id="_5">变量<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>但是, 这个程序很快就不那么令人满意了. 人们有时候需要计算一个很长的过程啊, 把这个过程写到同一行未免有点难为人, 如果前面的计算结果恰好要在后米纳的计算过程中使用, 记不住也是一件很难受的事情.</p>
+<p>在发明计算机的时候, 为了让计算机能够读取程序并执行, 设计者在计算机里面留了一个叫做内存的玩意儿, 这个东西可以储存程序的指令, 是不是也可以储存临时计算结果呢?</p>
+<p>答案是当然可以. 懒不愧是科学发展的第一驱动力, 人们决定对这个计算器程序进行一些升级, 往里面加入一些能够储存临时结果的东西, 也就是**变量**. 变量这个东西其实很常见了, <code>y = f(x)</code>这种式子在数学课本上到处都是, 如果要进行数学研究, 怎么能少了变量这种东西呢?</p>
+<p>在设计变量的时候人们碰到了一些问题, 在计算机里面, 所有的数据都是用0和1来存储的, 那么我们怎么知道这一大堆0和1, 表示什么数呢? 如果是整数, 自然好表示, 如果是小数呢? 首先, 由于只能存储0和1, 所以你是没有办法表示小数点的. 人们设计了两套系统, 一套用来处理整数, 一套用来处理小数. 人们并不想费脑筋去编写程序推断你的变量究竟是小数还是整数, 索性规定:</p>
+<blockquote>
+<p>1, 要先声明变量并指明变量的类型, 才能够使用它.</p>
+</blockquote>
+<p>声明一个变量, 只需要使用 <code>&lt;变量类型&gt; &lt;变量名称&gt;</code>的方式就可以了. 例如<code>int x</code>, 会声明一个整数类型的<code>x</code>变量以供使用.</p>
+<p>于是你就可以这样在计算器程序里面写 (假设'-&gt;'后面的是用户的输入)</p>
+<div class="codehilite"><pre><span></span><code>-&gt; int x
+声明了整数类型的 x
+-&gt; x = 2 + 5
+计算 2 + 5, 结果为 7, 储存在 x 里面.
+-&gt; int y
+声明了整数类型的 y
+-&gt; y = 3 + x
+读取 x 的值为 7, 计算3 + 7, 结果为 10, 储存在 y 里面.
+</code></pre></div>
+
+<p>人们在编写好的计算器程序里面提供了这样几种类型:</p>
+<p><strong>int</strong> : <code>integer</code>的缩写, 意思是整数. 比较小的整数都可以储存在<code>int</code>类型里面.这个比较小, 最大的界限是<code>-2147483648 ~ 2147483647</code>, 但是大多数程序员是记不住这个数字的, 索性记着10位数以下的都用<code>int</code>类型.</p>
+<p><strong>long</strong> : 比较大的整数, 当你发现<code>int</code>类型不好用的时候, 可以尝试把类型声明改成<code>long</code>.</p>
+<p><strong>long long</strong> : 最大的整数类型, 范围是<code>-9223372036854775808 ~ 9223372036854775807</code>, 但是也没有人记得住. 如果<code>long</code>不足以招架你的计算结果, 是时候请出<code>long long</code>了, 如果<code>long long</code>也不足以解决你的问题, 你可能就要借助一些编程手段而不是埋怨编译器不好了.</p>
+<p><strong>float</strong> : 单精度浮点数, 说的直白一点就是普通小数. 但是精度不高.</p>
+<p><strong>double</strong> : 双精度浮点数, 占用空间比<code>float</code>类型大了一倍, 精度比较高, 但是用来计算整数的时候还是有所问题, 比如会在计算过程中把中间结果 2 储存成 1.999999999999999, 所以应当避免用浮点数类型进行整数运算.</p>
+<p><strong>char</strong> : 为了处理一些文字信息, 人们又引入了字符类型. 用八个二进制数位来表示一个字母. 一个字符既可以用单引号括起来表示 <code>'a'</code>, 也可以用数值表示 <code>97</code>.</p>
+<p><strong>unsigned</strong> : <code>unsigned</code>表示无符号类型, 可以放在各个整数类型前面当前缀, 这样可以省下来表示负数的部分, 数值的表示范围扩大了一倍.</p>
+<p>这样, 拥有了变量的计算器, 变得更加的强大了.</p>
+<h2 id="_6">分隔符<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>但是呢, 人们有时候并不想一边输入一边查看计算结果. 如果我要进行科学演示怎么办? 或者说, 如果我想让我的代码能够读取输入然后进行一系列的计算怎么办呢? 有人提出来, 可以把表达式按顺序来写在一个文本文件里, 计算器通过读取这个文件来一条一条的执行. 这确实是个好办法, 但是怎么告诉计算器, 输入的一大堆东西, 从头开始读多长算是一条完整的指令呢? 有人提议说用换行来区分. 这样做确实可以, 但是如果表达式很长应该怎么办呀... 我们为了方便阅读, 有时候挺想把一大长句的表达式分成几行来阅读...而且, 如果以换行来区分的话, 写起来格式必须中规中矩的, 限制好多. 最终开发者决定, 使用**分号**来当不同表达式语句之间的**分隔符**, 并且做出了一个保证, 即当计算器遇到分号的时候, 它会保证分号之前的所有计算任务和表达式全部都执行完毕, 否则就不会继续往下执行.</p>
+<p>据此, 人们就可以随心所欲的写代码了. 只要符合规定, 哪怕是乱成下面这样的代码, 也一样可以执行:</p>
+<div class="codehilite"><pre><span></span><code><span class="kt">int</span>
+<span class="n">x</span><span class="p">;</span>
+<span class="kt">int</span>             <span class="n">y</span><span class="p">;</span>
+
+
+<span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span>         <span class="o">+</span> <span class="mi">3</span>
+<span class="o">/</span><span class="mi">4</span>   <span class="o">*</span> <span class="mi">5</span>          <span class="p">(</span><span class="mi">3</span><span class="o">-</span><span class="mi">45</span><span class="p">)</span>
+<span class="p">);</span>
+<span class="kt">int</span> <span class="n">__</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
+
+       <span class="n">x</span><span class="o">=</span><span class="n">__</span><span class="o">=</span><span class="n">x</span><span class="o">*</span>
+        <span class="p">(</span><span class="mo">00</span><span class="p">)</span><span class="o">|</span><span class="n">__</span><span class="o">-</span><span class="n">__</span><span class="o">-</span><span class="n">__</span><span class="o">-</span>
+        <span class="p">(</span><span class="n">__</span><span class="p">)</span><span class="o">|</span>      <span class="n">__</span><span class="o">-</span><span class="n">__</span><span class="o">-</span>
+            <span class="n">x</span><span class="o">||</span><span class="n">__</span><span class="o">-</span><span class="n">__</span><span class="o">-</span>
+            <span class="n">x</span><span class="o">||</span>     <span class="n">x</span><span class="o">||</span><span class="n">x</span><span class="p">;</span>
+</code></pre></div>
+
+<p>这些看起来奇奇怪怪的表达式都是合法的.</p>
+<h2 id="_7">函数与作用域<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p>函数在数学里面是一个很重要的概念, 数学家们表示计算器很好用, 但是如果能写像 <code>y = f(x)</code> 这种程序就更好了. 于是人们又开始了长时间的研究...... 如何表示一个函数呢? 自然是沿用数学的习惯啦, 这样就可以最大限度的让计算机为数学服务而不用另学一套规则. 可是, 如果我想定义: <code>f(x) = 2 * x + 1</code>, 应该怎么去定义呢? 直接这么写确实是一种办法, 但是我们还需要给函数加上数据类型, 否则的话计算机不知道该怎么去处理函数里面的变量. 经过改进后, 人们可以通过:  <code>f(int x) = 2 * x + 1</code>的格式来定义一个函数. 这么做还有一个漏洞, 我们还需要定义<code>f(x)</code>的计算结果的类型, 于是最终成品就是: <code>int f(int x) = 2 * x + 1</code>, 而使用的时候就可以写: <code>y = f(2);</code>来计算<code>x = 2</code>时<code>f(x)</code>的值, 这么做确实令数学家们更加的高兴了.</p>
+<p>而且从这个时候, 计算器就不能仅仅是对程序语句进行顺序的执行了, **跳转**和**重用**的概念也出现在了舞台上. 例如下面的代码:</p>
+<div class="codehilite"><pre><span></span><code><span class="kt">int</span> <span class="nf">f</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="kt">int</span> <span class="n">z</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+</code></pre></div>
+
+<p>计算器按照顺序读取到第一行函数定义的时候, 因为只是个定义, 并没有实际的x让他去计算, 所以计算器跳过了这一部分. 读取到第二行的时候, 需要计算f(2)的值, 于是计算器就需要跳转到第一行, 将x赋值为2, 再执行<code>2 * x + 1</code>的计算, 最终将计算结果返回并赋值给y, 然后跳转到第三行, 发现要计算f(3)的值, 于是再次跳转到第一行, 计算完毕后跳回第三行并给z赋值. 两次执行f(x), 实际上就是对f(x)的定义进行了重复使用, 也就是**重用**.</p>
+<p>但在开发者按照这个思路设计计算器程序的时候来了个大问题, 等号已经被定义成赋值的符号了啊, <code>x=2</code>就是把x赋值为2, 如果这么设计的话, 开发者就需要弄一个智能的等号, 判断当前语境, 如果是变量就执行赋值的操作, 如果是函数, 就执行定义函数的操作... 可是当时的计算机哪有这么多计算资源呢? 设计这样一个智能的等号不仅浪费计算机的资源, 延长工作时间, 而且计算器设计起来会很复杂, <del>前两次升级已经有很多程序员猝死了</del>, 还是饶过我们吧QAQ.</p>
+<p>还有一个更加棘手的问题, 比如按照这个规则写出来的程序:</p>
+<div class="codehilite"><pre><span></span><code><span class="kt">int</span> <span class="n">x</span><span class="p">;</span>
+<span class="kt">int</span> <span class="nf">f</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<span class="kt">int</span> <span class="n">z</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+</code></pre></div>
+
+<p>那么函数定义里面那个x, 和参与了y的计算的那个x, 是不是同一个x呢? 当给z赋值时, f(2)里面的x实际上是等于2的, 那么计算之后, x究竟是5还是2呢? 这种令人迷惑的代码对头发实在是不怎么友好, 而且太为难程序开发者了..</p>
+<p>于是开发者们提出来一个叫做**代码块和作用域**的概念.</p>
+<p>我们可以用大括号<code>{}</code>来包含若干条表达式语句, 这些表达式语句共同组成了一个**代码块**, 在这个代码块内声明的变量只在这一对大括号括起来的若干条表达式中存在. 我们就称这对大括号所包含的表达式语句为这些变量的**作用域**.</p>
+<p>这样一来我们可以用代码块来把代码分隔开, 定义函数的时候就可以写:</p>
+<div class="codehilite"><pre><span></span><code><span class="kt">int</span> <span class="nf">f</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<span class="kt">int</span> <span class="n">z</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+</code></pre></div>
+
+<p>由于代码块把x和外部的语句隔离开了, 所以在执行f(x)的时候, 里面的x的值如何改变, 并不会影响到外面的x.</p>
+<p>这样的版本看起来已经很完善了, 但是开发者们总觉得, 既然提出来了代码块这个概念, 那么应该可以干更多的事情啊, 比如说把一连串更加复杂的表达式封装到一个函数里? 例如:</p>
+<div class="codehilite"><pre><span></span><code><span class="kt">int</span> <span class="nf">f</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span> <span class="o">+</span> <span class="mi">9</span><span class="p">;</span>
+    <span class="c1">//这个函数应该返回什么结果?</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>函数定义写到一半戛然而止, 这个函数的最终计算结果是什么呢?</p>
+<p>于是一个叫做**return**的机制被提了出来, 可以发明一个叫做<code>return</code>的语句, return后面所跟的数值就是函数最终的执行结果. 同时规定, 函数遇到return的时候就会返回return后面的数值, 同时立即返回调用函数的那个部分, 函数里面处于return后面的语句统统不执行. 于是我们可以这么写:</p>
+<div class="codehilite"><pre><span></span><code><span class="kt">int</span> <span class="nf">f</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span> <span class="o">+</span> <span class="mi">9</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">y</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>这样的函数定义越来越完善了, 同时, 这种灵活的代码块设计也让函数做更多的事情, 让代码看起来更有序.</p>
+<h2 id="_8">操作系统的横空出世<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<p>随着计算机技术的发展, 计算机拥有了键盘和屏幕, 甚至鼠标. 人们也需要分享计算机的计算资源, 在一台计算机上运行不同的任务. 只有一个计算器肯定不行啊, 这样的话相当于是浪费了宝贵的计算机资源. 所以人们开发了一个叫做操作系统的软件, 本质上是一个调控平台, 其他的所有软件都运行在操作系统的平台上, 并听从操作系统的调遣. 操作系统按照时间, 让每一个程序都能在一段时间里面运行上一小会儿, 从而保证多个计算任务可以同时进行. 但是由于计算机的普及, 垃圾程序员开始变得多了起来, 具体表现就是许多人会写一些不符合规定的代码, 让计算器程序执行到一半的时候出一些没办法识别的错误. 而操作系统没办法识别这些错误, 也没有办法结束这些程序, 就只能干等着, 浪费了资源又增加了系统的不稳定性. 于是开发者们苦思冥想, 如何才能在不增加现有代码复杂度的情况下保证计算器可以正确运行呢?</p>
+<p>最终, 得益于<code>代码块</code>和<code>函数</code>的概念, 人们想出来了一种简单的方法. 那就是, 将所有的计算表达式全部函数化! 计算器读取文件时, 从一个叫做main的函数开始执行, 在main函数的结尾有一个<code>return 0;</code>, 由于main函数是整个代码的主体, 不会有外部代码会写<code>int x = main(1);</code>这种表达式的, 所以计算器会把这个0返回给操作系统, 操作系统收到0之后就明白了, 这个任务已经成功的完成了. 如果计算器遇到了不符合规定的代码怎么办呢? 这个时候计算器会立即停止执行, 并返回一个非0的数字给操作系统, 表示这个代码有bug, 没能计算成功. 经过几个版本的迭代开发, 计算器和操作系统都变的更加智能并且可以识别一些常见的错误了, 这个时候操作系统就可以准备一张对照表, 计算器遇到某些类型的错误的时候可以按照这个表来返回一个非0数字, 来表示程序具体出了什么错误. 这样以来代码的编写者就可以通过查看系统日志的方式来看自己的程序出了什么错误, 从而加快排除bug的速度, 提成检查程序的能力.</p>
+<p>根据这种设计, 开发者们规定, 所有在函数外部的过程性表达式全部都是非法的, 所有的计算过程必须写在函数定义的一个代码块内, main函数的定义就是主计算过程, 在任何函数里都可以调用外部的函数, 只要被调用的这个函数的定义在**之前**已经写出来了就行.</p>
+<p>这个时候, 程序语言的发展已经有了一个最基本的框架了.</p>
+<div class="codehilite"><pre><span></span><code><span class="kt">int</span> <span class="nf">f</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">7</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">z</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="p">(</span><span class="n">y</span> <span class="o">+</span> <span class="mi">3</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">z</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+    <span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>这就是一份合法的代码了. 由于计算器每读取一条指令就会计算出结果显示在屏幕上, 所以我们就可以从屏幕上看到所有的结果.</p>
+<h2 id="_9">预告<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<p>由于语言的快速发展和复杂化, 原有的计算器变的越來越庞大, 在每个操作系统上都安装一个臃肿的计算器程序逐渐变的困难. 人们开始想把这些表达式组成的代码直接翻译成机器指令包装成程序, 从而脱离了计算器也一样可以执行. 于是人们发明了一个新的软件, 同时又增加了一些新的功能, 让程序可以在屏幕上输出特定的文字和数值, 而把计算过程隐藏起来......</p>
+                
+                  
+                
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../../操作系统学习/程序员脱发指南-操作系统/" title="程序员脱发指南-操作系统" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  上一页
+                </span>
+                程序员脱发指南-操作系统
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../Chapter-2/" title="第二章" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  下一页
+                </span>
+                第二章
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.c33a9706.js"></script>
+      
+        
+        
+          
+          <script src="../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+              
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+    
+  </body>
+</html>
