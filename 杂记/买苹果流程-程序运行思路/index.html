@@ -88,13 +88,14 @@
       </a>
     
     
-      <header class="md-header" data-md-component="header">
+<header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../.." title="Reverier 的博客" aria-label="Reverier 的博客" class="md-header-nav__button md-logo">
+        <a href="../.." title="Reverier 的博客"
+          aria-label="Reverier 的博客" class="md-header-nav__button md-logo">
           
-            <i class="md-icon"></i>
+          <i class="md-icon"></i>
           
         </a>
       </div>
@@ -104,21 +105,44 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
-            <span class="md-header-nav__topic">
-              Reverier 的博客
-            </span>
-            <span class="md-header-nav__topic">
-              
-                买苹果流程--程序运行思路
-              
-            </span>
+          <span class="md-header-nav__topic">
+            Reverier 的博客
+          </span>
+          <span class="md-header-nav__topic">
+            
+            买苹果流程--程序运行思路
+            
+          </span>
           
+
         </div>
+        <p id="hitokoto" style="font-size:12px;line-height: 24px;overflow: hidden;display: block;white-space: nowrap;"
+          align="right">:D 获取中...</p>
+        <!-- 以下写法，选取一种即可 -->
+
+        <!-- 现代写法，推荐 -->
+        <!-- 兼容低版本浏览器 (包括 IE)，可移除 -->
+        <script src="https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js"></script>
+        <!--End-->
+        <script>
+          fetch('https://v1.hitokoto.cn')
+            .then(function (res) {
+              return res.json();
+            })
+            .then(function (data) {
+              var hitokoto = document.getElementById('hitokoto');
+              hitokoto.innerText = data.hitokoto;
+            })
+            .catch(function (err) {
+              console.error(err);
+            })
+        </script>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         
-          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-          
+        <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+        
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
@@ -147,7 +171,7 @@
     </div>
   </nav>
 </header>
-    
+
     <div class="md-container">
       
         
