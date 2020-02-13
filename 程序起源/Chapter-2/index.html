@@ -514,6 +514,12 @@
       
       
       
+        <li class="md-nav__item">
+          <a href="#__comments" class="md-nav__link md-nav__link--active">
+            评论
+          </a>
+        </li>
+      
     </ul>
   
 </nav>
@@ -901,6 +907,12 @@
       
       
       
+        <li class="md-nav__item">
+          <a href="#__comments" class="md-nav__link md-nav__link--active">
+            评论
+          </a>
+        </li>
+      
     </ul>
   
 </nav>
@@ -1041,65 +1053,82 @@ const是另一个关键字, 可以放在任何变量类型前面当修饰, 表�
                 
 
 
+  <h2 id="__comments">评论</h2>
+  <div id="disqus_thread"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = "None";
+      this.page.identifier =
+        "None";
+    };
+    (function() {
+      var d = document, s = d.createElement("script");
+      s.src = "//Reverier.disqus.com/embed.js";
+      s.setAttribute("data-timestamp", +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+
               
             </article>
           </div>
         </div>
       </main>
       
-        
+
 <footer class="md-footer">
   
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid">
-        
-          <a href="../Chapter-1/" title="第一章" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
-            </div>
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  上一页
-                </span>
-                第一章
-              </span>
-            </div>
-          </a>
-        
-        
-          <a href="../../杂记/买苹果流程-程序运行思路/" title="买苹果" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  下一页
-                </span>
-                买苹果
-              </span>
-            </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
-          </a>
-        
-      </nav>
-    </div>
+  <div class="md-footer-nav">
+    <nav class="md-footer-nav__inner md-grid">
+      
+      <a href="../Chapter-1/" title="第一章"
+        class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+        </div>
+        <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+          <span class="md-flex__ellipsis">
+            <span class="md-footer-nav__direction">
+              上一页
+            </span>
+            第一章
+          </span>
+        </div>
+      </a>
+      
+      
+      <a href="../../杂记/买苹果流程-程序运行思路/" title="买苹果"
+        class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+        <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+          <span class="md-flex__ellipsis">
+            <span class="md-footer-nav__direction">
+              下一页
+            </span>
+            买苹果
+          </span>
+        </div>
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+        </div>
+      </a>
+      
+    </nav>
+  </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-footer-copyright">
         
-        powered by
-        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
-        and
-        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-          Material for MkDocs</a>
+        <div class="md-footer-copyright__highlight">
+          Copyright &copy; 2019 - 2020 Reverier, Wootec Orgnization
+        </div>
+        
       </div>
       
     </div>
   </div>
 </footer>
-      
+
     </div>
     
       <script src="../../assets/javascripts/application.c33a9706.js"></script>

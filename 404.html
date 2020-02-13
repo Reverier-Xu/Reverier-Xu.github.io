@@ -729,6 +729,22 @@
                 
 
 
+  <h2 id="__comments">评论</h2>
+  <div id="disqus_thread"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = "";
+      this.page.identifier =
+        "";
+    };
+    (function() {
+      var d = document, s = d.createElement("script");
+      s.src = "//Reverier.disqus.com/embed.js";
+      s.setAttribute("data-timestamp", +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+
               
             </article>
           </div>
@@ -741,6 +757,10 @@
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2019 - 2020 Reverier, Wootec Orgnization
+          </div>
         
         powered by
         <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
