@@ -30,7 +30,7 @@ $(function () { //获取处理友链数据
 
         // 过期的
         if (notValid.length > 0) {
-            $('.links-content').append("<div class='friend-title-item'><br>异常的大佬们<br><br><hr></div></div>");
+            $('.links-content').append("<div class='friend-title-item'><br>没有互换友链但是TQL还是得挂的大佬们<br><br><hr></div></div>");
             $.each(notValid, function (i, e) {
                 var html = "<div class=\"friend-card-item\">";
                 html += "    <img class=\"ava\" src=\"/img/links/nopic.jpg\" title=\"图片链接不可用，使用的默认图片\">";
