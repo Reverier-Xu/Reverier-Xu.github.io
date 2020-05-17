@@ -11,7 +11,7 @@ $(function () { //获取处理友链数据
         data = data.filter((item, a, b) => item.valid != 0).sort(function (a, b) {
             return Math.random() > .5 ? -1 : 1;
         });
-        $('.links-content').append("<div class='friend-title-item'><br>大佬们<br><br><hr></div>");
+        $('.links-content').append("<div class='friend-title-item'><br> Pia! (随机排列, 不分先后的哦! 刷新一下试试~) <br><br><hr></div>");
         $.each(data, function (i, e) {
             var html = "<div class=\"friend-card-item\">";
             if (e.src == undefined) {
