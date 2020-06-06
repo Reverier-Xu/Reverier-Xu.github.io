@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="generator" content="Hexo 4.2.1"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><meta name="keywords" content="[object Object]"><meta name="description" content="点击查看"><meta name="author" content="Reverier"><title>随机点名的需求文档 - Reverier&#039;s Blog</title><meta description="点击查看"><meta property="og:type" content="article"><meta property="og:title" content="随机点名的需求文档"><meta property="og:url" content="https://www.wootec.top/2020/05/26/%E9%9A%8F%E6%9C%BA%E7%82%B9%E5%90%8D%E7%9A%84%E9%9C%80%E6%B1%82%E6%96%87%E6%A1%A3/"><meta property="og:site_name" content="Reverier&#039;s Blog"><meta property="og:description" content="点击查看"><meta property="og:locale" content="zh_CN"><meta property="article:published_time" content="2020-05-26T14:05:23.000Z"><meta property="article:modified_time" content="2020-06-06T17:03:47.932Z"><meta property="article:author" content="Reverier"><meta property="article:tag" content="软件开发"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="https://www.wootec.top/img/avatar.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.wootec.top/2020/05/26/%E9%9A%8F%E6%9C%BA%E7%82%B9%E5%90%8D%E7%9A%84%E9%9C%80%E6%B1%82%E6%96%87%E6%A1%A3/"},"headline":"随机点名的需求文档","image":["https://www.wootec.top/img/avatar.png"],"datePublished":"2020-05-26T14:05:23.000Z","dateModified":"2020-06-06T17:03:47.932Z","author":{"@type":"Person","name":"Reverier"},"description":"点击查看"}</script><link rel="alternative" href="/atom.xml" title="Reverier&#039;s Blog" type="application/atom+xml"><link rel="icon" href="/img/favicon.png"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/font-awesome/5.12.0/css/all.min.css"><link rel="stylesheet" href="https://fonts.loli.net/css?family=Ubuntu:400,600|Source+Code+Pro|Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Microsoft YaHei:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&amp;amp;subset=latin,latin-ext|Inconsolata|Itim|Lobster.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/lightgallery/1.6.12/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.7.0/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><script src="https://cdnjs.loli.net/ajax/libs/pace/1.0.2/pace.min.js"></script><link rel="stylesheet" href="/css/style.css"><script src="https://cdnjs.loli.net/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script src="/js/globalUtils.js"></script></head><body class="is-3-column has-navbar-fixed-top"><nav class="navbar navbar-main is-fixed-top"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.png" alt="Reverier&#039;s Blog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">首页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/friend">友链</a><a class="navbar-item" href="/message">留言</a><a class="navbar-item" href="/about">关于</a><a class="navbar-item" href="http://ictfe.wootec.top/">ICTFE</a><a class="navbar-item" href="http://home.wootec.top/">Home</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Follow me on GitHub" href="https://github.com/Reverier-Xu"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a><a class="navbar-item" id="night-nav" title="Night Mode" href="javascript:;"><i class="fas fa-moon" id="night-icon"></i></a></div></div></div></nav><script type="text/javascript" src="/js/theme-setting.js"></script><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-9-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><i class="far fa-calendar-plus"> </i>2020-05-26  <a class="commentCountImg" href="/2020/05/26/%E9%9A%8F%E6%9C%BA%E7%82%B9%E5%90%8D%E7%9A%84%E9%9C%80%E6%B1%82%E6%96%87%E6%A1%A3/#comment-container"><span class="display-none-class">51378e4ad156aa4dca7650ac13b03631</span><i class="far fa-comment-dots"></i> <span class="commentCount" id="51378e4ad156aa4dca7650ac13b03631">99+</span>  </a><span class="level-item"><i class="far fa-clock"> </i>10 分钟  <i class="fas fa-pencil-alt"> </i>1.6 k</span><span class="level-item" id="busuanzi_container_page_pv"><i class="far fa-eye"></i>&nbsp;&nbsp;<span id="busuanzi_value_page_pv">0</span>次访问</span></div></div><h1 class="title is-3 is-size-4-mobile">随机点名的需求文档</h1><div class="content"><p>点击查看</p>
+<a id="more"></a>
+
+<h2 id="1-引言"><a href="#1-引言" class="headerlink" title="1 引言"></a>1 引言</h2><h3 id="编写目的"><a href="#编写目的" class="headerlink" title="编写目的"></a>编写目的</h3><p>为教师教学提供完善的随机点名应用程序.</p>
+<h3 id="1-2范围"><a href="#1-2范围" class="headerlink" title="1.2范围"></a><strong>1.2</strong>范围</h3><p>a. 名称: 随机点名 V13;</p>
+<p>b. 用途: 学校/教育机构线下教学 教学机应用, 提供随机点名, 基本学生管理, 分性别点名等;</p>
+<p>c. 系统需求: Windows® 7 ServePack1及以上版本 / Windows® 8 / Windows® 8.1 / Windows® 10 / Arch Linux v274.5 with Wine 5.8 / Fedora 32 with Wine 5.8;</p>
+<p>d. 运行环境需求: </p>
+<p>1, Microsoft® .NET Framework 4.5 及以上版本 / dotnet45 with Wine 5.8.</p>
+<h3 id="1-3-定义、首字母缩写词或缩略语"><a href="#1-3-定义、首字母缩写词或缩略语" class="headerlink" title="1.3 定义、首字母缩写词或缩略语"></a><strong>1.3</strong> 定义、首字母缩写词或缩略语</h3><p>****MS: 指Microsoft®公司;</p>
+<p>Win: 指软件所兼容的Windows®操作系统;</p>
+<p>Linux: 指软件所兼容的Fedora和Arch Linux操作系统;</p>
+<p>Dotnet: 指软件使用的Microsoft® .NET®技术;</p>
+<h3 id="1-4-参考资料"><a href="#1-4-参考资料" class="headerlink" title="1.4 参考资料"></a><strong>1.4</strong> 参考资料</h3><p><a href="https://docs.microsoft.com/zh-cn/dotnet/">https://docs.microsoft.com/zh-cn/dotnet/</a></p>
+<h2 id="2-项目概述"><a href="#2-项目概述" class="headerlink" title="2 项目概述"></a><strong>2</strong> 项目概述</h2><h3 id="2-1-产品描述"><a href="#2-1-产品描述" class="headerlink" title="2.1 产品描述"></a><strong>2.1</strong> 产品描述</h3><p>采用MS .NET技术开发的随机点名应用程序, 具有完善的随机点名功能和跨平台支持.</p>
+<p><strong>2.2</strong> <strong><em>\</em>产品需求**</strong></p>
+<p><strong>2.2.1</strong> <strong><em>\</em>功能需求*****</strong>*<br>****A. 软件可以完成1~6人的一次性点名, 采用开放寻址类似算法保证多次点名时的公平性;</p>
+<p>B. 软件可以在完成点名后根据学号来查询对应的学生姓名;</p>
+<p>C. 软件可以根据性别设置来分性别抽取学生;</p>
+<p>D. 软件可以方便的管理学生列表, 包括增, 查, 删, 改, 导入学生数据;</p>
+<p>E. 软件可以暗化背景以防止黑板在投影仪照射下的反光干扰教师教学;</p>
+<p>F. 软件具有倒计时功能, 可以精确到秒的进行考试倒计时.</p>
+<p><strong>2.2.2</strong> <strong><em>\</em>性能需求*****</strong>*<br>****A. 至少支持十万级数据检索时的毫秒级响应;</p>
+<p>B. 至少支持十万级数据在六人模式下的工作时间不超过1.5s;</p>
+<p>C. 程序处于非工作状态时UI刷新率至少保持在30FPS以上;</p>
+<p>D. 至少支持千人数据编辑延迟在10ms以下 (肉眼不可见) ;</p>
+<p><strong>2.2.3</strong> <strong><em>\</em>可服务性需求*****</strong>*<br>****A. 应保证解压即可使用;</p>
+<p>B. 应保证可以从txt文件列表中导入学生数据;</p>
+<p><strong>2.3</strong> <strong><em>\</em>用户及用户特点*****</strong>*<br>****用户团体为教育机构, 多为老师.</p>
+<p>特点:</p>
+<p>a. 班级人数不多, 对大型数据的处理没有需求;</p>
+<p>b. 点名频率并不高, 对高性能高响应没有需求, 反而需要延长点名时间来制造悬疑性.</p>
+<p><strong>2.4</strong> <strong><em>\</em>一般约束*****</strong>*<br>****a. 必须在支持.NET技术的平台上运行;</p>
+<p>b. 必须在支持WinForm图形库的平台上运行;</p>
+<p>c. 构建时所采用的.NET版本不得高于4.5.2, 否则跨兼容性会出现问题;</p>
+<p><strong>2.5</strong> <strong><em>\</em>假设和依据*****</strong>*<br>****</p>
+<table>
+<thead>
+<tr>
+<th>假设</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>人数小于10k</td>
+<td>一般学校的全体人数在2k左右, 班级人数则一般不超过120人, SQLite快速检索最大支持百万级数据, 在十万级数据时出现可以察觉到的延迟, 于是点名人数限制在10k以下, 可以满足几乎所有学校的任何需求.</td>
+</tr>
+<tr>
+<td>性别只有男女</td>
+<td>不考虑其它非主流性别</td>
+</tr>
+<tr>
+<td>倒计时的最大天数支持为999</td>
+<td>一般学制为3年, 从九月一日招生起到三年后六月七日高考, 其间有1019天. 考虑到四位天数的排版问题, 决定只兼容3位数. 多出来的20天会出现一些可以忍受的显示问题.</td>
+</tr>
+</tbody></table>
+<p><strong>3</strong> <strong><em>\</em>用例描述**</strong></p>
+<p><strong>3.1</strong> <strong><em>\</em>用例1**</strong></p>
+<table>
+<thead>
+<tr>
+<th>用例编号</th>
+<th>1</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>用例名称</td>
+<td>随机抽取</td>
+</tr>
+<tr>
+<td>参与者</td>
+<td>老师</td>
+</tr>
+<tr>
+<td>用例说明</td>
+<td>老师上课时随机抽取六名学生</td>
+</tr>
+<tr>
+<td>前置条件</td>
+<td>学生数据成功导入</td>
+</tr>
+<tr>
+<td>基本事件流</td>
+<td>1.老师打开软件</td>
+</tr>
+<tr>
+<td>2.点击默认模式</td>
+<td></td>
+</tr>
+<tr>
+<td>3.人数调整到6</td>
+<td></td>
+</tr>
+<tr>
+<td>4.点击Let’s GO</td>
+<td></td>
+</tr>
+<tr>
+<td>5.软件经过一分钟计算后得出六个号码</td>
+<td></td>
+</tr>
+<tr>
+<td>6.软件查询号码对应的学生姓名并显示</td>
+<td></td>
+</tr>
+<tr>
+<td>7.软件将本次抽取记录到全局概率均衡器中</td>
+<td></td>
+</tr>
+<tr>
+<td>异常事件流</td>
+<td>2-3a.调整到平均模式, 但人数小于2, 抽取失败, 软件弹窗警告</td>
+</tr>
+<tr>
+<td>4a.快速多次点击Let’s GO, 造成单线程界面假死, 并导致全局概率均衡器出错</td>
+<td></td>
+</tr>
+<tr>
+<td>5a.所有模式下软件发现要抽取的人数大于班级总人数, 弹窗警告, 抽取失败</td>
+<td></td>
+</tr>
+<tr>
+<td>7a.软件保存全局概率均衡器时SQLite出错</td>
+<td></td>
+</tr>
+<tr>
+<td>后置条件</td>
+<td>无</td>
+</tr>
+</tbody></table>
+<p><strong>3.2</strong> <strong><em>\</em>用例2**</strong></p>
+<table>
+<thead>
+<tr>
+<th>用例编号</th>
+<th>2</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>用例名称</td>
+<td>更改软件设置</td>
+</tr>
+<tr>
+<td>参与者</td>
+<td>老师</td>
+</tr>
+<tr>
+<td>用例说明</td>
+<td>更改软件的学生列表, 高考倒计时等数据</td>
+</tr>
+<tr>
+<td>前置条件</td>
+<td>无</td>
+</tr>
+<tr>
+<td>基本事件流</td>
+<td>1.老师打开软件</td>
+</tr>
+<tr>
+<td>2.点击软件设置</td>
+<td></td>
+</tr>
+<tr>
+<td>3.通过增删改三个按钮与方向键对列表进行编辑</td>
+<td></td>
+</tr>
+<tr>
+<td>4.以20190607格式编辑高考倒计时</td>
+<td></td>
+</tr>
+<tr>
+<td>5.点击保存</td>
+<td></td>
+</tr>
+<tr>
+<td>6.软件读取设置数据并写入到SQLite中</td>
+<td></td>
+</tr>
+<tr>
+<td>7.更新数据到全局均衡器</td>
+<td></td>
+</tr>
+<tr>
+<td>异常事件流</td>
+<td>3a.设置性别时试图输入0和1之外的字符, 软件弹窗警告, 恢复上一次的设置</td>
+</tr>
+<tr>
+<td>3a.试图删除单个单元格, 软件弹窗警告, 删除失败</td>
+<td></td>
+</tr>
+<tr>
+<td>3a.保存数据时有未初始化的单元格, 软件崩溃</td>
+<td></td>
+</tr>
+<tr>
+<td>7a.更新数据失败, 软件需要重启才能应用新数据</td>
+<td></td>
+</tr>
+<tr>
+<td>后置条件</td>
+<td>无</td>
+</tr>
+</tbody></table>
+<p><strong>4</strong> <strong><em>\</em>外部接口需求**</strong></p>
+<p><strong>4.1</strong> <strong><em>\</em>用户接口*****</strong>*<br>****基于.NET构建的图形化界面</p>
+<p><strong>4.2</strong> <strong><em>\</em>硬件接口*****</strong>*<br>****无</p>
+<p><strong>4.3</strong> <strong><em>\</em>软件接口*****</strong>*<br>****无</p>
+<p><strong>4.4</strong> <strong><em>\</em>通信接口*****</strong>*<br>****无</p>
+<p><strong>5</strong> <strong><em>\</em>属性**</strong></p>
+<p><strong>5.1</strong> <strong><em>\</em>可用性*****</strong>*<br>****保证在可发行的平台上稳定运行; 保证在Windows平台上不出错误; 保证在其他兼容的Linux平台基本功能可用.</p>
+<p><strong>5.2</strong> <strong><em>\</em>安全性*****</strong>*<br>****本软件不对任何系统底层文件进行更改, 不更改注册表, 不对软件安装目录之外的任何路径进行读写, 不需要管理员权限, 不对运行内存栈之外的内存区域做出修改, 无内存泄露问题.</p>
+<p><strong>5.3</strong> <strong><em>\</em>可维护性*****</strong>*<br>****采用WinForm构建, 保证重要函数不依赖于其它函数, 便于代码重用.</p>
+<p><strong>5.4</strong> <strong><em>\</em>可移植性*****</strong>*<br>****可采用Wine移植到Linux平台; 理论上可以使用Wine移植到Mac平台, 无法移植到移动端 (包括Android和iOS)</p>
+<p><strong><em>\</em>6 其他需求**</strong></p>
+<p><strong><em>\</em>6.1 数据库*****</strong>*<br>****SQLite</p>
+</div><ul class="post-copyright"><li><strong>本文标题：</strong><a href="https://www.wootec.top/2020/05/26/随机点名的需求文档/">随机点名的需求文档</a></li><li><strong>本文作者：</strong><a href="https://www.wootec.top">Reverier Xu</a></li><li><strong>本文链接：</strong><a href="https://www.wootec.top/2020/05/26/随机点名的需求文档/">https://www.wootec.top/2020/05/26/随机点名的需求文档/</a></li><li><strong>版权声明：</strong><span>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</span></li></ul><div><div class="recommend-post"><span class="is-size-6 has-text-grey has-mr-7"># 相关文章</span><br><span>  1.<a class="is-size-6" href="/2020/06/06/RDB/" target="_blank">小型数据存储系统</a><br></span></div></div><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/social-share.js/1.0.16/css/share.min.css"><div class="social-share"></div><script src="https://cdnjs.loli.net/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3><div class="buttons is-centered"><a class="button is-info donate"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>支付宝</span><span class="qrcode"><img src="https://i.loli.net/2020/04/25/fdruj4ci3sYItoN.png" alt="支付宝"></span></a><a class="button is-success donate"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>微信</span><span class="qrcode"><img src="https://i.loli.net/2020/04/25/f6Nq3AsO5U8vEyz.png" alt="微信"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2020/06/06/RDB/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">小型数据存储系统</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2020/05/25/Nvidia%E6%98%BE%E5%8D%A1%E7%9A%84%E5%B0%8F%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"><span class="level-item">Nvidia Prime的最终折腾方案</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><div class="title is-5">评论</div><div id="comment-container"></div><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/gitalk/1.6.0/gitalk.css"><script> $.getScript('/js/gitalk.min.js', function () { 
+            var gitalk = new Gitalk({
+            language:'zh-CN',
+            id: '51378e4ad156aa4dca7650ac13b03631',
+            repo: 'blog_comment',
+            owner: 'Reverier-Xu',
+            clientID: '04e3a9c7b8514d2532ba',
+            clientSecret: 'b55ad7dd220563faca25d9b74dc517fd309dafa9',
+            admin: ["Reverier-Xu"],
+            createIssueManually: true,
+            distractionFreeMode: false,
+            perPage: 10,
+            pagerDirection: 'last',
+            
+            
+            enableHotKey: true,
+            isLocked: false
+        })
+        gitalk.render('comment-container')});</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1 is-sticky"><div class="card widget toc-scroll" id="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list toc"><li><a class="is-flex toc-item" id="toc-item-1-引言" href="#1-引言"><span>1 引言</span></a><ul class="menu-list toc"><li><a class="is-flex toc-item" id="toc-item-编写目的" href="#编写目的"><span>编写目的</span></a></li><li><a class="is-flex toc-item" id="toc-item-1-2范围" href="#1-2范围"><span>1.2范围</span></a></li><li><a class="is-flex toc-item" id="toc-item-1-3-定义、首字母缩写词或缩略语" href="#1-3-定义、首字母缩写词或缩略语"><span>1.3 定义、首字母缩写词或缩略语</span></a></li><li><a class="is-flex toc-item" id="toc-item-1-4-参考资料" href="#1-4-参考资料"><span>1.4 参考资料</span></a></li></ul></li><li><a class="is-flex toc-item" id="toc-item-2-项目概述" href="#2-项目概述"><span>2 项目概述</span></a><ul class="menu-list toc"><li><a class="is-flex toc-item" id="toc-item-2-1-产品描述" href="#2-1-产品描述"><span>2.1 产品描述</span></a></li></ul></li></ul></div></div><script type="text/javascript" async>
+        $(document).ready(function () { //参考自 https://github.com/ppoffice/hexo-theme-icarus/pull/616/files
+            var observerTopMargin;
+            var scrollObserver;
+            var headerElems = $(".headerlink");
+            var activeTocItem;
+        
+            function initIntersectionObserver(docHeight) {
+                observerTopMargin = docHeight;
+                scrollObserver = new IntersectionObserver(scrollCallBack,
+                    {
+                        root: null,  // viewpoint
+                        rootMargin: docHeight + "px 0px -80% 0px"  // cover top 30% of viewport to the top of document
+                    })
+            }
+        
+            function scrollCallBack(entries, observer) {
+                if ($(window).scrollTop() > observerTopMargin * 0.7) { 
+                    // User somehow scroll to 70% of observerTopMargin (which is inited as 200% document height)
+                    // Observer top margin need to extend to cover all the space to the top of the document
+                    initIntersectionObserver(observerTopMargin * 2)
+                    observer.disconnect();
+                    return;
+                }
+                let toActive;
+                if (entries[0].intersectionRatio == 1) {  // enter viewed area
+                    let entry = entries.reduce((u, v) => (u.target.toc_id > v.target.toc_id ? u : v));  // get the lowest item
+                    toActive = $("#toc-item-" + $(entry.target).attr("href").substr(1));
+                } else {
+                    let entry = entries.reduce((u, v) => (u.target.toc_id < v.target.toc_id ? u : v));  // get the highest item
+                    let idx = Math.max(entry.target.toc_id - 1, 0);
+                    toActive = $("#toc-item-" + $(headerElems[idx]).attr("href").substr(1));
+                }
+                if (activeTocItem) activeTocItem.removeClass("is-current");
+                activeTocItem = toActive
+                activeTocItem.addClass("is-current");
+            }
+        
+            initIntersectionObserver($(document).height() * 2);
+            headerElems.each(function (index, obj) {
+                obj.toc_id = index;
+                scrollObserver.observe(obj);
+            })
+        });</script></div><div class="card widget"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="is-rounded" src="/img/avatar.png" alt="Reverier"></figure><p class="title is-size-4 is-block line-height-inherit">Reverier</p><p class="is-size-6 is-block">Hope Miracle Youth</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>China</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">38</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">13</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">21</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/Reverier-Xu" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile"><a class="level-item button is-transparent is-white is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/Reverier-Xu"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-white is-marginless" target="_blank" rel="noopener" title="Email" href="mailto:reverier.xu@outlook.com"><i class="fa fa-envelope"></i></a><a class="level-item button is-transparent is-white is-marginless" target="_blank" rel="noopener" title="RSS" href="/atom.xml"><i class="fas fa-rss"></i></a></div><div><hr><p id="hitokoto">:D 一言句子获取中...</p><script type="text/javascript" defer>function getYiyan(){
+                                $.getJSON("https://v1.hitokoto.cn/", function (data) {
+                                if(data){
+                                    $('#hitokoto').html("");
+                                    $('#hitokoto').append("<strong style='color: #3273dc;'>"+data.hitokoto+"</strong>"+
+                                    "<p>"+"来源《"+data.from+"》</p><p>提供者-"+data.creator+"</p>");
+                                }});}
+                                $(function (){getYiyan();$('#hitokoto').click(function(){getYiyan();})});</script></div></div></div><div class="card widget"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content size-small"><p><time dateTime="2020-06-06T16:50:00.000Z">2020-06-07</time></p><p class="title is-6"><a class="link-muted" href="/2020/06/06/RDB/">小型数据存储系统</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/">软件开发</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-05-26T14:05:23.000Z">2020-05-26</time></p><p class="title is-6"><a class="link-muted" href="/2020/05/26/%E9%9A%8F%E6%9C%BA%E7%82%B9%E5%90%8D%E7%9A%84%E9%9C%80%E6%B1%82%E6%96%87%E6%A1%A3/">随机点名的需求文档</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/">软件开发</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-05-25T01:46:00.000Z">2020-05-25</time></p><p class="title is-6"><a class="link-muted" href="/2020/05/25/Nvidia%E6%98%BE%E5%8D%A1%E7%9A%84%E5%B0%8F%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">Nvidia Prime的最终折腾方案</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/Linux/">Linux</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-05-22T17:14:22.000Z">2020-05-23</time></p><p class="title is-6"><a class="link-muted" href="/2020/05/22/20200523/">5月23日小总结与调整</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-05-17T15:48:54.000Z">2020-05-17</time></p><p class="title is-6"><a class="link-muted" href="/2020/05/17/%E5%85%B3%E4%BA%8ECTF%E5%88%86%E4%BA%AB%E5%B9%B3%E5%8F%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E6%83%B3%E6%B3%95/">关于CTF知识分享平台的一些想法</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/CTF/">CTF</a></p></div></article></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile is-marginless" href="/categories/CTF/"><span class="level-start"><span class="level-item">CTF</span></span><span class="level-end"><span class="level-item tag">18</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/ICTFE/"><span class="level-start"><span class="level-item">ICTFE</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/Linux/"><span class="level-start"><span class="level-item">Linux</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/RNIX/"><span class="level-start"><span class="level-item">RNIX</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/%E4%BB%A3%E7%A0%81%E9%A3%8E%E6%A0%BC/"><span class="level-start"><span class="level-item">代码风格</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/%E6%97%A5%E5%B8%B8%E7%94%9F%E6%B4%BB/"><span class="level-start"><span class="level-item">日常生活</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/%E7%94%9F%E6%B4%BB/"><span class="level-start"><span class="level-item">生活</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/%E7%94%9F%E6%B4%BB%E7%90%90%E4%BA%8B/"><span class="level-start"><span class="level-item">生活琐事</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/%E7%A8%8B%E5%BA%8F%E8%B5%B7%E6%BA%90/"><span class="level-start"><span class="level-item">程序起源</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/%E7%AE%97%E6%B3%95/"><span class="level-start"><span class="level-item">算法</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><a class="level is-mobile is-marginless" href="/categories/"><span class="level-start"><span class="level-item">查看全部&gt;&gt;</span></span></a></ul></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile is-marginless" href="/archives/2020/06/"><span class="level-start"><span class="level-item">六月 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/05/"><span class="level-start"><span class="level-item">五月 2020</span></span><span class="level-end"><span class="level-item tag">8</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/04/"><span class="level-start"><span class="level-item">四月 2020</span></span><span class="level-end"><span class="level-item tag">12</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/02/"><span class="level-start"><span class="level-item">二月 2020</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2019/12/"><span class="level-start"><span class="level-item">十二月 2019</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><a class="level is-mobile is-marginless" href="/archives/"><span class="level-start"><span class="level-item">查看全部&gt;&gt;</span></span></a></ul></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/CTF/"><span class="tag">CTF</span><span class="tag is-grey-lightest">19</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Reverse/"><span class="tag">Reverse</span><span class="tag is-grey-lightest">12</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%BC%96%E7%A8%8B/"><span class="tag">编程</span><span class="tag is-grey-lightest">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Linux/"><span class="tag">Linux</span><span class="tag is-grey-lightest">5</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"><span class="tag">操作系统</span><span class="tag is-grey-lightest">5</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%97%A5%E5%B8%B8%E7%94%9F%E6%B4%BB/"><span class="tag">日常生活</span><span class="tag is-grey-lightest">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/"><span class="tag">信息安全</span><span class="tag is-grey-lightest">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%94%9F%E6%B4%BB/"><span class="tag">生活</span><span class="tag is-grey-lightest">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/"><span class="tag">网站搭建</span><span class="tag is-grey-lightest">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%A8%8B%E5%BA%8F%E8%B5%B7%E6%BA%90/"><span class="tag">程序起源</span><span class="tag is-grey-lightest">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%AE%97%E6%B3%95/"><span class="tag">算法</span><span class="tag is-grey-lightest">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/"><span class="tag">软件开发</span><span class="tag is-grey-lightest">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/ACM-ICPC%E5%AD%A6%E4%B9%A0/"><span class="tag">ACM-ICPC学习</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/ICTFE/"><span class="tag">ICTFE</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/ISAE/"><span class="tag">ISAE</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/docker/"><span class="tag">docker</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E4%BB%A3%E7%A0%81%E9%A3%8E%E6%A0%BC/"><span class="tag">代码风格</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/"><span class="tag">密码学</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%BC%80%E5%8F%91/"><span class="tag">开发</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%98%BE%E5%8D%A1-Nvidia/"><span class="tag">显卡 - Nvidia</span><span class="tag is-grey-lightest">1</span></a></div></div><div class="field is-grouped is-grouped-multiline"><a class="tags has-addons" href="/tags/"><span class="tag">查看全部&gt;&gt;</span></a></div></div></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.png" alt="Reverier&#039;s Blog" height="28"></a><p class="size-small"><span>&copy; 2020 Reverier Xu</span>  Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>,Modify by <a href="https://github.com/removeif/hexo-theme-amazing" target="_blank">removeif</a> <br><span>© 版权说明 [本站所有内容除特别注明之外均为原创, 转载请注明出处. 若本博客有违规文章请联系Reverier(reverier.xu@outlook.com)删除.]</span><span><span id="statistic-times">loading...</span><script>function createTime(time) {
+            var n = new Date(time);
+            now.setTime(now.getTime() + 250),
+                days = (now - n) / 1e3 / 60 / 60 / 24,
+                dnum = Math.floor(days),
+                hours = (now - n) / 1e3 / 60 / 60 - 24 * dnum,
+                hnum = Math.floor(hours),
+            1 == String(hnum).length && (hnum = "0" + hnum),
+                minutes = (now - n) / 1e3 / 60 - 1440 * dnum - 60 * hnum,
+                mnum = Math.floor(minutes),
+            1 == String(mnum).length && (mnum = "0" + mnum),
+                seconds = (now - n) / 1e3 - 86400 * dnum - 3600 * hnum - 60 * mnum,
+                snum = Math.round(seconds),
+            1 == String(snum).length && (snum = "0" + snum),
+                document.getElementById("statistic-times").innerHTML = "❤️本站自 <strong>"+time.split(" ")[0].replace(/\//g,".")+"</strong> 已运行 <strong>" + dnum + "</strong> 天 <strong>" + hnum + "</strong> 小时 <strong>" + mnum + "</strong> 分 <strong>" + snum + "</strong> 秒！❤️";
+        }var now = new Date();setInterval("createTime('2019/09/11 00:00:00')", 250,"");</script><br></span><div class="size-small"><span>❤️感谢 <strong><span id="busuanzi_value_site_uv">99+</span></strong> 小伙伴的 <strong><span id="busuanzi_value_site_pv">99+</span></strong> 次光临！❤️</span></div></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/Reverier-Xu"><i class="fab fa-github"></i></a></p></div><div class="sideMusic"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="/js/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script><meting-js style="width: auto;height: 2000px;" server="netease" type="playlist" id="5030621147" theme="#2980b9" loop="all" autoplay="false" order="list" storageName="aplayer-setting" lrctype="0" list-max-height="400px" fixed="true"></meting-js></div></div></div></div></footer><script src="https://cdnjs.loli.net/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            site: {
+                url: 'https://www.wootec.top',
+                external_link: {"enable":true,"exclude":[]}
+            },
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="https://cdnjs.loli.net/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" defer></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back-to-top.js" defer></script><!--!--><!--!--><script src="https://cdnjs.loli.net/ajax/libs/lightgallery/1.6.12/js/lightgallery-all.min.js" defer></script><script src="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.7.0/js/jquery.justifiedGallery.min.js" defer></script><!--!--><!--!--><!--!--><!--!--><script src="/js/toc.js" defer></script><script src="/js/main.js" defer></script><script>$.getScript('/js/comment-issue-data.js',function(){loadIssueData('04e3a9c7b8514d2532ba','b55ad7dd220563faca25d9b74dc517fd309dafa9','Reverier-Xu','blog_comment',false);})</script><link rel="stylesheet" href="/css/insight.css"><div class="searchbox ins-search"><div class="searchbox-container ins-search-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="想要查找什么..."><span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"></div></div></div></div><script>(function (window) {
+            var INSIGHT_CONFIG = {
+                TRANSLATION: {
+                    POSTS: '文章',
+                    PAGES: '页面',
+                    CATEGORIES: '分类',
+                    TAGS: '标签',
+                    UNTITLED: '(无标题)',
+                },
+                CONTENT_URL: '/content.json',
+            };
+            window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+        })(window);</script><script src="/js/insight.js" defer></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script><script type="text/javascript">var pjax = new Pjax({
+            elements: "a",//代表点击链接就更新
+            selectors: [  //代表要更新的节点
+                ".section",
+                "title"
+            ],
+            cache: true,
+            cacheBust:false
+        })
+
+        function loadBusuanzi(){
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js", function () {});
+        }
+
+        // 开始 PJAX 执行的函数
+        document.addEventListener('pjax:send', function () {
+        });
+        
+        // PJAX 完成之后执行的函数，可以和上面的重载放在一起
+        document.addEventListener('pjax:complete', function () {
+            $(".section").css({opacity:1});
+            if(undefined){
+                $.getScript('/js/comment-issue-data.js',function(){loadIssueData('04e3a9c7b8514d2532ba','b55ad7dd220563faca25d9b74dc517fd309dafa9','Reverier-Xu','blog_comment',false);});
+            }
+            if(false){
+                loadMathJax();
+            }
+            loadMainJs(jQuery, window.moment, window.ClipboardJS, window.IcarusThemeSettings);
+            loadBackTop();
+            loadBusuanzi();
+            if(typeof loadBanner == 'function'){
+                loadBanner();
+            }
+        });</script></body></html>
