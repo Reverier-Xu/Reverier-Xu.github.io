@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.wootec.top/"/>
-  <updated>2020-06-09T17:48:38.834Z</updated>
+  <updated>2020-06-12T05:17:35.280Z</updated>
   <id>https://www.wootec.top/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux 5.7.2 swapfile 无法挂载的解决方案</title>
+    <link href="https://www.wootec.top/2020/06/12/Linux5.7swapfailed/"/>
+    <id>https://www.wootec.top/2020/06/12/Linux5.7swapfailed/</id>
+    <published>2020-06-12T05:10:08.000Z</published>
+    <updated>2020-06-12T05:17:35.280Z</updated>
+    
+    <content type="html"><![CDATA[<p>如题</p><a id="more"></a><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[FAILED] Failed to activate swap &#x2F;swapfile.</span><br><span class="line">[DEPEND] Dependency failed for Swap.</span><br></pre></td></tr></table></figure><p>开机时报错如上, 开机之后交换文件无法正确被挂载.</p><p>在Arch Linux论坛上找到了解决方案如下:</p><p><a href="https://bbs.archlinux.org/viewtopic.php?id=256503">SOLVED: Swap not working with Kernel 5.7.2</a></p><p>这个问题仅出现在<code>ext4</code>文件系统下的 <code>Linux 5.7.2</code> 上, 使用<code>fallocate</code> 创建的swap交换文件.</p><p><a href="https://wiki.archlinux.org/index.php/swap">Arch Linux Wiki</a>的解释如下:</p><blockquote><p><strong>Note:</strong> dynamic space allocation such as using <code>fallocate</code> is not supported, as it causes problems with some file systems such as <a href="https://wiki.archlinux.org/index.php/F2FS">F2FS</a><a href="https://github.com/karelzak/util-linux/issues/633">[1]</a> and will likely fail to activate at boot time with error “<em>swapon: swapfile has holes</em>“ as of kernel 5.7. Hence, contiguous allocation, such as <code>dd</code>, is the only reliable way to allocate a swap file.<a href="https://manpages.courier-mta.org/htmlman8/swapon.8.html#swapon-8_sect3">[2]</a></p></blockquote><p><strong>因此删掉原有的<code>swapfile</code>, 用<code>dd</code>重新分配即可.</strong></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo dd <span class="keyword">if</span>=/dev/zero of=/swapfile bs=1M count=4096 status=progress</span><br><span class="line">sudo chmod 600 /swapfile </span><br><span class="line">sudo mkswap /swapfile </span><br><span class="line">sudo swapon /swapfile</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;如题&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Linux" scheme="https://www.wootec.top/categories/Linux/"/>
+    
+    
+      <category term="Linux" scheme="https://www.wootec.top/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title>数据库类</title>
@@ -479,31 +502,6 @@
     <updated>2020-04-28T12:42:02.740Z</updated>
     
     <content type="html"><![CDATA[<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><a id="more"></a><p>虽然这道题正规解法应该是用dex2jar解包之后再用jd-gui反编译或者用别的安卓逆向工具但是记事本打开能直接搜到flag我也就懒得去用工具了.jpeg</p><p><img src="https://i.loli.net/2020/04/28/tZcKoMJ2dTEbrpP.png" alt="Screenshot_20200428_200121.png"></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;题解&quot;&gt;&lt;a href=&quot;#题解&quot; class=&quot;headerlink&quot; title=&quot;题解&quot;&gt;&lt;/a&gt;题解&lt;/h2&gt;
-    
-    </summary>
-    
-    
-      <category term="CTF" scheme="https://www.wootec.top/categories/CTF/"/>
-    
-    
-      <category term="CTF" scheme="https://www.wootec.top/tags/CTF/"/>
-    
-      <category term="Reverse" scheme="https://www.wootec.top/tags/Reverse/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>BUUCTF-新年快乐 WP</title>
-    <link href="https://www.wootec.top/2020/04/28/BUU-%E6%96%B0%E5%B9%B4%E5%BF%AB%E4%B9%90/"/>
-    <id>https://www.wootec.top/2020/04/28/BUU-%E6%96%B0%E5%B9%B4%E5%BF%AB%E4%B9%90/</id>
-    <published>2020-04-28T15:33:36.000Z</published>
-    <updated>2020-04-28T12:41:49.204Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><a id="more"></a><p>我现在开始怀疑写这些题解是否在浪费时间.jpg</p><p><img src="https://i.loli.net/2020/04/28/gcmXOt3jlB6TP1K.png" alt="QQ图片20200428195830.png"></p>]]></content>
     
     <summary type="html">
     
