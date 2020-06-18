@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.wootec.top/"/>
-  <updated>2020-06-12T05:17:35.280Z</updated>
+  <updated>2020-06-18T11:01:45.766Z</updated>
   <id>https://www.wootec.top/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>C++ 虚函数</title>
+    <link href="https://www.wootec.top/2020/06/18/CppVirtualFunction/"/>
+    <id>https://www.wootec.top/2020/06/18/CppVirtualFunction/</id>
+    <published>2020-06-18T09:11:33.000Z</published>
+    <updated>2020-06-18T11:01:45.766Z</updated>
+    
+    <content type="html"><![CDATA[<p>对C++虚函数的概念做一个简单的了解.</p><a id="more"></a><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><h3 id="虚函数"><a href="#虚函数" class="headerlink" title="虚函数"></a>虚函数</h3><p>虚函数指在基类使用<code>virtual</code>关键字声明的成员函数, 在使用对象指针时, 允许用基类的指针来调用子类的这个函数.</p><h3 id="纯虚函数"><a href="#纯虚函数" class="headerlink" title="纯虚函数"></a>纯虚函数</h3><p>定义一个函数为纯虚函数, 代表该函数在基类中只有声明, 但是没有被实现. 子类必须对此函数进行重写才能够使用, 与此同时, 基类由于没有提供纯虚函数的具体实现, 所以无法被实例化为对象而使用.</p><blockquote><p>一、定义<br>　纯虚函数是在基类中声明的虚函数，它在基类中没有定义，但要求任何派生类都要定义自己的实现方法。在基类中实现纯虚函数的方法是在函数原型后加<code>&quot;=0&quot;</code><br>　<code>virtual void funtion1()=0;</code></p><p>二、引入原因<br>　　1、为了方便使用多态特性，我们常常需要在基类中定义虚拟函数。<br>　　2、在很多情况下，基类本身生成对象是不合情理的。例如，动物作为一个基类可以派生出老虎、孔雀等子类，但动物本身生成对象明显不合常理。<br>　　为了解决上述问题，引入了纯虚函数的概念，将函数定义为纯虚函数（方法：virtual ReturnType Function()= 0;），则编译器要求在派生类中必须予以重写以实现多态性。同时含有纯虚拟函数的类称为抽象类，它不能生成对象。这样就很好地解决了上述两个问题。<br>声明了纯虚函数的类是一个抽象类。所以，用户不能创建类的实例，只能创建它的派生类的实例。<br>纯虚函数最显著的特征是：它们必须在继承类中重新声明函数（不要后面的＝0，否则该派生类也不能实例化），而且它们在抽象类中往往没有定义。<br>定义纯虚函数的目的在于，使派生类仅仅只是继承函数的接口。<br>纯虚函数的意义，让所有的类对象（主要是派生类对象）都可以执行纯虚函数的动作，但类无法为纯虚函数提供一个合理的缺省实现。所以类纯虚函数的声明就是在告诉子类的设计者，“你必须提供一个纯虚函数的实现，但我不知道你会怎样实现它”。</p><p>来自<a href="https://blog.csdn.net/Hackbuteer1/article/details/7558868">虚函数和纯虚函数的区别-hackbuteer1</a></p></blockquote><h3 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h3><p>带有<strong>纯虚函数</strong>的类被称为抽象类.</p><p>抽象类只能作为基类被继承, 同时如果子类也没有提供该类中纯虚函数的定义, 那么子类也是一个抽象类.</p><p>抽象类不能被实例化为对象来使用.</p><h2 id="实验"><a href="#实验" class="headerlink" title="实验"></a>实验</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// virtualFunc.cpp 虚函数实验</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Father</span> &#123;</span></span><br><span class="line">  <span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">virtualFunc</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"Virtual Function of Father class\n"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">commonFunc</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"Common function of Father class\n"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Son</span> :</span> <span class="keyword">public</span> Father &#123; <span class="comment">// Father必须使用public关键字修饰, 否则为不可访问的基类</span></span><br><span class="line">  <span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">virtualFunc</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"Virtual Function of Son class\n"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">commonFunc</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"Common function of Son class\n"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">    Father *p = <span class="keyword">new</span> Son();</span><br><span class="line">    p-&gt;virtualFunc();</span><br><span class="line">    p-&gt;commonFunc();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>结果:</p><p><img src="https://i.loli.net/2020/06/18/S1ra48zBf35uqEc.png" alt="image-20200618185932043"></p><h2 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h2><p><a href="https://blog.apache553.com">Apache553</a>大哥说的没错, C++是永远学不完的.</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;对C++虚函数的概念做一个简单的了解.&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="软件开发" scheme="https://www.wootec.top/categories/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="C++" scheme="https://www.wootec.top/tags/C/"/>
+    
+      <category term="软件开发" scheme="https://www.wootec.top/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/"/>
+    
+      <category term="ISAE" scheme="https://www.wootec.top/tags/ISAE/"/>
+    
+  </entry>
   
   <entry>
     <title>Linux 5.7.2 swapfile 无法挂载的解决方案</title>
@@ -58,11 +85,11 @@
       <category term="软件开发" scheme="https://www.wootec.top/categories/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/"/>
     
     
-      <category term="编程" scheme="https://www.wootec.top/tags/%E7%BC%96%E7%A8%8B/"/>
+      <category term="软件开发" scheme="https://www.wootec.top/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/"/>
     
       <category term="ISAE" scheme="https://www.wootec.top/tags/ISAE/"/>
     
-      <category term="软件开发" scheme="https://www.wootec.top/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/"/>
+      <category term="编程" scheme="https://www.wootec.top/tags/%E7%BC%96%E7%A8%8B/"/>
     
   </entry>
   
@@ -85,11 +112,11 @@
       <category term="软件开发" scheme="https://www.wootec.top/categories/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/"/>
     
     
-      <category term="编程" scheme="https://www.wootec.top/tags/%E7%BC%96%E7%A8%8B/"/>
+      <category term="软件开发" scheme="https://www.wootec.top/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/"/>
     
       <category term="ISAE" scheme="https://www.wootec.top/tags/ISAE/"/>
     
-      <category term="软件开发" scheme="https://www.wootec.top/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/"/>
+      <category term="编程" scheme="https://www.wootec.top/tags/%E7%BC%96%E7%A8%8B/"/>
     
   </entry>
   
@@ -112,11 +139,11 @@
       <category term="软件开发" scheme="https://www.wootec.top/categories/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/"/>
     
     
-      <category term="编程" scheme="https://www.wootec.top/tags/%E7%BC%96%E7%A8%8B/"/>
+      <category term="软件开发" scheme="https://www.wootec.top/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/"/>
     
       <category term="ISAE" scheme="https://www.wootec.top/tags/ISAE/"/>
     
-      <category term="软件开发" scheme="https://www.wootec.top/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/"/>
+      <category term="编程" scheme="https://www.wootec.top/tags/%E7%BC%96%E7%A8%8B/"/>
     
   </entry>
   
@@ -139,11 +166,11 @@
       <category term="软件开发" scheme="https://www.wootec.top/categories/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/"/>
     
     
-      <category term="编程" scheme="https://www.wootec.top/tags/%E7%BC%96%E7%A8%8B/"/>
+      <category term="软件开发" scheme="https://www.wootec.top/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/"/>
     
       <category term="ISAE" scheme="https://www.wootec.top/tags/ISAE/"/>
     
-      <category term="软件开发" scheme="https://www.wootec.top/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/"/>
+      <category term="编程" scheme="https://www.wootec.top/tags/%E7%BC%96%E7%A8%8B/"/>
     
   </entry>
   
@@ -166,11 +193,11 @@
       <category term="软件开发" scheme="https://www.wootec.top/categories/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/"/>
     
     
-      <category term="编程" scheme="https://www.wootec.top/tags/%E7%BC%96%E7%A8%8B/"/>
+      <category term="软件开发" scheme="https://www.wootec.top/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/"/>
     
       <category term="ISAE" scheme="https://www.wootec.top/tags/ISAE/"/>
     
-      <category term="软件开发" scheme="https://www.wootec.top/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/"/>
+      <category term="编程" scheme="https://www.wootec.top/tags/%E7%BC%96%E7%A8%8B/"/>
     
   </entry>
   
@@ -477,31 +504,6 @@
     <updated>2020-04-28T12:41:51.940Z</updated>
     
     <content type="html"><![CDATA[<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><a id="more"></a><p>我真的觉得这种打开ida在数据区翻翻就能看见flag的题没有什么意思.webp</p><p><img src="https://i.loli.net/2020/04/28/WBSbpQi72OkUcdZ.png" alt="Screenshot_20200428_201314.png"></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;题解&quot;&gt;&lt;a href=&quot;#题解&quot; class=&quot;headerlink&quot; title=&quot;题解&quot;&gt;&lt;/a&gt;题解&lt;/h2&gt;
-    
-    </summary>
-    
-    
-      <category term="CTF" scheme="https://www.wootec.top/categories/CTF/"/>
-    
-    
-      <category term="CTF" scheme="https://www.wootec.top/tags/CTF/"/>
-    
-      <category term="Reverse" scheme="https://www.wootec.top/tags/Reverse/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>BUUCTF-helloworld WP</title>
-    <link href="https://www.wootec.top/2020/04/28/BUU-Hello-World/"/>
-    <id>https://www.wootec.top/2020/04/28/BUU-Hello-World/</id>
-    <published>2020-04-28T15:33:37.000Z</published>
-    <updated>2020-04-28T12:42:02.740Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><a id="more"></a><p>虽然这道题正规解法应该是用dex2jar解包之后再用jd-gui反编译或者用别的安卓逆向工具但是记事本打开能直接搜到flag我也就懒得去用工具了.jpeg</p><p><img src="https://i.loli.net/2020/04/28/tZcKoMJ2dTEbrpP.png" alt="Screenshot_20200428_200121.png"></p>]]></content>
     
     <summary type="html">
     
