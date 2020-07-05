@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.wootec.top/"/>
-  <updated>2020-06-27T12:40:07.580Z</updated>
+  <updated>2020-07-05T08:31:06.491Z</updated>
   <id>https://www.wootec.top/</id>
   
   <author>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>Pinned</title>
-    <link href="https://www.wootec.top/2020/06/27/top/"/>
-    <id>https://www.wootec.top/2020/06/27/top/</id>
-    <published>2020-06-27T12:34:36.908Z</published>
-    <updated>2020-06-27T12:40:07.580Z</updated>
+    <link href="https://www.wootec.top/2070/12/31/top/"/>
+    <id>https://www.wootec.top/2070/12/31/top/</id>
+    <published>2070-12-31T15:59:59.000Z</published>
+    <updated>2020-07-05T08:31:06.491Z</updated>
     
     <content type="html"><![CDATA[<h4 id="那些发问前不愿思考也不做任何功课的人，我发自内心的讨厌他们-虽然有时候因为友情不会表露出来-。那些人是时间杀手-——-他们只想索取，从不付出，消耗我的宝贵时间。而那些时间本来能用在更有趣的问题或更值得回答的人身上，或者让我能多学一点知识，多敲几行代码。"><a href="#那些发问前不愿思考也不做任何功课的人，我发自内心的讨厌他们-虽然有时候因为友情不会表露出来-。那些人是时间杀手-——-他们只想索取，从不付出，消耗我的宝贵时间。而那些时间本来能用在更有趣的问题或更值得回答的人身上，或者让我能多学一点知识，多敲几行代码。" class="headerlink" title="那些发问前不愿思考也不做任何功课的人，我发自内心的讨厌他们 (虽然有时候因为友情不会表露出来)。那些人是时间杀手 —— 他们只想索取，从不付出，消耗我的宝贵时间。而那些时间本来能用在更有趣的问题或更值得回答的人身上，或者让我能多学一点知识，多敲几行代码。"></a>那些发问前不愿思考也不做任何功课的人，我发自内心的讨厌他们 (虽然有时候因为友情不会表露出来)。那些人是时间杀手 —— 他们只想索取，从不付出，消耗我的宝贵时间。而那些时间本来能用在更有趣的问题或更值得回答的人身上，或者让我能多学一点知识，多敲几行代码。</h4>]]></content>
     
@@ -35,6 +35,31 @@
     </summary>
     
     
+    
+  </entry>
+  
+  <entry>
+    <title>C++的一些神奇用法</title>
+    <link href="https://www.wootec.top/2020/06/27/Cpp_learning_1/"/>
+    <id>https://www.wootec.top/2020/06/27/Cpp_learning_1/</id>
+    <published>2020-06-27T12:44:48.000Z</published>
+    <updated>2020-06-27T12:49:22.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>如题</p><a id="more"></a><h2 id="数组索引-倒过来还是索引"><a href="#数组索引-倒过来还是索引" class="headerlink" title="数组索引, 倒过来还是索引"></a>数组索引, 倒过来还是索引</h2><p>由于数组索引被解释成<code>指针+偏移</code>, 所以我们用<code>偏移+指针</code>也未尝不可.</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a[] = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>&#125;;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"a[4]: "</span> &lt;&lt; a[<span class="number">4</span>] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"4[a]: "</span> &lt;&lt; <span class="number">4</span>[a] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id=""><a href="#" class="headerlink" title=""></a></h2>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;如题&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="软件开发" scheme="https://www.wootec.top/categories/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="C++" scheme="https://www.wootec.top/tags/C/"/>
+    
+      <category term="软件开发" scheme="https://www.wootec.top/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/"/>
     
   </entry>
   
@@ -476,31 +501,6 @@
     <updated>2020-04-28T12:43:40.205Z</updated>
     
     <content type="html"><![CDATA[<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><a id="more"></a><p>没啥好写的, 也是个打开IDA获取flag的题..</p><p><img src="https://i.loli.net/2020/04/28/lJNkiFXR1MuGjET.png" alt="Screenshot_20200428_203927.png"></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;题解&quot;&gt;&lt;a href=&quot;#题解&quot; class=&quot;headerlink&quot; title=&quot;题解&quot;&gt;&lt;/a&gt;题解&lt;/h2&gt;
-    
-    </summary>
-    
-    
-      <category term="CTF" scheme="https://www.wootec.top/categories/CTF/"/>
-    
-    
-      <category term="CTF" scheme="https://www.wootec.top/tags/CTF/"/>
-    
-      <category term="Reverse" scheme="https://www.wootec.top/tags/Reverse/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>BUUCTF-xor WP</title>
-    <link href="https://www.wootec.top/2020/04/28/BUU-XOR/"/>
-    <id>https://www.wootec.top/2020/04/28/BUU-XOR/</id>
-    <published>2020-04-28T15:33:39.000Z</published>
-    <updated>2020-04-28T12:43:46.672Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><a id="more"></a><p>这道题是一个很单纯的异或后比对flag, 异或在很多逆向题中都很常见.</p><p>主函数: </p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> __cdecl <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> **argv, <span class="keyword">const</span> <span class="keyword">char</span> **envp)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">char</span> *v3; <span class="comment">// rsi</span></span><br><span class="line">  <span class="keyword">int</span> result; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">signed</span> <span class="keyword">int</span> i; <span class="comment">// [rsp+2Ch] [rbp-124h]</span></span><br><span class="line">  <span class="keyword">char</span> v6[<span class="number">264</span>]; <span class="comment">// [rsp+40h] [rbp-110h]</span></span><br><span class="line">  __int64 v7; <span class="comment">// [rsp+148h] [rbp-8h]</span></span><br><span class="line"></span><br><span class="line">  <span class="built_in">memset</span>(v6, <span class="number">0</span>, <span class="number">0x100</span>uLL);</span><br><span class="line">  v3 = (<span class="keyword">char</span> *)<span class="number">256</span>;</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">"Input your flag:\n"</span>, <span class="number">0L</span>L);</span><br><span class="line">  get_line(v6, <span class="number">256L</span>L);</span><br><span class="line">  <span class="keyword">if</span> ( <span class="built_in">strlen</span>(v6) != <span class="number">33</span> )</span><br><span class="line">    <span class="keyword">goto</span> LABEL_12;</span><br><span class="line">  <span class="keyword">for</span> ( i = <span class="number">1</span>; i &lt; <span class="number">33</span>; ++i )</span><br><span class="line">    v6[i] ^= v6[i - <span class="number">1</span>];</span><br><span class="line">  v3 = global;</span><br><span class="line">  <span class="keyword">if</span> ( !<span class="built_in">strncmp</span>(v6, global, <span class="number">33u</span>LL) )</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"Success"</span>, v3);</span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">LABEL_12:</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"Failed"</span>, v3);</span><br><span class="line">  result = __stack_chk_guard;</span><br><span class="line">  <span class="keyword">if</span> ( __stack_chk_guard == v7 )</span><br><span class="line">    result = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>输入被存储在<code>v6</code>之中, 然后通过一个for循环把<code>v6</code>中除了第一个元素之外的每一个元素都和前一个元素异或, 然后和<code>global</code>数组比对. 反其道而行之, 把<code>global</code>数组反着处理一遍就好了.</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">global = [<span class="number">0x66</span>, <span class="number">0x0A</span>, <span class="number">0x6B</span>, <span class="number">0x0C</span>, <span class="number">0x77</span>, <span class="number">0x26</span>, <span class="number">0x4F</span>, <span class="number">0x2E</span>, <span class="number">0x40</span>, <span class="number">0x11</span>, <span class="number">0x78</span>, <span class="number">0x0D</span>, <span class="number">0x5A</span>, <span class="number">0x3B</span>, <span class="number">0x55</span>, <span class="number">0x11</span>, <span class="number">0x70</span>, <span class="number">0x19</span>, <span class="number">0x46</span>, <span class="number">0x1F</span>, <span class="number">0x76</span>, <span class="number">0x22</span>, <span class="number">0x4D</span>, <span class="number">0x23</span>, <span class="number">0x44</span>, <span class="number">0x0E</span>, <span class="number">0x67</span>, <span class="number">0x06</span>, <span class="number">0x68</span>, <span class="number">0x0F</span>, <span class="number">0x47</span>, <span class="number">0x32</span>, <span class="number">0x4F</span>, <span class="number">0x00</span>]</span><br></pre></td></tr></table></figure><p>脚本:</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">globals = [<span class="number">0x66</span>, <span class="number">0x0A</span>, <span class="number">0x6B</span>, <span class="number">0x0C</span>, <span class="number">0x77</span>, <span class="number">0x26</span>, <span class="number">0x4F</span>, <span class="number">0x2E</span>, <span class="number">0x40</span>, <span class="number">0x11</span>, <span class="number">0x78</span>, <span class="number">0x0D</span>, <span class="number">0x5A</span>, <span class="number">0x3B</span>, <span class="number">0x55</span>, <span class="number">0x11</span>, <span class="number">0x70</span>, <span class="number">0x19</span>, <span class="number">0x46</span>, <span class="number">0x1F</span>, <span class="number">0x76</span>, <span class="number">0x22</span>, <span class="number">0x4D</span>, <span class="number">0x23</span>, <span class="number">0x44</span>, <span class="number">0x0E</span>, <span class="number">0x67</span>, <span class="number">0x06</span>, <span class="number">0x68</span>, <span class="number">0x0F</span>, <span class="number">0x47</span>, <span class="number">0x32</span>, <span class="number">0x4F</span>, <span class="number">0x00</span>]</span><br><span class="line">length = len(globals)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(length - <span class="number">1</span>):</span><br><span class="line">    globals[length - i - <span class="number">1</span>] ^= globals[length - i - <span class="number">2</span>]</span><br><span class="line">out = <span class="string">''</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(length):</span><br><span class="line">    out += chr(globals[i])</span><br><span class="line">print(out)</span><br></pre></td></tr></table></figure><p><code>flag</code>:</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flag&#123;QianQiuWanDai_YiTongJiangHu&#125;</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
