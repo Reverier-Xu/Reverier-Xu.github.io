@@ -1,40 +1,40 @@
 <!doctype html>
 <html lang="zh"><head><meta charset="utf-8"><meta name="generator" content="Hexo 4.2.1"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><meta name="keywords" content="[object Object]"><meta name="description" content="点击查看"><meta name="author" content="Reverier"><title>随机点名的需求文档 - Reverier&#039;s Blog</title><meta description="点击查看"><meta property="og:type" content="article"><meta property="og:title" content="随机点名的需求文档"><meta property="og:url" content="https://www.wootec.top/2020/05/26/%E9%9A%8F%E6%9C%BA%E7%82%B9%E5%90%8D%E7%9A%84%E9%9C%80%E6%B1%82%E6%96%87%E6%A1%A3/"><meta property="og:site_name" content="Reverier&#039;s Blog"><meta property="og:description" content="点击查看"><meta property="og:locale" content="zh_CN"><meta property="article:published_time" content="2020-05-26T14:05:23.000Z"><meta property="article:modified_time" content="2020-06-06T17:03:47.000Z"><meta property="article:author" content="Reverier"><meta property="article:tag" content="软件开发"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="https://www.wootec.top/img/avatar.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.wootec.top/2020/05/26/%E9%9A%8F%E6%9C%BA%E7%82%B9%E5%90%8D%E7%9A%84%E9%9C%80%E6%B1%82%E6%96%87%E6%A1%A3/"},"headline":"随机点名的需求文档","image":["https://www.wootec.top/img/avatar.png"],"datePublished":"2020-05-26T14:05:23.000Z","dateModified":"2020-06-06T17:03:47.000Z","author":{"@type":"Person","name":"Reverier"},"description":"点击查看"}</script><link rel="alternative" href="/atom.xml" title="Reverier&#039;s Blog" type="application/atom+xml"><link rel="icon" href="/img/favicon.png"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/font-awesome/5.12.0/css/all.min.css"><link rel="stylesheet" href="https://fonts.loli.net/css?family=Ubuntu:400,600|Source+Code+Pro|Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Microsoft YaHei:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&amp;amp;subset=latin,latin-ext|Inconsolata|Itim|Lobster.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/lightgallery/1.6.12/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.7.0/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><script src="https://cdnjs.loli.net/ajax/libs/pace/1.0.2/pace.min.js"></script><link rel="stylesheet" href="/css/style.css"><script src="https://cdnjs.loli.net/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script src="/js/globalUtils.js"></script></head><body class="is-3-column has-navbar-fixed-top"><nav class="navbar navbar-main is-fixed-top"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.png" alt="Reverier&#039;s Blog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">首页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/friend">友链</a><a class="navbar-item" href="/message">留言</a><a class="navbar-item" href="/about">关于</a><a class="navbar-item" href="http://ictfe.wootec.top/">ICTFE</a><a class="navbar-item" href="http://home.wootec.top/">Home</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Follow me on GitHub" href="https://github.com/Reverier-Xu"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a><a class="navbar-item" id="night-nav" title="Night Mode" href="javascript:;"><i class="fas fa-moon" id="night-icon"></i></a></div></div></div></nav><script type="text/javascript" src="/js/theme-setting.js"></script><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-9-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><i class="far fa-calendar-plus"> </i>2020-05-26  <a class="commentCountImg" href="/2020/05/26/%E9%9A%8F%E6%9C%BA%E7%82%B9%E5%90%8D%E7%9A%84%E9%9C%80%E6%B1%82%E6%96%87%E6%A1%A3/#comment-container"><span class="display-none-class">51378e4ad156aa4dca7650ac13b03631</span><i class="far fa-comment-dots"></i> <span class="commentCount" id="51378e4ad156aa4dca7650ac13b03631">99+</span>  </a><span class="level-item"><i class="far fa-clock"> </i>10 分钟  <i class="fas fa-pencil-alt"> </i>1.6 k</span><span class="level-item" id="busuanzi_container_page_pv"><i class="far fa-eye"></i>&nbsp;&nbsp;<span id="busuanzi_value_page_pv">0</span>次访问</span></div></div><h1 class="title is-3 is-size-4-mobile">随机点名的需求文档</h1><div class="content"><p>点击查看</p>
 <a id="more"></a>
-
 <h2 id="1-引言"><a href="#1-引言" class="headerlink" title="1 引言"></a>1 引言</h2><h3 id="编写目的"><a href="#编写目的" class="headerlink" title="编写目的"></a>编写目的</h3><p>为教师教学提供完善的随机点名应用程序.</p>
 <h3 id="1-2范围"><a href="#1-2范围" class="headerlink" title="1.2范围"></a><strong>1.2</strong>范围</h3><p>a. 名称: 随机点名 V13;</p>
 <p>b. 用途: 学校/教育机构线下教学 教学机应用, 提供随机点名, 基本学生管理, 分性别点名等;</p>
 <p>c. 系统需求: Windows® 7 ServePack1及以上版本 / Windows® 8 / Windows® 8.1 / Windows® 10 / Arch Linux v274.5 with Wine 5.8 / Fedora 32 with Wine 5.8;</p>
 <p>d. 运行环境需求: </p>
 <p>1, Microsoft® .NET Framework 4.5 及以上版本 / dotnet45 with Wine 5.8.</p>
-<h3 id="1-3-定义、首字母缩写词或缩略语"><a href="#1-3-定义、首字母缩写词或缩略语" class="headerlink" title="1.3 定义、首字母缩写词或缩略语"></a><strong>1.3</strong> 定义、首字母缩写词或缩略语</h3><p>****MS: 指Microsoft®公司;</p>
+<h3 id="1-3-定义、首字母缩写词或缩略语"><a href="#1-3-定义、首字母缩写词或缩略语" class="headerlink" title="1.3 定义、首字母缩写词或缩略语"></a><strong>1.3</strong> 定义、首字母缩写词或缩略语</h3><p>*<em>*</em>MS: 指Microsoft®公司;</p>
 <p>Win: 指软件所兼容的Windows®操作系统;</p>
 <p>Linux: 指软件所兼容的Fedora和Arch Linux操作系统;</p>
 <p>Dotnet: 指软件使用的Microsoft® .NET®技术;</p>
 <h3 id="1-4-参考资料"><a href="#1-4-参考资料" class="headerlink" title="1.4 参考资料"></a><strong>1.4</strong> 参考资料</h3><p><a href="https://docs.microsoft.com/zh-cn/dotnet/">https://docs.microsoft.com/zh-cn/dotnet/</a></p>
 <h2 id="2-项目概述"><a href="#2-项目概述" class="headerlink" title="2 项目概述"></a><strong>2</strong> 项目概述</h2><h3 id="2-1-产品描述"><a href="#2-1-产品描述" class="headerlink" title="2.1 产品描述"></a><strong>2.1</strong> 产品描述</h3><p>采用MS .NET技术开发的随机点名应用程序, 具有完善的随机点名功能和跨平台支持.</p>
 <p><strong>2.2</strong> <strong><em>\</em>产品需求**</strong></p>
-<p><strong>2.2.1</strong> <strong><em>\</em>功能需求*****</strong>*<br>****A. 软件可以完成1~6人的一次性点名, 采用开放寻址类似算法保证多次点名时的公平性;</p>
+<p><strong>2.2.1</strong> <strong><em>\</em>功能需求*<em>**</em></strong>*<br>*<em>*</em>A. 软件可以完成1~6人的一次性点名, 采用开放寻址类似算法保证多次点名时的公平性;</p>
 <p>B. 软件可以在完成点名后根据学号来查询对应的学生姓名;</p>
 <p>C. 软件可以根据性别设置来分性别抽取学生;</p>
 <p>D. 软件可以方便的管理学生列表, 包括增, 查, 删, 改, 导入学生数据;</p>
 <p>E. 软件可以暗化背景以防止黑板在投影仪照射下的反光干扰教师教学;</p>
 <p>F. 软件具有倒计时功能, 可以精确到秒的进行考试倒计时.</p>
-<p><strong>2.2.2</strong> <strong><em>\</em>性能需求*****</strong>*<br>****A. 至少支持十万级数据检索时的毫秒级响应;</p>
+<p><strong>2.2.2</strong> <strong><em>\</em>性能需求*<em>**</em></strong>*<br>*<em>*</em>A. 至少支持十万级数据检索时的毫秒级响应;</p>
 <p>B. 至少支持十万级数据在六人模式下的工作时间不超过1.5s;</p>
 <p>C. 程序处于非工作状态时UI刷新率至少保持在30FPS以上;</p>
 <p>D. 至少支持千人数据编辑延迟在10ms以下 (肉眼不可见) ;</p>
-<p><strong>2.2.3</strong> <strong><em>\</em>可服务性需求*****</strong>*<br>****A. 应保证解压即可使用;</p>
+<p><strong>2.2.3</strong> <strong><em>\</em>可服务性需求*<em>**</em></strong>*<br>*<em>*</em>A. 应保证解压即可使用;</p>
 <p>B. 应保证可以从txt文件列表中导入学生数据;</p>
-<p><strong>2.3</strong> <strong><em>\</em>用户及用户特点*****</strong>*<br>****用户团体为教育机构, 多为老师.</p>
+<p><strong>2.3</strong> <strong><em>\</em>用户及用户特点*<em>**</em></strong>*<br>*<em>*</em>用户团体为教育机构, 多为老师.</p>
 <p>特点:</p>
 <p>a. 班级人数不多, 对大型数据的处理没有需求;</p>
 <p>b. 点名频率并不高, 对高性能高响应没有需求, 反而需要延长点名时间来制造悬疑性.</p>
-<p><strong>2.4</strong> <strong><em>\</em>一般约束*****</strong>*<br>****a. 必须在支持.NET技术的平台上运行;</p>
+<p><strong>2.4</strong> <strong><em>\</em>一般约束*<em>**</em></strong>*<br>*<em>*</em>a. 必须在支持.NET技术的平台上运行;</p>
 <p>b. 必须在支持WinForm图形库的平台上运行;</p>
 <p>c. 构建时所采用的.NET版本不得高于4.5.2, 否则跨兼容性会出现问题;</p>
-<p><strong>2.5</strong> <strong><em>\</em>假设和依据*****</strong>*<br>****</p>
+<p><strong>2.5</strong> <strong><em>\</em>假设和依据*<em>**</em></strong>*<br>*<em>*</em></p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -42,7 +42,8 @@
 <th>依据</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>人数小于10k</td>
 <td>一般学校的全体人数在2k左右, 班级人数则一般不超过120人, SQLite快速检索最大支持百万级数据, 在十万级数据时出现可以察觉到的延迟, 于是点名人数限制在10k以下, 可以满足几乎所有学校的任何需求.</td>
 </tr>
@@ -54,9 +55,12 @@
 <td>倒计时的最大天数支持为999</td>
 <td>一般学制为3年, 从九月一日招生起到三年后六月七日高考, 其间有1019天. 考虑到四位天数的排版问题, 决定只兼容3位数. 多出来的20天会出现一些可以忍受的显示问题.</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p><strong>3</strong> <strong><em>\</em>用例描述**</strong></p>
 <p><strong>3.1</strong> <strong><em>\</em>用例1**</strong></p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -64,7 +68,8 @@
 <th>1</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>用例名称</td>
 <td>随机抽取</td>
 </tr>
@@ -128,8 +133,11 @@
 <td>后置条件</td>
 <td>无</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p><strong>3.2</strong> <strong><em>\</em>用例2**</strong></p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -137,7 +145,8 @@
 <th>2</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>用例名称</td>
 <td>更改软件设置</td>
 </tr>
@@ -201,19 +210,21 @@
 <td>后置条件</td>
 <td>无</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p><strong>4</strong> <strong><em>\</em>外部接口需求**</strong></p>
-<p><strong>4.1</strong> <strong><em>\</em>用户接口*****</strong>*<br>****基于.NET构建的图形化界面</p>
-<p><strong>4.2</strong> <strong><em>\</em>硬件接口*****</strong>*<br>****无</p>
-<p><strong>4.3</strong> <strong><em>\</em>软件接口*****</strong>*<br>****无</p>
-<p><strong>4.4</strong> <strong><em>\</em>通信接口*****</strong>*<br>****无</p>
+<p><strong>4.1</strong> <strong><em>\</em>用户接口*<em>**</em></strong>*<br>*<em>*</em>基于.NET构建的图形化界面</p>
+<p><strong>4.2</strong> <strong><em>\</em>硬件接口*<em>**</em></strong>*<br>*<em>*</em>无</p>
+<p><strong>4.3</strong> <strong><em>\</em>软件接口*<em>**</em></strong>*<br>*<em>*</em>无</p>
+<p><strong>4.4</strong> <strong><em>\</em>通信接口*<em>**</em></strong>*<br>*<em>*</em>无</p>
 <p><strong>5</strong> <strong><em>\</em>属性**</strong></p>
-<p><strong>5.1</strong> <strong><em>\</em>可用性*****</strong>*<br>****保证在可发行的平台上稳定运行; 保证在Windows平台上不出错误; 保证在其他兼容的Linux平台基本功能可用.</p>
-<p><strong>5.2</strong> <strong><em>\</em>安全性*****</strong>*<br>****本软件不对任何系统底层文件进行更改, 不更改注册表, 不对软件安装目录之外的任何路径进行读写, 不需要管理员权限, 不对运行内存栈之外的内存区域做出修改, 无内存泄露问题.</p>
-<p><strong>5.3</strong> <strong><em>\</em>可维护性*****</strong>*<br>****采用WinForm构建, 保证重要函数不依赖于其它函数, 便于代码重用.</p>
-<p><strong>5.4</strong> <strong><em>\</em>可移植性*****</strong>*<br>****可采用Wine移植到Linux平台; 理论上可以使用Wine移植到Mac平台, 无法移植到移动端 (包括Android和iOS)</p>
+<p><strong>5.1</strong> <strong><em>\</em>可用性*<em>**</em></strong>*<br>*<em>*</em>保证在可发行的平台上稳定运行; 保证在Windows平台上不出错误; 保证在其他兼容的Linux平台基本功能可用.</p>
+<p><strong>5.2</strong> <strong><em>\</em>安全性*<em>**</em></strong>*<br>*<em>*</em>本软件不对任何系统底层文件进行更改, 不更改注册表, 不对软件安装目录之外的任何路径进行读写, 不需要管理员权限, 不对运行内存栈之外的内存区域做出修改, 无内存泄露问题.</p>
+<p><strong>5.3</strong> <strong><em>\</em>可维护性*<em>**</em></strong>*<br>*<em>*</em>采用WinForm构建, 保证重要函数不依赖于其它函数, 便于代码重用.</p>
+<p><strong>5.4</strong> <strong><em>\</em>可移植性*<em>**</em></strong>*<br>*<em>*</em>可采用Wine移植到Linux平台; 理论上可以使用Wine移植到Mac平台, 无法移植到移动端 (包括Android和iOS)</p>
 <p><strong><em>\</em>6 其他需求**</strong></p>
-<p><strong><em>\</em>6.1 数据库*****</strong>*<br>****SQLite</p>
+<p><strong><em>\</em>6.1 数据库*<em>**</em></strong>*<br>*<em>*</em>SQLite</p>
 </div><ul class="post-copyright"><li><strong>本文标题：</strong><a href="https://www.wootec.top/2020/05/26/随机点名的需求文档/">随机点名的需求文档</a></li><li><strong>本文作者：</strong><a href="https://www.wootec.top">Reverier Xu</a></li><li><strong>本文链接：</strong><a href="https://www.wootec.top/2020/05/26/随机点名的需求文档/">https://www.wootec.top/2020/05/26/随机点名的需求文档/</a></li><li><strong>版权声明：</strong><span>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</span></li></ul><div><div class="recommend-post"><span class="is-size-6 has-text-grey has-mr-7"># 相关文章</span><br><span>  1.<a class="is-size-6" href="/2020/07/05/Cpp_learning_1/" target="_blank">C++的一些神奇用法_1</a><br></span><span>  2.<a class="is-size-6" href="/2020/06/18/CppVirtualFunction/" target="_blank">C++ 虚函数</a><br></span><span>  3.<a class="is-size-6" href="/2020/06/09/RDB-Docs-DataBase/" target="_blank">数据库类</a><br></span><span>  4.<a class="is-size-6" href="/2020/06/09/RDB-Docs-%E6%89%A9%E5%B1%95%E9%98%85%E8%AF%BB/" target="_blank">扩展阅读</a><br></span><span>  5.<a class="is-size-6" href="/2020/06/08/RDB-Docs-%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/" target="_blank">系统结构</a><br></span><span>  6.<a class="is-size-6" href="/2020/06/08/RDB-Docs-%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99/" target="_blank">命名规则</a><br></span><span>  7.<a class="is-size-6" href="/2020/06/06/RDB/" target="_blank">小型数据存储系统</a><br></span></div></div><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/social-share.js/1.0.16/css/share.min.css"><div class="social-share"></div><script src="https://cdnjs.loli.net/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3><div class="buttons is-centered"><a class="button is-info donate"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>支付宝</span><span class="qrcode"><img src="https://i.loli.net/2020/04/25/fdruj4ci3sYItoN.png" alt="支付宝"></span></a><a class="button is-success donate"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>微信</span><span class="qrcode"><img src="https://i.loli.net/2020/04/25/f6Nq3AsO5U8vEyz.png" alt="微信"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2020/06/06/RDB/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">小型数据存储系统</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2020/05/25/Nvidia%E6%98%BE%E5%8D%A1%E7%9A%84%E5%B0%8F%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"><span class="level-item">Nvidia Prime的最终折腾方案</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><div class="title is-5">评论</div><div id="comment-container"></div><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/gitalk/1.6.0/gitalk.css"><script> $.getScript('/js/gitalk.min.js', function () { 
             var gitalk = new Gitalk({
             language:'zh-CN',
@@ -308,7 +319,11 @@
                     fold: 'unfolded'
                 }
             }
-        };</script><script src="https://cdnjs.loli.net/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" defer></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back-to-top.js" defer></script><!--!--><!--!--><script src="https://cdnjs.loli.net/ajax/libs/lightgallery/1.6.12/js/lightgallery-all.min.js" defer></script><script src="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.7.0/js/jquery.justifiedGallery.min.js" defer></script><!--!--><!--!--><!--!--><!--!--><script src="/js/toc.js" defer></script><script src="/js/main.js" defer></script><script>$.getScript('/js/comment-issue-data.js',function(){loadIssueData('04e3a9c7b8514d2532ba','b55ad7dd220563faca25d9b74dc517fd309dafa9','Reverier-Xu','blog_comment',false);})</script><link rel="stylesheet" href="/css/insight.css"><div class="searchbox ins-search"><div class="searchbox-container ins-search-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="想要查找什么..."><span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"></div></div></div></div><script>(function (window) {
+        };</script><script src="https://cdnjs.loli.net/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" defer></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back-to-top.js" defer></script><!--!--><!--!--><script src="https://cdnjs.loli.net/ajax/libs/lightgallery/1.6.12/js/lightgallery-all.min.js" defer></script><script src="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.7.0/js/jquery.justifiedGallery.min.js" defer></script><!--!--><!--!--><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/KaTeX/0.11.1/katex.min.css"><script src="https://cdnjs.loli.net/ajax/libs/KaTeX/0.11.1/katex.min.js" defer></script><script src="https://cdnjs.loli.net/ajax/libs/KaTeX/0.11.1/contrib/auto-render.min.js" defer></script><script>document.addEventListener("DOMContentLoaded", function() {
+            document.querySelectorAll('[role="article"] > .content').forEach(function(element) {
+                renderMathInElement(element);
+            });
+        });</script><!--!--><script src="/js/toc.js" defer></script><script src="/js/main.js" defer></script><script>$.getScript('/js/comment-issue-data.js',function(){loadIssueData('04e3a9c7b8514d2532ba','b55ad7dd220563faca25d9b74dc517fd309dafa9','Reverier-Xu','blog_comment',false);})</script><link rel="stylesheet" href="/css/insight.css"><div class="searchbox ins-search"><div class="searchbox-container ins-search-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="想要查找什么..."><span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"></div></div></div></div><script>(function (window) {
             var INSIGHT_CONFIG = {
                 TRANSLATION: {
                     POSTS: '文章',
