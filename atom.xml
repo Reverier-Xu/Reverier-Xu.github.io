@@ -39,6 +39,31 @@
   </entry>
   
   <entry>
+    <title>POST</title>
+    <link href="https://www.wootec.top/2020/08/07/POST/"/>
+    <id>https://www.wootec.top/2020/08/07/POST/</id>
+    <published>2020-08-07T04:48:54.000Z</published>
+    <updated>2020-08-07T04:50:28.892Z</updated>
+    
+    <content type="html"><![CDATA[<p>如题</p><a id="more"></a><h2 id="POST是什么"><a href="#POST是什么" class="headerlink" title="POST是什么?"></a>POST是什么?</h2><p><code>POST</code>是一种<code>HTTP</code>请求方法, 通过网址中的参数来向服务器请求相应的网络资源.</p><p>更详细的<code>HTTP</code>请求方法介绍, 请见: <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Methods">MDN文档</a></p><h2 id="如何POST"><a href="#如何POST" class="headerlink" title="如何POST?"></a>如何POST?</h2><p><code>POST</code>本质上和<code>GET</code>都属于给网站提供数据的请求方法. 只不过<code>GET</code>请求可以通过在网址后面直接构造的方法来使用, 十分的简单便捷.</p><p>而<code>POST</code>不同, <code>POST</code>是一种有报文的请求方式, 正常用户是无法显式看见<code>POST</code>请求的详细信息的.</p><p><code>POST</code>的方法有很多种, 我们只挑两种来讲.</p><h3 id="使用Postman工具"><a href="#使用Postman工具" class="headerlink" title="使用Postman工具"></a>使用<code>Postman</code>工具</h3><p>打开<code>Postman</code>, 界面大致如下:</p><p><img src="https://i.loli.net/2020/08/07/LOtkXhljgHNqTKd.png" alt="Screenshot_20200807_122034.png"></p><p>如上设置好你的数据, 就可以非常方便的向服务器发送请求了.</p><h3 id="使用Python的Requests库"><a href="#使用Python的Requests库" class="headerlink" title="使用Python的Requests库"></a>使用<code>Python</code>的<code>Requests</code>库</h3><p>使用<code>Python</code>的<code>requests</code>库是最灵活也是<code>CTF</code>中最常用的方法.</p><h4 id="安装requests库"><a href="#安装requests库" class="headerlink" title="安装requests库"></a>安装<code>requests</code>库</h4><p>确保你的电脑上有<code>Python3</code>;</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ python3 -m pip install requests -i https://pypi.tuna.tsinghua.edu.cn/simple</span><br></pre></td></tr></table></figure><p><strong>请注意! 不要将<code>requests</code>错误的写为<code>request</code>, <code>request</code>库近期被检出投毒: <a href="https://bbs.pediy.com/thread-261274.htm">链接</a></strong></p><p>如果你使用<code>Linux</code>, 也可以在对应发行版的软件仓库里找到<code>requests</code>库的安装包. 例如<code>Arch Linux</code>:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo pacman -Syyu python-requests</span><br></pre></td></tr></table></figure><p>即可安装<code>requests</code>库.</p><p>尽量使用发行版的包管理器, 这样包管理器更新时会一并检查这些包并自动升级. 如果使用<code>pip</code>, 可能还需要隔一段时间手动更新以修复一些<code>bug</code>, 获得新的功能.</p><h4 id="使用requests"><a href="#使用requests" class="headerlink" title="使用requests"></a>使用<code>requests</code></h4><p>使用如下脚本即可简单的对一个网站进行请求:</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line">payload = &#123;<span class="string">"key"</span> : <span class="string">"value"</span>&#125;</span><br><span class="line">url = <span class="string">"https://www.example.com"</span></span><br><span class="line"></span><br><span class="line">response = requests.post(url, data=payload) <span class="comment"># 发送请求</span></span><br><span class="line"></span><br><span class="line">print(response.text) <span class="comment"># 输出响应主体</span></span><br><span class="line"></span><br><span class="line">print(response.headers) <span class="comment"># 输出HTTP响应头</span></span><br></pre></td></tr></table></figure><p><code>requests</code>库的用法十分丰富, 还可以使用<code>session</code>来维持一个会话, 请熟练掌握.</p><p>关于更高级的用法本文不再介绍, 请阅读<a href="https://requests.readthedocs.io/zh_CN/latest/">requests官方文档</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;如题&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="CTF" scheme="https://www.wootec.top/categories/CTF/"/>
+    
+    
+      <category term="CTF" scheme="https://www.wootec.top/tags/CTF/"/>
+    
+      <category term="Web" scheme="https://www.wootec.top/tags/Web/"/>
+    
+  </entry>
+  
+  <entry>
     <title>GET</title>
     <link href="https://www.wootec.top/2020/08/06/GET/"/>
     <id>https://www.wootec.top/2020/08/06/GET/</id>
@@ -491,34 +516,9 @@
       <category term="ICTFE" scheme="https://www.wootec.top/categories/ICTFE/"/>
     
     
+      <category term="CTF" scheme="https://www.wootec.top/tags/CTF/"/>
+    
       <category term="ICTFE" scheme="https://www.wootec.top/tags/ICTFE/"/>
-    
-      <category term="CTF" scheme="https://www.wootec.top/tags/CTF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>GXY-CheckIn WP</title>
-    <link href="https://www.wootec.top/2020/05/01/GXY-checkin/"/>
-    <id>https://www.wootec.top/2020/05/01/GXY-checkin/</id>
-    <published>2020-05-01T05:33:33.000Z</published>
-    <updated>2020-05-01T04:11:14.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><a id="more"></a><p>这道题的文件打开后里面的文本文件给了个Base64字符串, 解码后是ROT47, emmmmmm这个只能靠积累了8…</p><p><img src="https://i.loli.net/2020/05/01/yE5JTdVG78W1akC.png" alt="Screenshot_20200501_120747.png"></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;题解&quot;&gt;&lt;a href=&quot;#题解&quot; class=&quot;headerlink&quot; title=&quot;题解&quot;&gt;&lt;/a&gt;题解&lt;/h2&gt;
-    
-    </summary>
-    
-    
-      <category term="CTF" scheme="https://www.wootec.top/categories/CTF/"/>
-    
-    
-      <category term="CTF" scheme="https://www.wootec.top/tags/CTF/"/>
-    
-      <category term="密码学" scheme="https://www.wootec.top/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/"/>
     
   </entry>
   
