@@ -39,6 +39,29 @@
   </entry>
   
   <entry>
+    <title>泰勒级数小记</title>
+    <link href="https://www.wootec.top/2020/08/12/%E6%B3%B0%E5%8B%92%E7%BA%A7%E6%95%B0/"/>
+    <id>https://www.wootec.top/2020/08/12/%E6%B3%B0%E5%8B%92%E7%BA%A7%E6%95%B0/</id>
+    <published>2020-08-12T11:07:57.000Z</published>
+    <updated>2020-08-17T14:48:32.318Z</updated>
+    
+    <content type="html"><![CDATA[<p>如题</p><a id="more"></a><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>泰勒级数是用无限多项式(级数)的和来表示某个函数的近似值的方法.</p><p>对于某个函数$f(x)$, 设$x\approx a$, 那么在$a$处的泰勒表达式为:</p><script type="math/tex; mode=display">f(x)=1+\frac{df}{dx}(a)\frac{(x-a)^1}{1!}+\frac{d^2f}{dx^2}(a)\frac{(x-a)^2}{2!}+\frac{d^3f}{dx^3}(a)\frac{(x-a)^3}{3!}+\cdots</script><h2 id="什么是级数"><a href="#什么是级数" class="headerlink" title="什么是级数"></a>什么是级数</h2><p>有无限多项的多项式, 称为级数.</p><h2 id="泰勒级数有什么用处"><a href="#泰勒级数有什么用处" class="headerlink" title="泰勒级数有什么用处"></a>泰勒级数有什么用处</h2><p>通过将一个复杂函数化为多项式的方法, 可以简化此函数, 方便计算, 积分, 化简等工作.</p><h2 id="泰勒级数是怎么来的"><a href="#泰勒级数是怎么来的" class="headerlink" title="泰勒级数是怎么来的"></a>泰勒级数是怎么来的</h2><p>推荐在B站看一下<a href="https://space.bilibili.com/88461692">3BLUE1BROWN</a>的微积分教程. 十分的形象易懂.</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;如题&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="数学" scheme="https://www.wootec.top/categories/%E6%95%B0%E5%AD%A6/"/>
+    
+    
+      <category term="数学" scheme="https://www.wootec.top/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
     <title>POST</title>
     <link href="https://www.wootec.top/2020/08/07/POST/"/>
     <id>https://www.wootec.top/2020/08/07/POST/</id>
@@ -494,31 +517,6 @@
       <category term="网站搭建" scheme="https://www.wootec.top/tags/%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/"/>
     
       <category term="docker" scheme="https://www.wootec.top/tags/docker/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ICTFE Version 1.0 发布!</title>
-    <link href="https://www.wootec.top/2020/05/05/20200505-ICTFE/"/>
-    <id>https://www.wootec.top/2020/05/05/20200505-ICTFE/</id>
-    <published>2020-05-05T07:17:45.000Z</published>
-    <updated>2020-05-05T07:25:25.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="ICTFE-Version-1-0-Alpha-发布啦"><a href="#ICTFE-Version-1-0-Alpha-发布啦" class="headerlink" title="ICTFE Version 1.0 Alpha 发布啦!"></a>ICTFE Version 1.0 Alpha 发布啦!</h2><a id="more"></a><p>项目地址: <a href="https://github.com/Reverier-Xu/ICTFE">https://github.com/Reverier-Xu/ICTFE</a>, 你也可以点击博客上方导航栏进入本项目页面. 欢迎前来使用!</p><p>请随意Fork, 重新打包使用其中的代码.</p><p>2.0正在计划之中, 随着2.0的到来, Reverier将会搭建更加完善的数据流处理与全局插件系统.</p><p>同时有计划写一个CTF知识在线分享平台以及可以索引的离线知识库, 本博客将会同步更新2.0的开发计划, 开发计划完善后就开工编写, 敬请期待~ </p><h2 id="点个star不迷路哦"><a href="#点个star不迷路哦" class="headerlink" title="点个star不迷路哦~"></a>点个star不迷路哦~</h2><h2 id="放个图"><a href="#放个图" class="headerlink" title="放个图"></a>放个图</h2><p><img src="https://i.loli.net/2020/05/05/92ZFXPtduQgbIsB.png" alt="Screenshot_20200505_152507"></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;ICTFE-Version-1-0-Alpha-发布啦&quot;&gt;&lt;a href=&quot;#ICTFE-Version-1-0-Alpha-发布啦&quot; class=&quot;headerlink&quot; title=&quot;ICTFE Version 1.0 Alpha 发布啦!&quot;&gt;&lt;/a&gt;ICTFE Version 1.0 Alpha 发布啦!&lt;/h2&gt;
-    
-    </summary>
-    
-    
-      <category term="ICTFE" scheme="https://www.wootec.top/categories/ICTFE/"/>
-    
-    
-      <category term="ICTFE" scheme="https://www.wootec.top/tags/ICTFE/"/>
-    
-      <category term="CTF" scheme="https://www.wootec.top/tags/CTF/"/>
     
   </entry>
   
