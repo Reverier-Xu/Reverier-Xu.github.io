@@ -39,6 +39,29 @@
   </entry>
   
   <entry>
+    <title>N1CTF-oflo WriteUp</title>
+    <link href="https://www.wootec.top/2020/10/26/N1CTF-oflo/"/>
+    <id>https://www.wootec.top/2020/10/26/N1CTF-oflo/</id>
+    <published>2020-10-26T06:50:00.000Z</published>
+    <updated>2020-10-26T07:28:47.542Z</updated>
+    
+    <content type="html"><![CDATA[<p>如题.</p><a id="more"></a><p>使用<code>IDA</code>打开题目文件后, 发现没有识别出<code>main</code>函数, 可以初步判断是由于花指令造成的.</p><p>在左侧的函数列表里发现了<code>mprotect</code>函数, 这个函数是用来更改内存读写权限的, 隐约感觉有<code>smc</code>(<code>Self-Modifying Code</code>)的存在.</p><p>先从<code>start</code>函数定位到<code>main</code>函数所在的区段, 发现了明显的花指令特征:</p><p><img src="https://i.loli.net/2020/10/26/nLudGhFiqPc3Kbl.png" alt="image-20201026135433040"></p><p>试图用<code>GDB</code>调试到此位置:</p><p><img src="https://i.loli.net/2020/10/26/pJzdlhiKQ9ejmrn.png" alt="image-20201026135656530"></p><p>于是在<code>IDA</code>里将光标定位至<code>0x400BB1</code>的位置, 按下U键取消定义, 然后在<code>0x400BB2</code>的位置按下C键<code>Make Code</code>, 然后再用<code>IDAPython</code>给<code>0x400BB1</code>变成<code>nop</code></p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PatchByte(<span class="number">0x400BB1</span>, <span class="number">0x90</span>)</span><br></pre></td></tr></table></figure><p><img src="https://i.loli.net/2020/10/26/tSpYQhRyq5vgVOE.png" alt="image-20201026140032321"></p><p>继续往下分析, <code>0x400BBC</code>处还有几个神必数据莫得头绪. 不过从<code>BB7</code>跳转到了<code>BBF</code>, 所以继续往下看, 然后… 它<code>retn</code>了.</p><p>继续用<code>gdb</code>断点到<code>0x400BB7</code>, 然后接着调试:</p><p><img src="https://i.loli.net/2020/10/26/qVp6i3Af4I9OoED.png" alt="image-20201026140355769"></p><p>可以看到程序控制流从<code>0x400BD0</code>跳到了<code>0x400BBD</code>, 接着跳转到了<code>0x400BD1</code>. 由此可以推测出<code>0x400BBC</code>处也是一个花指令. 先在<code>0x400BBD</code>的位置变成汇编, 再用相同的办法把<code>BBC</code>给<code>nop</code>掉:</p><p><img src="https://i.loli.net/2020/10/26/rw6abV9ofCGcqUL.png" alt="image-20201026142128162"></p><p>由此可以看出来, 从<code>0x400BB7</code>到<code>0x400BD0</code>的一大段代码实际上全是无效代码. 用<code>IDAPython</code>写个循环全部变成<code>nop</code>就完事了:</p><p><img src="https://i.loli.net/2020/10/26/DSlg8c3Rnx1XBAk.png" alt="image-20201026142313218"></p><p>在<code>0x400CBA</code>处还有一个长得一模一样的东西, 同样处理之, <code>0x400D04</code>还有一坨, <code>nop</code>掉即可.</p><p>全部搞定之后把光标移到最上面的<code>main</code>处, 戳一下F5, 代码就反编译成功了:</p><p><img src="https://i.loli.net/2020/10/26/y1P4qCtMxwAaTHf.png" alt="image-20201026142819634"></p><p>第<code>20</code>行弄了个函数指针, <code>21</code>行用<code>mprotect</code>函数将某个<code>text</code>段的读写执行权限改成了<code>7</code>, 也就是<code>b111</code>, 即可读可写可执行. <code>22~23</code>行通过函数指针, 将该函数的前十个字节与<code>v4</code>的前五位异或, 然后第<code>24</code>行用刚刚修改过的函数对输入进行验证. 对部分变量重命名一下, 好康点.</p><p><img src="https://i.loli.net/2020/10/26/eYopwS641ufyOij.png" alt="image-20201026143407379"></p><p>可以发现是用了<code>flag</code>的前五位. 这个比赛的所有<code>flag</code>格式均为<code>n1ctf{xxx}</code>, 那么前五位必然是<code>n1ctf</code>.</p><p>定位到<code>evaluate</code>函数所在的位置, 用<code>IDAPython</code>把正确代码处理回来, 否则没法<code>F5</code>.</p><p><img src="https://i.loli.net/2020/10/26/CpXsamqWn5LHzyR.png" alt="image-20201026144002533"></p><p>好极了, 代码恢复成功, F5试一下…失败了, 往下面一看, 还是有花指令.</p><p>想试着调试一下, 结果发现了</p><p><img src="https://i.loli.net/2020/10/26/eYopwS641ufyOij.png" alt="image-20201026143407379"></p><p>第<code>17</code>行那个函数, 里面调用了<code>ptrace</code>对程序的运行状态进行了监视. 而<code>gdb</code>也是通过<code>ptrace</code>进行调试的, 同一时间只能有一个调试器挂在程序上, 所以起到了反调试的作用. 不过往下看, <code>read</code>函数是在反调函数下面的, 所以可以先运行程序, 跑起来之后等待输入时用<code>gdb</code>再<code>attach</code>上去.</p><p><img src="https://i.loli.net/2020/10/26/9RPCKSzqh8itkbY.png" alt=""></p><p>接下来定位到<code>0x400ABC</code>, 然后跟踪一下函数流程, 并把花指令都给处理掉. 有如下几个地方:</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0x400AC4</span>, <span class="number">0x400AC9</span>):</span><br><span class="line">    PatchByte(i, <span class="number">0x90</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0x400B0E</span>, <span class="number">0x400B28</span>):</span><br><span class="line">    PatchByte(i, <span class="number">0x90</span>)</span><br></pre></td></tr></table></figure><p>搞完了之后再<code>F5</code>一下, <code>evaluate</code>函数的真容就浮现出来了. 因为<code>smc</code>和花指令的影响, 之前<code>main</code>函数中给<code>evaluate</code>传的参数乱七八糟, 重新<code>F5</code>一下<code>main</code>函数, 找到这几行:</p><p><img src="https://i.loli.net/2020/10/26/tCdFBJEX1gyvA9q.png" alt="image-20201026145602058"></p><p>然后再看重命名之后的<code>evaluate</code>函数:</p><p><img src="https://i.loli.net/2020/10/26/hN7m1LtlKy3O5vs.png" alt="image-20201026150058722"></p><p>你可以右键参数, 然后选择<code>set lvar type</code>, 改成指针之后就能显示出来数组形式的表达式了.</p><p>第<code>39</code>行处理的地址是<code>&amp;v20+1-32</code>, 看一下上面的变量声明, 这个地方就是<code>v5</code>, 那么这个循环就是遍历了<code>v5~v18</code>.</p><p><img src="https://i.loli.net/2020/10/26/5xzQaCKyLBG671j.png" alt=""></p><p>还有个难题就是<code>space</code>里面存的到底是个什么东西了.</p><p>答案其实很简单, 我们点进那个反调试函数里面瞅一眼, 发现他运行了一下<code>/usr/bin/cat /proc/version</code>, 动态调试到<code>evaluate</code>里面, 输出一下栈里面的东西, </p><p><img src="https://i.loli.net/2020/10/26/8iyECSWMnocX4Qb.png" alt="image-20201026152439543"></p><p>发现<code>space</code>存的实际上就是<code>/usr/bin/cat /proc/version</code>指令的输出, 即你的<code>linux</code>版本信息, 然后取前<code>13</code>位. 因为是<code>linux</code>程序, 所以不管在什么系统上, 前<code>13</code>位必然是<code>Linux Version</code>, 那就保证唯一性了.</p><p>接下来就是快乐的拿<code>flag</code>时间了.</p><p><img src="https://i.loli.net/2020/10/26/JUIeNtiKOBwGvVC.png" alt="image-20201026152313624"></p><p>脚本:</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/bin/python3</span></span><br><span class="line"><span class="comment"># from __future__ import print_function</span></span><br><span class="line">magic = [<span class="number">53</span>, <span class="number">45</span>, <span class="number">17</span>, <span class="number">26</span>, <span class="number">73</span>, <span class="number">125</span>, <span class="number">17</span>, <span class="number">20</span>, <span class="number">43</span>, <span class="number">59</span>, <span class="number">62</span>, <span class="number">61</span>, <span class="number">60</span>, <span class="number">95</span>]</span><br><span class="line">space = <span class="string">'Linux Version '</span></span><br><span class="line">head = <span class="string">'n1ctf'</span></span><br><span class="line"><span class="keyword">print</span> (head,end=<span class="string">''</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(magic)):</span><br><span class="line">    print(chr(magic[i] ^ (ord(space[i]) + <span class="number">2</span>)), end=<span class="string">''</span>)</span><br></pre></td></tr></table></figure><p><code>flag: n1ctf{Fam3_Is_NULL}</code></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;如题.&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="CTF" scheme="https://www.wootec.top/categories/CTF/"/>
+    
+    
+      <category term="CTF" scheme="https://www.wootec.top/tags/CTF/"/>
+    
+  </entry>
+  
+  <entry>
     <title>MssCTF 赛后总结</title>
     <link href="https://www.wootec.top/2020/09/20/MssCTF/"/>
     <id>https://www.wootec.top/2020/09/20/MssCTF/</id>
@@ -495,29 +518,6 @@
       <category term="Linux" scheme="https://www.wootec.top/tags/Linux/"/>
     
       <category term="显卡 - Nvidia" scheme="https://www.wootec.top/tags/%E6%98%BE%E5%8D%A1-Nvidia/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>5月23日小总结与调整</title>
-    <link href="https://www.wootec.top/2020/05/22/20200523/"/>
-    <id>https://www.wootec.top/2020/05/22/20200523/</id>
-    <published>2020-05-22T17:14:22.000Z</published>
-    <updated>2020-05-22T17:36:10.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>如题.</p><a id="more"></a><h2 id="状态总结"><a href="#状态总结" class="headerlink" title="状态总结"></a>状态总结</h2><p><code>Mini L CTF</code>结束后的这几天都干了什么呢…</p><ul><li>写了题解</li><li>补了一点点作业</li><li>在<code>GitHub</code>上开了几个新坑, 但是看起来似乎没有要填的意思</li></ul><p>然后就是疯狂的摸鱼了…</p><p>刷完了两部番剧, 好好的睡了好几觉, 甚至搞的有点日夜颠倒emmm…</p><p>感觉失去了写题的动力. 看到逆向题也不想去深究了, 如果一眼看不出来套路, 就索性放弃. 这么下去肯定是不行的…</p><p>但是又毫无干劲啊啊啊啊</p><h2 id="小计划"><a href="#小计划" class="headerlink" title="小计划"></a>小计划</h2><p>之前给自己定的每天刷CTF各个方向的题目, 写题解算是一天都没能成功.</p><p>那现在就重新计划一下好了. 每天的保底任务:</p><div class="table-container"><table><thead><tr><th>密码</th><th>逆向</th><th>pwn</th><th>洛谷</th><th>RxWidget</th><th>ISAE</th></tr></thead><tbody><tr><td>1道题, 题解</td><td>2道题, 题解</td><td>1道题, 题解</td><td>2道题, 题解</td><td>每天推进</td><td>每天推进, 从需求文档开始</td></tr></tbody></table></div><p>记得打卡, 以后博客尽力日更吧.</p><p>同时还要:</p><ul><li>补齐作业, 尤其是大物</li><li>补课, 不能挂科</li><li>锻炼, 免得哪天瘫痪在电脑面前了</li></ul><h2 id=""><a href="#" class="headerlink" title="~"></a>~</h2><p>大概这些吧.. 睡觉!</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;如题.&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="生活" scheme="https://www.wootec.top/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-      <category term="生活" scheme="https://www.wootec.top/tags/%E7%94%9F%E6%B4%BB/"/>
     
   </entry>
   
