@@ -39,6 +39,67 @@
   </entry>
   
   <entry>
+    <title>reverse</title>
+    <link href="https://www.wootec.top/2020/10/28/reverse/"/>
+    <id>https://www.wootec.top/2020/10/28/reverse/</id>
+    <published>2020-10-28T04:24:33.206Z</published>
+    <updated>2020-09-08T20:59:06.485Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="MoeCTF-2020"><a href="#MoeCTF-2020" class="headerlink" title="MoeCTF 2020"></a>MoeCTF 2020</h1><p>逆向工程入门指北, Copyright @ 2020 Reverier, XDSEC</p><h2 id="逆向工程是什么"><a href="#逆向工程是什么" class="headerlink" title="逆向工程是什么?"></a>逆向工程是什么?</h2><p>简而言之, 你可以把逆向工程理解为从产品倒推设计方案的一门技术. 这是一门比较黑客向的东西, 想尽办法恢复别人深藏在产品中的设计思想, 并收归己用or进行更深层次的破解与利用.</p><p>CTF中的逆向工程指的都是软件逆向工程, 逆向的对象不仅包括你最常见的Windows或者Linux操作系统上的那些二进制文件, 也包括安卓的安装包, 物联网设备的固件, 形形色色的中间语言(例如Java的class文件, 既不属于机器代码, 也不属于人类可读的代码, 而是一种能够运行在Java Runtime, 也成为Java虚拟机JVM的东西上的字节码), 总之一切能隐藏逻辑, 并具有执行特定功能的文件, 都是软件逆向工程的目标.</p><h2 id="我要从哪里开始呢"><a href="#我要从哪里开始呢" class="headerlink" title="我要从哪里开始呢?"></a>我要从哪里开始呢?</h2><p>就从最简单的Hello World开始吧.</p><p>逆向工程是一个逆向的过程, 那正向是什么呢? 没错, 是编程. 也许你不会编程, 但是歪打正着做对了一些题, 这是可以的, 但你越往下走, 就越艰难. 你要熟悉正向过程, 才能在逆向分析中游刃有余.</p><p>所以, 如果你还不会C语言, 请现在开始学习编程吧. 入门编程请从C语言开始. </p><h3 id="为什么选择C语言"><a href="#为什么选择C语言" class="headerlink" title="为什么选择C语言"></a>为什么选择C语言</h3><blockquote><p><em>可是为什么不用人生苦短的Python呢? 为什么不从C++开始呢? 为什么不从其他更加高级/现代的语言开始呢?</em></p></blockquote><p>你可能会有这样的疑问, 没错, 编程考验的是逻辑处理能力, 但是逆向并不只是逻辑处理. 你需要更贴近计算机的运行原理. C语言在保证贴近高级语言的同时, 提供了足够底层的支持, 并且C语言的结构相对简单, 没有类与对象等各种复杂特性, 因此更适合拿来理解计算机执行程序的原理. 更高级的语言你学着挺舒服, 学完了一问运行原理你还是啥都不知道, 即使你想去了解也很难, 高级语言的实现过程一般都是你想象不到的复杂.</p><p>同时C语言具有设计上的缺陷, 但绝大部分的其他高级语言的解释器/编译器/运行时还是使用C语言编写出来的, 学会C语言之后再去入门其他的语言门槛会低很多, 但是你先学Python再学C, 你会发现C比你想象中的要难, 所以入门编程请从C语言开始.</p><p><strong>如果上面说了这么多都无法打动你的话, 那么接下来的话你听好了: C语言是大一上学期必修课, 并且在你整个大学过程中都阴魂不散, 这下你该去学了吧?</strong></p><h3 id="学了一点C语言之后呢"><a href="#学了一点C语言之后呢" class="headerlink" title="学了一点C语言之后呢?"></a>学了一点C语言之后呢?</h3><p>接下来你就可以尝试着上手逆向工程题目了. 有个叫做IDA的工具可以帮你把神必的机器代码变成汇编语言, 还能帮你把让人头晕的汇编语言变成类似C语言的代码. 接下来你就可以安心的分析程序逻辑了, 这就像是在看别人的代码, 然后揣度别人的意思一样, 通过分析程序内部的算法, 再运用一点逻辑和数学的知识, 你就能成功的把隐藏的信息给挖出来.</p><p>关于IDA如何使用, 我们就不再介绍了, 篇幅写不下, 本文只是给你指明一个方向, 具体使用方法还需要你自己通过谷歌或者百度一步步探索, 作为学长我可以为你引路, 但不能当你的老师/保姆呀. 至于资源去哪里找, 下一题有IDA的资源链接.</p><h3 id="逆向题一般是什么套路"><a href="#逆向题一般是什么套路" class="headerlink" title="逆向题一般是什么套路?"></a>逆向题一般是什么套路?</h3><p>我们不从逆向工程师的角度来看, 我们从一个软件开发者的角度来看.</p><p>比如让你写一个密码验证器, 你会怎么做?</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">strcmp</span>(input, <span class="string">"this_is_password"</span>);</span><br></pre></td></tr></table></figure><p>你可能会这么写, 但是这样写毫无逻辑可言, 就是简单的字符串比对. 你编译一下扔进IDA, 然后按下F5键, 你就能发现你的密码就躺在程序里, 可以被轻松破解掉.</p><p>那安全一点的写法呢?</p><p>你可以用各种算法来保证你的数据没有那么容易被别人给搞出来, 比如你可以使用异或:</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> password_enc[] = &#123;<span class="number">98</span>, <span class="number">126</span>, <span class="number">127</span>, <span class="number">101</span>, <span class="number">73</span>, <span class="number">127</span>, <span class="number">101</span>, <span class="number">73</span>, <span class="number">102</span>, <span class="number">119</span>, <span class="number">101</span>, <span class="number">101</span>, <span class="number">97</span>, <span class="number">121</span>, <span class="number">100</span>, <span class="number">114</span>&#125;;</span><br><span class="line"><span class="comment">// password_enc的每一位和22进行异或, 就能得到真实的密码"this_is_password"</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">16</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (input[i] ^ <span class="number">22</span> != password_enc[i]) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"Password is wrong!\n"</span>);</span><br><span class="line">        <span class="built_in">exit</span>(<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"Password is right!\n"</span>);</span><br></pre></td></tr></table></figure><p>虽然这个算法也很简单, 但编译之后的破译难度是不是增加了?</p><p>那么作为一个逆向手, 你的主要工作就是:</p><ul><li>找到目标数据, 无论是加密过的还是没有加密过的</li><li>从你的输入开始, 逐步分析他的代码都干了些什么, 一直到输出的位置</li><li>把算法抽象出来, 理解他究竟对目标数据做了什么</li><li>尝试通过写出逆算法, 把加密的目标数据成功还原为加密前的数据.</li></ul><p>例如上面那个异或数据的例子, 我们就很容易破解:</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 因为a^b=c时, b^c=a, 所以我们可以这样还原数据:</span></span><br><span class="line"><span class="keyword">char</span> password_enc[] = &#123;<span class="number">98</span>, <span class="number">126</span>, <span class="number">127</span>, <span class="number">101</span>, <span class="number">73</span>, <span class="number">127</span>, <span class="number">101</span>, <span class="number">73</span>, <span class="number">102</span>, <span class="number">119</span>, <span class="number">101</span>, <span class="number">101</span>, <span class="number">97</span>, <span class="number">121</span>, <span class="number">100</span>, <span class="number">114</span>&#125;;</span><br><span class="line"><span class="keyword">char</span> password[<span class="number">17</span>];</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">16</span>; i++) &#123;</span><br><span class="line">    password[i] = password_enc[i] ^ <span class="number">22</span>;</span><br><span class="line">&#125;</span><br><span class="line">password[<span class="number">16</span>] = <span class="number">0</span>;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%s\n"</span>, password);</span><br></pre></td></tr></table></figure><p>简单吧.</p><p>真实做题中你会逐渐遇到更难的加密方式与算法, 这不仅要求你的编程能力要逐步提高, 还要求你要有耐心, 逆向的过程一般都是冗长而无聊的, 但是解出题目那一瞬的快感可以让你高兴一整天(我是这样的).</p><h3 id="你说的好像挺简单-但是好像不是所有题目都长这样啊"><a href="#你说的好像挺简单-但是好像不是所有题目都长这样啊" class="headerlink" title="你说的好像挺简单, 但是好像不是所有题目都长这样啊"></a>你说的好像挺简单, 但是好像不是所有题目都长这样啊</h3><p>当然. 我前面介绍过, 任何能够执行的文件都是我们逆向的目标, 所以针对不同语言, 我们有不同的工具. 遇到新的逆向题目不要害怕, 越是古怪的题目可能越简单. 这个时候搜索引擎就派上大用场了, 你可以找到各种形形色色的工具, 但最终还是要回归到上面讲的逻辑分析上.</p><h3 id="逆向只有这些嘛"><a href="#逆向只有这些嘛" class="headerlink" title="逆向只有这些嘛?"></a>逆向只有这些嘛?</h3><p>并不, 随着软件保护技术的发展, 先后出现了加壳, 花指令, 指令虚拟化, 虚拟机等等等各种更加高级的保护手法, 有时候可能IDA也对这些保护束手无策. 你可能还需要动态调试工具, 通过程序运行一步一步分析在保护之下的真实逻辑, 你可能也需要脱壳工具来帮助你脱掉程序的保护壳, 有时候脱壳工具也不管用, 你还需要了解手动脱壳……你以为我会在这里给你全部说一遍嘛? 不可能的, 说完我都可以出书了.</p><p>我的目标已经达成了,万事开头难, 我只想帮你迈出第一步, 后面的探索过程就留给你自己啦. 学会用搜索引擎, 并在搜索引擎无能为力时懂得找学长寻求帮助, 你的进步一定会非常快的. 但学习逆向工程的路不会很顺利, 请做好准备哦~</p><p>加油, 祝你在逆向工程领域能取得好成绩!</p><p>本题flag: <code>moectf{0hhhhhhh_I_kn0w_hoW_t0_R3v3rs3!}</code></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;MoeCTF-2020&quot;&gt;&lt;a href=&quot;#MoeCTF-2020&quot; class=&quot;headerlink&quot; title=&quot;MoeCTF 2020&quot;&gt;&lt;/a&gt;MoeCTF 2020&lt;/h1&gt;&lt;p&gt;逆向工程入门指北, Copyright @ 2020 Reverie
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>dog</title>
+    <link href="https://www.wootec.top/2020/10/28/dog/"/>
+    <id>https://www.wootec.top/2020/10/28/dog/</id>
+    <published>2020-10-28T04:24:33.196Z</published>
+    <updated>2020-10-04T05:32:02.435Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>archlinux</title>
+    <link href="https://www.wootec.top/2020/10/28/archlinux/"/>
+    <id>https://www.wootec.top/2020/10/28/archlinux/</id>
+    <published>2020-10-28T04:24:33.189Z</published>
+    <updated>2020-10-26T05:41:01.123Z</updated>
+    
+    <content type="html"><![CDATA[<hr><hr>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;hr&gt;
+&lt;hr&gt;
+
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>N1CTF-oflo WriteUp</title>
     <link href="https://www.wootec.top/2020/10/26/N1CTF-oflo/"/>
     <id>https://www.wootec.top/2020/10/26/N1CTF-oflo/</id>
@@ -63,8 +124,8 @@
   
   <entry>
     <title>MssCTF 赛后总结</title>
-    <link href="https://www.wootec.top/2020/09/20/MssCTF/"/>
-    <id>https://www.wootec.top/2020/09/20/MssCTF/</id>
+    <link href="https://www.wootec.top/2020/09/21/MssCTF/"/>
+    <id>https://www.wootec.top/2020/09/21/MssCTF/</id>
     <published>2020-09-20T19:00:25.000Z</published>
     <updated>2020-09-20T19:45:37.742Z</updated>
     
@@ -211,8 +272,8 @@
   
   <entry>
     <title>ISAE开发_来点设计模式#1</title>
-    <link href="https://www.wootec.top/2020/07/12/designpattern1/"/>
-    <id>https://www.wootec.top/2020/07/12/designpattern1/</id>
+    <link href="https://www.wootec.top/2020/07/13/designpattern1/"/>
+    <id>https://www.wootec.top/2020/07/13/designpattern1/</id>
     <published>2020-07-12T16:22:19.000Z</published>
     <updated>2020-07-13T10:44:18.654Z</updated>
     
@@ -340,8 +401,8 @@
   
   <entry>
     <title>数据库类</title>
-    <link href="https://www.wootec.top/2020/06/09/RDB-Docs-DataBase/"/>
-    <id>https://www.wootec.top/2020/06/09/RDB-Docs-DataBase/</id>
+    <link href="https://www.wootec.top/2020/06/10/RDB-Docs-DataBase/"/>
+    <id>https://www.wootec.top/2020/06/10/RDB-Docs-DataBase/</id>
     <published>2020-06-09T17:20:23.000Z</published>
     <updated>2020-06-09T17:48:38.000Z</updated>
     
@@ -443,81 +504,6 @@
       <category term="软件开发" scheme="https://www.wootec.top/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/"/>
     
       <category term="ISAE" scheme="https://www.wootec.top/tags/ISAE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>小型数据存储系统</title>
-    <link href="https://www.wootec.top/2020/06/06/RDB/"/>
-    <id>https://www.wootec.top/2020/06/06/RDB/</id>
-    <published>2020-06-06T16:50:00.000Z</published>
-    <updated>2020-06-06T17:03:04.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>点击查看</p><a id="more"></a><h2 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h2><p>实现简单的数据存储系统, 可以应对小部分的数据增查删改.</p><h2 id="项目背景"><a href="#项目背景" class="headerlink" title="项目背景"></a>项目背景</h2><h3 id="名称"><a href="#名称" class="headerlink" title="名称"></a>名称</h3><p>RDB</p><h3 id="开发语言"><a href="#开发语言" class="headerlink" title="开发语言"></a>开发语言</h3><p>C++</p><h3 id="可以使用的类库"><a href="#可以使用的类库" class="headerlink" title="可以使用的类库"></a>可以使用的类库</h3><p>C++标准库, 包括STL, 不能使用依赖于操作系统的类库, 例如<code>windows.h</code>等.</p><h3 id="需要支持的平台"><a href="#需要支持的平台" class="headerlink" title="需要支持的平台"></a>需要支持的平台</h3><p>理论上全平台支持.</p><p>附记: 父项目<code>ISAE</code>需要在<code>Windows x86_64</code>平台和<code>Linux x86_64</code>平台上实现核心兼容(主程序界面完全兼容, 部分面向平台插件可以分平台分别提供). 本项目作为核心数据存储系统, 需要做到全平台兼容性. 所以不能使用依赖于操作系统的类库.</p><p>本项目需要尽可能高的性能, 所以无需使用<code>sleep</code>一类的阻塞函数. 时间处理请使用<code>STL</code>.</p><h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><h3 id="结构图"><a href="#结构图" class="headerlink" title="结构图"></a>结构图</h3><p><img src="https://i.loli.net/2020/06/07/QCBZvYsz2jol1gE.png" alt="Screenshot_20200607_004647.png"></p><h2 id="详细接口定义"><a href="#详细接口定义" class="headerlink" title="详细接口定义"></a>详细接口定义</h2><p>将在6月10日之前给定.</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;点击查看&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="软件开发" scheme="https://www.wootec.top/categories/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/"/>
-    
-    
-      <category term="编程" scheme="https://www.wootec.top/tags/%E7%BC%96%E7%A8%8B/"/>
-    
-      <category term="软件开发" scheme="https://www.wootec.top/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/"/>
-    
-      <category term="ISAE" scheme="https://www.wootec.top/tags/ISAE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>随机点名的需求文档</title>
-    <link href="https://www.wootec.top/2020/05/26/%E9%9A%8F%E6%9C%BA%E7%82%B9%E5%90%8D%E7%9A%84%E9%9C%80%E6%B1%82%E6%96%87%E6%A1%A3/"/>
-    <id>https://www.wootec.top/2020/05/26/%E9%9A%8F%E6%9C%BA%E7%82%B9%E5%90%8D%E7%9A%84%E9%9C%80%E6%B1%82%E6%96%87%E6%A1%A3/</id>
-    <published>2020-05-26T14:05:23.000Z</published>
-    <updated>2020-06-06T17:03:47.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>点击查看</p><a id="more"></a><h2 id="1-引言"><a href="#1-引言" class="headerlink" title="1 引言"></a>1 引言</h2><h3 id="编写目的"><a href="#编写目的" class="headerlink" title="编写目的"></a>编写目的</h3><p>为教师教学提供完善的随机点名应用程序.</p><h3 id="1-2范围"><a href="#1-2范围" class="headerlink" title="1.2范围"></a><strong>1.2</strong>范围</h3><p>a. 名称: 随机点名 V13;</p><p>b. 用途: 学校/教育机构线下教学 教学机应用, 提供随机点名, 基本学生管理, 分性别点名等;</p><p>c. 系统需求: Windows® 7 ServePack1及以上版本 / Windows® 8 / Windows® 8.1 / Windows® 10 / Arch Linux v274.5 with Wine 5.8 / Fedora 32 with Wine 5.8;</p><p>d. 运行环境需求: </p><p>1, Microsoft® .NET Framework 4.5 及以上版本 / dotnet45 with Wine 5.8.</p><h3 id="1-3-定义、首字母缩写词或缩略语"><a href="#1-3-定义、首字母缩写词或缩略语" class="headerlink" title="1.3 定义、首字母缩写词或缩略语"></a><strong>1.3</strong> 定义、首字母缩写词或缩略语</h3><p>*<em>*</em>MS: 指Microsoft®公司;</p><p>Win: 指软件所兼容的Windows®操作系统;</p><p>Linux: 指软件所兼容的Fedora和Arch Linux操作系统;</p><p>Dotnet: 指软件使用的Microsoft® .NET®技术;</p><h3 id="1-4-参考资料"><a href="#1-4-参考资料" class="headerlink" title="1.4 参考资料"></a><strong>1.4</strong> 参考资料</h3><p><a href="https://docs.microsoft.com/zh-cn/dotnet/">https://docs.microsoft.com/zh-cn/dotnet/</a></p><h2 id="2-项目概述"><a href="#2-项目概述" class="headerlink" title="2 项目概述"></a><strong>2</strong> 项目概述</h2><h3 id="2-1-产品描述"><a href="#2-1-产品描述" class="headerlink" title="2.1 产品描述"></a><strong>2.1</strong> 产品描述</h3><p>采用MS .NET技术开发的随机点名应用程序, 具有完善的随机点名功能和跨平台支持.</p><p><strong>2.2</strong> <strong><em>\</em>产品需求**</strong></p><p><strong>2.2.1</strong> <strong><em>\</em>功能需求*<em>**</em></strong>*<br>*<em>*</em>A. 软件可以完成1~6人的一次性点名, 采用开放寻址类似算法保证多次点名时的公平性;</p><p>B. 软件可以在完成点名后根据学号来查询对应的学生姓名;</p><p>C. 软件可以根据性别设置来分性别抽取学生;</p><p>D. 软件可以方便的管理学生列表, 包括增, 查, 删, 改, 导入学生数据;</p><p>E. 软件可以暗化背景以防止黑板在投影仪照射下的反光干扰教师教学;</p><p>F. 软件具有倒计时功能, 可以精确到秒的进行考试倒计时.</p><p><strong>2.2.2</strong> <strong><em>\</em>性能需求*<em>**</em></strong>*<br>*<em>*</em>A. 至少支持十万级数据检索时的毫秒级响应;</p><p>B. 至少支持十万级数据在六人模式下的工作时间不超过1.5s;</p><p>C. 程序处于非工作状态时UI刷新率至少保持在30FPS以上;</p><p>D. 至少支持千人数据编辑延迟在10ms以下 (肉眼不可见) ;</p><p><strong>2.2.3</strong> <strong><em>\</em>可服务性需求*<em>**</em></strong>*<br>*<em>*</em>A. 应保证解压即可使用;</p><p>B. 应保证可以从txt文件列表中导入学生数据;</p><p><strong>2.3</strong> <strong><em>\</em>用户及用户特点*<em>**</em></strong>*<br>*<em>*</em>用户团体为教育机构, 多为老师.</p><p>特点:</p><p>a. 班级人数不多, 对大型数据的处理没有需求;</p><p>b. 点名频率并不高, 对高性能高响应没有需求, 反而需要延长点名时间来制造悬疑性.</p><p><strong>2.4</strong> <strong><em>\</em>一般约束*<em>**</em></strong>*<br>*<em>*</em>a. 必须在支持.NET技术的平台上运行;</p><p>b. 必须在支持WinForm图形库的平台上运行;</p><p>c. 构建时所采用的.NET版本不得高于4.5.2, 否则跨兼容性会出现问题;</p><p><strong>2.5</strong> <strong><em>\</em>假设和依据*<em>**</em></strong>*<br>*<em>*</em></p><div class="table-container"><table><thead><tr><th>假设</th><th>依据</th></tr></thead><tbody><tr><td>人数小于10k</td><td>一般学校的全体人数在2k左右, 班级人数则一般不超过120人, SQLite快速检索最大支持百万级数据, 在十万级数据时出现可以察觉到的延迟, 于是点名人数限制在10k以下, 可以满足几乎所有学校的任何需求.</td></tr><tr><td>性别只有男女</td><td>不考虑其它非主流性别</td></tr><tr><td>倒计时的最大天数支持为999</td><td>一般学制为3年, 从九月一日招生起到三年后六月七日高考, 其间有1019天. 考虑到四位天数的排版问题, 决定只兼容3位数. 多出来的20天会出现一些可以忍受的显示问题.</td></tr></tbody></table></div><p><strong>3</strong> <strong><em>\</em>用例描述**</strong></p><p><strong>3.1</strong> <strong><em>\</em>用例1**</strong></p><div class="table-container"><table><thead><tr><th>用例编号</th><th>1</th></tr></thead><tbody><tr><td>用例名称</td><td>随机抽取</td></tr><tr><td>参与者</td><td>老师</td></tr><tr><td>用例说明</td><td>老师上课时随机抽取六名学生</td></tr><tr><td>前置条件</td><td>学生数据成功导入</td></tr><tr><td>基本事件流</td><td>1.老师打开软件</td></tr><tr><td>2.点击默认模式</td><td></td></tr><tr><td>3.人数调整到6</td><td></td></tr><tr><td>4.点击Let’s GO</td><td></td></tr><tr><td>5.软件经过一分钟计算后得出六个号码</td><td></td></tr><tr><td>6.软件查询号码对应的学生姓名并显示</td><td></td></tr><tr><td>7.软件将本次抽取记录到全局概率均衡器中</td><td></td></tr><tr><td>异常事件流</td><td>2-3a.调整到平均模式, 但人数小于2, 抽取失败, 软件弹窗警告</td></tr><tr><td>4a.快速多次点击Let’s GO, 造成单线程界面假死, 并导致全局概率均衡器出错</td><td></td></tr><tr><td>5a.所有模式下软件发现要抽取的人数大于班级总人数, 弹窗警告, 抽取失败</td><td></td></tr><tr><td>7a.软件保存全局概率均衡器时SQLite出错</td><td></td></tr><tr><td>后置条件</td><td>无</td></tr></tbody></table></div><p><strong>3.2</strong> <strong><em>\</em>用例2**</strong></p><div class="table-container"><table><thead><tr><th>用例编号</th><th>2</th></tr></thead><tbody><tr><td>用例名称</td><td>更改软件设置</td></tr><tr><td>参与者</td><td>老师</td></tr><tr><td>用例说明</td><td>更改软件的学生列表, 高考倒计时等数据</td></tr><tr><td>前置条件</td><td>无</td></tr><tr><td>基本事件流</td><td>1.老师打开软件</td></tr><tr><td>2.点击软件设置</td><td></td></tr><tr><td>3.通过增删改三个按钮与方向键对列表进行编辑</td><td></td></tr><tr><td>4.以20190607格式编辑高考倒计时</td><td></td></tr><tr><td>5.点击保存</td><td></td></tr><tr><td>6.软件读取设置数据并写入到SQLite中</td><td></td></tr><tr><td>7.更新数据到全局均衡器</td><td></td></tr><tr><td>异常事件流</td><td>3a.设置性别时试图输入0和1之外的字符, 软件弹窗警告, 恢复上一次的设置</td></tr><tr><td>3a.试图删除单个单元格, 软件弹窗警告, 删除失败</td><td></td></tr><tr><td>3a.保存数据时有未初始化的单元格, 软件崩溃</td><td></td></tr><tr><td>7a.更新数据失败, 软件需要重启才能应用新数据</td><td></td></tr><tr><td>后置条件</td><td>无</td></tr></tbody></table></div><p><strong>4</strong> <strong><em>\</em>外部接口需求**</strong></p><p><strong>4.1</strong> <strong><em>\</em>用户接口*<em>**</em></strong>*<br>*<em>*</em>基于.NET构建的图形化界面</p><p><strong>4.2</strong> <strong><em>\</em>硬件接口*<em>**</em></strong>*<br>*<em>*</em>无</p><p><strong>4.3</strong> <strong><em>\</em>软件接口*<em>**</em></strong>*<br>*<em>*</em>无</p><p><strong>4.4</strong> <strong><em>\</em>通信接口*<em>**</em></strong>*<br>*<em>*</em>无</p><p><strong>5</strong> <strong><em>\</em>属性**</strong></p><p><strong>5.1</strong> <strong><em>\</em>可用性*<em>**</em></strong>*<br>*<em>*</em>保证在可发行的平台上稳定运行; 保证在Windows平台上不出错误; 保证在其他兼容的Linux平台基本功能可用.</p><p><strong>5.2</strong> <strong><em>\</em>安全性*<em>**</em></strong>*<br>*<em>*</em>本软件不对任何系统底层文件进行更改, 不更改注册表, 不对软件安装目录之外的任何路径进行读写, 不需要管理员权限, 不对运行内存栈之外的内存区域做出修改, 无内存泄露问题.</p><p><strong>5.3</strong> <strong><em>\</em>可维护性*<em>**</em></strong>*<br>*<em>*</em>采用WinForm构建, 保证重要函数不依赖于其它函数, 便于代码重用.</p><p><strong>5.4</strong> <strong><em>\</em>可移植性*<em>**</em></strong>*<br>*<em>*</em>可采用Wine移植到Linux平台; 理论上可以使用Wine移植到Mac平台, 无法移植到移动端 (包括Android和iOS)</p><p><strong><em>\</em>6 其他需求**</strong></p><p><strong><em>\</em>6.1 数据库*<em>**</em></strong>*<br>*<em>*</em>SQLite</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;点击查看&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="软件开发" scheme="https://www.wootec.top/categories/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/"/>
-    
-    
-      <category term="软件开发" scheme="https://www.wootec.top/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Nvidia Prime的最终折腾方案</title>
-    <link href="https://www.wootec.top/2020/05/25/Nvidia%E6%98%BE%E5%8D%A1%E7%9A%84%E5%B0%8F%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
-    <id>https://www.wootec.top/2020/05/25/Nvidia%E6%98%BE%E5%8D%A1%E7%9A%84%E5%B0%8F%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</id>
-    <published>2020-05-25T01:46:00.000Z</published>
-    <updated>2020-06-09T17:48:52.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>如题.</p><a id="more"></a><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>从折腾好笔记本上的独立显卡到目前已经稳定运行了四个多月左右, 写一下大概的解决方案.</p><h2 id="Nvidia-Prime"><a href="#Nvidia-Prime" class="headerlink" title="Nvidia-Prime"></a><code>Nvidia-Prime</code></h2><p><code>Nvidia-Prime</code>是<code>Nvidia</code>官方给<code>Linux</code>用户<strong>施舍</strong>的兼容<code>Optimus</code>显卡的解决方案.</p><h3 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h3><p>我的笔记本配置:</p><p><img src="https://i.loli.net/2020/05/25/I3t1mk2SV4gPyDY.png" alt="neofetch"></p><p>如图. 由于<del>混迹于哔哩哔哩</del>某些原因需要进行视频渲染, 本身又是个码农, 还是个在校学生, 上个网课之类的, 平时还要背着电脑到处跑, 于是就需要寻找一个完美点的显卡解决方案.</p><p>尝试过<code>Bumblebee</code>, 由于要配合<code>bbswitch</code>使用, 而我的笔记本由于比较特殊, 无法用软件开启或者关闭显卡; 可以从<code>BIOS</code>关闭显卡, 但是每次都很麻烦; 显卡状态改变后笔记本需要彻底断电然后冷启动才能够正确的加载显卡活动…</p><p>于是最终就只能抛弃了<code>Bumblebee</code>.</p><p>就在不久之前, <code>Linus</code>宣布发布<code>Linux 5.6</code>, 介绍中加入了对<code>RTX</code>系列显卡的支持. <code>Nvidia</code>官方又推出了更新进度虽然缓慢但有总比没有好的<code>Nvidia-Prime</code>供<code>Linux</code>用户使用, 在<code>Linux</code>上折腾显卡才显露出一丝曙光.</p><h3 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo pacman -Syyu nvidia nvidia-prime nvidia-settings nvidia-utils</span><br></pre></td></tr></table></figure><p>好了, 没有了.</p><p>这几个包可以让你的显卡转起来了. 美中不足的就是它不能有效的关停显卡, 而是让显卡以省电模式继续转.</p><p>运行需要独立显卡的程序时, 使用<code>prime-run xxx</code>即可.</p><h3 id="一些软件适配"><a href="#一些软件适配" class="headerlink" title="一些软件适配"></a>一些软件适配</h3><h4 id="Davinci-Resolve"><a href="#Davinci-Resolve" class="headerlink" title="Davinci Resolve"></a><code>Davinci Resolve</code></h4><p><code>Davinci Resolve</code>需要安装<code>opencl-nvidia</code>才能够正常运行. 否则会报<code>ld4CXX</code>相关的错误.</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo pacman -Syyu opencl-nvidia</span></span><br></pre></td></tr></table></figure><p><code>Davinci Resolve</code>启动前有一定延迟, 耐心等待即可.</p><h4 id="Osu-Lazer"><a href="#Osu-Lazer" class="headerlink" title="Osu! Lazer"></a><code>Osu! Lazer</code></h4><p>使用<code>prime-run osu-lazer</code>之后, 调整窗口为全屏.</p><h4 id="Minecraft-Launcher-Offcial-HMCL"><a href="#Minecraft-Launcher-Offcial-HMCL" class="headerlink" title="Minecraft Launcher (Offcial, HMCL)"></a><code>Minecraft Launcher (Offcial, HMCL)</code></h4><p>卸载<code>Noto Sans</code>系字体, 否则打开<code>launcher</code>之后界面会保持黑色, 游戏启动时会异常<code>crash</code>.</p><h3 id="已知BUG-影响使用体验的现象"><a href="#已知BUG-影响使用体验的现象" class="headerlink" title="已知BUG/影响使用体验的现象"></a>已知BUG/影响使用体验的现象</h3><h4 id="Davinci-Resolve-1"><a href="#Davinci-Resolve-1" class="headerlink" title="Davinci Resolve"></a><code>Davinci Resolve</code></h4><p>调出某些子窗口时全部黑屏, 摸索着关掉子窗口之后恢复正常.</p><p>例如剪辑<code>panel</code>中试图更改片段时长, 或者片段速度时, 在你右键菜单选中这一项并按下时整个屏幕会黑掉. 按一下<code>Esc</code>则又会恢复.</p><p>无法使用<code>Fcitx</code>进行中文输入. <code>ibus</code>没有测试.</p><p><strong>可能的解决方案</strong>: </p><p>可以尝试使用<code>Bumblebee</code>(不带<code>bbswitch</code>)与<code>primusrun</code>. 使用<code>primusrun</code>运行的<code>Davinci Resolve</code>不会出现此类BUG. 但是<code>primusrun</code>与<code>Bumblebee</code>模块的性能较低, 使用<code>Fusion</code>制作一些复杂一点的特效时, <code>Davinci Resolve</code>会崩溃. </p><h4 id="Osu-Lazer-1"><a href="#Osu-Lazer-1" class="headerlink" title="Osu! Lazer"></a><code>Osu! Lazer</code></h4><p>桌面特效会被强制关闭.</p><p>无法输入中文.</p><h4 id="Minecraft-Launcher-Offcial"><a href="#Minecraft-Launcher-Offcial" class="headerlink" title="Minecraft Launcher (Offcial)"></a><code>Minecraft Launcher (Offcial)</code></h4><p>无法输入中文. 无论是否用独立显卡运行, 都不能输入中文.</p><h4 id="Wine"><a href="#Wine" class="headerlink" title="Wine"></a><code>Wine</code></h4><p>使用<code>prime-run</code>运行的<code>wine</code>应用程序无法在全屏显示状态下输入中文. 非全屏显示时没有问题.</p><p>使用独显运行时字体渲染有些发虚.</p><h4 id="CUDA"><a href="#CUDA" class="headerlink" title="CUDA"></a><code>CUDA</code></h4><p>需要使用<code>CUDA</code>的软件包在安装<code>CUDA</code>之后使用时性能损耗明显, 并且崩溃有些频繁, 只能先凑合着用…</p><h2 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h2><p>如果你有什么更好的解决方案, 希望能提供在评论区, 不胜感谢.</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;如题.&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="Linux" scheme="https://www.wootec.top/categories/Linux/"/>
-    
-    
-      <category term="Linux" scheme="https://www.wootec.top/tags/Linux/"/>
-    
-      <category term="显卡 - Nvidia" scheme="https://www.wootec.top/tags/%E6%98%BE%E5%8D%A1-Nvidia/"/>
     
   </entry>
   
