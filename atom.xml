@@ -57,15 +57,15 @@
       <category term="Qt" scheme="https://www.wootec.top/categories/Qt/"/>
     
     
+      <category term="Qt" scheme="https://www.wootec.top/tags/Qt/"/>
+    
       <category term="C++" scheme="https://www.wootec.top/tags/C/"/>
+    
+      <category term="桌面开发" scheme="https://www.wootec.top/tags/%E6%A1%8C%E9%9D%A2%E5%BC%80%E5%8F%91/"/>
     
       <category term="Linux" scheme="https://www.wootec.top/tags/Linux/"/>
     
       <category term="KDE" scheme="https://www.wootec.top/tags/KDE/"/>
-    
-      <category term="Qt" scheme="https://www.wootec.top/tags/Qt/"/>
-    
-      <category term="桌面开发" scheme="https://www.wootec.top/tags/%E6%A1%8C%E9%9D%A2%E5%BC%80%E5%8F%91/"/>
     
       <category term="OpenSource" scheme="https://www.wootec.top/tags/OpenSource/"/>
     
@@ -92,9 +92,9 @@
     
       <category term="Linux" scheme="https://www.wootec.top/tags/Linux/"/>
     
-      <category term="日常生活" scheme="https://www.wootec.top/tags/%E6%97%A5%E5%B8%B8%E7%94%9F%E6%B4%BB/"/>
-    
       <category term="KDE" scheme="https://www.wootec.top/tags/KDE/"/>
+    
+      <category term="日常生活" scheme="https://www.wootec.top/tags/%E6%97%A5%E5%B8%B8%E7%94%9F%E6%B4%BB/"/>
     
   </entry>
   
@@ -161,9 +161,9 @@
       <category term="ISAE" scheme="https://www.wootec.top/categories/ISAE/"/>
     
     
-      <category term="编程" scheme="https://www.wootec.top/tags/%E7%BC%96%E7%A8%8B/"/>
-    
       <category term="C++" scheme="https://www.wootec.top/tags/C/"/>
+    
+      <category term="编程" scheme="https://www.wootec.top/tags/%E7%BC%96%E7%A8%8B/"/>
     
       <category term="软件开发" scheme="https://www.wootec.top/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/"/>
     
