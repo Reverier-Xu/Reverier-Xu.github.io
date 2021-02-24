@@ -39,6 +39,57 @@
   </entry>
   
   <entry>
+    <title>IDA Skin - 两个极简主义皮肤</title>
+    <link href="https://www.wootec.top/2021/02/24/IDA-Skins/"/>
+    <id>https://www.wootec.top/2021/02/24/IDA-Skins/</id>
+    <published>2021-02-24T07:00:00.000Z</published>
+    <updated>2021-02-24T07:17:00.348Z</updated>
+    
+    <content type="html"><![CDATA[<p>如题.</p><a id="more"></a><h2 id="仓库地址-Reverier-Xu-IDA-Skins"><a href="#仓库地址-Reverier-Xu-IDA-Skins" class="headerlink" title="仓库地址 Reverier-Xu/IDA-Skins"></a>仓库地址 <a href="https://github.com/Reverier-Xu/IDA-Skins">Reverier-Xu/IDA-Skins</a></h2><p>先放成品.</p><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>IDA的前端是用Qt撸出来的, 所以老早就感觉可以自定义了. 在7.3之前就有用来自定义皮肤的插件, 用的还是QSS, 7.3之后官方也支持了, 于是抽了点时间出来整了两份样式表, 一黑一白.</p><p>大体上的设计是照着<code>VSCode</code>的样式抄下来的, 一股浓浓的微软风. 删掉了几乎所有的渐变色, 用纯色来代替. 导航条换成了灰度色, 不过我平时都没看过, 就当是个全局滚动条了.</p><h2 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h2><p>把仓库里那俩文件夹甩到<code>IDA安装目录/themes/</code>下面, 然后打开IDA, <code>Options-&gt;Colors</code>, 选择主题即可.</p><p>因为我在<code>Linux</code>下使用<code>Wine</code>运行IDA的, 所以字体默认用的是宋体. 虽然渲染没啥问题但看着总感觉难受, 于是就直接在主题里启用了全局<code>JetBrains Mono</code>字体. 如果你的电脑上有JB家的IDE, 那应该已经安装了这个字体, 如果没有的话去<a href="https://www.jetbrains.com/zh-cn/lp/mono/">JetBrains Mono: 免费开源的代码字体</a>上下载一份装上就行.</p><h2 id="后续调整"><a href="#后续调整" class="headerlink" title="后续调整"></a>后续调整</h2><p>那个工具条我怎么看怎么难受. 调整也调的四不像, 后来想想其实我大部分时间都在用右键菜单和键盘快捷键, 那几个工具条我几乎都没用过, 于是就全部删掉了.</p><p>然后瞅了一眼Desktop的布局, 萌生了一个想法: 干脆把VSCode抄到底(?)</p><p>于是把布局改成了这样:</p><p><img src="https://i.loli.net/2021/02/24/vhGCqAw7Vr5fPBs.png" alt="image-20210224151056174"></p><p><img src="https://i.loli.net/2021/02/24/DxwRXtVeqvjpJGk.png" alt="image-20210224151120244"></p><p>嗯, 虽然感觉还是丑了点, 但是比原版看起来舒服多了.</p><p>愉快.jpg</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;如题.&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="日常生活" scheme="https://www.wootec.top/categories/%E6%97%A5%E5%B8%B8%E7%94%9F%E6%B4%BB/"/>
+    
+    
+      <category term="CTF" scheme="https://www.wootec.top/tags/CTF/"/>
+    
+      <category term="逆向工程" scheme="https://www.wootec.top/tags/%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>mpv | libmpv 中文文档</title>
+    <link href="https://www.wootec.top/2021/01/20/libmpv-doc/"/>
+    <id>https://www.wootec.top/2021/01/20/libmpv-doc/</id>
+    <published>2021-01-20T06:58:00.000Z</published>
+    <updated>2021-02-24T07:18:03.050Z</updated>
+    
+    <content type="html"><![CDATA[<p>文档地址：<a href="https://github.com/mpv-player/mpv/blob/master/libmpv/client.h">https://github.com/mpv-player/mpv/blob/master/libmpv/client.h</a></p><p>本文会持续更新跟进<code>mpv</code>的开发进度。目前状态: 未完成.</p><a id="more"></a><h2 id="译者声明"><a href="#译者声明" class="headerlink" title="译者声明"></a>译者声明</h2><p>本翻译由<code>Reverier-Xu</code>根据原文档人工翻译而成，尽力保证了准确性与易读性，如有问题还请参照原文档。</p><p>本文档可以引用转载，但必须注明原作者并附上本文链接。如有对原文进行的更改，请务必标识出来。</p><h2 id="此API提供的机制"><a href="#此API提供的机制" class="headerlink" title="此API提供的机制"></a>此<code>API</code>提供的机制</h2><p>这份<code>API</code>提供了对<code>mpv</code>播放的控制机制。本<code>API</code>并不直接提供给你关于播放器的单个组件或者单个元素，只提供对播放器的总体控制。这在某种程度上可以当成<code>MPlayer</code>的从属机制(<code>slave mode</code>)，你可以通过本<code>API</code>对播放器发送命令，从播放器检索或者设置播放的状态或属性，以及接收播放器传来的事件。</p><p>这份<code>API</code>可以用于两个用途：</p><ul><li>为<code>mpv</code>命令行播放器添加其他的功能，<code>mpv</code>的<code>Lua</code>扩展脚本系统就是这么做的。（目前没有插件<code>API</code>可以在外部用户代码中获得客户端的<code>API</code>句柄，他必须是播放器的固定部分。）</li><li>使用<code>mpv_create()</code>函数，将<code>mpv</code>当作一个程序库来使用。这里提供了将<code>mpv</code>嵌入其他应用程序时所要用到的最基本的函数。</li></ul><h2 id="关于文档"><a href="#关于文档" class="headerlink" title="关于文档"></a>关于文档</h2><p><code>libmpv</code>的<code>C API</code>文档就写在这个头文件里面(译者注：现在被翻译成文档放在这个博客里了)。请注意，与播放器的大部分交互是通过选项(<code>options</code>)/命令(<code>commands</code>)/属性(<code>properties</code>)来完成的，可以通过此<code>API</code>来进行。从本质上来讲，一切事件都是由它们完成的，包括加载文件，检索文件进度等等。 </p><p>在其他的地方也有一些文档：</p><ul><li><a href="http://mpv.io/manual/master/#options">http://mpv.io/manual/master/#options</a></li><li><a href="http://mpv.io/manual/master/#list-of-input-commands">http://mpv.io/manual/master/#list-of-input-commands</a></li><li><a href="http://mpv.io/manual/master/#properties">http://mpv.io/manual/master/#properties</a></li></ul><p>你可以在这里查看一些示例：</p><ul><li><a href="https://github.com/mpv-player/mpv-examples/tree/master/libmpv">https://github.com/mpv-player/mpv-examples/tree/master/libmpv</a></li></ul><h2 id="事件循环"><a href="#事件循环" class="headerlink" title="事件循环"></a>事件循环</h2><p>一般情况下，使用此<code>API</code>的开发者应当在后台运行一个事件循环来持续接收本播放器发出的事件。这个事件循环的名称应当叫做<code>mpv_wait_event()</code>，一旦有新的<code>mpv</code>客户端<code>API</code>可用，它将返回这个<code>API</code>。你也可以通过<code>mpv_set_wakeup_callback()</code>函数将这个事件循环集成到其他的现有事件循环里（例如GUI程序的事件循环），然后通过调用<code>mpv_wait_event()</code>来轮询事件，轮询事件的间隔(<code>timeout</code>)应当设置为<code>0</code>。</p><p>请注意，播放器和事件循环实际上是分离的。不调用<code>mpv_call_event()</code>并不会让播放器停止播放。但是这最终会阻塞你的<code>API</code>事件处理队列。</p><h2 id="同步与异步调用"><a href="#同步与异步调用" class="headerlink" title="同步与异步调用"></a>同步与异步调用</h2><p>此<code>API</code>同时支持同步和异步的调用方法。同步调用需要等待播放器核心的响应，而等待的事件很可能是不确定的（例如较差的网络加载速度）。而异步调用仅将调用的操作当成请求放入处理队列中，然后将操作的结果当成事件，在处理结束后返回。</p><h3 id="异步调用"><a href="#异步调用" class="headerlink" title="异步调用"></a>异步调用</h3><p>此客户端<code>API</code>包含了异步调用所需要的函数。这些函数允许你将操作请求立即发送给播放器，然后在播放器处理完成之后得到事件回复。这些请求所使用的函数都用<code>_async</code>作为后缀名。这些函数处理完成的结果都会当成事件，通过<code>mpv_wait_event()</code>进行发送（与正常的事件流交叉）。</p><p><code>libmpv</code>使用一个64位的<code>userdata</code>值将你的请求和处理完成后的结果事件相关联，这个值是通过<code>reply_userdata</code>参数传送给请求函数的。而请求得到的回复将包含一个<code>mpv_event-&gt;reply_userdata</code>成员，这个成员的值与你传入的相应请求中<code>userdata</code>的值是相同的，你可以通过这个将请求和回复对应起来。</p><p>这个<code>userdata</code>是由开发者自行设置的。本<code>API</code>仅把这个值当成一个事件标签，所以可以任意设置。但请注意，将<code>userdata</code>设置成<code>0</code>属于合法操作，但是如果事件不是一个答复（例如视频播放完成事件），则开发者必须要小心，不能错误的将<code>mpv_event-&gt;reply_userdata</code>当成一个答复，因为<code>0</code>是<code>mpv</code>事件中<code>userdata</code>的默认值。（译者注：言外之意就是不要使用<code>0</code>作为<code>userdata</code>，不便于区分。）</p><p>调用队列并不保证按照请求的先后顺序去执行。如果你不希望事件的执行顺序被打乱，请在异步调用完成并收到回复事件后再进行下一个请求。</p><h2 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h2><p>本<code>API</code>在一般情况下是完全线程安全的，除非有特别注明。</p><p>不过同时使用多个线程去操控播放器是没有必要的，因为所用请求都会被播放器放入队列当中挨个执行。</p><h2 id="基础环境要求"><a href="#基础环境要求" class="headerlink" title="基础环境要求"></a>基础环境要求</h2><p>接下来的要求都是在<code>C</code>语言环境基础之上的。这个对于将<code>mpv</code>作为程序库嵌入其他应用程序的开发者来说尤其重要。</p><ul><li><code>LC_NUMERIC</code>环境变量必须设置为<code>&quot;C&quot;</code>。如果你的应用程序使用了<code>setlocale()</code>，请当心，不要设置<code>LC_ALL</code>环境变量。如果你这么做了，请将<code>LC_NUMERIC</code>变量设置回默认值：<code>setlocale(LC_NUMERIC, &quot;C&quot;)</code></li><li>如果使用基于<code>X11</code>的<code>V0</code>，那么<code>mpv</code>会设置<code>xlib error handler</code>。这个错误处理程序是进程范围的，而且没有适当的方法在同一进程内与其他的<code>xlib</code>用户共享。这可能在一些<code>GUI</code>框架中会遇到困扰。</li><li><code>mpv</code>使用了一些<strong>可能并不安全</strong>的库，例如<code>Fribidi</code>(通过<code>libass</code>使用)，<code>ALSA</code>，<code>FFmpeg</code>，除了这些之外可能还有更多。</li><li><code>FPU</code>的精度至少得设置到<strong>双精度</strong>。</li><li>在<code>Windows</code>上，<code>mpv</code>会自动调用<code>timeBeginPeriod(1)</code>。</li><li>内存即将耗尽时，<code>mpv</code>会自动终止进程。</li><li>在某些情况下，<code>mpv</code>可能会启动子进程，例如<code>ytdl</code>包装器脚本。</li><li>打开<code>UNIX IPC</code>（默认是关闭的）时会将<code>SIGPIPE</code>的信号处理器覆盖掉，设置到<code>SIG_IGN</code>。对于一些子进程的调用命令也会这么做。</li><li><code>mpv</code>会在使用到随机数时通过<code>srand()</code>函数为传统的<code>C</code>语言随机数生成器设置新种子。</li><li>由于<code>mpv</code>在某些情况下会启动子进程，开发者应当避免覆盖<code>SIGCHLD</code>或者等待父进程中或其他库中的所有<code>PID</code>（例如调用<code>wait()</code>）。<code>libmpv</code>仅等待它的子进程。</li><li>如果进程中的任何地方注册了信号处理程序，则它们必须设置<code>SA_RESTART</code>标志。 否则，你可能会接收到随机的信号错误。</li></ul><h2 id="文件名编码"><a href="#文件名编码" class="headerlink" title="文件名编码"></a>文件名编码</h2><p><code>mpv</code>在任何地方都使用<code>UTF-8</code>编码。</p><p>在某些平台上（例如<code>Linux</code>），文件名可能不必要一定是<code>UTF-8</code>编码，由于这个原因，<code>libmpv</code>也支持使用非<code>UTF-8</code>的字符串。<code>libmpv</code>会使用<code>Linux Kernel</code>同款编码，并且不会重新编码文件名称。至少在<code>Linux</code>平台上，将一个字符串传递给<code>libmpv</code>和将一个字符串传递给<code>fopen()</code>函数是一样的。</p><p>在<code>Windows</code>平台上，文件名一直都是<code>UTF-8</code>。在调用<code>WIN32 API</code>时，<code>libmpv</code>会自动在<code>UTF-8</code>和<code>UTF-16</code>之间相互转换。<code>libmpv</code>不使用也不接受本地的8位字符串编码。在这个平台上<code>libmpv</code>不再使用<code>fopen()</code>函数，而是使用<code>_wfopen()</code>函数来处理文件。</p><p>在<code>OS X</code> 平台上，<code>libmpv</code>获取或返回的文件名和其他的字符串的<code>unicode</code>规范可能不一致，但你得往好处想。</p><p>请参考<code>MPV_FORMAT_STRING</code>处的标注。</p><h2 id="集成视频播放窗口"><a href="#集成视频播放窗口" class="headerlink" title="集成视频播放窗口"></a>集成视频播放窗口</h2><p>建议使用渲染<code>API</code>（在<code>render_cb.h</code>中）。此<code>API</code>需要你创建和维护<code>OpenGL</code>上下文，你可以通过调用<code>API</code>来渲染视频。 此<code>API</code>不直接包含键盘或鼠标输入的处理。</p><p>除此之外你还有一个比较老的办法来做到这一点，那就是获取到原始的窗口句柄，然后将他设置为<code>&quot;wid&quot;</code>选项。这个办法只能在<code>X11</code>，<code>win32</code>，<code>OS X</code>上使用。这个用起来比渲染<code>API</code>要简单的多得多，但是也有各种奇怪的问题。</p><p>请参考客户端<code>API</code>调用示例和<code>mpv</code>的<code>manpage</code>。这里还有一个扩展的讨论页面：</p><ul><li><a href="https://github.com/mpv-player/mpv-examples/tree/master/libmpv#methods-of-embedding-the-video-window">https://github.com/mpv-player/mpv-examples/tree/master/libmpv#methods-of-embedding-the-video-window</a></li></ul><h2 id="兼容性"><a href="#兼容性" class="headerlink" title="兼容性"></a>兼容性</h2><p><code>mpv</code>的开发工作并不是停滞不前的，而对<code>mpv</code>的内部以及接口的更改可能会导致与开发者使用的<code>API</code>的兼容性问题。</p><p><code>mpv</code>的<code>API</code>是通过版本来控制的（参考<code>MPV_CLIENT_API_VERSION</code>），对<code>API</code>的更改会放在<code>DOCS/client-api-changes.rst</code>。不过本文档所描述的<code>C</code>语言<code>API</code>很有可能会在很长一段时间里保持稳定，但是这些<code>API</code>对应的功能可能会更快的改变。比如说给选项改一个新名字或者改变有效值的取值范围。</p><p>应当使用<strong>防御性编程</strong>来处理控制<code>libmpv</code>的模块，以应对可能存在的选项，命令，属性消失，更改，取值范围更新或者基础类型改变。使用<code>MPV_FORMAT_STRING</code>来代替其他类型可能是个好主意，以使你的代码与可能存在的<code>mpv</code>更改脱钩。</p><p>参考：<code>DOCS/compatibility.rst</code></p><h2 id="未来发展"><a href="#未来发展" class="headerlink" title="未来发展"></a>未来发展</h2><p>以下计划中的更改，很可能会在<code>libmpv</code>的下一个重大变更中完成：</p><ul><li>移除所有被标记为<code>deprecated(已过时)</code>的符号和包含文件。</li><li>重新分配枚举数值来消除无用的类型。</li><li>移除<code>mpv_opengl_init_params.extra_exts</code>域。</li><li>更改<code>mpv_event_end_file.reason</code>的类型。</li><li>默认关闭所有事件。</li></ul><h2 id="定义与宏"><a href="#定义与宏" class="headerlink" title="定义与宏"></a>定义与宏</h2><h3 id="MPV-MAKE-VERSION"><a href="#MPV-MAKE-VERSION" class="headerlink" title="MPV_MAKE_VERSION"></a><code>MPV_MAKE_VERSION</code></h3><p>版本信息会在每次<code>API</code>更改之后递增。此定义的低16个字节表示小版本编号，高16个字节表示主要版本编号。如果<code>API</code>与上一个版本不再兼容，那么主要版本编号会更改。这个只会影响到<code>C</code>语言部分，并且没有属性和选项可供设置。</p><p>每个<code>API</code>的更改都可以在仓库里的<code>DOCS/client-api-changes.rst</code>找到。</p><p>你可以使用<code>MPV_MAKE_VERSION()</code>并将此宏返回的数值和整数比较。</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MPV_MAKE_VERSION(major, minor) (((major) &lt;&lt; 16) | (minor) | 0UL)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MPV_CLIENT_API_VERSION MPV_MAKE_VERSION(1, 109)</span></span><br></pre></td></tr></table></figure><h3 id="MPV-ENABLE-DEPRECATED"><a href="#MPV-ENABLE-DEPRECATED" class="headerlink" title="MPV_ENABLE_DEPRECATED"></a><code>MPV_ENABLE_DEPRECATED</code></h3><p>开发者可以在引用<code>libmpv</code>之前定义<code>&quot;#define MPV_ENABLE_DEPRECATED 0&quot;</code>，这个标记允许开发者使用已经过时的<code>API</code>。</p><p>当然，已经过时的<code>API</code>，包括属性，命令和其他的函数是可以正常工作的。</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> MPV_ENABLE_DEPRECATED</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MPV_ENABLE_DEPRECATED 1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure><h2 id="结构定义"><a href="#结构定义" class="headerlink" title="结构定义"></a>结构定义</h2><h3 id="struct-mpv-handle"><a href="#struct-mpv-handle" class="headerlink" title="struct mpv_handle"></a><code>struct mpv_handle</code></h3><p>客户端<code>API</code>所使用的客户端上下文。每个客户端都有自己私有的句柄。</p><h2 id="枚举定义"><a href="#枚举定义" class="headerlink" title="枚举定义"></a>枚举定义</h2><h3 id="enum-mpv-error"><a href="#enum-mpv-error" class="headerlink" title="enum mpv_error"></a><code>enum mpv_error</code></h3><p><code>API</code>函数会返回的错误代码枚举类型。0和正整数通常意味着成功，负数意味着执行失败，有错误发生。</p><div class="table-container"><table><thead><tr><th>枚举定义</th><th>值</th><th>含义</th></tr></thead><tbody><tr><td><code>MPV_ERROR_SUCCESS</code></td><td>0</td><td>没有错误发生（通常表示操作成功完成）。请注意许多<code>API</code>函数会返回正数的错误代码，这通常意味着操作成功执行了。你可以使用<code>&gt;= 0</code>来判断操作是否成功。</td></tr><tr><td><code>MPV_ERROR_EVENT_QUEUE_FULL</code></td><td>-1</td><td>事件环缓冲区满了。这意味着客户端卡住了，而且不能接收任何事件。这个会在有很多异步请求出现但是还没有应答时发生。不过这个错误应该永远不会产生，除非<code>mpv</code>由于一些原因卡住了，而且客户端在源源不断的发送异步请求。</td></tr><tr><td><code>MPV_ERROR_NOMEM</code></td><td>-2</td><td>无法分配内存。</td></tr><tr><td><code>MPV_ERROR_UNINITIALIZED</code></td><td>-3</td><td><code>mpv</code>核心没有初始化也没有进行配置。请查看<code>mpv_create()</code>函数的记录。</td></tr><tr><td><code>MPV_ERROR_INVALID_PARAMETER</code></td><td>-4</td><td>当参数设置成非法或者不支持的值是所产生的通用错误。对于播放器产生的错误，在没有更好的描述方法时才会使用本信号。</td></tr><tr><td><code>MPV_ERROR_OPTION_NOT_FOUND</code></td><td>-5</td><td>试图设置一个不存在的选项。</td></tr><tr><td><code>MPV_ERROR_OPTION_FORMAT</code></td><td>-6</td><td>试图为选项设置一个不支持的<code>MPV_FORMAT</code>。</td></tr><tr><td><code>MPV_ERROR_OPTION_ERROR</code></td><td>-7</td><td>设置选项失败了。通常来说这个错误会在提供的选项值无法被解析时发生。</td></tr><tr><td><code>MPV_ERROR_PROPERTY_NOT_FOUND</code></td><td>-8</td><td>访问的属性不存在。</td></tr><tr><td><code>MPV_ERROR_PROPERTY_FORMAT</code></td><td>-9</td><td>尝试使用不支持的<code>MPV_FORMAT</code>来设置或获取一个属性。</td></tr><tr><td><code>MPV_ERROR_PROPERTY_UNAVAILABLE</code></td><td>-10</td><td>这个属性存在但是不可用。这个通常发生在相关的子系统没有被激活时，比如在音频关闭时查询音频的参数。</td></tr><tr><td><code>MPV_ERROR_PROPERTY_ERROR</code></td><td>-11</td><td>设置或者获取某个属性的时候失败了。</td></tr><tr><td><code>MPV_ERROR_COMMAND</code></td><td>-12</td><td>运行<code>mpv_command()</code>或相似函数时引发的通用错误。</td></tr><tr><td><code>MPV_ERROR_LOADING_FAILED</code></td><td>-13</td><td>加载过程中引发的通用错误。（通常与<code>mpv_event_end_file.error</code>一起使用）</td></tr><tr><td><code>MPV_ERROR_AO_INIT_FAILED</code></td><td>-14</td><td>初始化音频输出失败。</td></tr><tr><td><code>MPV_ERROR_VO_INIT_FAILED</code></td><td>-15</td><td>初始化视频输出失败。</td></tr><tr><td><code>MPV_ERROR_NOTHING_TO_PLAY</code></td><td>-16</td><td>没有音视频数据可以播放。这通常在一个已经识别的媒体文件里没能找到能够播放的音视频流或者没有音视频流被选择播放。</td></tr><tr><td><code>MPV_ERROR_UNKNOWN_FORMAT</code></td><td>-17</td><td>在加载文件时发现文件格式未识别，或者文件已损坏。</td></tr><tr><td><code>MPV_ERROR_UNSUPPORTED</code></td><td>-18</td><td>表示某些系统要求未得到满足的一般错误。</td></tr><tr><td><code>MPV_ERROR_NOT_IMPLEMENTED</code></td><td>-19</td><td>被调用的函数只是一个空函数，还没有被实现。</td></tr><tr><td><code>MPV_ERROR_GENERIC</code></td><td>-20</td><td>未知的错误。</td></tr></tbody></table></div><h3 id="enum-mpv-format"><a href="#enum-mpv-format" class="headerlink" title="enum mpv_format"></a><code>enum mpv_format</code></h3><p>选项和属性的数据格式。 获取/设置属性和选项的<code>API</code>函数支持多种格式，此枚举类型对这些数据格式进行了描述。</p><div class="table-container"><table><thead><tr><th>枚举定义</th><th>值</th><th>含义</th></tr></thead><tbody><tr><td><code>MPV_FORMAT_NONE</code></td><td>0</td><td>无效的格式，有时用于空值。这个值将始终定义为0, 因此可以保证<code>mpv_format</code>或<code>mpv_node</code>初始化时的值始终为<code>MPV_FORMAT_NONE</code>。（这有些时候会让事情好起来。）</td></tr><tr><td><code>MPV_FORMAT_STRING</code></td><td>1</td><td>基础类型为<code>char*</code>。此格式表示一个纯字符串的属性，例如在<code>input.conf</code>里使用<code>${=property}</code>（参照<code>input.rst</code>）<br /><code>NULL</code>是不合法的。<br />警告：虽然编码通常情况下都是<code>UTF-8</code>，但并不是一直都这样。文件标签通常会将字符串存在一些遗留代码页中，并且文件名也不一定必须是<code>UTF-8</code>（至少在<code>Linux</code>上是这样）。如果你给代码传入的字符串需要是有效的<code>UTF-8</code>编码，你得自己想办法解决这个问题。<br />在<code>Windows</code>上文件名倒一直是<code>UTF-8</code>编码的，<code>libmpv</code>在调用<code>Win32 API</code>时会自动在<code>UTF-8</code>和<code>UTF-16</code>之间进行转换。参考<code>Encoding of filenames</code>节。<br /><br />示例：<br /><code>char *result=NULL;</code><br /><code>if(mpv_get_property(ctx, &quot;property&quot;, MPV_FORMAT_STRING, &amp;result) &lt; 0)</code><br /><code>goto error;</code><br /><code>printf(&quot;%s\n&quot;, result);</code><br /><code>mpv_free(result);</code><br /><br />或者使用<code>mpv_get_property_string()</code>：<br /><code>char *value = &quot;the new value&quot;;</code><br /><code>mpv_set_property(ctx, &quot;property&quot;, MPV_FORMAT_STRING, &amp;value);</code><br /><br />或者仅仅使用<code>mpv_set_property_string()</code>。</td></tr><tr><td><code>MPV_FORMAT_OSD_STRING</code></td><td>2</td><td>此类型的基本类型为<code>char*</code>。此类型返回一个表示<code>OSD</code>属性的字符串，例如在<code>input.conf</code>中的<code>${property}</code>（参考<code>input.rst</code>）。在很多情况下，这个和原始字符串类型是相同的，但是在另一些情况下它具有<code>OSD</code>的文本格式。它旨在让人类可读。不要尝试解析这些字符串。</td></tr><tr><td><code>MPV_FORMAT_FLAG</code></td><td>3</td><td>基础类型为<code>int</code>。他只接受0（<code>no</code>）和1（<code>yes</code>）作为有效值。<br />读取示例：<br /><code>int result;</code><br /><code>if (mpv_get_property(ctx, &quot;property&quot;, MPV_FORMAT_FLAG, &amp;result) &lt; 0)</code><br /><code>goto error;</code><br /><code>printf(&quot;%s\n&quot;, result ? &quot;true&quot; : &quot;false&quot;);</code><br /><br />写入示例：</td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td></tr></tbody></table></div>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;文档地址：&lt;a href=&quot;https://github.com/mpv-player/mpv/blob/master/libmpv/client.h&quot;&gt;https://github.com/mpv-player/mpv/blob/master/libmpv/client.h&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;本文会持续更新跟进&lt;code&gt;mpv&lt;/code&gt;的开发进度。目前状态: 未完成.&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="文档" scheme="https://www.wootec.top/categories/%E6%96%87%E6%A1%A3/"/>
+    
+    
+      <category term="软件开发" scheme="https://www.wootec.top/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/"/>
+    
+      <category term="多媒体" scheme="https://www.wootec.top/tags/%E5%A4%9A%E5%AA%92%E4%BD%93/"/>
+    
+  </entry>
+  
+  <entry>
     <title>BUUCTF firmware WriteUp</title>
     <link href="https://www.wootec.top/2021/01/12/buuctf-firmware/"/>
     <id>https://www.wootec.top/2021/01/12/buuctf-firmware/</id>
@@ -82,9 +133,9 @@
       <category term="Qt" scheme="https://www.wootec.top/categories/Qt/"/>
     
     
-      <category term="Qt" scheme="https://www.wootec.top/tags/Qt/"/>
-    
       <category term="C++" scheme="https://www.wootec.top/tags/C/"/>
+    
+      <category term="Qt" scheme="https://www.wootec.top/tags/Qt/"/>
     
       <category term="桌面开发" scheme="https://www.wootec.top/tags/%E6%A1%8C%E9%9D%A2%E5%BC%80%E5%8F%91/"/>
     
@@ -186,9 +237,9 @@
       <category term="ISAE" scheme="https://www.wootec.top/categories/ISAE/"/>
     
     
-      <category term="C++" scheme="https://www.wootec.top/tags/C/"/>
-    
       <category term="编程" scheme="https://www.wootec.top/tags/%E7%BC%96%E7%A8%8B/"/>
+    
+      <category term="C++" scheme="https://www.wootec.top/tags/C/"/>
     
       <category term="软件开发" scheme="https://www.wootec.top/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/"/>
     
@@ -337,6 +388,8 @@
       <category term="ACM" scheme="https://www.wootec.top/categories/ACM/"/>
     
     
+      <category term="编程" scheme="https://www.wootec.top/tags/%E7%BC%96%E7%A8%8B/"/>
+    
       <category term="ACM" scheme="https://www.wootec.top/tags/ACM/"/>
     
       <category term="OI" scheme="https://www.wootec.top/tags/OI/"/>
@@ -344,8 +397,6 @@
       <category term="CCF" scheme="https://www.wootec.top/tags/CCF/"/>
     
       <category term="算法" scheme="https://www.wootec.top/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="编程" scheme="https://www.wootec.top/tags/%E7%BC%96%E7%A8%8B/"/>
     
   </entry>
   
@@ -469,54 +520,6 @@
       <category term="Linux" scheme="https://www.wootec.top/tags/Linux/"/>
     
       <category term="显卡 - Nvidia" scheme="https://www.wootec.top/tags/%E6%98%BE%E5%8D%A1-Nvidia/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>5月23日小总结与调整</title>
-    <link href="https://www.wootec.top/2020/05/23/20200523/"/>
-    <id>https://www.wootec.top/2020/05/23/20200523/</id>
-    <published>2020-05-22T17:14:22.000Z</published>
-    <updated>2020-05-22T17:36:10.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>如题.</p><a id="more"></a><h2 id="状态总结"><a href="#状态总结" class="headerlink" title="状态总结"></a>状态总结</h2><p><code>Mini L CTF</code>结束后的这几天都干了什么呢…</p><ul><li>写了题解</li><li>补了一点点作业</li><li>在<code>GitHub</code>上开了几个新坑, 但是看起来似乎没有要填的意思</li></ul><p>然后就是疯狂的摸鱼了…</p><p>刷完了两部番剧, 好好的睡了好几觉, 甚至搞的有点日夜颠倒emmm…</p><p>感觉失去了写题的动力. 看到逆向题也不想去深究了, 如果一眼看不出来套路, 就索性放弃. 这么下去肯定是不行的…</p><p>但是又毫无干劲啊啊啊啊</p><h2 id="小计划"><a href="#小计划" class="headerlink" title="小计划"></a>小计划</h2><p>之前给自己定的每天刷CTF各个方向的题目, 写题解算是一天都没能成功.</p><p>那现在就重新计划一下好了. 每天的保底任务:</p><div class="table-container"><table><thead><tr><th>密码</th><th>逆向</th><th>pwn</th><th>洛谷</th><th>RxWidget</th><th>ISAE</th></tr></thead><tbody><tr><td>1道题, 题解</td><td>2道题, 题解</td><td>1道题, 题解</td><td>2道题, 题解</td><td>每天推进</td><td>每天推进, 从需求文档开始</td></tr></tbody></table></div><p>记得打卡, 以后博客尽力日更吧.</p><p>同时还要:</p><ul><li>补齐作业, 尤其是大物</li><li>补课, 不能挂科</li><li>锻炼, 免得哪天瘫痪在电脑面前了</li></ul><h2 id=""><a href="#" class="headerlink" title="~"></a>~</h2><p>大概这些吧.. 睡觉!</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;如题.&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="生活" scheme="https://www.wootec.top/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-      <category term="生活" scheme="https://www.wootec.top/tags/%E7%94%9F%E6%B4%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>关于CTF知识分享平台的一些想法</title>
-    <link href="https://www.wootec.top/2020/05/17/%E5%85%B3%E4%BA%8ECTF%E5%88%86%E4%BA%AB%E5%B9%B3%E5%8F%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E6%83%B3%E6%B3%95/"/>
-    <id>https://www.wootec.top/2020/05/17/%E5%85%B3%E4%BA%8ECTF%E5%88%86%E4%BA%AB%E5%B9%B3%E5%8F%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E6%83%B3%E6%B3%95/</id>
-    <published>2020-05-17T15:48:54.000Z</published>
-    <updated>2020-05-17T16:50:54.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>如题</p><a id="more"></a><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>这个想法在开发<code>ICTFE</code>时就萌生了.</p><p>目前<code>CTF</code>的知识分享平台并不是很多, <code>CTF Wiki</code>只是一个知识库, 而且<code>mkdocs</code>所带的检索功能并不好用. 登录网站比较麻烦, 有什么笔记之类的都写博客里去了, 很少有人会去评论.</p><ul><li>做题的时候需要某个知识点, 谷歌可以找到更接地气的博文, 但是搜不到ctf wiki的内容;</li><li>搜索功能几乎相当于没有;</li></ul><p>总之使用体验很差.</p><h2 id="计划"><a href="#计划" class="headerlink" title="计划"></a>计划</h2><p>我的开发计划大概是使用<code>PyQt5</code>开发一个这样的软件, 支持离线缓存<code>Wiki</code>的信息, 可以方便的进行查找, 与服务器信息同步, 用户可以用快捷键方便的调出查询界面, 也可以方便的在各个板块下面编辑, 添加内容与链接.</p><p>使用<code>PyQt5</code>的原因嘛, 因为我只熟悉这一个跨平台图形框架了 (用别的框架也可以, 我也可以现学, 不过目前<code>PyQt5</code>算是我见过构建速度比较快的<code>UI</code>框架了).. 另一个原因是我可以毫不费力的把这个东西集成到<code>ICTFE</code>里面, 从而在做题的时候更加方便的查询各种知识. 同时可以用<code>Python</code>写个脚本, 自动根据<code>markdown</code>的文章题目什么的制作目录, 渲染出<code>html</code>并建立索引, 这样就可以照搬<code>CTF Wiki</code>或者一些博客现有的<code>md</code>文件了.</p><p>这些还是初步设想, 桌面程序的开发应该不麻烦, 但是服务器的架设, 内容管理, 要不要加入账号系统, 该怎么写账号系统/用什么轮子, 服务器的同步怎么进行, 这些都还没有考虑过.</p><p>甚至<code>markdown</code>怎么渲染都是个问题emmm..</p><h2 id="后续"><a href="#后续" class="headerlink" title="后续"></a>后续</h2><p>这个项目打算六月开始写.</p><p>接下来的时间里我会好好整一份开发文档, 将这个和<code>ICTFE V2.0</code>的开发合计一下.</p><p><code>ICTFE V2</code>打算改名叫<code>ISAE</code>, <code>Intergrated Security Audit Environment</code>. 打算将所有的panel全部插件化. 这样, 你既可以把<code>panel</code>整出来当成一个独立软件使用, 现有的软件也可以将接口整出来, 然后注册成<code>ISAE</code>的一个<code>panel</code>, 和别的<code>panel</code>一起使用. 这个工程可能比较大, 也比较考验系统设计能力, 具体的文档我应该可以在六月过完之前整出来.</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;如题&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="CTF" scheme="https://www.wootec.top/categories/CTF/"/>
-    
-    
-      <category term="CTF" scheme="https://www.wootec.top/tags/CTF/"/>
-    
-      <category term="开发" scheme="https://www.wootec.top/tags/%E5%BC%80%E5%8F%91/"/>
     
   </entry>
   
