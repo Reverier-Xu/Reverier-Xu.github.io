@@ -388,8 +388,6 @@
       <category term="ACM" scheme="https://www.wootec.top/categories/ACM/"/>
     
     
-      <category term="编程" scheme="https://www.wootec.top/tags/%E7%BC%96%E7%A8%8B/"/>
-    
       <category term="ACM" scheme="https://www.wootec.top/tags/ACM/"/>
     
       <category term="OI" scheme="https://www.wootec.top/tags/OI/"/>
@@ -397,6 +395,8 @@
       <category term="CCF" scheme="https://www.wootec.top/tags/CCF/"/>
     
       <category term="算法" scheme="https://www.wootec.top/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="编程" scheme="https://www.wootec.top/tags/%E7%BC%96%E7%A8%8B/"/>
     
   </entry>
   
