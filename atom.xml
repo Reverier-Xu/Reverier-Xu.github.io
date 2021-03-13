@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.wootec.top/"/>
-  <updated>2020-08-17T14:44:03.151Z</updated>
+  <updated>2021-03-13T13:08:28.105Z</updated>
   <id>https://www.wootec.top/</id>
   
   <author>
@@ -21,20 +21,45 @@
     <link href="https://www.wootec.top/2077/12/31/top/"/>
     <id>https://www.wootec.top/2077/12/31/top/</id>
     <published>2077-12-31T15:59:59.000Z</published>
-    <updated>2020-08-17T14:44:03.151Z</updated>
+    <updated>2021-03-13T13:08:28.105Z</updated>
     
-    <content type="html"><![CDATA[<h4 id="那些发问前不愿思考也不做任何功课，甚至不愿动手百度-Google一下的人，我真的会发自内心的讨厌他-虽然有时候可能因为友情不会表露出来-。那些人只想索取，从不付出，像个婴儿一样-婴儿还会学着爬呢-，就是纯粹的时间杀手。而那些被浪费掉的时间本来能用在更有趣的问题或更值得回答的人身上，或者用来追追番，多敲几行代码，也比在这里解决你那百度一下或者阅读错误报告就能找到答案的问题要有用。"><a href="#那些发问前不愿思考也不做任何功课，甚至不愿动手百度-Google一下的人，我真的会发自内心的讨厌他-虽然有时候可能因为友情不会表露出来-。那些人只想索取，从不付出，像个婴儿一样-婴儿还会学着爬呢-，就是纯粹的时间杀手。而那些被浪费掉的时间本来能用在更有趣的问题或更值得回答的人身上，或者用来追追番，多敲几行代码，也比在这里解决你那百度一下或者阅读错误报告就能找到答案的问题要有用。" class="headerlink" title="那些发问前不愿思考也不做任何功课，甚至不愿动手百度/Google一下的人，我真的会发自内心的讨厌他 (虽然有时候可能因为友情不会表露出来)。那些人只想索取，从不付出，像个婴儿一样 (婴儿还会学着爬呢)，就是纯粹的时间杀手。而那些被浪费掉的时间本来能用在更有趣的问题或更值得回答的人身上，或者用来追追番，多敲几行代码，也比在这里解决你那百度一下或者阅读错误报告就能找到答案的问题要有用。"></a>那些发问前不愿思考也不做任何功课，甚至不愿动手百度/Google一下的人，我真的会发自内心的讨厌他 (虽然有时候可能因为友情不会表露出来)。那些人只想索取，从不付出，像个婴儿一样 (婴儿还会学着爬呢)，就是纯粹的时间杀手。而那些被浪费掉的时间本来能用在更有趣的问题或更值得回答的人身上，或者用来追追番，多敲几行代码，也比在这里解决你那百度一下或者阅读错误报告就能找到答案的问题要有用。</h4><p><code>注: 本条不适用于比我强的人, 比如shallow, luoqi@n, Cor1e等巨佬.</code></p>]]></content>
+    <content type="html"><![CDATA[<h2 id="由于某些问题-本博客上的GitTalk出现了一些问题-无法成功使用GitHub登录认证-如果对文章存在疑问或者需要探讨交流-请在这里或者这里发一个issue-附上对应文章的链接-我会很快回复你的"><a href="#由于某些问题-本博客上的GitTalk出现了一些问题-无法成功使用GitHub登录认证-如果对文章存在疑问或者需要探讨交流-请在这里或者这里发一个issue-附上对应文章的链接-我会很快回复你的" class="headerlink" title="由于某些问题, 本博客上的GitTalk出现了一些问题, 无法成功使用GitHub登录认证. 如果对文章存在疑问或者需要探讨交流, 请在这里或者这里发一个issue, 附上对应文章的链接, 我会很快回复你的."></a>由于某些问题, 本博客上的GitTalk出现了一些问题, 无法成功使用GitHub登录认证. 如果对文章存在疑问或者需要探讨交流, 请在<a href="https://github.com/Reverier-Xu/Reverier-Xu">这里</a>或者<a href="https://github.com/Reverier-Xu/Reverier-Xu.github.io">这里</a>发一个issue, 附上对应文章的链接, 我会很快回复你的.</h2>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h4 id=&quot;那些发问前不愿思考也不做任何功课，甚至不愿动手百度-Google一下的人，我真的会发自内心的讨厌他-虽然有时候可能因为友情不会表露出来-。那些人只想索取，从不付出，像个婴儿一样-婴儿还会学着爬呢-，就是纯粹的时间杀手。而那些被浪费掉的时间本来能用在更有趣的问题或更
+        &lt;h2 id=&quot;由于某些问题-本博客上的GitTalk出现了一些问题-无法成功使用GitHub登录认证-如果对文章存在疑问或者需要探讨交流-请在这里或者这里发一个issue-附上对应文章的链接-我会很快回复你的&quot;&gt;&lt;a href=&quot;#由于某些问题-本博客上的GitTalk出现了一
       
     
     </summary>
     
     
+    
+  </entry>
+  
+  <entry>
+    <title>Bit Wave! 一个播放器的开发实录 0x00</title>
+    <link href="https://www.wootec.top/2021/03/13/BitWave-01/"/>
+    <id>https://www.wootec.top/2021/03/13/BitWave-01/</id>
+    <published>2021-03-13T12:32:00.000Z</published>
+    <updated>2021-03-13T13:29:40.460Z</updated>
+    
+    <content type="html"><![CDATA[<p><code>Bit Wave</code>播放器开发日志</p><a id="more"></a><p>经过多次尝试与失败, 我大概确定下来播放器应该怎么实现了.</p><p>这个项目的前身是我计划开发的听风音乐播放器<code>Listen To Wind</code>, 结果这个名字表面上看起来是挺好的, 但是写到界面里一看, 实在是太特么长了, 用户把窗口拉小一点, 这个标题能把控件挤得乱七八糟. 经过<del>摇骰子式起名</del>多重考虑, 给她换了个简单点的名字.</p><p>这个播放器打算干什么:</p><ul><li>集成本地音乐与视频媒体管理功能: VLC等主流播放器虽然支持播放列表, 但毕竟没有一个长时间的播放列表管理系统, 也没有一个舒适的界面. 强大倒是挺强大的, 可是操作总感觉不舒服. 音乐播放器倒是可以选择Clementine, 但是没有国内音乐厂商的在线音乐服务<del>而且界面太特么丑了</del>. 以及大多数播放器要么只能放音乐要么只对视频播放体验有所优化, 没有一个用着顺手的统一播放器.</li><li>画一个好康的UI: <del>这个十分重要!!! 好康的界面是第一生产力!!!</del></li><li>插件化集成一些国内媒体服务厂商的API: 在线音乐提供商(网易云音乐)对于我来说已经是必不可少的东西了. 毕竟手动上网找歌曲资源太麻烦, 何况我还是个木耳, 高音质对我来说没什么特别的感受, 所以在线音乐必须要有. 如果有可能的话还想集成一下BIiliBili的API, 一键追番岂不爽哉?</li><li>针对Linux进行集成, 同时跨平台发布: 国内厂商实在是太怠惰(<del>大脑都在颤抖!!!</del>)了, 网易云音乐 for Linux已经不支持播放某些付费歌曲了, 其他厂商干脆就没有支持Linux的计划.</li><li>兼顾本地管理与在线媒体管理: 目前已经有不少项目提供了国内音乐第三方解决方案了. 但是经过实际使用体验发现都不太行…要么和操作系统的集成度不够高, 要么功能过于简陋, 有些甚至连最小化到托盘都不支持. 而且大多数第三方播放器都不支持下载操作. 要知道背着电脑到处跑着打线下, 离线音乐是很重要的.</li></ul><p>关于版权问题:</p><p>既然是使用国内厂商的API, 那免不了要面对合法性和各种权利问题. 我决定对在线数字媒体严格遵守国内厂商的使用条款, 其他方面可能就只能尽力做到一个好用合格的第三方播放器了, 如有侵权问题, 对应功能/资源将会第一时间移除.</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;code&gt;Bit Wave&lt;/code&gt;播放器开发日志&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="软件开发" scheme="https://www.wootec.top/categories/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="软件开发 - Qt" scheme="https://www.wootec.top/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91-Qt/"/>
+    
+      <category term="C++ - QtQuick" scheme="https://www.wootec.top/tags/C-QtQuick/"/>
     
   </entry>
   
@@ -495,31 +520,6 @@
     
     
       <category term="软件开发" scheme="https://www.wootec.top/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Nvidia Prime的最终折腾方案</title>
-    <link href="https://www.wootec.top/2020/05/25/Nvidia%E6%98%BE%E5%8D%A1%E7%9A%84%E5%B0%8F%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
-    <id>https://www.wootec.top/2020/05/25/Nvidia%E6%98%BE%E5%8D%A1%E7%9A%84%E5%B0%8F%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</id>
-    <published>2020-05-25T01:46:00.000Z</published>
-    <updated>2020-06-09T17:48:52.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>如题.</p><a id="more"></a><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>从折腾好笔记本上的独立显卡到目前已经稳定运行了四个多月左右, 写一下大概的解决方案.</p><h2 id="Nvidia-Prime"><a href="#Nvidia-Prime" class="headerlink" title="Nvidia-Prime"></a><code>Nvidia-Prime</code></h2><p><code>Nvidia-Prime</code>是<code>Nvidia</code>官方给<code>Linux</code>用户<strong>施舍</strong>的兼容<code>Optimus</code>显卡的解决方案.</p><h3 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h3><p>我的笔记本配置:</p><p><img src="https://i.loli.net/2020/05/25/I3t1mk2SV4gPyDY.png" alt="neofetch"></p><p>如图. 由于<del>混迹于哔哩哔哩</del>某些原因需要进行视频渲染, 本身又是个码农, 还是个在校学生, 上个网课之类的, 平时还要背着电脑到处跑, 于是就需要寻找一个完美点的显卡解决方案.</p><p>尝试过<code>Bumblebee</code>, 由于要配合<code>bbswitch</code>使用, 而我的笔记本由于比较特殊, 无法用软件开启或者关闭显卡; 可以从<code>BIOS</code>关闭显卡, 但是每次都很麻烦; 显卡状态改变后笔记本需要彻底断电然后冷启动才能够正确的加载显卡活动…</p><p>于是最终就只能抛弃了<code>Bumblebee</code>.</p><p>就在不久之前, <code>Linus</code>宣布发布<code>Linux 5.6</code>, 介绍中加入了对<code>RTX</code>系列显卡的支持. <code>Nvidia</code>官方又推出了更新进度虽然缓慢但有总比没有好的<code>Nvidia-Prime</code>供<code>Linux</code>用户使用, 在<code>Linux</code>上折腾显卡才显露出一丝曙光.</p><h3 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo pacman -Syyu nvidia nvidia-prime nvidia-settings nvidia-utils</span><br></pre></td></tr></table></figure><p>好了, 没有了.</p><p>这几个包可以让你的显卡转起来了. 美中不足的就是它不能有效的关停显卡, 而是让显卡以省电模式继续转.</p><p>运行需要独立显卡的程序时, 使用<code>prime-run xxx</code>即可.</p><h3 id="一些软件适配"><a href="#一些软件适配" class="headerlink" title="一些软件适配"></a>一些软件适配</h3><h4 id="Davinci-Resolve"><a href="#Davinci-Resolve" class="headerlink" title="Davinci Resolve"></a><code>Davinci Resolve</code></h4><p><code>Davinci Resolve</code>需要安装<code>opencl-nvidia</code>才能够正常运行. 否则会报<code>ld4CXX</code>相关的错误.</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo pacman -Syyu opencl-nvidia</span></span><br></pre></td></tr></table></figure><p><code>Davinci Resolve</code>启动前有一定延迟, 耐心等待即可.</p><h4 id="Osu-Lazer"><a href="#Osu-Lazer" class="headerlink" title="Osu! Lazer"></a><code>Osu! Lazer</code></h4><p>使用<code>prime-run osu-lazer</code>之后, 调整窗口为全屏.</p><h4 id="Minecraft-Launcher-Offcial-HMCL"><a href="#Minecraft-Launcher-Offcial-HMCL" class="headerlink" title="Minecraft Launcher (Offcial, HMCL)"></a><code>Minecraft Launcher (Offcial, HMCL)</code></h4><p>卸载<code>Noto Sans</code>系字体, 否则打开<code>launcher</code>之后界面会保持黑色, 游戏启动时会异常<code>crash</code>.</p><h3 id="已知BUG-影响使用体验的现象"><a href="#已知BUG-影响使用体验的现象" class="headerlink" title="已知BUG/影响使用体验的现象"></a>已知BUG/影响使用体验的现象</h3><h4 id="Davinci-Resolve-1"><a href="#Davinci-Resolve-1" class="headerlink" title="Davinci Resolve"></a><code>Davinci Resolve</code></h4><p>调出某些子窗口时全部黑屏, 摸索着关掉子窗口之后恢复正常.</p><p>例如剪辑<code>panel</code>中试图更改片段时长, 或者片段速度时, 在你右键菜单选中这一项并按下时整个屏幕会黑掉. 按一下<code>Esc</code>则又会恢复.</p><p>无法使用<code>Fcitx</code>进行中文输入. <code>ibus</code>没有测试.</p><p><strong>可能的解决方案</strong>: </p><p>可以尝试使用<code>Bumblebee</code>(不带<code>bbswitch</code>)与<code>primusrun</code>. 使用<code>primusrun</code>运行的<code>Davinci Resolve</code>不会出现此类BUG. 但是<code>primusrun</code>与<code>Bumblebee</code>模块的性能较低, 使用<code>Fusion</code>制作一些复杂一点的特效时, <code>Davinci Resolve</code>会崩溃. </p><h4 id="Osu-Lazer-1"><a href="#Osu-Lazer-1" class="headerlink" title="Osu! Lazer"></a><code>Osu! Lazer</code></h4><p>桌面特效会被强制关闭.</p><p>无法输入中文.</p><h4 id="Minecraft-Launcher-Offcial"><a href="#Minecraft-Launcher-Offcial" class="headerlink" title="Minecraft Launcher (Offcial)"></a><code>Minecraft Launcher (Offcial)</code></h4><p>无法输入中文. 无论是否用独立显卡运行, 都不能输入中文.</p><h4 id="Wine"><a href="#Wine" class="headerlink" title="Wine"></a><code>Wine</code></h4><p>使用<code>prime-run</code>运行的<code>wine</code>应用程序无法在全屏显示状态下输入中文. 非全屏显示时没有问题.</p><p>使用独显运行时字体渲染有些发虚.</p><h4 id="CUDA"><a href="#CUDA" class="headerlink" title="CUDA"></a><code>CUDA</code></h4><p>需要使用<code>CUDA</code>的软件包在安装<code>CUDA</code>之后使用时性能损耗明显, 并且崩溃有些频繁, 只能先凑合着用…</p><h2 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h2><p>如果你有什么更好的解决方案, 希望能提供在评论区, 不胜感谢.</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;如题.&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="Linux" scheme="https://www.wootec.top/categories/Linux/"/>
-    
-    
-      <category term="Linux" scheme="https://www.wootec.top/tags/Linux/"/>
-    
-      <category term="显卡 - Nvidia" scheme="https://www.wootec.top/tags/%E6%98%BE%E5%8D%A1-Nvidia/"/>
     
   </entry>
   
