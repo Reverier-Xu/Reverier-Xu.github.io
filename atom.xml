@@ -189,11 +189,11 @@
       <category term="Linux" scheme="https://www.wootec.top/categories/Linux/"/>
     
     
+      <category term="日常生活" scheme="https://www.wootec.top/tags/%E6%97%A5%E5%B8%B8%E7%94%9F%E6%B4%BB/"/>
+    
       <category term="Linux" scheme="https://www.wootec.top/tags/Linux/"/>
     
       <category term="KDE" scheme="https://www.wootec.top/tags/KDE/"/>
-    
-      <category term="日常生活" scheme="https://www.wootec.top/tags/%E6%97%A5%E5%B8%B8%E7%94%9F%E6%B4%BB/"/>
     
   </entry>
   
@@ -262,11 +262,11 @@
     
       <category term="C++" scheme="https://www.wootec.top/tags/C/"/>
     
+      <category term="编程" scheme="https://www.wootec.top/tags/%E7%BC%96%E7%A8%8B/"/>
+    
       <category term="软件开发" scheme="https://www.wootec.top/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/"/>
     
       <category term="ISAE" scheme="https://www.wootec.top/tags/ISAE/"/>
-    
-      <category term="编程" scheme="https://www.wootec.top/tags/%E7%BC%96%E7%A8%8B/"/>
     
       <category term="绑定" scheme="https://www.wootec.top/tags/%E7%BB%91%E5%AE%9A/"/>
     
@@ -411,6 +411,8 @@
       <category term="ACM" scheme="https://www.wootec.top/categories/ACM/"/>
     
     
+      <category term="编程" scheme="https://www.wootec.top/tags/%E7%BC%96%E7%A8%8B/"/>
+    
       <category term="ACM" scheme="https://www.wootec.top/tags/ACM/"/>
     
       <category term="OI" scheme="https://www.wootec.top/tags/OI/"/>
@@ -418,8 +420,6 @@
       <category term="CCF" scheme="https://www.wootec.top/tags/CCF/"/>
     
       <category term="算法" scheme="https://www.wootec.top/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="编程" scheme="https://www.wootec.top/tags/%E7%BC%96%E7%A8%8B/"/>
     
   </entry>
   
