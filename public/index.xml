@@ -1,0 +1,90 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Reverier&#39;s Blog</title>
+        <link>https://blog.woooo.tech/</link>
+        <description>Creating reality with idealism.</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>reverier.xu@outlook.com (Reverier-Xu)</managingEditor>
+            <webMaster>reverier.xu@outlook.com (Reverier-Xu)</webMaster><lastBuildDate>Wed, 24 Feb 2021 15:00:00 &#43;0800</lastBuildDate>
+            <atom:link href="https://blog.woooo.tech/index.xml" rel="self" type="application/rss+xml" />
+        <item>
+    <title>IDA 两个极简主义皮肤</title>
+    <link>https://blog.woooo.tech/posts/ida_skins/</link>
+    <pubDate>Wed, 24 Feb 2021 15:00:00 &#43;0800</pubDate>
+    <author>Reverier-Xu</author>
+    <guid>https://blog.woooo.tech/posts/ida_skins/</guid>
+    <description><![CDATA[<p>如题.</p>]]></description>
+</item>
+<item>
+    <title>BUUCTF firmware WriteUp</title>
+    <link>https://blog.woooo.tech/posts/buuctf_firmware/</link>
+    <pubDate>Tue, 12 Jan 2021 23:05:09 &#43;0800</pubDate>
+    <author>Reverier-Xu</author>
+    <guid>https://blog.woooo.tech/posts/buuctf_firmware/</guid>
+    <description><![CDATA[首先下载题目文件，使用binwalk解压出固件内的文件 [Rx][•ᴗ•] &gt;&gt;&gt; binwalk -e ./51475f91-7b90-41dd-81a3-8b82df4f29d0.bin DECIMAL HEXADECIMAL DESCRIPTION -------------------------------------------------------------------------------- 0 0x0 TP-Link firmware header, firmware version: 1.-20432.3, image version: &#34;&#34;, product ID: 0x0, product version: 155254791, kernel load address: 0x0, kernel entry point: 0x80002000, kernel]]></description>
+</item>
+<item>
+    <title>N1CTF-oflo WriteUp</title>
+    <link>https://blog.woooo.tech/posts/n1ctf_oflo/</link>
+    <pubDate>Mon, 26 Oct 2020 14:50:00 &#43;0800</pubDate>
+    <author>Reverier-Xu</author>
+    <guid>https://blog.woooo.tech/posts/n1ctf_oflo/</guid>
+    <description><![CDATA[<p>如题.</p>]]></description>
+</item>
+<item>
+    <title>MssCTF 2020 赛后总结</title>
+    <link>https://blog.woooo.tech/posts/mssctf_2020_memos/</link>
+    <pubDate>Mon, 21 Sep 2020 03:00:25 &#43;0800</pubDate>
+    <author>Reverier-Xu</author>
+    <guid>https://blog.woooo.tech/posts/mssctf_2020_memos/</guid>
+    <description><![CDATA[<p>如题</p>]]></description>
+</item>
+<item>
+    <title>POST</title>
+    <link>https://blog.woooo.tech/posts/post/</link>
+    <pubDate>Fri, 07 Aug 2020 12:48:54 &#43;0800</pubDate>
+    <author>Reverier-Xu</author>
+    <guid>https://blog.woooo.tech/posts/post/</guid>
+    <description><![CDATA[<p>如题</p>]]></description>
+</item>
+<item>
+    <title>GET</title>
+    <link>https://blog.woooo.tech/posts/get/</link>
+    <pubDate>Thu, 06 Aug 2020 15:48:54 &#43;0800</pubDate>
+    <author>Reverier-Xu</author>
+    <guid>https://blog.woooo.tech/posts/get/</guid>
+    <description><![CDATA[<p>如题</p>]]></description>
+</item>
+<item>
+    <title>逆向工程入门指北 for MoeCTF 2020</title>
+    <link>https://blog.woooo.tech/posts/reverse_tutorial/</link>
+    <pubDate>Sat, 01 Aug 2020 00:00:00 &#43;0800</pubDate>
+    <author>Reverier-Xu</author>
+    <guid>https://blog.woooo.tech/posts/reverse_tutorial/</guid>
+    <description><![CDATA[逆向工程入门指北, Copyright @ 2020 Reverier, XDSEC for MoeCTF beginners only. 逆向工程是什么? 简而言之, 你可以把逆向工程理解为从产品倒推设计方案的一门技术. 这是一门比较黑客向的东西,]]></description>
+</item>
+<item>
+    <title>C&#43;&#43;的一些神奇用法</title>
+    <link>https://blog.woooo.tech/posts/cpp_learning_1/</link>
+    <pubDate>Sun, 05 Jul 2020 20:44:48 &#43;0800</pubDate>
+    <author>Reverier-Xu</author>
+    <guid>https://blog.woooo.tech/posts/cpp_learning_1/</guid>
+    <description><![CDATA[数组索引, 倒过来还是索引 由于数组索引被解释成指针+偏移, 所以我们用偏移+指针也未尝不可. #include &lt;iostream&gt; using namespace std; int main () { int a[] = {1, 2, 3, 4, 5, 6, 7}; cout &lt;&lt; &#34;a[4]: &#34; &lt;&lt; a[4] &lt;&lt;]]></description>
+</item>
+<item>
+    <title>C&#43;&#43; 虚函数</title>
+    <link>https://blog.woooo.tech/posts/cpp_virtual_function/</link>
+    <pubDate>Thu, 18 Jun 2020 17:11:33 &#43;0800</pubDate>
+    <author>Reverier-Xu</author>
+    <guid>https://blog.woooo.tech/posts/cpp_virtual_function/</guid>
+    <description><![CDATA[对C++虚函数的概念做一个简单的了解. 介绍 虚函数 虚函数指在基类使用virtual关键字声明的成员函数, 在使用对象指针时, 允许用基类的指针来调]]></description>
+</item>
+<item>
+    <title>Linux 5.7.2 swapfile 无法挂载的解决方案</title>
+    <link>https://blog.woooo.tech/posts/linux_57_swapfile_bugs/</link>
+    <pubDate>Fri, 12 Jun 2020 13:10:08 &#43;0800</pubDate>
+    <author>Reverier-Xu</author>
+    <guid>https://blog.woooo.tech/posts/linux_57_swapfile_bugs/</guid>
+    <description><![CDATA[<p>如题</p>]]></description>
+</item>
+</channel>
+</rss>

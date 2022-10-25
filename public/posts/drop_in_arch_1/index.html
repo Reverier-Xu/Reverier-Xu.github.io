@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>如何在Linux上优雅的堕落-2 - Reverier&#39;s Blog</title><meta name="Description" content="Creating reality with idealism."><meta property="og:title" content="如何在Linux上优雅的堕落-2" />
+<meta property="og:description" content="前言 请阅读上一篇之后再来读本文哦~ 正文 基本配置 扩展软件 聊天软件 TIM, 微信是差不多是阻止大批量用户使用Linux的原因之最. 我已经不想再吐槽某鹅厂" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.woooo.tech/posts/drop_in_arch_1/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2019-11-15T15:32:08+08:00" />
+<meta property="article:modified_time" content="2019-11-15T15:32:08+08:00" /><meta property="og:site_name" content="Reverier&#39;s Blog" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="如何在Linux上优雅的堕落-2"/>
+<meta name="twitter:description" content="前言 请阅读上一篇之后再来读本文哦~ 正文 基本配置 扩展软件 聊天软件 TIM, 微信是差不多是阻止大批量用户使用Linux的原因之最. 我已经不想再吐槽某鹅厂"/>
+<meta name="application-name" content="Reverier&#39;s Blog">
+<meta name="apple-mobile-web-app-title" content="Reverier&#39;s Blog"><meta name="theme-color" content="#0078D6"><meta name="msapplication-TileColor" content="#0078D6"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0078D6"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://blog.woooo.tech/posts/drop_in_arch_1/" /><link rel="prev" href="https://blog.woooo.tech/posts/drop_in_arch_0/" /><link rel="next" href="https://blog.woooo.tech/posts/kde_tim_bugs_solution/" /><link rel="stylesheet" href="/css/style.min.519b64cb5eb54579779c509062777056449484da1d13d762f5152138c8c4422c.css" integrity="sha256-UZtky161RXl3nFCQYndwVkSUhNodE9di9RUhOMjEQiw="><link rel="preload" href="/lib/fontawesome-free/all.min.0df5a33710e433de1f5415b1d47e4130ca7466aee5b81955f1045c4844bbb3ed.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.0df5a33710e433de1f5415b1d47e4130ca7466aee5b81955f1045c4844bbb3ed.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0="></noscript><link rel="preload" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1+AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8=" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1+AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8="></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "如何在Linux上优雅的堕落-2",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/blog.woooo.tech\/posts\/drop_in_arch_1\/"
+        },"genre": "posts","keywords": "Linux, Workspace","wordcount":  2250 ,
+        "url": "https:\/\/blog.woooo.tech\/posts\/drop_in_arch_1\/","datePublished": "2019-11-15T15:32:08+08:00","dateModified": "2019-11-15T15:32:08+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Reverier-Xu"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Reverier&#39;s Blog"><span class="header-title-pre"><span style="color: #0078D6;">#  </span></span><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"><span style="color: #0078D6">&gt;&gt;</span> 文章 </a><a class="menu-item" href="/tags/"><span style="color: #0078D6">&gt;&gt;</span> 标签 </a><a class="menu-item" href="/categories/"><span style="color: #0078D6">&gt;&gt;</span> 分类 </a><a class="menu-item" href="/friends"><span style="color: #0078D6">&gt;&gt;</span> 朋友们 </a><a class="menu-item" href="/about"><span style="color: #0078D6">&gt;&gt;</span> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Reverier&#39;s Blog"><span class="header-title-pre"><span style="color: #0078D6;">#  </span></span><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title=""><span style="color: #0078D6">&gt;&gt;</span>文章</a><a class="menu-item" href="/tags/" title=""><span style="color: #0078D6">&gt;&gt;</span>标签</a><a class="menu-item" href="/categories/" title=""><span style="color: #0078D6">&gt;&gt;</span>分类</a><a class="menu-item" href="/friends" title=""><span style="color: #0078D6">&gt;&gt;</span>朋友们</a><a class="menu-item" href="/about" title=""><span style="color: #0078D6">&gt;&gt;</span>关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">如何在Linux上优雅的堕落-2</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://blog.woooo.tech" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Reverier-Xu</a></span>&nbsp;<span class="post-category">included in <a href="/categories/workspace/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Workspace</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2019-11-15">2019-11-15</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;2250 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;5 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#正文">正文</a>
+      <ul>
+        <li><a href="#基本配置">基本配置</a></li>
+        <li><a href="#高级配置">高级配置</a></li>
+      </ul>
+    </li>
+    <li><a href="#尾语">尾语</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="前言">前言</h2>
+<p>请阅读上一篇之后再来读本文哦~</p>
+<h2 id="正文">正文</h2>
+<h3 id="基本配置">基本配置</h3>
+<h4 id="扩展软件">扩展软件</h4>
+<h5 id="聊天软件">聊天软件</h5>
+<p>TIM, 微信是差不多是阻止大批量用户使用Linux的原因之最. 我已经不想再吐槽某鹅厂了, 这里讲一下如何在Linux里面使用TIM和微信.</p>
+<p>使用微信十分的简单, 无论是wine版本还是网页版都挺优秀的. 在这里我们使用electronic-wechat, 是基于electron和网页版微信的第三方版本, 用户体验可以说是十分优秀的. ArchLinuxCN源里也有这个软件包:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo pacman -S electronic-wechat
+</span></span></code></pre></div><p>TIM使用的是Deepin团队打包的Deepin-wine来运行的Windows版TIM. 10月24日腾讯发布了LinuxQQ 2.0, 但其代码和2008 1.0版的差别并不大, 使用的还是GTK2.0, 在KDE上的兼容性非常不好, 并且有许多已知BUG. 等腾讯真正静下心来做一个说得过去的QQ for Linux, 或许我会去体验一下.</p>
+<p>ArchLinuxCN源里也有打包好的TIM:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo pacman -S deepin.com.qq.office
+</span></span></code></pre></div><p>但这样我们在KDE环境下是打不开的, Deepin所打包的TIM是适配GTK风格桌面的. 我们安装gnome-settings-daemon来解决这个问题:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo pacman -S gnome-settings-daemon
+</span></span></code></pre></div><p>设置/usr/lib/gsd-xsettings为自启动:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">系统设置-&gt;开机或关机-&gt;自动启动-&gt;添加脚本-&gt;输入/usr/lib/gsd-xsettings
+</span></span></code></pre></div><p>重启就好了.</p>
+<h5 id="媒体播放器">媒体播放器</h5>
+<p>由于简洁的需要, 我们可以装mplayer来播放一些常见的视频. 如果有更多的需求, 可以装VLC播放器. VLC就不多介绍了, 用过的人除了吐槽界面丑之外都说好. 另外, 深度影院也是非常不错的, 在KDE下面可能显示有一点点小问题, 但总体来说使用起来还是很舒服的.</p>
+<p>音乐播放器能基本达到Windows体验的只有网易云音乐了, 还有一些挺优秀的本地音乐播放器, 如AMROK, 深度音乐等, 可以按照需求去装.</p>
+<p>还有一个叫做ffmpeg的东东, 是堪比Media Encoder的存在, 用来转码十分的方便, 还可以自定义多种需求.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo pacman -S mplayer ffmpeg netease-cloud-music amrok
+</span></span></code></pre></div><h5 id="markdown-写作软件">MarkDown 写作软件</h5>
+<p>其实我习惯装个插件然后用Visual Studio Code来撸markdown, 这样写起来挺方便的. 但是如果习惯Word这种图形化操作的话, 也许一个专用的MarkDown编辑器更适合你. 在这里我们使用Typora, 当然还有Notable, 是一款十分优秀的开源md编辑器, 但是嘛&hellip; 我找不到安装的办法. Typora的使用体验挺优秀的, 我没体验过Notable, 不知道会不会更好一些.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo pacman -S typora
+</span></span></code></pre></div><h5 id="办公软件">办公软件</h5>
+<p>说实话, Manjaro安装的时候带的OpenOffice和LibreOffice都是很优秀的产品, 但是从Windows过来的用户还真不一定用的习惯&hellip; 所以! 我们可以安装WPS的Linux版本. 这是继网易云音乐, 搜狗输入法之后第三个肯在Linux上用心的国产软件! 除了不支持宏操作以外, 其他的使用体验几乎和Windows版本保持了一致.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo pacman -S wps-office
+</span></span></code></pre></div><h5 id="pdf">PDF</h5>
+<p>Manjaro带的Okular已经十分优秀了&hellip; 但我不知道你的版本有没有带&hellip; 索性加上:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo pacman -S okular
+</span></span></code></pre></div><h5 id="游戏">游戏</h5>
+<h6 id="steam">Steam</h6>
+<p>这个不说了, Manjaro出厂带的就有, 几乎畅玩主流游戏, Dota2都可以, 不用我这个菜鸡带大家逛steam了吧 : )</p>
+<h6 id="minecraft">Minecraft</h6>
+<p>Minecraft! 作为一名光荣的方块人, 怎么能不想办法玩MC? 其实不费什么功夫, 你把Windows上MC里的<code>.minecraft</code>文件夹复制过来就行了. 对了, 你在Linux下面看不见.开头的文件夹&hellip; 按<code>Ctrl+H</code>就可以看见隐藏文件夹了.</p>
+<p>然后去网上找一个<code>HMCL.jar</code>, 和<code>.minecraft</code>放在同一个文件夹下面, 然后在终端里进入这个文件夹, 输入</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ java -jar HMCL.jar
+</span></span></code></pre></div><p>就可以啦!</p>
+<p>但是这么弄还是有点麻烦..</p>
+<p>我们在这个文件夹里建一个脚本:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ touch ./start.sh
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">$ vim ./start.sh
+</span></span></code></pre></div><p><code>start.sh</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1">##!/bin/bash</span>
+</span></span><span class="line"><span class="cl">java -jar ./HMCL.jar
+</span></span></code></pre></div><p>然后保存退出vim, 继续:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ chmod a+x ./start.sh
+</span></span></code></pre></div><p>然后在文件夹里一点就开啦! 你也可以拖动到桌面上, 然后选择链接到此处, 也可以链接到Latte-dock里.</p>
+<h5 id="开发套件">开发套件</h5>
+<p>按需安装就好了, 个人力荐Jetbrains全家桶.</p>
+<h3 id="高级配置">高级配置</h3>
+<p>我们配置好了所需的软件, 接下来弄一些能显著改善用户体验的东东.</p>
+<h4 id="触摸板手势">触摸板手势</h4>
+<p>Linux下面原本是没有触摸板手势这一说的. 那怎么能行呢? OS X那么受到程序员喜爱的原因之一不就是强大的触控板手势么? 所以我们一定要在Linux上实现这个功能.</p>
+<p>Linux上最容易的实现莫过于Fusuma, 但是我折腾了一会儿发现在KDE上的表现确实很差很差. 最后选择了libinput-gestures来实现, 效果非常好.</p>
+<p>我是按照<a href="https://segmentfault.com/a/1190000011327776" target="_blank" rel="noopener noreffer ">kde5与archlinux环境下配置libinput-gestures多手势操作</a>这篇文章来配置的, 事实证明十分好用. 我就不重新把这篇文章抄一遍了, 只是把我的配置贴出来供大家参考一下.</p>
+<p><code>$HOME/.config/libinput-gestures.conf</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1">## 四指右滑切换到右侧的虚拟桌面</span>
+</span></span><span class="line"><span class="cl">gesture swipe right <span class="m">4</span> xdotool key ctrl+F1
+</span></span><span class="line"><span class="cl"><span class="c1">## 四指左滑切换到左侧的虚拟桌面</span>
+</span></span><span class="line"><span class="cl">gesture swipe left <span class="m">4</span> xdotool key ctrl+F2
+</span></span><span class="line"><span class="cl"><span class="c1">## 在这里我把键位映射改变了一下, 可以去设置里面将切换虚拟桌面</span>
+</span></span><span class="line"><span class="cl"><span class="c1">##的快捷键改为上方的快捷键</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">## 三指下滑查看所有任务</span>
+</span></span><span class="line"><span class="cl">gesture swipe down <span class="m">3</span> xdotool key ctrl+F9
+</span></span><span class="line"><span class="cl"><span class="c1">## 四指下滑最小化当前窗口</span>
+</span></span><span class="line"><span class="cl">gesture swipe down <span class="m">4</span> xdotool key super+alt+m
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">## 三指上滑打开应用程序面板 ( 开始菜单 )</span>
+</span></span><span class="line"><span class="cl">gesture swipe up <span class="m">3</span> xdotool key super+space
+</span></span><span class="line"><span class="cl"><span class="c1">## 三指左右滑动快速切换不同的窗口</span>
+</span></span><span class="line"><span class="cl">gesture swipe right <span class="m">3</span> xdotool key alt+shift+Tab
+</span></span><span class="line"><span class="cl">gesture swipe left <span class="m">3</span> xdotool key alt+Tab
+</span></span><span class="line"><span class="cl">gesture pinch in <span class="m">2</span> xdotool key ctrl+minus <span class="c1"># 2指捏: 缩小</span>
+</span></span><span class="line"><span class="cl">gesture pinch out <span class="m">2</span> xdotool key ctrl+plus <span class="c1"># 2指张: 放大</span>
+</span></span><span class="line"><span class="cl"><span class="c1">## 事实证明这个放大缩小由于是模拟快捷键操作, 所以并不好用, 也并不流畅</span>
+</span></span><span class="line"><span class="cl"><span class="c1">## 但有总比没有好..</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">## 四指上滑立体显示所有桌面</span>
+</span></span><span class="line"><span class="cl">gesture swipe up <span class="m">4</span> xdotool key ctrl+F11
+</span></span></code></pre></div><h2 id="尾语">尾语</h2>
+<p>感觉应该差不多了, 剩下的自己折腾就好了. 加油啦!</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2019-11-15</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/linux/">Linux</a>,&nbsp;<a href="/tags/workspace/">Workspace</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/drop_in_arch_0/" class="prev" rel="prev" title="如何在Linux上优雅地堕落-1"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>如何在Linux上优雅地堕落-1</a>
+            <a href="/posts/kde_tim_bugs_solution/" class="next" rel="next" title="KDE上TIM无法打开文件所在位置的解决方案">KDE上TIM无法打开文件所在位置的解决方案<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="gitalk" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://github.com/gitalk/gitalk"></a>Gitalk</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2019 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://blog.woooo.tech" target="_blank">Reverier-Xu</a></span>&nbsp;|&nbsp;<span class="license">CC-BY-NC-SA 4.0</span><span class="icp-splitter">&nbsp;|&nbsp;</span><br class="icp-br"/>
+                    <span class="icp"><a href="https://beian.miit.gov.cn/">豫ICP备20023182号-2</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/gitalk/gitalk.min.e1f973627089fc121272c24d146e7c52e316a203fcb362eb2f648d803fc0d327.css" integrity="sha256-4flzYnCJ/BIScsJNFG58UuMWogP8s2LrL2SNgD/A0yc="><link rel="stylesheet" href="/lib/katex/katex.min.76e39bd605d45b2d1944123c66608b0c8bb9baeb70720b212571531c7cf9bc2a.css" integrity="sha256-duOb1gXUWy0ZRBI8ZmCLDIu5uutwcgshJXFTHHz5vCo="><script type="text/javascript" src="/lib/gitalk/gitalk.min.3e68fce688cb68f396c11b65309c267b307f420f01cef269e5e4f3bd769801f0.js" integrity="sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.ae2da1bd62c6469ee27770ad1cddf2e8296d8a7f6d85b091463e5200c5e320af.js" integrity="sha256-ri2hvWLGRp7id3CtHN3y6Cltin9thbCRRj5SAMXjIK8="></script><script type="text/javascript" src="/lib/lunr/lunr.min.08a93c0120364b01159db3c287f39b2180bb740334472bda0675bd3f18981676.js" integrity="sha256-CKk8ASA2SwEVnbPCh/ObIYC7dAM0RyvaBnW9PxiYFnY="></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.3d9120fa621da6d613c1698b7014ec6bdf4620366e8f2b7b547059f4b6f6272b.js" integrity="sha256-PZEg+mIdptYTwWmLcBTsa99GIDZujyt7VHBZ9Lb2Jys="></script><script type="text/javascript" src="/lib/twemoji/twemoji.min.706224d8dc5440460f8ed91c1a6aad25d732af6e0ee6fb31151b157ab485babb.js" integrity="sha256-cGIk2NxUQEYPjtkcGmqtJdcyr24O5vsxFRsVerSFurs="></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.e17a1d816e13c0826e0ed7febfabc3277f45571234bde0bf9120829a7169edc9.js" integrity="sha256-4XodgW4TwIJuDtf+v6vDJ39FVxI0veC/kSCCmnFp7ck="></script><script type="text/javascript" src="/lib/typeit/index.umd.807dab627518d7e2864af47389e0f0e5ae825fcb3036681f2312a5629cb2493a.js" integrity="sha256-gH2rYnUY1+KGSvRzieDw5a6CX8swNmgfIxKlYpyySTo="></script><script type="text/javascript" src="/lib/katex/katex.min.eb18207487161674e717087c317db14ac1a62dadaecccb802499ce173bfeb739.js" integrity="sha256-6xggdIcWFnTnFwh8MX2xSsGmLa2uzMuAJJnOFzv+tzk="></script><script type="text/javascript" src="/lib/katex/contrib/auto-render.min.cb7f4ca60ed5dc3e258415f8c7a3b46d4a93578a52adf83011f18a7f190e7602.js" integrity="sha256-y39Mpg7V3D4lhBX4x6O0bUqTV4pSrfgwEfGKfxkOdgI="></script><script type="text/javascript" src="/lib/katex/contrib/copy-tex.min.52ce78fab4860d24ef22128a52ce24ca01368a9034457a565a1d3fccbab0ddbb.js" integrity="sha256-Us54+rSGDSTvIhKKUs4kygE2ipA0RXpWWh0/zLqw3bs="></script><script type="text/javascript" src="/lib/katex/contrib/mhchem.min.5c0a121a8b490afc85860a522347aeb34fb508c6b23044e5d29f6b2194227b51.js" integrity="sha256-XAoSGotJCvyFhgpSI0eus0+1CMayMETl0p9rIZQie1E="></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{"gitalk":{"admin":["Reverier-Xu"],"clientID":"04e3a9c7b8514d2532ba","clientSecret":"b55ad7dd220563faca25d9b74dc517fd309dafa9","id":"2019-11-15T15:32:08+08:00","owner":"Reverier-Xu","repo":"blog_comment","title":"如何在Linux上优雅的堕落-2"}},"data":{"id-1":"~/Reverier's Blog","id-2":"~/Reverier's Blog"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"},"twemoji":true,"typeit":{"cursorChar":"\u003cstrong style=\"color: #0078D6;\"\u003e_\u003c/strong\u003e","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":50}};</script><script type="text/javascript" src="/js/theme.min.b0df51c2c57145081cc73960e9aa780e6f5f56d06cf4ef0f96da8ce1619d1e12.js" integrity="sha256-sN9RwsVxRQgcxzlg6ap4Dm9fVtBs9O8PltqM4WGdHhI="></script></body>
+</html>

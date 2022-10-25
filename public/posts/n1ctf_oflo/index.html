@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>N1CTF-oflo WriteUp - Reverier&#39;s Blog</title><meta name="Description" content="Creating reality with idealism."><meta property="og:title" content="N1CTF-oflo WriteUp" />
+<meta property="og:description" content="如题." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.woooo.tech/posts/n1ctf_oflo/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-10-26T14:50:00+08:00" />
+<meta property="article:modified_time" content="2020-10-26T14:50:00+08:00" /><meta property="og:site_name" content="Reverier&#39;s Blog" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="N1CTF-oflo WriteUp"/>
+<meta name="twitter:description" content="如题."/>
+<meta name="application-name" content="Reverier&#39;s Blog">
+<meta name="apple-mobile-web-app-title" content="Reverier&#39;s Blog"><meta name="theme-color" content="#0078D6"><meta name="msapplication-TileColor" content="#0078D6"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0078D6"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://blog.woooo.tech/posts/n1ctf_oflo/" /><link rel="prev" href="https://blog.woooo.tech/posts/mssctf_2020_memos/" /><link rel="next" href="https://blog.woooo.tech/posts/buuctf_firmware/" /><link rel="stylesheet" href="/css/style.min.519b64cb5eb54579779c509062777056449484da1d13d762f5152138c8c4422c.css" integrity="sha256-UZtky161RXl3nFCQYndwVkSUhNodE9di9RUhOMjEQiw="><link rel="preload" href="/lib/fontawesome-free/all.min.0df5a33710e433de1f5415b1d47e4130ca7466aee5b81955f1045c4844bbb3ed.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.0df5a33710e433de1f5415b1d47e4130ca7466aee5b81955f1045c4844bbb3ed.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0="></noscript><link rel="preload" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1+AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8=" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1+AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8="></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "N1CTF-oflo WriteUp",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/blog.woooo.tech\/posts\/n1ctf_oflo\/"
+        },"genre": "posts","keywords": "CTF","wordcount":  1580 ,
+        "url": "https:\/\/blog.woooo.tech\/posts\/n1ctf_oflo\/","datePublished": "2020-10-26T14:50:00+08:00","dateModified": "2020-10-26T14:50:00+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Reverier-Xu"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Reverier&#39;s Blog"><span class="header-title-pre"><span style="color: #0078D6;">#  </span></span><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"><span style="color: #0078D6">&gt;&gt;</span> 文章 </a><a class="menu-item" href="/tags/"><span style="color: #0078D6">&gt;&gt;</span> 标签 </a><a class="menu-item" href="/categories/"><span style="color: #0078D6">&gt;&gt;</span> 分类 </a><a class="menu-item" href="/friends"><span style="color: #0078D6">&gt;&gt;</span> 朋友们 </a><a class="menu-item" href="/about"><span style="color: #0078D6">&gt;&gt;</span> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Reverier&#39;s Blog"><span class="header-title-pre"><span style="color: #0078D6;">#  </span></span><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title=""><span style="color: #0078D6">&gt;&gt;</span>文章</a><a class="menu-item" href="/tags/" title=""><span style="color: #0078D6">&gt;&gt;</span>标签</a><a class="menu-item" href="/categories/" title=""><span style="color: #0078D6">&gt;&gt;</span>分类</a><a class="menu-item" href="/friends" title=""><span style="color: #0078D6">&gt;&gt;</span>朋友们</a><a class="menu-item" href="/about" title=""><span style="color: #0078D6">&gt;&gt;</span>关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">N1CTF-oflo WriteUp</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://blog.woooo.tech" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Reverier-Xu</a></span>&nbsp;<span class="post-category">included in <a href="/categories/ctf/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>CTF</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2020-10-26">2020-10-26</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1580 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;4 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
+            </div><div class="content" id="content"><p>如题.</p>
+<p>使用<code>IDA</code>打开题目文件后, 发现没有识别出<code>main</code>函数, 可以初步判断是由于花指令造成的.</p>
+<p>在左侧的函数列表里发现了<code>mprotect</code>函数, 这个函数是用来更改内存读写权限的, 隐约感觉有<code>smc</code>(<code>Self-Modifying Code</code>)的存在.</p>
+<p>先从<code>start</code>函数定位到<code>main</code>函数所在的区段, 发现了明显的花指令特征:</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://i.loli.net/2020/10/26/nLudGhFiqPc3Kbl.png"
+        data-srcset="https://i.loli.net/2020/10/26/nLudGhFiqPc3Kbl.png, https://i.loli.net/2020/10/26/nLudGhFiqPc3Kbl.png 1.5x, https://i.loli.net/2020/10/26/nLudGhFiqPc3Kbl.png 2x"
+        data-sizes="auto"
+        alt="https://i.loli.net/2020/10/26/nLudGhFiqPc3Kbl.png"
+        title="image-20201026135433040" /></p>
+<p>试图用<code>GDB</code>调试到此位置:</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://i.loli.net/2020/10/26/pJzdlhiKQ9ejmrn.png"
+        data-srcset="https://i.loli.net/2020/10/26/pJzdlhiKQ9ejmrn.png, https://i.loli.net/2020/10/26/pJzdlhiKQ9ejmrn.png 1.5x, https://i.loli.net/2020/10/26/pJzdlhiKQ9ejmrn.png 2x"
+        data-sizes="auto"
+        alt="https://i.loli.net/2020/10/26/pJzdlhiKQ9ejmrn.png"
+        title="image-20201026135656530" /></p>
+<p>于是在<code>IDA</code>里将光标定位至<code>0x400BB1</code>的位置, 按下U键取消定义, 然后在<code>0x400BB2</code>的位置按下C键<code>Make Code</code>, 然后再用<code>IDAPython</code>给<code>0x400BB1</code>变成<code>nop</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="n">PatchByte</span><span class="p">(</span><span class="mh">0x400BB1</span><span class="p">,</span> <span class="mh">0x90</span><span class="p">)</span>
+</span></span></code></pre></div><p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://i.loli.net/2020/10/26/tSpYQhRyq5vgVOE.png"
+        data-srcset="https://i.loli.net/2020/10/26/tSpYQhRyq5vgVOE.png, https://i.loli.net/2020/10/26/tSpYQhRyq5vgVOE.png 1.5x, https://i.loli.net/2020/10/26/tSpYQhRyq5vgVOE.png 2x"
+        data-sizes="auto"
+        alt="https://i.loli.net/2020/10/26/tSpYQhRyq5vgVOE.png"
+        title="image-20201026140032321" /></p>
+<p>继续往下分析, <code>0x400BBC</code>处还有几个神必数据莫得头绪. 不过从<code>BB7</code>跳转到了<code>BBF</code>, 所以继续往下看, 然后&hellip; 它<code>retn</code>了.</p>
+<p>继续用<code>gdb</code>断点到<code>0x400BB7</code>, 然后接着调试:</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://i.loli.net/2020/10/26/qVp6i3Af4I9OoED.png"
+        data-srcset="https://i.loli.net/2020/10/26/qVp6i3Af4I9OoED.png, https://i.loli.net/2020/10/26/qVp6i3Af4I9OoED.png 1.5x, https://i.loli.net/2020/10/26/qVp6i3Af4I9OoED.png 2x"
+        data-sizes="auto"
+        alt="https://i.loli.net/2020/10/26/qVp6i3Af4I9OoED.png"
+        title="image-20201026140355769" /></p>
+<p>可以看到程序控制流从<code>0x400BD0</code>跳到了<code>0x400BBD</code>, 接着跳转到了<code>0x400BD1</code>. 由此可以推测出<code>0x400BBC</code>处也是一个花指令. 先在<code>0x400BBD</code>的位置变成汇编, 再用相同的办法把<code>BBC</code>给<code>nop</code>掉:</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://i.loli.net/2020/10/26/rw6abV9ofCGcqUL.png"
+        data-srcset="https://i.loli.net/2020/10/26/rw6abV9ofCGcqUL.png, https://i.loli.net/2020/10/26/rw6abV9ofCGcqUL.png 1.5x, https://i.loli.net/2020/10/26/rw6abV9ofCGcqUL.png 2x"
+        data-sizes="auto"
+        alt="https://i.loli.net/2020/10/26/rw6abV9ofCGcqUL.png"
+        title="image-20201026142128162" /></p>
+<p>由此可以看出来, 从<code>0x400BB7</code>到<code>0x400BD0</code>的一大段代码实际上全是无效代码. 用<code>IDAPython</code>写个循环全部变成<code>nop</code>就完事了:</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://i.loli.net/2020/10/26/DSlg8c3Rnx1XBAk.png"
+        data-srcset="https://i.loli.net/2020/10/26/DSlg8c3Rnx1XBAk.png, https://i.loli.net/2020/10/26/DSlg8c3Rnx1XBAk.png 1.5x, https://i.loli.net/2020/10/26/DSlg8c3Rnx1XBAk.png 2x"
+        data-sizes="auto"
+        alt="https://i.loli.net/2020/10/26/DSlg8c3Rnx1XBAk.png"
+        title="image-20201026142313218" /></p>
+<p>在<code>0x400CBA</code>处还有一个长得一模一样的东西, 同样处理之, <code>0x400D04</code>还有一坨, <code>nop</code>掉即可.</p>
+<p>全部搞定之后把光标移到最上面的<code>main</code>处, 戳一下F5, 代码就反编译成功了:</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://i.loli.net/2020/10/26/y1P4qCtMxwAaTHf.png"
+        data-srcset="https://i.loli.net/2020/10/26/y1P4qCtMxwAaTHf.png, https://i.loli.net/2020/10/26/y1P4qCtMxwAaTHf.png 1.5x, https://i.loli.net/2020/10/26/y1P4qCtMxwAaTHf.png 2x"
+        data-sizes="auto"
+        alt="https://i.loli.net/2020/10/26/y1P4qCtMxwAaTHf.png"
+        title="image-20201026142819634" /></p>
+<p>第<code>20</code>行弄了个函数指针, <code>21</code>行用<code>mprotect</code>函数将某个<code>text</code>段的读写执行权限改成了<code>7</code>, 也就是<code>b111</code>, 即可读可写可执行. <code>22~23</code>行通过函数指针, 将该函数的前十个字节与<code>v4</code>的前五位异或, 然后第<code>24</code>行用刚刚修改过的函数对输入进行验证. 对部分变量重命名一下, 好康点.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://i.loli.net/2020/10/26/eYopwS641ufyOij.png"
+        data-srcset="https://i.loli.net/2020/10/26/eYopwS641ufyOij.png, https://i.loli.net/2020/10/26/eYopwS641ufyOij.png 1.5x, https://i.loli.net/2020/10/26/eYopwS641ufyOij.png 2x"
+        data-sizes="auto"
+        alt="https://i.loli.net/2020/10/26/eYopwS641ufyOij.png"
+        title="image-20201026143407379" /></p>
+<p>可以发现是用了<code>flag</code>的前五位. 这个比赛的所有<code>flag</code>格式均为<code>n1ctf{xxx}</code>, 那么前五位必然是<code>n1ctf</code>.</p>
+<p>定位到<code>evaluate</code>函数所在的位置, 用<code>IDAPython</code>把正确代码处理回来, 否则没法<code>F5</code>.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://i.loli.net/2020/10/26/CpXsamqWn5LHzyR.png"
+        data-srcset="https://i.loli.net/2020/10/26/CpXsamqWn5LHzyR.png, https://i.loli.net/2020/10/26/CpXsamqWn5LHzyR.png 1.5x, https://i.loli.net/2020/10/26/CpXsamqWn5LHzyR.png 2x"
+        data-sizes="auto"
+        alt="https://i.loli.net/2020/10/26/CpXsamqWn5LHzyR.png"
+        title="image-20201026144002533" /></p>
+<p>好极了, 代码恢复成功, F5试一下&hellip;失败了, 往下面一看, 还是有花指令.</p>
+<p>想试着调试一下, 结果发现了</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://i.loli.net/2020/10/26/eYopwS641ufyOij.png"
+        data-srcset="https://i.loli.net/2020/10/26/eYopwS641ufyOij.png, https://i.loli.net/2020/10/26/eYopwS641ufyOij.png 1.5x, https://i.loli.net/2020/10/26/eYopwS641ufyOij.png 2x"
+        data-sizes="auto"
+        alt="https://i.loli.net/2020/10/26/eYopwS641ufyOij.png"
+        title="image-20201026143407379" /></p>
+<p>第<code>17</code>行那个函数, 里面调用了<code>ptrace</code>对程序的运行状态进行了监视. 而<code>gdb</code>也是通过<code>ptrace</code>进行调试的, 同一时间只能有一个调试器挂在程序上, 所以起到了反调试的作用. 不过往下看, <code>read</code>函数是在反调函数下面的, 所以可以先运行程序, 跑起来之后等待输入时用<code>gdb</code>再<code>attach</code>上去.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://i.loli.net/2020/10/26/9RPCKSzqh8itkbY.png"
+        data-srcset="https://i.loli.net/2020/10/26/9RPCKSzqh8itkbY.png, https://i.loli.net/2020/10/26/9RPCKSzqh8itkbY.png 1.5x, https://i.loli.net/2020/10/26/9RPCKSzqh8itkbY.png 2x"
+        data-sizes="auto"
+        alt="https://i.loli.net/2020/10/26/9RPCKSzqh8itkbY.png"
+        title="https://i.loli.net/2020/10/26/9RPCKSzqh8itkbY.png" /></p>
+<p>接下来定位到<code>0x400ABC</code>, 然后跟踪一下函数流程, 并把花指令都给处理掉. 有如下几个地方:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mh">0x400AC4</span><span class="p">,</span> <span class="mh">0x400AC9</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">PatchByte</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="mh">0x90</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mh">0x400B0E</span><span class="p">,</span> <span class="mh">0x400B28</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">PatchByte</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="mh">0x90</span><span class="p">)</span>
+</span></span></code></pre></div><p>搞完了之后再<code>F5</code>一下, <code>evaluate</code>函数的真容就浮现出来了. 因为<code>smc</code>和花指令的影响, 之前<code>main</code>函数中给<code>evaluate</code>传的参数乱七八糟, 重新<code>F5</code>一下<code>main</code>函数, 找到这几行:</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://i.loli.net/2020/10/26/tCdFBJEX1gyvA9q.png"
+        data-srcset="https://i.loli.net/2020/10/26/tCdFBJEX1gyvA9q.png, https://i.loli.net/2020/10/26/tCdFBJEX1gyvA9q.png 1.5x, https://i.loli.net/2020/10/26/tCdFBJEX1gyvA9q.png 2x"
+        data-sizes="auto"
+        alt="https://i.loli.net/2020/10/26/tCdFBJEX1gyvA9q.png"
+        title="image-20201026145602058" /></p>
+<p>然后再看重命名之后的<code>evaluate</code>函数:</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://i.loli.net/2020/10/26/hN7m1LtlKy3O5vs.png"
+        data-srcset="https://i.loli.net/2020/10/26/hN7m1LtlKy3O5vs.png, https://i.loli.net/2020/10/26/hN7m1LtlKy3O5vs.png 1.5x, https://i.loli.net/2020/10/26/hN7m1LtlKy3O5vs.png 2x"
+        data-sizes="auto"
+        alt="https://i.loli.net/2020/10/26/hN7m1LtlKy3O5vs.png"
+        title="image-20201026150058722" /></p>
+<p>你可以右键参数, 然后选择<code>set lvar type</code>, 改成指针之后就能显示出来数组形式的表达式了.</p>
+<p>第<code>39</code>行处理的地址是<code>&amp;v20+1-32</code>, 看一下上面的变量声明, 这个地方就是<code>v5</code>, 那么这个循环就是遍历了<code>v5~v18</code>.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://i.loli.net/2020/10/26/5xzQaCKyLBG671j.png"
+        data-srcset="https://i.loli.net/2020/10/26/5xzQaCKyLBG671j.png, https://i.loli.net/2020/10/26/5xzQaCKyLBG671j.png 1.5x, https://i.loli.net/2020/10/26/5xzQaCKyLBG671j.png 2x"
+        data-sizes="auto"
+        alt="https://i.loli.net/2020/10/26/5xzQaCKyLBG671j.png"
+        title="https://i.loli.net/2020/10/26/5xzQaCKyLBG671j.png" /></p>
+<p>还有个难题就是<code>space</code>里面存的到底是个什么东西了.</p>
+<p>答案其实很简单, 我们点进那个反调试函数里面瞅一眼, 发现他运行了一下<code>/usr/bin/cat /proc/version</code>, 动态调试到<code>evaluate</code>里面, 输出一下栈里面的东西,</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://i.loli.net/2020/10/26/8iyECSWMnocX4Qb.png"
+        data-srcset="https://i.loli.net/2020/10/26/8iyECSWMnocX4Qb.png, https://i.loli.net/2020/10/26/8iyECSWMnocX4Qb.png 1.5x, https://i.loli.net/2020/10/26/8iyECSWMnocX4Qb.png 2x"
+        data-sizes="auto"
+        alt="https://i.loli.net/2020/10/26/8iyECSWMnocX4Qb.png"
+        title="image-20201026152439543" /></p>
+<p>发现<code>space</code>存的实际上就是<code>/usr/bin/cat /proc/version</code>指令的输出, 即你的<code>linux</code>版本信息, 然后取前<code>13</code>位. 因为是<code>linux</code>程序, 所以不管在什么系统上, 前<code>13</code>位必然是<code>Linux Version </code>, 那就保证唯一性了.</p>
+<p>接下来就是快乐的拿<code>flag</code>时间了.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://i.loli.net/2020/10/26/JUIeNtiKOBwGvVC.png"
+        data-srcset="https://i.loli.net/2020/10/26/JUIeNtiKOBwGvVC.png, https://i.loli.net/2020/10/26/JUIeNtiKOBwGvVC.png 1.5x, https://i.loli.net/2020/10/26/JUIeNtiKOBwGvVC.png 2x"
+        data-sizes="auto"
+        alt="https://i.loli.net/2020/10/26/JUIeNtiKOBwGvVC.png"
+        title="image-20201026152313624" /></p>
+<p>脚本:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="ch">#!/bin/python3</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># from __future__ import print_function</span>
+</span></span><span class="line"><span class="cl"><span class="n">magic</span> <span class="o">=</span> <span class="p">[</span><span class="mi">53</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">73</span><span class="p">,</span> <span class="mi">125</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">59</span><span class="p">,</span> <span class="mi">62</span><span class="p">,</span> <span class="mi">61</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">95</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">space</span> <span class="o">=</span> <span class="s1">&#39;Linux Version &#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">head</span> <span class="o">=</span> <span class="s1">&#39;n1ctf&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span> <span class="p">(</span><span class="n">head</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">magic</span><span class="p">)):</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="nb">chr</span><span class="p">(</span><span class="n">magic</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">^</span> <span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">space</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)),</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+</span></span></code></pre></div><p><code>flag: n1ctf{Fam3_Is_NULL}</code></p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2020-10-26</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/ctf/">CTF</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/mssctf_2020_memos/" class="prev" rel="prev" title="MssCTF 2020 赛后总结"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>MssCTF 2020 赛后总结</a>
+            <a href="/posts/buuctf_firmware/" class="next" rel="next" title="BUUCTF firmware WriteUp">BUUCTF firmware WriteUp<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="gitalk" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://github.com/gitalk/gitalk"></a>Gitalk</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2019 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://blog.woooo.tech" target="_blank">Reverier-Xu</a></span>&nbsp;|&nbsp;<span class="license">CC-BY-NC-SA 4.0</span><span class="icp-splitter">&nbsp;|&nbsp;</span><br class="icp-br"/>
+                    <span class="icp"><a href="https://beian.miit.gov.cn/">豫ICP备20023182号-2</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/gitalk/gitalk.min.e1f973627089fc121272c24d146e7c52e316a203fcb362eb2f648d803fc0d327.css" integrity="sha256-4flzYnCJ/BIScsJNFG58UuMWogP8s2LrL2SNgD/A0yc="><link rel="stylesheet" href="/lib/katex/katex.min.76e39bd605d45b2d1944123c66608b0c8bb9baeb70720b212571531c7cf9bc2a.css" integrity="sha256-duOb1gXUWy0ZRBI8ZmCLDIu5uutwcgshJXFTHHz5vCo="><script type="text/javascript" src="/lib/gitalk/gitalk.min.3e68fce688cb68f396c11b65309c267b307f420f01cef269e5e4f3bd769801f0.js" integrity="sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.ae2da1bd62c6469ee27770ad1cddf2e8296d8a7f6d85b091463e5200c5e320af.js" integrity="sha256-ri2hvWLGRp7id3CtHN3y6Cltin9thbCRRj5SAMXjIK8="></script><script type="text/javascript" src="/lib/lunr/lunr.min.08a93c0120364b01159db3c287f39b2180bb740334472bda0675bd3f18981676.js" integrity="sha256-CKk8ASA2SwEVnbPCh/ObIYC7dAM0RyvaBnW9PxiYFnY="></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.3d9120fa621da6d613c1698b7014ec6bdf4620366e8f2b7b547059f4b6f6272b.js" integrity="sha256-PZEg+mIdptYTwWmLcBTsa99GIDZujyt7VHBZ9Lb2Jys="></script><script type="text/javascript" src="/lib/twemoji/twemoji.min.706224d8dc5440460f8ed91c1a6aad25d732af6e0ee6fb31151b157ab485babb.js" integrity="sha256-cGIk2NxUQEYPjtkcGmqtJdcyr24O5vsxFRsVerSFurs="></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.e17a1d816e13c0826e0ed7febfabc3277f45571234bde0bf9120829a7169edc9.js" integrity="sha256-4XodgW4TwIJuDtf+v6vDJ39FVxI0veC/kSCCmnFp7ck="></script><script type="text/javascript" src="/lib/typeit/index.umd.807dab627518d7e2864af47389e0f0e5ae825fcb3036681f2312a5629cb2493a.js" integrity="sha256-gH2rYnUY1+KGSvRzieDw5a6CX8swNmgfIxKlYpyySTo="></script><script type="text/javascript" src="/lib/katex/katex.min.eb18207487161674e717087c317db14ac1a62dadaecccb802499ce173bfeb739.js" integrity="sha256-6xggdIcWFnTnFwh8MX2xSsGmLa2uzMuAJJnOFzv+tzk="></script><script type="text/javascript" src="/lib/katex/contrib/auto-render.min.cb7f4ca60ed5dc3e258415f8c7a3b46d4a93578a52adf83011f18a7f190e7602.js" integrity="sha256-y39Mpg7V3D4lhBX4x6O0bUqTV4pSrfgwEfGKfxkOdgI="></script><script type="text/javascript" src="/lib/katex/contrib/copy-tex.min.52ce78fab4860d24ef22128a52ce24ca01368a9034457a565a1d3fccbab0ddbb.js" integrity="sha256-Us54+rSGDSTvIhKKUs4kygE2ipA0RXpWWh0/zLqw3bs="></script><script type="text/javascript" src="/lib/katex/contrib/mhchem.min.5c0a121a8b490afc85860a522347aeb34fb508c6b23044e5d29f6b2194227b51.js" integrity="sha256-XAoSGotJCvyFhgpSI0eus0+1CMayMETl0p9rIZQie1E="></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{"gitalk":{"admin":["Reverier-Xu"],"clientID":"04e3a9c7b8514d2532ba","clientSecret":"b55ad7dd220563faca25d9b74dc517fd309dafa9","id":"2020-10-26T14:50:00+08:00","owner":"Reverier-Xu","repo":"blog_comment","title":"N1CTF-oflo WriteUp"}},"data":{"id-1":"~/Reverier's Blog","id-2":"~/Reverier's Blog"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"},"twemoji":true,"typeit":{"cursorChar":"\u003cstrong style=\"color: #0078D6;\"\u003e_\u003c/strong\u003e","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":50}};</script><script type="text/javascript" src="/js/theme.min.b0df51c2c57145081cc73960e9aa780e6f5f56d06cf4ef0f96da8ce1619d1e12.js" integrity="sha256-sN9RwsVxRQgcxzlg6ap4Dm9fVtBs9O8PltqM4WGdHhI="></script></body>
+</html>

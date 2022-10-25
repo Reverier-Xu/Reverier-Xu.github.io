@@ -1,0 +1,59 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Linux - Tag - Reverier&#39;s Blog</title>
+        <link>https://blog.woooo.tech/tags/linux/</link>
+        <description>Linux - Tag - Reverier&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>reverier.xu@outlook.com (Reverier-Xu)</managingEditor>
+            <webMaster>reverier.xu@outlook.com (Reverier-Xu)</webMaster><lastBuildDate>Fri, 12 Jun 2020 13:10:08 &#43;0800</lastBuildDate><atom:link href="https://blog.woooo.tech/tags/linux/" rel="self" type="application/rss+xml" /><item>
+    <title>Linux 5.7.2 swapfile 无法挂载的解决方案</title>
+    <link>https://blog.woooo.tech/posts/linux_57_swapfile_bugs/</link>
+    <pubDate>Fri, 12 Jun 2020 13:10:08 &#43;0800</pubDate>
+    <author>Reverier-Xu</author>
+    <guid>https://blog.woooo.tech/posts/linux_57_swapfile_bugs/</guid>
+    <description><![CDATA[<p>如题</p>]]></description>
+</item>
+<item>
+    <title>Nvidia Prime的最终折腾方案</title>
+    <link>https://blog.woooo.tech/posts/nvidia_drivers_solution/</link>
+    <pubDate>Mon, 25 May 2020 09:46:00 &#43;0800</pubDate>
+    <author>Reverier-Xu</author>
+    <guid>https://blog.woooo.tech/posts/nvidia_drivers_solution/</guid>
+    <description><![CDATA[<p>如题.</p>]]></description>
+</item>
+<item>
+    <title>wine-wechat 窗口阴影置顶解决方案</title>
+    <link>https://blog.woooo.tech/posts/wine_wechat_shadow_bugs_solution/</link>
+    <pubDate>Sun, 16 Feb 2020 19:41:41 &#43;0800</pubDate>
+    <author>Reverier-Xu</author>
+    <guid>https://blog.woooo.tech/posts/wine_wechat_shadow_bugs_solution/</guid>
+    <description><![CDATA[<h2 id="前言">前言</h2>
+<p>archlinuxcn中有打包好的wine-wechat应用, 但是该应用启动后有边框阴影特效, 此时如果有另一个应用覆盖在微信的窗口之前, 阴影就会被置顶, 从而造成一些视觉阻碍.</p>]]></description>
+</item>
+<item>
+    <title>KDE上TIM无法打开文件所在位置的解决方案</title>
+    <link>https://blog.woooo.tech/posts/kde_tim_bugs_solution/</link>
+    <pubDate>Mon, 10 Feb 2020 19:41:41 &#43;0800</pubDate>
+    <author>Reverier-Xu</author>
+    <guid>https://blog.woooo.tech/posts/kde_tim_bugs_solution/</guid>
+    <description><![CDATA[<h2 id="前言">前言</h2>
+<p>自从上次用过<code>Arch Linux</code>滚挂之后, 辗转于<code>Manjaro</code>, <code>Deepin</code>, <code>Fedora</code>, 最后还是趁着没法出门, 在家里把<code>Arch Linux</code>又整上了. 但是安装好TIM之后还是老问题, KDE下面用TIM下载群文件之后没法点击打开文件夹来方便的定位文件.</p>
+<p>正好闲着没事干, 就解决一下这个问题.</p>]]></description>
+</item>
+<item>
+    <title>如何在Linux上优雅的堕落-2</title>
+    <link>https://blog.woooo.tech/posts/drop_in_arch_1/</link>
+    <pubDate>Fri, 15 Nov 2019 15:32:08 &#43;0800</pubDate>
+    <author>Reverier-Xu</author>
+    <guid>https://blog.woooo.tech/posts/drop_in_arch_1/</guid>
+    <description><![CDATA[前言 请阅读上一篇之后再来读本文哦~ 正文 基本配置 扩展软件 聊天软件 TIM, 微信是差不多是阻止大批量用户使用Linux的原因之最. 我已经不想再吐槽某鹅厂]]></description>
+</item>
+<item>
+    <title>如何在Linux上优雅地堕落-1</title>
+    <link>https://blog.woooo.tech/posts/drop_in_arch_0/</link>
+    <pubDate>Sat, 02 Nov 2019 10:50:19 &#43;0800</pubDate>
+    <author>Reverier-Xu</author>
+    <guid>https://blog.woooo.tech/posts/drop_in_arch_0/</guid>
+    <description><![CDATA[前言 为什么折腾了这么久Linux, 才想起来整一个博文呢? emmmm因为老是崩盘嘛&hellip; 导致我每次重新配置环境都要想半天, 我之前那个]]></description>
+</item>
+</channel>
+</rss>

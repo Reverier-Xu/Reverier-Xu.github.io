@@ -1,0 +1,26 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Life - Category - Reverier&#39;s Blog</title>
+        <link>https://blog.woooo.tech/categories/life/</link>
+        <description>Life - Category - Reverier&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>reverier.xu@outlook.com (Reverier-Xu)</managingEditor>
+            <webMaster>reverier.xu@outlook.com (Reverier-Xu)</webMaster><lastBuildDate>Sun, 18 Aug 2019 18:09:06 &#43;0800</lastBuildDate><atom:link href="https://blog.woooo.tech/categories/life/" rel="self" type="application/rss+xml" /><item>
+    <title>The Elementary Of Programming Style</title>
+    <link>https://blog.woooo.tech/posts/the_elementary_of_programming_style/</link>
+    <pubDate>Sun, 18 Aug 2019 18:09:06 &#43;0800</pubDate>
+    <author>Reverier-Xu</author>
+    <guid>https://blog.woooo.tech/posts/the_elementary_of_programming_style/</guid>
+    <description><![CDATA[<h2 id="前言">前言</h2>
+<p>这是网上流行的一本绝版书籍,短短几页却浓缩了很多精华.</p>
+<p>即使过了30余年, 其中的思想仍旧在编程时十分有参考价值. 时间挡不住作者的真知灼见.</p>]]></description>
+</item>
+<item>
+    <title>Hello World</title>
+    <link>https://blog.woooo.tech/posts/hello_world/</link>
+    <pubDate>Fri, 16 Aug 2019 09:33:33 &#43;0800</pubDate>
+    <author>Reverier-Xu</author>
+    <guid>https://blog.woooo.tech/posts/hello_world/</guid>
+    <description><![CDATA[<p>我的第一篇博文!!</p>]]></description>
+</item>
+</channel>
+</rss>

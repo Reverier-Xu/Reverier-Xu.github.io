@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>使用GitHub和HEXO的博客搭建过程 - Reverier&#39;s Blog</title><meta name="Description" content="Creating reality with idealism."><meta property="og:title" content="使用GitHub和HEXO的博客搭建过程" />
+<meta property="og:description" content="废话
+作为一个小白,在WEB方面的小白,搭建一个简单的静态博客确实费了许多精力.其中参考了无数资料,有官方的,非官方的&hellip;反正搭建不易,现在就详述一下,博客是怎么搭建起来的." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.woooo.tech/posts/construct_blog_with_hexo/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2019-08-18T18:40:54+08:00" />
+<meta property="article:modified_time" content="2019-08-18T18:40:54+08:00" /><meta property="og:site_name" content="Reverier&#39;s Blog" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="使用GitHub和HEXO的博客搭建过程"/>
+<meta name="twitter:description" content="废话
+作为一个小白,在WEB方面的小白,搭建一个简单的静态博客确实费了许多精力.其中参考了无数资料,有官方的,非官方的&hellip;反正搭建不易,现在就详述一下,博客是怎么搭建起来的."/>
+<meta name="application-name" content="Reverier&#39;s Blog">
+<meta name="apple-mobile-web-app-title" content="Reverier&#39;s Blog"><meta name="theme-color" content="#0078D6"><meta name="msapplication-TileColor" content="#0078D6"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0078D6"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://blog.woooo.tech/posts/construct_blog_with_hexo/" /><link rel="prev" href="https://blog.woooo.tech/posts/the_elementary_of_programming_style/" /><link rel="next" href="https://blog.woooo.tech/posts/beautify_your_blog/" /><link rel="stylesheet" href="/css/style.min.519b64cb5eb54579779c509062777056449484da1d13d762f5152138c8c4422c.css" integrity="sha256-UZtky161RXl3nFCQYndwVkSUhNodE9di9RUhOMjEQiw="><link rel="preload" href="/lib/fontawesome-free/all.min.0df5a33710e433de1f5415b1d47e4130ca7466aee5b81955f1045c4844bbb3ed.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.0df5a33710e433de1f5415b1d47e4130ca7466aee5b81955f1045c4844bbb3ed.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0="></noscript><link rel="preload" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1+AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8=" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1+AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8="></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "使用GitHub和HEXO的博客搭建过程",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/blog.woooo.tech\/posts\/construct_blog_with_hexo\/"
+        },"genre": "posts","keywords": "Web, Development","wordcount":  3281 ,
+        "url": "https:\/\/blog.woooo.tech\/posts\/construct_blog_with_hexo\/","datePublished": "2019-08-18T18:40:54+08:00","dateModified": "2019-08-18T18:40:54+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Reverier-Xu"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Reverier&#39;s Blog"><span class="header-title-pre"><span style="color: #0078D6;">#  </span></span><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"><span style="color: #0078D6">&gt;&gt;</span> 文章 </a><a class="menu-item" href="/tags/"><span style="color: #0078D6">&gt;&gt;</span> 标签 </a><a class="menu-item" href="/categories/"><span style="color: #0078D6">&gt;&gt;</span> 分类 </a><a class="menu-item" href="/friends"><span style="color: #0078D6">&gt;&gt;</span> 朋友们 </a><a class="menu-item" href="/about"><span style="color: #0078D6">&gt;&gt;</span> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Reverier&#39;s Blog"><span class="header-title-pre"><span style="color: #0078D6;">#  </span></span><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title=""><span style="color: #0078D6">&gt;&gt;</span>文章</a><a class="menu-item" href="/tags/" title=""><span style="color: #0078D6">&gt;&gt;</span>标签</a><a class="menu-item" href="/categories/" title=""><span style="color: #0078D6">&gt;&gt;</span>分类</a><a class="menu-item" href="/friends" title=""><span style="color: #0078D6">&gt;&gt;</span>朋友们</a><a class="menu-item" href="/about" title=""><span style="color: #0078D6">&gt;&gt;</span>关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">使用GitHub和HEXO的博客搭建过程</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://blog.woooo.tech" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Reverier-Xu</a></span>&nbsp;<span class="post-category">included in <a href="/categories/development/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Development</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2019-08-18">2019-08-18</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;3281 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;7 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#废话">废话</a></li>
+    <li><a href="#准备工作">准备工作</a>
+      <ul>
+        <li><a href="#git">Git</a></li>
+        <li><a href="#nodejs">Node.js</a></li>
+        <li><a href="#github账号配置">GitHub账号配置</a></li>
+      </ul>
+    </li>
+    <li><a href="#正式开始">正式开始</a>
+      <ul>
+        <li><a href="#安装hexo">安装HEXO</a></li>
+        <li><a href="#初始化博客">初始化博客</a></li>
+        <li><a href="#本地预览博客">本地预览博客</a></li>
+        <li><a href="#hexo的正确使用姿势">HEXO的正确使用姿势</a></li>
+        <li><a href="#发布到github">发布到GitHub</a></li>
+      </ul>
+    </li>
+    <li><a href="#日常使用">日常使用</a></li>
+    <li><a href="#未完待续">未完待续~</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="废话">废话</h2>
+<p>作为一个小白,在WEB方面的小白,搭建一个简单的静态博客确实费了许多精力.其中参考了无数资料,有官方的,非官方的&hellip;反正搭建不易,现在就详述一下,博客是怎么搭建起来的.</p>
+<p>没错,看到这个一级标题了吧,这篇文章里面不是一个水到渠成的方法,我会把我所踩过的坑以及踩坑用的方法写进来,所以&hellip;😜</p>
+<p>噢,笔者很穷,用不起Mac,所以就不会Mac的做法咯~</p>
+<p>原创,转载请注明来源</p>
+<h2 id="准备工作">准备工作</h2>
+<h3 id="git">Git</h3>
+<p>准备什么咧?因为我们的博客是建在GitHub上啦,所以你需要一个Git. <a href="https://git-scm.com/" target="_blank" rel="noopener noreffer ">Git 下载地址</a></p>
+<p>按照Windows下面装软件的惯例,就 下一步 下一步 下一步 我同意 下一步 下一步 安装 完成 就装好啦~</p>
+<p>如果是Linux, Git 应该已经集成到大部分的系统里啦~如果没有,就</p>
+<p>DEB系: Debian, Ubuntu, Deepin, Linux Mint以及各种衍生版本,包括Kali Linux和Parrot Sec Linux</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo apt-get install git
+</span></span></code></pre></div><p>RedHat系: Fedora, RHEL, CentOS</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo dnf install git
+</span></span></code></pre></div><p>emmm如果是CentOS这种万年不更新的系统的话,用yum就好啦:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo yum install git
+</span></span></code></pre></div><p>Open SUSE: 没办法,SUSE自成一派,不过 YasT 确实好用,笔者电脑上就是Windows 10 + Open SUSE</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo zypper install git
+</span></span></code></pre></div><p>Arch系:Arch Linux, Manjaro, Gentoo</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo pacman -S git
+</span></span></code></pre></div><p>我猜装个git不需要用AUR吧😨</p>
+<p>(别问笔者为啥各大Linux的安装包管理器背的这么熟练,说出来都是泪)</p>
+<h3 id="nodejs">Node.js</h3>
+<p>好了,Git 装完了,接下来装Hexo(我们的主角)的必备依赖!</p>
+<p>他就是Node.js!(反正笔者也没学过,感觉很厉害就是了) <a href="http://nodejs.cn/download/" target="_blank" rel="noopener noreffer ">Node.js下载地址</a></p>
+<h3 id="github账号配置">GitHub账号配置</h3>
+<p>接下来我们得注册一个GitHub 账号&hellip;&hellip; 喂,这么重要的东西,应该早就有了吧(手动滑稽</p>
+<p>咳</p>
+<p>注册完后,我们继续&hellip;&hellip;</p>
+<p>现在我们来配置一下Git (什么?Hexo还没装呢?就先配置Git? )</p>
+<p>Windows用户:</p>
+<p>装好Git后,会有一个叫做Git Bash的东东出现在你的桌面上 ( Linux用户:不存在的 )</p>
+<p>然后&hellip;&hellip; 你可以找个清闲的地方 ( 不是叫你喝茶 ) ,新建一个文件夹,取一个喜欢的名字. ( 喂,不是给女儿起名字,那么认真干嘛 ) 然后右键,选择Git Bash Here.</p>
+<p>Linux用户:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ mkdir ./MyBlog <span class="c1">##你喜欢就好</span>
+</span></span><span class="line"><span class="cl">$ <span class="nb">cd</span> ./MyBlog <span class="c1">##进入这个目录</span>
+</span></span></code></pre></div><p>然后,现在我们就可以把Windows和Linux统一起来说啦.</p>
+<p>先配置一下你刚注册的账户~</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ git config --global user.name <span class="s2">&#34;你的GitHub用户名&#34;</span>
+</span></span><span class="line"><span class="cl">$ git config --global user.email <span class="s2">&#34;你的GitHub注册邮箱&#34;</span>
+</span></span></code></pre></div><p>( 啥? 没有一个叫 你的GitHub用户名 的用户? 不至于吧,我说的是你的GitHub的用户名,不是叫&quot;你的GitHub用户名&quot;的用户😓)</p>
+<p>我们为了避免每次使用都要输入密码登录,可以配置一个叫SSH Key的东西:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ ssh-keygen -t rsa -C <span class="s2">&#34;你的GitHub注册邮箱&#34;</span>
+</span></span></code></pre></div><p>( 你不至于连open-ssh都没有吧&hellip;&hellip;那得是一个多么精简的系统 )</p>
+<p>接下来会让你输入各种信息,啥都不输,无脑回车就行了.</p>
+<p>然后找到生成的.ssh的文件夹中的id_rsa.pub密钥，将内容全部复制.</p>
+<p>再然后&hellip;&hellip; ( 我为哈说啥都要带个然后 )</p>
+<p>打开<a href="https://github.com/settings/keys" target="_blank" rel="noopener noreffer ">GitHub_Settings_keys</a> 页面，新建new SSH Key</p>
+<p>为了保证访问速度&hellip;&hellip;我就不在博客上添加图片了哈,不然GitHub该生气了(手动滑稽</p>
+<p>Title随便写,想写啥写啥,然后把刚刚复制的id_rsa.pub的内容粘贴到下面的Key里面,点击 Add SSH key,就OK啦!</p>
+<p>然后我们回到Bash ( Linux用户别抬杠, 是个shell都可以, 笔者用的是zsh )</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ ssh git@github.com
+</span></span></code></pre></div><p>如果出现了 Hi XXXX! You&rsquo;ve successfully&hellip;&hellip;balabala&hellip;&hellip;就说明配置成功啦! 具体原理如下:</p>
+<p>引自知乎 <a href="https://zhuanlan.zhihu.com/p/26625249" target="_blank" rel="noopener noreffer ">吴润的文章</a></p>
+<blockquote>
+<p>这里之所以设置GitHub密钥原因是，通过非对称加密的公钥与私钥来完成加密，公钥放置在GitHub上，私钥放置在自己的电脑里。GitHub要求每次推送代码都是合法用户，所以每次推送都需要输入账号密码验证推送用户是否是合法用户，为了省去每次输入密码的步骤，采用了ssh，当你推送的时候，git就会匹配你的私钥跟GitHub上面的公钥是否是配对的，若是匹配就认为你是合法用户，则允许推送。这样可以保证每次的推送都是正确合法的。</p>
+</blockquote>
+<h2 id="正式开始">正式开始</h2>
+<h3 id="安装hexo">安装HEXO</h3>
+<p>当当当! 我们的主角HEXO要登场啦!</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ npm install -g hexo-cli
+</span></span></code></pre></div><p>在我们的Git Bash里使用这条指令来安装hexo!安装会 <del>比较</del> 狠 慢! 因为&hellip;&hellip;我们有伟大的万里长城防火墙啊&hellip;&hellip; ( 逃</p>
+<h3 id="初始化博客">初始化博客</h3>
+<p>安装好之后,检查一下你当前的路径是不是刚刚让你找的清闲之地&mdash;&mdash;一个你想把博客布置起来的空文件夹.</p>
+<p>怎么检查?</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ <span class="nb">pwd</span>
+</span></span></code></pre></div><p>然后看输出的路径是不是 xxx/MyBlog 或者其他你取的名字.</p>
+<p>确认完毕后,输入:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ hexo init
+</span></span></code></pre></div><p>开始初始化你的博客吧!</p>
+<p>然后一屏令人目眩的代码飞过&hellip;&hellip;</p>
+<p>我们现在打开你的博客文件夹,就能看见下面多出了很多文件啦!</p>
+<h3 id="本地预览博客">本地预览博客</h3>
+<p>输入:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ hexo g
+</span></span><span class="line"><span class="cl">$ hexo s
+</span></span></code></pre></div><p>然后在浏览器点开 <a href="http://localhost:4000" target="_blank" rel="noopener noreffer ">本地博客</a> 就能看见我们的博客啦!</p>
+<h3 id="hexo的正确使用姿势">HEXO的正确使用姿势</h3>
+<p>现在我们瞅一眼 hexo 的正确使用姿势:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ npm install hexo -g <span class="c1">#安装Hexo</span>
+</span></span><span class="line"><span class="cl">$ npm update hexo -g <span class="c1">#升级</span>
+</span></span><span class="line"><span class="cl">$ hexo init <span class="c1">#初始化博客</span>
+</span></span></code></pre></div><p>命令简写:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ hexo n <span class="s2">&#34;文章名称&#34;</span> <span class="o">==</span> hexo new <span class="s2">&#34;文章名称&#34;</span> <span class="c1">#新建文章,注意,&#34;&#34;里面是你的文章名称,不是 文章名称 ......</span>
+</span></span><span class="line"><span class="cl">$ hexo <span class="nv">g</span> <span class="o">==</span> hexo generate <span class="c1">#生成本地文件</span>
+</span></span><span class="line"><span class="cl">$ hexo <span class="nv">s</span> <span class="o">==</span> hexo server <span class="c1">#启动服务预览</span>
+</span></span><span class="line"><span class="cl">$ hexo <span class="nv">d</span> <span class="o">==</span> hexo deploy <span class="c1">#部署到远程服务器</span>
+</span></span><span class="line"><span class="cl">$ hexo server <span class="c1">#Hexo会监视文件变动并自动更新，无须重启服务器</span>
+</span></span><span class="line"><span class="cl">$ hexo server -s <span class="c1">#静态模式</span>
+</span></span><span class="line"><span class="cl">$ hexo server -p <span class="m">5000</span> <span class="c1">#更改端口</span>
+</span></span><span class="line"><span class="cl">$ hexo server -i 192.168.1.1 <span class="c1">#自定义 IP</span>
+</span></span><span class="line"><span class="cl">$ hexo clean <span class="c1">#清除缓存，若是网页正常情况下可以忽略这条命令</span>
+</span></span></code></pre></div><p>就这样, 我们就可以掌握 hexo 的用法啦!</p>
+<h3 id="发布到github">发布到GitHub</h3>
+<p>看我们刚搭好的博客, 是不是有些激动?</p>
+<p>什么? 嫌丑?</p>
+<p>那不是现在要操心的事情&hellip;&hellip;应当操心的是,如何才能发布到网站上?</p>
+<p>这个时候,GitHub就要大显神威了. 打开你的GitHub页面, 然后新建一个仓库&hellip;&hellip;仓库取名叫</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">你的用户名.github.io
+</span></span></code></pre></div><p>我也不知道为啥非要写用户名,但是不写用户名后面的配置会出各种各样的奇怪问题&hellip;&hellip;</p>
+<p>然后创建就可以啦.</p>
+<p>然后! 用Visual Studio Code / Vim / Emacs / Sublime / Atom / Kate / Notepad &hellip;&hellip; ( 是个编辑器都行 ) 打开位于博客文件夹下的_config.yml, 然后把光标扯到最下面, 看到尾端有一个deploy的东东,编辑一下:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yml" data-lang="yml"><span class="line"><span class="cl"><span class="c">## Deployment</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">### Docs: https://hexo.io/docs/deployment.html</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">deploy</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">git</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">repository</span><span class="p">:</span><span class="w"> </span><span class="l">git@github.com:你的用户名/你的用户名.github.io.git</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">branch</span><span class="p">:</span><span class="w"> </span><span class="l">master</span><span class="w">
+</span></span></span></code></pre></div><p>回到Bash, 输入下面的指令安装部署插件:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ npm install hexo-deployer-git --save
+</span></span></code></pre></div><p>然后! 我们就可以很方便的部署网站啦! 两条指令搞定!</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ hexo clean <span class="c1">#清除上次的缓存</span>
+</span></span><span class="line"><span class="cl">$ hexo g -d <span class="c1">#等价于执行hexo g 后再执行一次 hexo d , 这两个指令已经介绍过了.</span>
+</span></span></code></pre></div><p>打开 你的用户名.github.io,你的网站就已经部署好啦!</p>
+<h2 id="日常使用">日常使用</h2>
+<p>那我们怎么写博客呢?</p>
+<p>只要打开Git Bash, cd到你的博客文件夹 ( Windows用户可以点开博客文件夹,右键 Git Bash Here)然后输入:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ hexo new post <span class="s2">&#34;文章名称&#34;</span>
+</span></span></code></pre></div><p>就能新建一篇文章啦!</p>
+<p>你可以去下载一个 <a href="https://typora.io/" target="_blank" rel="noopener noreffer ">Typora</a> ,一款很好用的MarkDown编辑器–&mdash;&ndash;好用到你根本不会觉得你在写一个叫做MarkDown的标记语言…&hellip;.事实上, 笔者现在仍旧对MarkDown保持着一股生疏感.安装好Typora之后,你可以打开设置,然后就可以设置每次打开的文件夹啦! 我们把文件夹设置为:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">MyBlog<span class="se">\s</span>ource<span class="se">\_</span>posts
+</span></span></code></pre></div><p>以后写的文章就可以保存在这里啦!</p>
+<p>想更新到GitHub的话,就是:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ hexo clean
+</span></span><span class="line"><span class="cl">$ hexo g -d
+</span></span></code></pre></div><p>然后打开你的博客地址 : 你的用户名.github.io就可以看见你刚写的文章啦!</p>
+<p>PS: 由于GitHub Pages需要每次重建,所以你可能不会很快的看见自己的文章咯~这样的话最好等上两分钟,你的文章就会出现在博客列表里啦!</p>
+<h2 id="未完待续">未完待续~</h2>
+<p>下集预告:安装Next主题, 配置我的博客!</p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2019-08-18</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/web/">Web</a>,&nbsp;<a href="/tags/development/">Development</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/the_elementary_of_programming_style/" class="prev" rel="prev" title="The Elementary Of Programming Style"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>The Elementary Of Programming Style</a>
+            <a href="/posts/beautify_your_blog/" class="next" rel="next" title="用Next美化 HEXO &amp; GitHub 博客">用Next美化 HEXO & GitHub 博客<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="gitalk" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://github.com/gitalk/gitalk"></a>Gitalk</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2019 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://blog.woooo.tech" target="_blank">Reverier-Xu</a></span>&nbsp;|&nbsp;<span class="license">CC-BY-NC-SA 4.0</span><span class="icp-splitter">&nbsp;|&nbsp;</span><br class="icp-br"/>
+                    <span class="icp"><a href="https://beian.miit.gov.cn/">豫ICP备20023182号-2</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/gitalk/gitalk.min.e1f973627089fc121272c24d146e7c52e316a203fcb362eb2f648d803fc0d327.css" integrity="sha256-4flzYnCJ/BIScsJNFG58UuMWogP8s2LrL2SNgD/A0yc="><link rel="stylesheet" href="/lib/katex/katex.min.76e39bd605d45b2d1944123c66608b0c8bb9baeb70720b212571531c7cf9bc2a.css" integrity="sha256-duOb1gXUWy0ZRBI8ZmCLDIu5uutwcgshJXFTHHz5vCo="><script type="text/javascript" src="/lib/gitalk/gitalk.min.3e68fce688cb68f396c11b65309c267b307f420f01cef269e5e4f3bd769801f0.js" integrity="sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.ae2da1bd62c6469ee27770ad1cddf2e8296d8a7f6d85b091463e5200c5e320af.js" integrity="sha256-ri2hvWLGRp7id3CtHN3y6Cltin9thbCRRj5SAMXjIK8="></script><script type="text/javascript" src="/lib/lunr/lunr.min.08a93c0120364b01159db3c287f39b2180bb740334472bda0675bd3f18981676.js" integrity="sha256-CKk8ASA2SwEVnbPCh/ObIYC7dAM0RyvaBnW9PxiYFnY="></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.3d9120fa621da6d613c1698b7014ec6bdf4620366e8f2b7b547059f4b6f6272b.js" integrity="sha256-PZEg+mIdptYTwWmLcBTsa99GIDZujyt7VHBZ9Lb2Jys="></script><script type="text/javascript" src="/lib/twemoji/twemoji.min.706224d8dc5440460f8ed91c1a6aad25d732af6e0ee6fb31151b157ab485babb.js" integrity="sha256-cGIk2NxUQEYPjtkcGmqtJdcyr24O5vsxFRsVerSFurs="></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.e17a1d816e13c0826e0ed7febfabc3277f45571234bde0bf9120829a7169edc9.js" integrity="sha256-4XodgW4TwIJuDtf+v6vDJ39FVxI0veC/kSCCmnFp7ck="></script><script type="text/javascript" src="/lib/typeit/index.umd.807dab627518d7e2864af47389e0f0e5ae825fcb3036681f2312a5629cb2493a.js" integrity="sha256-gH2rYnUY1+KGSvRzieDw5a6CX8swNmgfIxKlYpyySTo="></script><script type="text/javascript" src="/lib/katex/katex.min.eb18207487161674e717087c317db14ac1a62dadaecccb802499ce173bfeb739.js" integrity="sha256-6xggdIcWFnTnFwh8MX2xSsGmLa2uzMuAJJnOFzv+tzk="></script><script type="text/javascript" src="/lib/katex/contrib/auto-render.min.cb7f4ca60ed5dc3e258415f8c7a3b46d4a93578a52adf83011f18a7f190e7602.js" integrity="sha256-y39Mpg7V3D4lhBX4x6O0bUqTV4pSrfgwEfGKfxkOdgI="></script><script type="text/javascript" src="/lib/katex/contrib/copy-tex.min.52ce78fab4860d24ef22128a52ce24ca01368a9034457a565a1d3fccbab0ddbb.js" integrity="sha256-Us54+rSGDSTvIhKKUs4kygE2ipA0RXpWWh0/zLqw3bs="></script><script type="text/javascript" src="/lib/katex/contrib/mhchem.min.5c0a121a8b490afc85860a522347aeb34fb508c6b23044e5d29f6b2194227b51.js" integrity="sha256-XAoSGotJCvyFhgpSI0eus0+1CMayMETl0p9rIZQie1E="></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{"gitalk":{"admin":["Reverier-Xu"],"clientID":"04e3a9c7b8514d2532ba","clientSecret":"b55ad7dd220563faca25d9b74dc517fd309dafa9","id":"2019-08-18T18:40:54+08:00","owner":"Reverier-Xu","repo":"blog_comment","title":"使用GitHub和HEXO的博客搭建过程"}},"data":{"id-1":"~/Reverier's Blog","id-2":"~/Reverier's Blog"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"},"twemoji":true,"typeit":{"cursorChar":"\u003cstrong style=\"color: #0078D6;\"\u003e_\u003c/strong\u003e","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":50}};</script><script type="text/javascript" src="/js/theme.min.b0df51c2c57145081cc73960e9aa780e6f5f56d06cf4ef0f96da8ce1619d1e12.js" integrity="sha256-sN9RwsVxRQgcxzlg6ap4Dm9fVtBs9O8PltqM4WGdHhI="></script></body>
+</html>

@@ -1,0 +1,41 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Reverse - Tag - Reverier&#39;s Blog</title>
+        <link>https://blog.woooo.tech/tags/reverse/</link>
+        <description>Reverse - Tag - Reverier&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>reverier.xu@outlook.com (Reverier-Xu)</managingEditor>
+            <webMaster>reverier.xu@outlook.com (Reverier-Xu)</webMaster><lastBuildDate>Wed, 24 Feb 2021 15:00:00 &#43;0800</lastBuildDate><atom:link href="https://blog.woooo.tech/tags/reverse/" rel="self" type="application/rss+xml" /><item>
+    <title>IDA 两个极简主义皮肤</title>
+    <link>https://blog.woooo.tech/posts/ida_skins/</link>
+    <pubDate>Wed, 24 Feb 2021 15:00:00 &#43;0800</pubDate>
+    <author>Reverier-Xu</author>
+    <guid>https://blog.woooo.tech/posts/ida_skins/</guid>
+    <description><![CDATA[<p>如题.</p>]]></description>
+</item>
+<item>
+    <title>BUUCTF firmware WriteUp</title>
+    <link>https://blog.woooo.tech/posts/buuctf_firmware/</link>
+    <pubDate>Tue, 12 Jan 2021 23:05:09 &#43;0800</pubDate>
+    <author>Reverier-Xu</author>
+    <guid>https://blog.woooo.tech/posts/buuctf_firmware/</guid>
+    <description><![CDATA[首先下载题目文件，使用binwalk解压出固件内的文件 [Rx][•ᴗ•] &gt;&gt;&gt; binwalk -e ./51475f91-7b90-41dd-81a3-8b82df4f29d0.bin DECIMAL HEXADECIMAL DESCRIPTION -------------------------------------------------------------------------------- 0 0x0 TP-Link firmware header, firmware version: 1.-20432.3, image version: &#34;&#34;, product ID: 0x0, product version: 155254791, kernel load address: 0x0, kernel entry point: 0x80002000, kernel]]></description>
+</item>
+<item>
+    <title>Ha1cyon-CTF 你好sao啊 题解</title>
+    <link>https://blog.woooo.tech/posts/ha1cyonctf_rxencode/</link>
+    <pubDate>Tue, 28 Apr 2020 09:32:33 &#43;0800</pubDate>
+    <author>Reverier-Xu</author>
+    <guid>https://blog.woooo.tech/posts/ha1cyonctf_rxencode/</guid>
+    <description><![CDATA[<h2 id="源代码">源代码</h2>]]></description>
+</item>
+<item>
+    <title>Ha1cyon-CTF 芜湖 题解</title>
+    <link>https://blog.woooo.tech/posts/ha1cyonctf_wohu/</link>
+    <pubDate>Tue, 21 Apr 2020 23:33:33 &#43;0800</pubDate>
+    <author>Reverier-Xu</author>
+    <guid>https://blog.woooo.tech/posts/ha1cyonctf_wohu/</guid>
+    <description><![CDATA[<h2 id="源代码">源代码</h2>
+<p>先上源代码:</p>]]></description>
+</item>
+</channel>
+</rss>

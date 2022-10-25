@@ -1,0 +1,92 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>CTF - Category - Reverier&#39;s Blog</title>
+        <link>https://blog.woooo.tech/categories/ctf/</link>
+        <description>CTF - Category - Reverier&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>reverier.xu@outlook.com (Reverier-Xu)</managingEditor>
+            <webMaster>reverier.xu@outlook.com (Reverier-Xu)</webMaster><lastBuildDate>Tue, 12 Jan 2021 23:05:09 &#43;0800</lastBuildDate><atom:link href="https://blog.woooo.tech/categories/ctf/" rel="self" type="application/rss+xml" /><item>
+    <title>BUUCTF firmware WriteUp</title>
+    <link>https://blog.woooo.tech/posts/buuctf_firmware/</link>
+    <pubDate>Tue, 12 Jan 2021 23:05:09 &#43;0800</pubDate>
+    <author>Reverier-Xu</author>
+    <guid>https://blog.woooo.tech/posts/buuctf_firmware/</guid>
+    <description><![CDATA[首先下载题目文件，使用binwalk解压出固件内的文件 [Rx][•ᴗ•] &gt;&gt;&gt; binwalk -e ./51475f91-7b90-41dd-81a3-8b82df4f29d0.bin DECIMAL HEXADECIMAL DESCRIPTION -------------------------------------------------------------------------------- 0 0x0 TP-Link firmware header, firmware version: 1.-20432.3, image version: &#34;&#34;, product ID: 0x0, product version: 155254791, kernel load address: 0x0, kernel entry point: 0x80002000, kernel]]></description>
+</item>
+<item>
+    <title>N1CTF-oflo WriteUp</title>
+    <link>https://blog.woooo.tech/posts/n1ctf_oflo/</link>
+    <pubDate>Mon, 26 Oct 2020 14:50:00 &#43;0800</pubDate>
+    <author>Reverier-Xu</author>
+    <guid>https://blog.woooo.tech/posts/n1ctf_oflo/</guid>
+    <description><![CDATA[<p>如题.</p>]]></description>
+</item>
+<item>
+    <title>POST</title>
+    <link>https://blog.woooo.tech/posts/post/</link>
+    <pubDate>Fri, 07 Aug 2020 12:48:54 &#43;0800</pubDate>
+    <author>Reverier-Xu</author>
+    <guid>https://blog.woooo.tech/posts/post/</guid>
+    <description><![CDATA[<p>如题</p>]]></description>
+</item>
+<item>
+    <title>GET</title>
+    <link>https://blog.woooo.tech/posts/get/</link>
+    <pubDate>Thu, 06 Aug 2020 15:48:54 &#43;0800</pubDate>
+    <author>Reverier-Xu</author>
+    <guid>https://blog.woooo.tech/posts/get/</guid>
+    <description><![CDATA[<p>如题</p>]]></description>
+</item>
+<item>
+    <title>逆向工程入门指北 for MoeCTF 2020</title>
+    <link>https://blog.woooo.tech/posts/reverse_tutorial/</link>
+    <pubDate>Sat, 01 Aug 2020 00:00:00 &#43;0800</pubDate>
+    <author>Reverier-Xu</author>
+    <guid>https://blog.woooo.tech/posts/reverse_tutorial/</guid>
+    <description><![CDATA[逆向工程入门指北, Copyright @ 2020 Reverier, XDSEC for MoeCTF beginners only. 逆向工程是什么? 简而言之, 你可以把逆向工程理解为从产品倒推设计方案的一门技术. 这是一门比较黑客向的东西,]]></description>
+</item>
+<item>
+    <title>Mini L CTF WriteUp By Int3rn3t_Expl0rer Team</title>
+    <link>https://blog.woooo.tech/posts/minilctf_2020_wp/</link>
+    <pubDate>Sun, 17 May 2020 22:40:54 &#43;0800</pubDate>
+    <author>Reverier-Xu</author>
+    <guid>https://blog.woooo.tech/posts/minilctf_2020_wp/</guid>
+    <description><![CDATA[<p>wp</p>]]></description>
+</item>
+<item>
+    <title>Ha1cyon-CTF 你好sao啊 题解</title>
+    <link>https://blog.woooo.tech/posts/ha1cyonctf_rxencode/</link>
+    <pubDate>Tue, 28 Apr 2020 09:32:33 &#43;0800</pubDate>
+    <author>Reverier-Xu</author>
+    <guid>https://blog.woooo.tech/posts/ha1cyonctf_rxencode/</guid>
+    <description><![CDATA[<h2 id="源代码">源代码</h2>]]></description>
+</item>
+<item>
+    <title>Ha1cyon-CTF 芜湖 题解</title>
+    <link>https://blog.woooo.tech/posts/ha1cyonctf_wohu/</link>
+    <pubDate>Tue, 21 Apr 2020 23:33:33 &#43;0800</pubDate>
+    <author>Reverier-Xu</author>
+    <guid>https://blog.woooo.tech/posts/ha1cyonctf_wohu/</guid>
+    <description><![CDATA[<h2 id="源代码">源代码</h2>
+<p>先上源代码:</p>]]></description>
+</item>
+<item>
+    <title>记一次终极狗屎的HTTP请求头</title>
+    <link>https://blog.woooo.tech/posts/for_shit_http_headers/</link>
+    <pubDate>Wed, 18 Sep 2019 01:21:21 &#43;0800</pubDate>
+    <author>Reverier-Xu</author>
+    <guid>https://blog.woooo.tech/posts/for_shit_http_headers/</guid>
+    <description><![CDATA[<h2 id="题目">题目</h2>
+<p>得, 不多说了, 看图吧&hellip;</p>]]></description>
+</item>
+<item>
+    <title>MoeCTF 2019 题解</title>
+    <link>https://blog.woooo.tech/posts/moectf_2019_wp/</link>
+    <pubDate>Fri, 06 Sep 2019 18:23:00 &#43;0800</pubDate>
+    <author>Reverier-Xu</author>
+    <guid>https://blog.woooo.tech/posts/moectf_2019_wp/</guid>
+    <description><![CDATA[<h1 id="前言">前言</h1>
+<p>好了,本蒟蒻要开始写题解了…</p>
+<p>比赛结束力!</p>]]></description>
+</item>
+</channel>
+</rss>

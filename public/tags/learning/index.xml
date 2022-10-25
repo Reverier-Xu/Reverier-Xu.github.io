@@ -1,0 +1,34 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Learning - Tag - Reverier&#39;s Blog</title>
+        <link>https://blog.woooo.tech/tags/learning/</link>
+        <description>Learning - Tag - Reverier&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>reverier.xu@outlook.com (Reverier-Xu)</managingEditor>
+            <webMaster>reverier.xu@outlook.com (Reverier-Xu)</webMaster><lastBuildDate>Sun, 05 Jul 2020 20:44:48 &#43;0800</lastBuildDate><atom:link href="https://blog.woooo.tech/tags/learning/" rel="self" type="application/rss+xml" /><item>
+    <title>C&#43;&#43;的一些神奇用法</title>
+    <link>https://blog.woooo.tech/posts/cpp_learning_1/</link>
+    <pubDate>Sun, 05 Jul 2020 20:44:48 &#43;0800</pubDate>
+    <author>Reverier-Xu</author>
+    <guid>https://blog.woooo.tech/posts/cpp_learning_1/</guid>
+    <description><![CDATA[数组索引, 倒过来还是索引 由于数组索引被解释成指针+偏移, 所以我们用偏移+指针也未尝不可. #include &lt;iostream&gt; using namespace std; int main () { int a[] = {1, 2, 3, 4, 5, 6, 7}; cout &lt;&lt; &#34;a[4]: &#34; &lt;&lt; a[4] &lt;&lt;]]></description>
+</item>
+<item>
+    <title>C&#43;&#43; 虚函数</title>
+    <link>https://blog.woooo.tech/posts/cpp_virtual_function/</link>
+    <pubDate>Thu, 18 Jun 2020 17:11:33 &#43;0800</pubDate>
+    <author>Reverier-Xu</author>
+    <guid>https://blog.woooo.tech/posts/cpp_virtual_function/</guid>
+    <description><![CDATA[对C++虚函数的概念做一个简单的了解. 介绍 虚函数 虚函数指在基类使用virtual关键字声明的成员函数, 在使用对象指针时, 允许用基类的指针来调]]></description>
+</item>
+<item>
+    <title>The Elementary Of Programming Style</title>
+    <link>https://blog.woooo.tech/posts/the_elementary_of_programming_style/</link>
+    <pubDate>Sun, 18 Aug 2019 18:09:06 &#43;0800</pubDate>
+    <author>Reverier-Xu</author>
+    <guid>https://blog.woooo.tech/posts/the_elementary_of_programming_style/</guid>
+    <description><![CDATA[<h2 id="前言">前言</h2>
+<p>这是网上流行的一本绝版书籍,短短几页却浓缩了很多精华.</p>
+<p>即使过了30余年, 其中的思想仍旧在编程时十分有参考价值. 时间挡不住作者的真知灼见.</p>]]></description>
+</item>
+</channel>
+</rss>

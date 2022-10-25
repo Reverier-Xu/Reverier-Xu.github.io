@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>如何在Linux上优雅地堕落-1 - Reverier&#39;s Blog</title><meta name="Description" content="Creating reality with idealism."><meta property="og:title" content="如何在Linux上优雅地堕落-1" />
+<meta property="og:description" content="前言 为什么折腾了这么久Linux, 才想起来整一个博文呢? emmmm因为老是崩盘嘛&hellip; 导致我每次重新配置环境都要想半天, 我之前那个" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.woooo.tech/posts/drop_in_arch_0/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2019-11-02T10:50:19+08:00" />
+<meta property="article:modified_time" content="2019-11-02T10:50:19+08:00" /><meta property="og:site_name" content="Reverier&#39;s Blog" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="如何在Linux上优雅地堕落-1"/>
+<meta name="twitter:description" content="前言 为什么折腾了这么久Linux, 才想起来整一个博文呢? emmmm因为老是崩盘嘛&hellip; 导致我每次重新配置环境都要想半天, 我之前那个"/>
+<meta name="application-name" content="Reverier&#39;s Blog">
+<meta name="apple-mobile-web-app-title" content="Reverier&#39;s Blog"><meta name="theme-color" content="#0078D6"><meta name="msapplication-TileColor" content="#0078D6"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0078D6"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://blog.woooo.tech/posts/drop_in_arch_0/" /><link rel="prev" href="https://blog.woooo.tech/posts/leaning_network_algorithm/" /><link rel="next" href="https://blog.woooo.tech/posts/drop_in_arch_1/" /><link rel="stylesheet" href="/css/style.min.519b64cb5eb54579779c509062777056449484da1d13d762f5152138c8c4422c.css" integrity="sha256-UZtky161RXl3nFCQYndwVkSUhNodE9di9RUhOMjEQiw="><link rel="preload" href="/lib/fontawesome-free/all.min.0df5a33710e433de1f5415b1d47e4130ca7466aee5b81955f1045c4844bbb3ed.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.0df5a33710e433de1f5415b1d47e4130ca7466aee5b81955f1045c4844bbb3ed.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0="></noscript><link rel="preload" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1+AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8=" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1+AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8="></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "如何在Linux上优雅地堕落-1",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/blog.woooo.tech\/posts\/drop_in_arch_0\/"
+        },"genre": "posts","keywords": "Linux, Workspace","wordcount":  3213 ,
+        "url": "https:\/\/blog.woooo.tech\/posts\/drop_in_arch_0\/","datePublished": "2019-11-02T10:50:19+08:00","dateModified": "2019-11-02T10:50:19+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Reverier-Xu"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Reverier&#39;s Blog"><span class="header-title-pre"><span style="color: #0078D6;">#  </span></span><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"><span style="color: #0078D6">&gt;&gt;</span> 文章 </a><a class="menu-item" href="/tags/"><span style="color: #0078D6">&gt;&gt;</span> 标签 </a><a class="menu-item" href="/categories/"><span style="color: #0078D6">&gt;&gt;</span> 分类 </a><a class="menu-item" href="/friends"><span style="color: #0078D6">&gt;&gt;</span> 朋友们 </a><a class="menu-item" href="/about"><span style="color: #0078D6">&gt;&gt;</span> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Reverier&#39;s Blog"><span class="header-title-pre"><span style="color: #0078D6;">#  </span></span><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title=""><span style="color: #0078D6">&gt;&gt;</span>文章</a><a class="menu-item" href="/tags/" title=""><span style="color: #0078D6">&gt;&gt;</span>标签</a><a class="menu-item" href="/categories/" title=""><span style="color: #0078D6">&gt;&gt;</span>分类</a><a class="menu-item" href="/friends" title=""><span style="color: #0078D6">&gt;&gt;</span>朋友们</a><a class="menu-item" href="/about" title=""><span style="color: #0078D6">&gt;&gt;</span>关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">如何在Linux上优雅地堕落-1</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://blog.woooo.tech" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Reverier-Xu</a></span>&nbsp;<span class="post-category">included in <a href="/categories/workspace/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Workspace</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2019-11-02">2019-11-02</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;3213 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;7 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#正文">正文</a>
+      <ul>
+        <li><a href="#安装">安装</a></li>
+        <li><a href="#基本配置">基本配置</a></li>
+      </ul>
+    </li>
+    <li><a href="#安装arch系统可以参考">安装Arch系统可以参考</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="前言">前言</h2>
+<p>为什么折腾了这么久<code>Linux</code>, 才想起来整一个博文呢? emmmm因为老是崩盘嘛&hellip; 导致我每次重新配置环境都要想半天, 我之前那个软件是怎么装上的. 后来实在受不了, 索性抛弃了<code>Arch</code>转向了稍微友好一点的<code>Manjaro</code>. 于是我决定写一篇博文, 免得<code>Manjaro</code>哪天抽风了又要忙活好久. 不过还是得感叹一下<code>Manjaro</code>的稳定性.</p>
+<p>小更新: 又换回<code>Arch Linux</code>了hhhh. <code>Manjaro</code>虽然好, 但是有些地方还是自己手动配置比较舒服.</p>
+<h2 id="正文">正文</h2>
+<h3 id="安装">安装</h3>
+<p>由于某些软件和游戏的原因, 暂时还是脱离不了<code>Windows</code>的怀抱. 虚拟机的体验太差了, 于是经过多方面考虑, 最终决定采用双系统的办法. 首先在<code>Windows</code>上用自带的磁盘管理或者其他的分区工具找好地方, 开辟一个<code>100GB</code>左右的空间出来, 然后从镜像站嫖来最新版的<code>Snapshot</code>镜像, 用<code>Ultra ISO</code>以<code>RAW</code>的格式写进一个空间足够大的U盘里, 开机从U盘启动, 安装过程一切顺利. <code>UEFI</code>的启动方式需要把硬盘上第一个<code>FAT32</code>分区挂载到<code>/boot/efi</code>上, 千万不要手抖选择格式化, 否则你就要失去亲爱的<code>Windows</code>了.</p>
+<p>其他的设置无需多说了, Office套件我选择的是<code>Libre Office</code>, 毕竟从现在来说这个发行版是最稳定的, 没有其他一些奇奇怪怪的问题, 同时也比<code>Open Office</code>颜值高那么一点.</p>
+<p>桌面环境当然首选<code>KDE</code>啊, 使用不习惯<code>Gnome</code>的操作逻辑. 并且既然是要配置一个自己舒服的桌面环境, 高度可配置的<code>KDE</code>当然是第一选择.</p>
+<h3 id="基本配置">基本配置</h3>
+<h4 id="软件源">软件源</h4>
+<p>因为校内网有镜像站, 所以需要修改一下软件源, 这样就可以很方便的安装软件, 进行后面的配置.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo vi /etc/pacman.d/mirrorlist
+</span></span></code></pre></div><p>在最上面按照格式添加学校的镜像站, 然后打开<code>/etc/pacman.conf</code>添加<code>Archlinuxcn</code>源:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">[</span><span class="err">archlinuxcn</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="err">Server</span> <span class="err">=</span> <span class="err">https:</span><span class="c1">//mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
+</span></span></span></code></pre></div><p>然后执行</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo pacman -Syy
+</span></span></code></pre></div><p>来刷新软件源缓存, 然后</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo pacman -Syu
+</span></span></code></pre></div><p>来将系统更新到最新的版本.</p>
+<h4 id="网络加速">网络加速</h4>
+<p>因为配置过程中需要大量使用<code>GitHub</code>, 所以我们修改一下<code>/etc/hosts</code>文件, 以更快的从<code>GitHub</code>下载软件.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo nano /etc/hosts
+</span></span></code></pre></div><p>然后用<code>dig</code>或者<code>nslookup</code>指令找出<code>GitHub</code>相关域名的IP地址. 2019年11月3日可用的IP如下:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1">## GitHub Start</span>
+</span></span><span class="line"><span class="cl">192.30.253.112 github.com
+</span></span><span class="line"><span class="cl">192.30.253.119 gist.github.com
+</span></span><span class="line"><span class="cl">185.199.108.153 assets-cdn.github.com
+</span></span><span class="line"><span class="cl">151.101.128.133 raw.githubusercontent.com
+</span></span><span class="line"><span class="cl">151.101.128.133 gist.githubusercontent.com
+</span></span><span class="line"><span class="cl">151.101.128.133 cloud.githubusercontent.com
+</span></span><span class="line"><span class="cl">151.101.128.133 camo.githubusercontent.com
+</span></span><span class="line"><span class="cl">151.101.128.133 avatars0.githubusercontent.com
+</span></span><span class="line"><span class="cl">151.101.128.133 avatars1.githubusercontent.com
+</span></span><span class="line"><span class="cl">151.101.128.133 avatars2.githubusercontent.com
+</span></span><span class="line"><span class="cl">151.101.128.133 avatars3.githubusercontent.com
+</span></span><span class="line"><span class="cl">151.101.128.133 avatars4.githubusercontent.com
+</span></span><span class="line"><span class="cl">151.101.128.133 avatars5.githubusercontent.com
+</span></span><span class="line"><span class="cl">151.101.128.133 avatars6.githubusercontent.com
+</span></span><span class="line"><span class="cl">151.101.128.133 avatars7.githubusercontent.com
+</span></span><span class="line"><span class="cl">151.101.128.133 avatars8.githubusercontent.com
+</span></span><span class="line"><span class="cl"><span class="c1">## GitHub End</span>
+</span></span></code></pre></div><p>当然啦, 我可不保证你看到这篇文章的时候这个还管用. 所以找一份最新的, 或者自己用工具找到相关IP才是正确的做法.</p>
+<h4 id="基本软件">基本软件</h4>
+<h5 id="开发环境">开发环境</h5>
+<p>这里的开发环境指的是各种语言的编译环境.</p>
+<p>使用以下指令安装几个比较常见的编译工具:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo pacman -S gcc clang python python2
+</span></span></code></pre></div><p>java可以用</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">yay jdk
+</span></span></code></pre></div><p>来选择自己想用的版本. 博主用的是openjdk1.8.0, 因为Minecraft可以用这个版本跑起来 ( 手动狗头 )</p>
+<h5 id="shell-fish">Shell: Fish</h5>
+<p>对, 你没有看错, 这是一条鱼. 笔者的<code>Shell</code>使用本来受到<code>Arch Linux</code>的习惯影响, 是使用<code>zsh</code>作为自己的<code>Shell</code>的, 但是经过<code>Konge</code>学长的推荐, 尝试了这个号称宇宙第一<code>Shell</code>的<code>Fish</code>. 果不其然, 用户体验良好, 准备常驻了.</p>
+<p>要安装<code>Fish</code>, 只需要:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo pacman -S fish
+</span></span></code></pre></div><p>然后在终端里输入<code>fish</code>就可以进入然后开启快乐旅程了.</p>
+<p>我们把<code>fish</code>设为默认的<code>Shell</code>. 首先打开<code>Konsole</code>的配置方案管理, 编辑配置方案, 启动命令从<code>/bin/bash</code>换成<code>/bin/fish</code>. 接着重启<code>Konsole</code>. 然后把用户的默认<code>shell</code>也换成<code>fish</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo chsh -s /usr/bin/fish root
+</span></span><span class="line"><span class="cl">$ sudo chsh -s /usr/bin/fish <span class="o">[</span>username<span class="o">]</span>
+</span></span></code></pre></div><p><code>fish</code>每次启动时都会有打招呼内容, 我们用以下命令来自定义这句话:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ <span class="nb">set</span> fish_greeting <span class="s1">&#39;Your Greeting Words&#39;</span>
+</span></span></code></pre></div><p>对<code>fish</code>进行配置是十分人性化的, 只需要输入<code>fish_config</code>就可以了, 然后<code>fish</code>会打开本地的一个端口并启动浏览器, 以可视化的方式呈现出<code>fish</code>的各项配置. 功能设置十分的详细. 按照自己的喜好调整好就可了.</p>
+<h5 id="包管理器-yay">包管理器: yay</h5>
+<p>要充分发挥<code>Arch</code>系Linux的强大之处, 没有<code>AUR</code>怎么能行呢? 所以我们安装<code>yay</code>作为辅助<code>pacman</code>的包管理器.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo pacman -S yay
+</span></span></code></pre></div><p>今后安装软件如果不清楚名称, 就可以</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ yay <span class="o">[</span>Package Name<span class="o">]</span>
+</span></span></code></pre></div><p>来进行搜索, 然后很方便的安装了.</p>
+<h5 id="终端编辑器-vim">终端编辑器: Vim</h5>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo pacman -S vim
+</span></span></code></pre></div><p>即可安装<code>vim</code>. 我大概不用介绍<code>vim</code>了吧&hellip; 这可是一个很知名的编辑器呀.</p>
+<p>为了让<code>vim</code>更加的好用, 我们可以使用<a href="https://spacevim.org/cn/" target="_blank" rel="noopener noreffer ">SpaceVim</a>来改善自己的用户体验. 如何安装请参照官网使用指南, 在此不再赘述.</p>
+<h5 id="浏览器-chrome">浏览器: Chrome</h5>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo pacman -S google-chrome
+</span></span></code></pre></div><p>用<code>Chrome</code>完全是笔者的个人习惯, <code>Manjaro</code>自带的<code>FireFox</code>十分的优秀, 如果对浏览器没什么习惯的用<code>FireFox</code>完全可以.</p>
+<h5 id="gui代码编辑器-visual-studio-code">GUI代码编辑器: Visual Studio Code</h5>
+<p>经过微软的开源和诸多开发者的贡献之后, Visual Studio Code现在已经无愧于最强代码编辑器的称号了. (当然, 博主并不是在这里引战, 如果你非要用Sublime或者Atom也莫得关系) ArchlinuxCN源中有vscode的二进制版.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo pacman -S visual-studio-code-bin
+</span></span></code></pre></div><p>装好之后打开插件搜索chinese装一下中文包, 英语超级优秀的同学请忽略此句.</p>
+<p>我一般会对VSCode进行一点小配置, 然后装一些插件. 这里推荐使用Fira Code作为字体并开启字体连字, 某些符号看起来真的无比舒服.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://www.hanselman.com/blog/content/binary/Windows-Live-Writer/06e959c4fe7a_BA10/image_db854752-00fd-46d9-adb4-95292dece6a4.png"
+        data-srcset="https://www.hanselman.com/blog/content/binary/Windows-Live-Writer/06e959c4fe7a_BA10/image_db854752-00fd-46d9-adb4-95292dece6a4.png, https://www.hanselman.com/blog/content/binary/Windows-Live-Writer/06e959c4fe7a_BA10/image_db854752-00fd-46d9-adb4-95292dece6a4.png 1.5x, https://www.hanselman.com/blog/content/binary/Windows-Live-Writer/06e959c4fe7a_BA10/image_db854752-00fd-46d9-adb4-95292dece6a4.png 2x"
+        data-sizes="auto"
+        alt="https://www.hanselman.com/blog/content/binary/Windows-Live-Writer/06e959c4fe7a_BA10/image_db854752-00fd-46d9-adb4-95292dece6a4.png"
+        title="firacode.png" /></p>
+<p>还有一些插件, 博主大一学习, 装的插件有C/C++, Red Hat提供的java扩展, python,  intellicode, LeetCode, DailyAnime和VSC Netease music.</p>
+<h4 id="扩展软件">扩展软件</h4>
+<h5 id="下拉式终端-tilda">下拉式终端: Tilda</h5>
+<p>本来<code>Manjaro</code>是自带了一个<code>Yakuake</code>下拉式终端, 但是我实在是用不习惯, 并且它的显示有时候会出些问题. 因此我卸载了<code>Yakuake</code>装了<code>Tilda</code>. 打开设置, 在设置 &gt; 开机和关机 &gt; 自动启动里添加启动项, 并选择应用程序, 输入<code>Tilda</code>并开启.</p>
+<p>在桌面上直接敲<code>Tilda</code>, 可以从KDE的快速启动器中启动<code>Tilda</code>. 启动后我们可以进行一些设置, 比如透明度, 颜色, 启动命令, 延迟, 自动隐藏规则等等.</p>
+<h5 id="应用程序启动器-latte-dock">应用程序启动器: Latte-Dock</h5>
+<p>虽然我没有用过<code>Mac OS X</code>, 但是对其高效的桌面念念不忘. 同时我又想节省一下空间, <code>Windows</code>下面, 厚重的任务栏就占去了一部分屏幕, 标题栏又削一层, 菜单栏又削一层&hellip; 最后留给应用程序的显示空间就少了不必要的一部分. 于是我想找到一种办法, 把菜单, 标题, 状态栏集中在一个<code>bar</code>上面, 任务栏没办法, 要保证同时可用性, 就只能弄一个<code>dock</code>当任务栏, 在窗口活动时自动隐藏了. <code>Latte Dock</code>原生和KDE集成在一起, 通过它可以享受很棒的<code>dock</code>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo pacman -S latte-dock
+</span></span></code></pre></div><p>按照和<code>tilda</code>同样的方法把<code>latte-dock</code>也设置为自动启动, 然后在快速启动器里面输入<code>latte</code>并回车, 就可以看见<code>dock</code>了. 然后把任务栏拖动到屏幕上方, 右键任务栏配置面板, 把开始菜单和任务管理器, 虚拟桌面都删掉, 留下显示桌面和状态栏即可. 然后在面板左侧添加空白. 然后添加控件, 选择全屏的应用程序启动面板, 并拖动到<code>Latte-Dock</code>的第一个位置. <code>Latte-Dock</code>的默认隐藏策略就很智能, 无需单独配置. 在添加控件的侧栏下方安装新控件, 搜索<code>Application Title</code>并安装, 然后配置任务栏那一行, 拖动全局菜单到最左侧, 旁边插入空白, 再插入<code>Application Title</code>, 再插入空白, 最后是状态栏等控件.</p>
+<p>最后我们想办法, 把最大化窗口的标题栏去掉. 在<code>./.config/kwinrc</code>中找到<code>[Windows]</code>的选项, 然后按照以下方式配置:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ini" data-lang="ini"><span class="line"><span class="cl"><span class="k">[Windows]</span>
+</span></span><span class="line"><span class="cl"><span class="na">BorderlessMaximizedWindows</span><span class="o">=</span><span class="s">true</span>
+</span></span><span class="line"><span class="cl"><span class="na">ElectricBorderCooldown</span><span class="o">=</span><span class="s">350</span>
+</span></span><span class="line"><span class="cl"><span class="na">ElectricBorderCornerRatio</span><span class="o">=</span><span class="s">0.25</span>
+</span></span><span class="line"><span class="cl"><span class="na">ElectricBorderDelay</span><span class="o">=</span><span class="s">150</span>
+</span></span><span class="line"><span class="cl"><span class="na">ElectricBorderMaximize</span><span class="o">=</span><span class="s">true</span>
+</span></span><span class="line"><span class="cl"><span class="na">ElectricBorderTiling</span><span class="o">=</span><span class="s">true</span>
+</span></span><span class="line"><span class="cl"><span class="na">ElectricBorders</span><span class="o">=</span><span class="s">1</span>
+</span></span><span class="line"><span class="cl"><span class="na">RollOverDesktops</span><span class="o">=</span><span class="s">true</span>
+</span></span></code></pre></div><p>配置完成后的效果大概如图所示.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://i.loli.net/2019/11/03/39OkRIvcPWSyeHp.png"
+        data-srcset="https://i.loli.net/2019/11/03/39OkRIvcPWSyeHp.png, https://i.loli.net/2019/11/03/39OkRIvcPWSyeHp.png 1.5x, https://i.loli.net/2019/11/03/39OkRIvcPWSyeHp.png 2x"
+        data-sizes="auto"
+        alt="https://i.loli.net/2019/11/03/39OkRIvcPWSyeHp.png"
+        title="blog2.png" /></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://i.loli.net/2019/11/03/hr6Ea92FSNxWKQ1.png"
+        data-srcset="https://i.loli.net/2019/11/03/hr6Ea92FSNxWKQ1.png, https://i.loli.net/2019/11/03/hr6Ea92FSNxWKQ1.png 1.5x, https://i.loli.net/2019/11/03/hr6Ea92FSNxWKQ1.png 2x"
+        data-sizes="auto"
+        alt="https://i.loli.net/2019/11/03/hr6Ea92FSNxWKQ1.png"
+        title="blog3.png" /></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://i.loli.net/2019/11/03/1xjCIT9O7YlNewS.png"
+        data-srcset="https://i.loli.net/2019/11/03/1xjCIT9O7YlNewS.png, https://i.loli.net/2019/11/03/1xjCIT9O7YlNewS.png 1.5x, https://i.loli.net/2019/11/03/1xjCIT9O7YlNewS.png 2x"
+        data-sizes="auto"
+        alt="https://i.loli.net/2019/11/03/1xjCIT9O7YlNewS.png"
+        title="blog1.png" /></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://i.loli.net/2019/11/03/ja5GEbLqzo73yxn.png"
+        data-srcset="https://i.loli.net/2019/11/03/ja5GEbLqzo73yxn.png, https://i.loli.net/2019/11/03/ja5GEbLqzo73yxn.png 1.5x, https://i.loli.net/2019/11/03/ja5GEbLqzo73yxn.png 2x"
+        data-sizes="auto"
+        alt="https://i.loli.net/2019/11/03/ja5GEbLqzo73yxn.png"
+        title="blog4.png" /></p>
+<h5 id="输入法-fcitx-pinyin">输入法: Fcitx-pinyin</h5>
+<p>作为中国人, 配置了这么久才发现自己连中文输入都不能&hellip; 那怎么能行, 当然要装一下中文输入法了.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo pacman -S fcitx-im fcitx-configtool
+</span></span></code></pre></div><p>这条指令会安装<code>fcitx</code>和<code>fcitx</code>的图形化管理界面. 但是安装好后依旧无法输入中文, 这个时候先把<code>fcitx</code>设为开机启动, 然后终端输入<code>fcitx-diagnose</code>运行诊断, 然后按照诊断来进行配置和修复. 一般情况下你只要配置一下<code>$HOME/.xprofile</code>这个文件就好了, 在下面添加如下内容 ( 如果没有这个文件就新建一个 ):</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ini" data-lang="ini"><span class="line"><span class="cl"><span class="na">export GTK_IM_MODULE</span><span class="o">=</span><span class="s">fcitx</span>
+</span></span><span class="line"><span class="cl"><span class="na">export QT_IM_MODULE</span><span class="o">=</span><span class="s">fcitx</span>
+</span></span><span class="line"><span class="cl"><span class="na">export XMODIFIERS</span><span class="o">=</span><span class="s">&#34;@im=fcitx&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="na">export SAL_USE_VCLPLUGIN</span><span class="o">=</span><span class="s">gtk</span>
+</span></span><span class="line"><span class="cl"><span class="na">export LC_ALL</span><span class="o">=</span><span class="s">&#34;zh_CN.UTF-8&#34;</span>
+</span></span></code></pre></div><p>注销后重新登录就可以使用了.</p>
+<p>画个节点, 过两天继续更新.</p>
+<h2 id="安装arch系统可以参考">安装Arch系统可以参考</h2>
+<!-- raw HTML omitted -->
+<hr>
+<!-- raw HTML omitted -->
+<hr>
+<!-- raw HTML omitted -->
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2019-11-02</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/linux/">Linux</a>,&nbsp;<a href="/tags/workspace/">Workspace</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/leaning_network_algorithm/" class="prev" rel="prev" title="网络流学习1--最大流问题"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>网络流学习1--最大流问题</a>
+            <a href="/posts/drop_in_arch_1/" class="next" rel="next" title="如何在Linux上优雅的堕落-2">如何在Linux上优雅的堕落-2<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="gitalk" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://github.com/gitalk/gitalk"></a>Gitalk</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2019 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://blog.woooo.tech" target="_blank">Reverier-Xu</a></span>&nbsp;|&nbsp;<span class="license">CC-BY-NC-SA 4.0</span><span class="icp-splitter">&nbsp;|&nbsp;</span><br class="icp-br"/>
+                    <span class="icp"><a href="https://beian.miit.gov.cn/">豫ICP备20023182号-2</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/gitalk/gitalk.min.e1f973627089fc121272c24d146e7c52e316a203fcb362eb2f648d803fc0d327.css" integrity="sha256-4flzYnCJ/BIScsJNFG58UuMWogP8s2LrL2SNgD/A0yc="><link rel="stylesheet" href="/lib/katex/katex.min.76e39bd605d45b2d1944123c66608b0c8bb9baeb70720b212571531c7cf9bc2a.css" integrity="sha256-duOb1gXUWy0ZRBI8ZmCLDIu5uutwcgshJXFTHHz5vCo="><script type="text/javascript" src="/lib/gitalk/gitalk.min.3e68fce688cb68f396c11b65309c267b307f420f01cef269e5e4f3bd769801f0.js" integrity="sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.ae2da1bd62c6469ee27770ad1cddf2e8296d8a7f6d85b091463e5200c5e320af.js" integrity="sha256-ri2hvWLGRp7id3CtHN3y6Cltin9thbCRRj5SAMXjIK8="></script><script type="text/javascript" src="/lib/lunr/lunr.min.08a93c0120364b01159db3c287f39b2180bb740334472bda0675bd3f18981676.js" integrity="sha256-CKk8ASA2SwEVnbPCh/ObIYC7dAM0RyvaBnW9PxiYFnY="></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.3d9120fa621da6d613c1698b7014ec6bdf4620366e8f2b7b547059f4b6f6272b.js" integrity="sha256-PZEg+mIdptYTwWmLcBTsa99GIDZujyt7VHBZ9Lb2Jys="></script><script type="text/javascript" src="/lib/twemoji/twemoji.min.706224d8dc5440460f8ed91c1a6aad25d732af6e0ee6fb31151b157ab485babb.js" integrity="sha256-cGIk2NxUQEYPjtkcGmqtJdcyr24O5vsxFRsVerSFurs="></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.e17a1d816e13c0826e0ed7febfabc3277f45571234bde0bf9120829a7169edc9.js" integrity="sha256-4XodgW4TwIJuDtf+v6vDJ39FVxI0veC/kSCCmnFp7ck="></script><script type="text/javascript" src="/lib/typeit/index.umd.807dab627518d7e2864af47389e0f0e5ae825fcb3036681f2312a5629cb2493a.js" integrity="sha256-gH2rYnUY1+KGSvRzieDw5a6CX8swNmgfIxKlYpyySTo="></script><script type="text/javascript" src="/lib/katex/katex.min.eb18207487161674e717087c317db14ac1a62dadaecccb802499ce173bfeb739.js" integrity="sha256-6xggdIcWFnTnFwh8MX2xSsGmLa2uzMuAJJnOFzv+tzk="></script><script type="text/javascript" src="/lib/katex/contrib/auto-render.min.cb7f4ca60ed5dc3e258415f8c7a3b46d4a93578a52adf83011f18a7f190e7602.js" integrity="sha256-y39Mpg7V3D4lhBX4x6O0bUqTV4pSrfgwEfGKfxkOdgI="></script><script type="text/javascript" src="/lib/katex/contrib/copy-tex.min.52ce78fab4860d24ef22128a52ce24ca01368a9034457a565a1d3fccbab0ddbb.js" integrity="sha256-Us54+rSGDSTvIhKKUs4kygE2ipA0RXpWWh0/zLqw3bs="></script><script type="text/javascript" src="/lib/katex/contrib/mhchem.min.5c0a121a8b490afc85860a522347aeb34fb508c6b23044e5d29f6b2194227b51.js" integrity="sha256-XAoSGotJCvyFhgpSI0eus0+1CMayMETl0p9rIZQie1E="></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{"gitalk":{"admin":["Reverier-Xu"],"clientID":"04e3a9c7b8514d2532ba","clientSecret":"b55ad7dd220563faca25d9b74dc517fd309dafa9","id":"2019-11-02T10:50:19+08:00","owner":"Reverier-Xu","repo":"blog_comment","title":"如何在Linux上优雅地堕落-1"}},"data":{"id-1":"~/Reverier's Blog","id-2":"~/Reverier's Blog"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"},"twemoji":true,"typeit":{"cursorChar":"\u003cstrong style=\"color: #0078D6;\"\u003e_\u003c/strong\u003e","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":50}};</script><script type="text/javascript" src="/js/theme.min.b0df51c2c57145081cc73960e9aa780e6f5f56d06cf4ef0f96da8ce1619d1e12.js" integrity="sha256-sN9RwsVxRQgcxzlg6ap4Dm9fVtBs9O8PltqM4WGdHhI="></script></body>
+</html>

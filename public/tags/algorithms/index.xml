@@ -1,0 +1,17 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Algorithms - Tag - Reverier&#39;s Blog</title>
+        <link>https://blog.woooo.tech/tags/algorithms/</link>
+        <description>Algorithms - Tag - Reverier&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>reverier.xu@outlook.com (Reverier-Xu)</managingEditor>
+            <webMaster>reverier.xu@outlook.com (Reverier-Xu)</webMaster><lastBuildDate>Fri, 20 Sep 2019 16:40:27 &#43;0800</lastBuildDate><atom:link href="https://blog.woooo.tech/tags/algorithms/" rel="self" type="application/rss+xml" /><item>
+    <title>网络流学习1--最大流问题</title>
+    <link>https://blog.woooo.tech/posts/leaning_network_algorithm/</link>
+    <pubDate>Fri, 20 Sep 2019 16:40:27 &#43;0800</pubDate>
+    <author>Reverier-Xu</author>
+    <guid>https://blog.woooo.tech/posts/leaning_network_algorithm/</guid>
+    <description><![CDATA[<h2 id="前言">前言</h2>
+<p>本来什么都不会的, 但是呢, 为了能顺利进入MSC in XDU去打ACM, 我就只能硬着头皮上啦&hellip;</p>]]></description>
+</item>
+</channel>
+</rss>
