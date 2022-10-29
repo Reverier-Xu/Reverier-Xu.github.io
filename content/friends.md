@@ -47,6 +47,7 @@ title: 朋友们
 - [果果](https://orangecheers.top/): 高坂穗乃果，19级计科的神
 - [hawa130](https://hawa130.com/): 技术部部长，前端带师
 - [Dimole](https://blog.dml.ink/): 带嘿客，icalingua++维护者
+- [SuperBart](https://www.superbart.xyz/): 水表开发者，开发带师
 
 > ## 打CTF认识的师傅们
 
