@@ -1,6 +1,6 @@
 ---
 title: 长安杯 S4 比赛记录
-date: 2020-10-29T22:07:41+08:00
+date: 2022-10-29T22:07:41+08:00
 draft: true
 tags: [Forensics, CTF]
 categories: [Forensics]
