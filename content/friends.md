@@ -25,6 +25,7 @@ title: 朋友们
 - [Ga1@xy](http://www.ga1axy.top): ~~🐏~~，misc和电子取证带师
 - [luoqi@n](https://luoq1an.github.io/): misc和电子取证带师，白毛吉祥物
 - [arttnba3](https://arttnba3.cn/): ~~鸽子~~，内核带师，pwn👴，带画师
+- [l1ng](https://ll1ng.github.io/): pwn👴，ling姐姐
 - [HorizonChaser](https://horizonchaser.github.io/): 逆向手
 
 > ## [XDSEC](https://www.xdsec.org) 2020
