@@ -41,7 +41,7 @@ theme: next #注意 ‘:’ 后面是有空格的!
 
 打开博客文件夹下的`themes → next → _config.yml`文件, 对,也叫 `_config.yml` …… 不要晕了哦!
 
-NexT提供了四种主题风格，分别是Muse、Mist、Pisces、Gemini, 可以在刚打开的`_config.yml`里找到`scheme`这一项进行修改,然后 :
+NexT提供了四种主题风格, 分别是Muse、Mist、Pisces、Gemini, 可以在刚打开的`_config.yml`里找到`scheme`这一项进行修改,然后 :
 
 ```bash
 $ hexo s
@@ -1300,7 +1300,7 @@ deploy:
 
 首先, 大家也看到了笔者的博客, 鼠标点击会出来小红心 ( 别抬杠说不是红的 ), 这个效果怎么设置呢?
 
-在`/themes/next/source/js/src`下新建文件 `clicklove.js` ，接着把下面的代码拷贝粘贴到 `clicklove.js` 文件中：
+在`/themes/next/source/js/src`下新建文件 `clicklove.js` , 接着把下面的代码拷贝粘贴到 `clicklove.js` 文件中: 
 
 ```js
 !function (e, t, a) {
@@ -1325,7 +1325,7 @@ deploy:
 }(window, document);
 ```
 
-在`\themes\next\layout\_layout.swig`文件末尾添加：
+在`\themes\next\layout\_layout.swig`文件末尾添加: 
 
 ```html
 <script type="text/javascript" src="/js/src/clicklove.js"></script>
@@ -1371,7 +1371,7 @@ $ git clone https://github.com/theme-next/theme-next-canvas-nest themes/next/sou
 
 如何设置头像呢?
 
-你可以把头像文件放在`博客主目录/themes/next/source/images`目录下，然后在主题配置文件中:
+你可以把头像文件放在`博客主目录/themes/next/source/images`目录下, 然后在主题配置文件中:
 
 ```yml
 avatar:
@@ -1411,7 +1411,7 @@ avatar:
 </div>
 ```
 
-最后我们打开主题配置文件`_config.yml`,在末尾添加下面的代码：
+最后我们打开主题配置文件`_config.yml`,在末尾添加下面的代码: 
 
 ```yml
 passage_end_tag:

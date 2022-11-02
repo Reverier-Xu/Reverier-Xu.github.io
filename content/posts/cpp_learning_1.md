@@ -56,11 +56,11 @@ for (auto &s : v)
 
 > 转自[YouTube](https://youtu.be/hEx5DNLWGgA)
 
-除了标准支持的`for`自动迭代器之外，还有`std::for_each(container.begin(), container.end(), predicate_function)`与`Qt`的`for_each(item, container)`可用。不过有了新标准之后这种写法更容易理解，并且没有对库的依赖性。
+除了标准支持的`for`自动迭代器之外, 还有`std::for_each(container.begin(), container.end(), predicate_function)`与`Qt`的`for_each(item, container)`可用. 不过有了新标准之后这种写法更容易理解, 并且没有对库的依赖性. 
 
 ## 强大到没朋友的`auto`
 
-据说2038年的C++标准就可以支持这么写了：
+据说2038年的C++标准就可以支持这么写了: 
 
 ```C++
 auto [auto](auto auto) auto {
@@ -72,7 +72,7 @@ auto [auto](auto auto) auto {
 
 (这个代码就是开个玩笑)
 
-看上一节中的应用，`auto`几乎万能。
+看上一节中的应用, `auto`几乎万能. 
 
 ## 像`for`一样在`if`和`while`里使用变量初始化
 

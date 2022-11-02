@@ -12,11 +12,11 @@ wp
 
 ## hello
 
-> 证明了我真的是菜鸡的一道`pwn`题，搞了半天才明白XD
+> 证明了我真的是菜鸡的一道`pwn`题, 搞了半天才明白XD
 
 做题环境```Manjaro-KDE```
 
-首先使用```checksec```指令查看保护，可以发现保护基本都是关的，只有```Partial RELRO```，那么基本上是可以为所欲为了wwww
+首先使用```checksec```指令查看保护, 可以发现保护基本都是关的, 只有```Partial RELRO```, 那么基本上是可以为所欲为了wwww
 
 ```win```环境下拖进```IDA```进行分析
 
@@ -30,48 +30,48 @@ wp
 
 ![image.png](https://i.loli.net/2020/05/11/nKAZp7wUtfV3g6P.png)
 
-那么程序漏洞很明显了：
+那么程序漏洞很明显了: 
 
-- **使用```fgets```读入最大为72个字节的字符串，但是只分配给了48字节的空间，存在栈溢出**
+- **使用```fgets```读入最大为72个字节的字符串, 但是只分配给了48字节的空间, 存在栈溢出**
 
-又有一个可疑的```bd```函数，那么第一时间想到**```ret2text```**——构造`payload`跳转到```bd```
+又有一个可疑的```bd```函数, 那么第一时间想到**```ret2text```**——构造`payload`跳转到```bd```
 
-但是很明显，```bd```函数基本是是空的(悲)
+但是很明显, ```bd```函数基本是是空的(悲)
 
 ![image.png](https://i.loli.net/2020/05/11/59MVFNoviEYp4rn.png)
 
-> 然后我就在这里卡了半天，证明我真的菜XD
+> 然后我就在这里卡了半天, 证明我真的菜XD
 
 那么我们该如何利用这个```bd```呢？
 
-可以看到在```bd```中存在操作```jmp rsp```，那么其实我们可以利用这个指令**跳转回栈上，执行我们放在栈上的`shellcode`**
+可以看到在```bd```中存在操作```jmp rsp```, 那么其实我们可以利用这个指令**跳转回栈上, 执行我们放在栈上的`shellcode`**
 
 **也就是说这其实是一道`ret2shellcode`的题**
 
-### `ret2text`执行过程：
+### `ret2text`执行过程: 
 
 - **`rsp`永远指向栈顶**
-- **当我们用常规的`ret2text`构造48字节字符串`+8`字节`rbp+8`字节`bd`函数地址（覆盖掉原返回地址）的`payload`时，`rsp`指向的其实是`bd`函数地址的位置**
-- **`ret`指令进入`bd`后弹出`bd`地址，`rsp`指向栈内储存的`rbp`的值（预期内）**
-- **`bd`函数将`rbp`再`push`入栈中，此时`rsp`再加8，指向被新压入的`rbp`（预期内）**
+- **当我们用常规的`ret2text`构造48字节字符串`+8`字节`rbp+8`字节`bd`函数地址 (覆盖掉原返回地址) 的`payload`时, `rsp`指向的其实是`bd`函数地址的位置**
+- **`ret`指令进入`bd`后弹出`bd`地址, `rsp`指向栈内储存的`rbp`的值 (预期内) **
+- **`bd`函数将`rbp`再`push`入栈中, 此时`rsp`再加8, 指向被新压入的`rbp` (预期内) **
 - **`bd`函数执行`rsp`上的指令**
   那么我们就可以在`rsp`预期内指向的地址上覆盖上我们的`shellcode`使其被执行
 
-接下来就是`ret2shellcode`的：
+接下来就是`ret2shellcode`的: 
 
-### `ret2shellcode`修正过程：
+### `ret2shellcode`修正过程: 
 
 - **在`rsp`最终指向的地址放上我们待执行的`shellcode`**
-- **由于长度不够，我们可以把`getshell`的`shellcode`放在读入的字符串的最开始的地方，再通过汇编指令进行跳转**
-- **在`rsp`所指向的位置覆盖上`shellcode`，改变`rsp`的值使其指向`getshell`的`shellcode`并再次进行跳转，完成`getshell`**
+- **由于长度不够, 我们可以把`getshell`的`shellcode`放在读入的字符串的最开始的地方, 再通过汇编指令进行跳转**
+- **在`rsp`所指向的位置覆盖上`shellcode`, 改变`rsp`的值使其指向`getshell`的`shellcode`并再次进行跳转, 完成`getshell`**
 
-那么`payload`就很容易构造出来了：
+那么`payload`就很容易构造出来了: 
 
 ```python
 
 context.arch = 'amd64'
 sc1 = asm(shellcraft.sh())
-sc2 = asm('sub rsp,64')//48字节的字符串+8字节的rsp+8字节的rbp，跳回开头
+sc2 = asm('sub rsp,64')//48字节的字符串+8字节的rsp+8字节的rbp, 跳回开头
 sc3 = asm('jmp rsp')
 elf = ELF('hello')
 payload = sc1 + b'a'*(56-len(sc1)) + p64(elf.symbols['bd']) + sc2 + sc3
@@ -91,13 +91,13 @@ payload = sc1 + b'a'*(56-len(sc1)) + p64(elf.symbols['bd']) + sc2 + sc3
 
 <img src="https://i.loli.net/2020/05/16/gYQKdLw645feHW3.png" alt="image-20200516102439823.png" style="zoom:50%;" />
 
-这个还真挺好玩的，把认识的师傅id都输了一遍，直到我把自己的id输了进去（草
+这个还真挺好玩的, 把认识的师傅id都输了一遍, 直到我把自己的id输了进去 (草
 
-这里拿小sad举例：
+这里拿小sad举例: 
 
 ![image-20200516105810838.png](https://i.loli.net/2020/05/16/EtImALgT82Oeznq.png)
 
-看见这个，我立刻想到了强网杯的随便注（其实找了半天），因为那道题用到了堆叠注入的知识点，所以我就试了一下
+看见这个, 我立刻想到了强网杯的随便注 (其实找了半天) , 因为那道题用到了堆叠注入的知识点, 所以我就试了一下
 
 ```plaintext
 sad'); show databases;
@@ -105,7 +105,7 @@ sad'); show databases;
 
 ![image-20200516110446026.png](https://i.loli.net/2020/05/16/YUsGpLbv8QtgiNR.png)
 
-成了，再试一下查询表
+成了, 再试一下查询表
 
 ```plaintext
 sad'); show tables;
@@ -113,9 +113,9 @@ sad'); show tables;
 
 ![image-20200516110244132.png](https://i.loli.net/2020/05/16/N7hIaBu3ymOJ5E8.png)
 
-这个看起来这么臭的表一定有问题（确信
+这个看起来这么臭的表一定有问题 (确信
 
-这里我用到了handler，这条语句使我们能够一行一行的浏览一个表中的数据，所以：
+这里我用到了handler, 这条语句使我们能够一行一行的浏览一个表中的数据, 所以: 
 
 ```plaintext
 sad');handler`1145141919810`open;handler`1145141919810`read first;
@@ -127,7 +127,7 @@ sad');handler`1145141919810`open;handler`1145141919810`read first;
 sad');handler`1145141919810`open;handler`1145141919810`read first;handler`1145141919810`read next;
 ```
 
-直接给出flag（因为是动态flag所以不贴了
+直接给出flag (因为是动态flag所以不贴了
 
 ## reverse
 
@@ -135,21 +135,21 @@ sad');handler`1145141919810`open;handler`1145141919810`read first;handler`114514
 
 这道题还不如放到misc里去...一点逆向都没用到
 
-下载文件发现这玩意是用来钓鱼的假qq登陆界面，于是随便输入账号密码试了一下
+下载文件发现这玩意是用来钓鱼的假qq登陆界面, 于是随便输入账号密码试了一下
 
 <img src="https://i.loli.net/2020/05/16/p6mYFk734DCjtqM.png" alt="image-20200516111101915.png" style="zoom:67%;" />
 
-草这钓鱼界面太真实了，用wireshark抓包试试看
+草这钓鱼界面太真实了, 用wireshark抓包试试看
 
 ![image-20200516144727912.png](https://i.loli.net/2020/05/16/ziCEpyPBwZrRtLV.png)
 
-可以看到这个程序用smtp协议登录邮箱，将用户输入的账号和密码发送到dengluwo233@163.com这个邮箱。由于smtp协议登录时的账号和密码默认为base64编码加密，所以我们很容易得到邮箱密码：FGYYJTMAZVTUPSWH
+可以看到这个程序用smtp协议登录邮箱, 将用户输入的账号和密码发送到dengluwo233@163.com这个邮箱. 由于smtp协议登录时的账号和密码默认为base64编码加密, 所以我们很容易得到邮箱密码: FGYYJTMAZVTUPSWH
 
-但是邮箱的账号和密码在网页登录的时候显示密码错误，163邮箱的密码也默认必须由数字字母组成，这个密码明显不符合，但是后来RX大哥用客户端登录成功了，于是问了下出题人，这里贴一下：
+但是邮箱的账号和密码在网页登录的时候显示密码错误, 163邮箱的密码也默认必须由数字字母组成, 这个密码明显不符合, 但是后来RX大哥用客户端登录成功了, 于是问了下出题人, 这里贴一下: 
 
 ![image-20200516145508231.png](https://i.loli.net/2020/05/16/7ONTUZcbegP4YaQ.png)
 
-登录成功后，在收件箱发现一个压缩包：thing.zip，打开之后在其中的QQ.e文件里发现flag
+登录成功后, 在收件箱发现一个压缩包: thing.zip, 打开之后在其中的QQ.e文件里发现flag
 
 ![image-20200516145719636.png](https://i.loli.net/2020/05/16/Q6DX4Pj2zlTh7qc.png)
 
@@ -161,11 +161,11 @@ miniL{Epl_Oh_gre@T}
 
 #### MiniGameHacking
 
-这游戏好玩得很（虽然为了抢一血解法非常暴力
+这游戏好玩得很 (虽然为了抢一血解法非常暴力
 
 ![image-20200516152750684.png](https://i.loli.net/2020/05/16/EqNiWxgfOcYpFTu.png)
 
-在data.unity3d文件里人 肉 搜 索到的flag（因为flag的minil少了一个m，搜索minil是搜不到的
+在data.unity3d文件里人 肉 搜 索到的flag (因为flag的minil少了一个m, 搜索minil是搜不到的
 
 ![image-20200516153027924.png](https://i.loli.net/2020/05/16/hO81TYAlNsPQEjW.png)
 
@@ -173,13 +173,13 @@ miniL{Epl_Oh_gre@T}
 minil{diosamasayikou}
 ```
 
-后来听别人说游戏通关也有flag，一共15关，我打到14关就过不去了只能放弃（
+后来听别人说游戏通关也有flag, 一共15关, 我打到14关就过不去了只能放弃 (
 
 #### EasyVmem
 
 2G的vmem文件...我要死了草...
 
-本着这么大的文件不可能拖到kali里用Volatility挨个找的想法，我跟ga1@xy嫖了一个windows用的取证工具：Magnet  AXIOM，加载了半个多小时之后终于成了
+本着这么大的文件不可能拖到kali里用Volatility挨个找的想法, 我跟ga1@xy嫖了一个windows用的取证工具: Magnet  AXIOM, 加载了半个多小时之后终于成了
 
 ![image-20200516153735514.png](https://i.loli.net/2020/05/16/w1s3rvdboC5W2xz.png)
 
@@ -187,11 +187,11 @@ minil{diosamasayikou}
 
 ![image-20200516154011641.png](https://i.loli.net/2020/05/16/PScZYnO5XB4e1Kq.png)
 
-假flag里（base64）的大致内容是grep cha113nge to start the game，至于下面那一堆s3cR3t（太多了就不放这了）后面的数字一直在变，从10 10一直到289 289，猜测是289x289像素的图片，于是让RX大哥画了个图：
+假flag里 (base64) 的大致内容是grep cha113nge to start the game, 至于下面那一堆s3cR3t (太多了就不放这了) 后面的数字一直在变, 从10 10一直到289 289, 猜测是289x289像素的图片, 于是让RX大哥画了个图: 
 
 <img src="https://i.loli.net/2020/05/16/xrSw36YFG9ovIMb.png" alt="image-20200516154328639.png" style="zoom:67%;" />
 
-扫一下就可以获得flag（出题人说他是在volatility环境下设置的题，所以我这算是抄近路了
+扫一下就可以获得flag (出题人说他是在volatility环境下设置的题, 所以我这算是抄近路了
 
 ```plaintext
 miniLCTF{mAst3R_0F_v0Lat1l1tY!}
@@ -211,19 +211,19 @@ miniLCTF{mAst3R_0F_v0Lat1l1tY!}
 
 ![image-20200516155849753.png](https://i.loli.net/2020/05/16/TxbsAJVKdO5eCtI.png)
 
-去查一下common name：
+去查一下common name: 
 
 ![image-20200516160029095.png](https://i.loli.net/2020/05/16/RhzIQCWavnkOAXN.png)
 
-一看这个东西就是跟证书有关的，于是在流量包里搜索certificate
+一看这个东西就是跟证书有关的, 于是在流量包里搜索certificate
 
 ![image-20200516160603633.png](https://i.loli.net/2020/05/16/I3aP84wl5RAhCio.png)
 
-issuer，commonname，那这个Liuyukun CA应该就是要找的东西了，base64一下就能得到flag
+issuer, commonname, 那这个Liuyukun CA应该就是要找的东西了, base64一下就能得到flag
 
 ### 总结
 
-比赛这么多天，看着RX大哥穿了一道又一道，我就只能划水....混了个第三还是挺开心的
+比赛这么多天, 看着RX大哥穿了一道又一道, 我就只能划水....混了个第三还是挺开心的
 
 ![status](https://i.loli.net/2020/05/16/cw3CMnWGXZVsBtU.png)
 

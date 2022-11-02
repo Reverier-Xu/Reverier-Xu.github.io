@@ -48,9 +48,9 @@ Options:
   --author             显示作者信息.
   --license            显示版权信息.
   --desktopfile <文件名>  此应用程序的桌面条目的基础文件名
-  --select             参数中传递的文件和文件夹会被选中。
-  --split              Dolphin 将以拆分视图启动。
-  --new-window         Dolphin 将明确地在新窗口中打开。
+  --select             参数中传递的文件和文件夹会被选中. 
+  --split              Dolphin 将以拆分视图启动. 
+  --new-window         Dolphin 将明确地在新窗口中打开. 
   --daemon             启动 Dolphin 守护进程 (只在使用 DBus 接口时需要)
 
 Arguments:

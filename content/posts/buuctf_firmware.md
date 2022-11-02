@@ -5,7 +5,7 @@ tags: [CTF, Reverse]
 categories: [CTF]
 ---
 
-首先下载题目文件，使用binwalk解压出固件内的文件
+首先下载题目文件, 使用binwalk解压出固件内的文件
 
 ```plaintext
 [Rx][•ᴗ•] >>> binwalk -e ./51475f91-7b90-41dd-81a3-8b82df4f29d0.bin
@@ -22,9 +22,9 @@ DECIMAL       HEXADECIMAL     DESCRIPTION
 
 ```
 
-在解压出来的文件中包含了kernel镜像以及一个squashfs文件系统镜像。
+在解压出来的文件中包含了kernel镜像以及一个squashfs文件系统镜像. 
 
-使用`firmware-mod-kit`工具包内的`unsquashfs_all.sh`解压文件系统镜像，这个包在仓库`blackarch`中，直接安装包名即可。`unsquashfs_all.sh`的位置在`/usr/share/firmware-mod-kit/unsquashfs_all.sh`
+使用`firmware-mod-kit`工具包内的`unsquashfs_all.sh`解压文件系统镜像, 这个包在仓库`blackarch`中, 直接安装包名即可. `unsquashfs_all.sh`的位置在`/usr/share/firmware-mod-kit/unsquashfs_all.sh`
 
 ```plaintext
 [Rx][•ᴗ•] >>> /usr/share/firmware-mod-kit/unsquashfs_all.sh ./120200.squashfs
@@ -68,8 +68,8 @@ MKFS="./src/others/squashfs-4.0-lzma/mksquashfs-lzma"
 
 ```
 
-解压出来的文件夹中`tmp`目录下有一个叫做`backdoor`的后门二进制文件，查壳发现被upx压缩过，`upx -d`解压之，然后拖进IDA
+解压出来的文件夹中`tmp`目录下有一个叫做`backdoor`的后门二进制文件, 查壳发现被upx压缩过, `upx -d`解压之, 然后拖进IDA
 
 ![image-20210112230311859](https://i.loli.net/2021/01/12/w4fhtJlqxSFE1mW.png)
 
-成了。
+成了. 
