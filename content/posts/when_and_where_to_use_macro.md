@@ -1,5 +1,5 @@
 ---
-title: Rust: 什么时候该使用macro(宏)/function(函数)
+title: Rust - 什么时候该使用macro(宏)/function(函数)
 date: 2022-10-30T15:07:33+08:00
 tags: [Rust, Development, Learning]
 categories: [Learning]
