@@ -25,7 +25,7 @@ categories: [Development]
 
 ## 在某些场景下基于SNI的方案
 
-　　后来学长 [zkonge](https://github.com/zkonge)，[Frank](https://github.com/frankli0324) 提出了一种新的方法：利用 **服务器名称指示（SNI）**机制进行 L4 流量转发。由于 TLS 流量是完全加密的，对于某些需要承载多个网站的单一服务器来说就没办法使用单一证书进行解密。于是， SNI 在 2003 年 6 月的 RFC 3546 标准提出的《传输层安全（TLS）扩展》中加入到 [IETF](https://zh.m.wikipedia.org/wiki/IETF "IETF") 的 [Internet RFCs](https://zh.m.wikipedia.org/wiki/RFC "RFC") 内。目前所有主流 TLS 客户端均已支持 TLS 的 SNI 扩展协议。
+　　后来学长 [zkonge](https://github.com/zkonge)，[Frank](https://github.com/frankli0324) 提出了一种新的方法：利用 **服务器名称指示（SNI）** 机制进行 L4 流量转发。由于 TLS 流量是完全加密的，对于某些需要承载多个网站的单一服务器来说就没办法使用单一证书进行解密。于是， SNI 在 2003 年 6 月的 RFC 3546 标准提出的《传输层安全（TLS）扩展》中加入到 [IETF](https://zh.m.wikipedia.org/wiki/IETF "IETF") 的 [Internet RFCs](https://zh.m.wikipedia.org/wiki/RFC "RFC") 内。目前所有主流 TLS 客户端均已支持 TLS 的 SNI 扩展协议。
 
 　　这种方案虽然解决了多端口、无加密的问题，但无法进行 CDN 保护的问题仍然存在。又由于这套方案依赖于多域名，我们需要一个泛域名证书与一个 我们拥有完全控制权的域名，显然也是不适用学校服务器这一诸多限制场景的。
 
