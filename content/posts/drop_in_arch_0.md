@@ -248,18 +248,12 @@ export LC_ALL="zh_CN.UTF-8"
 
 ## 安装Arch系统可以参考
 
-<div style="position: relative; width: 100%; height: 0; padding-bottom: 73%;">
-    <iframe src="https://player.bilibili.com/player.html?aid=86719527&bvid=BV1T7411W7Jg&cid=148197779&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0;"> </iframe>
-</div>
+{{< bilibili BV1T7411W7Jg >}}
 
 ---
 
-<div style="position: relative; width: 100%; height: 0; padding-bottom: 73%;">
-    <iframe src="https://player.bilibili.com/player.html?aid=87132373&bvid=BV1q7411h75E&cid=148892701&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0;"> </iframe>
-</div>
+{{< bilibili BV1q7411h75E >}}
 
 ---
 
-<div style="position: relative; width: 100%; height: 0; padding-bottom: 73%;">
-    <iframe src="https://player.bilibili.com/player.html?aid=92174919&bvid=BV157411N7Hg&cid=157374395&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0;"> </iframe>
-</div>
+{{< bilibili BV157411N7Hg >}}
