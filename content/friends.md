@@ -49,6 +49,7 @@ title: 朋友们
 - [hawa130](https://hawa130.com/): 技术部部长, 前端带师
 - [Dimole](https://blog.dml.ink/): 带嘿客, icalingua++维护者
 - [SuperBart](https://www.superbart.xyz/): 水表开发者, 开发带师
+- [Badboy](https://badboy2002.xyz/): 硬件带师
 
 ## 打CTF认识的师傅们
 
