@@ -1,7 +1,7 @@
 ---
 title: 关于使用 Linux Desktop
 date: 2022-12-09T15:57:50+08:00
-tags: [Workspace]
+tags: [Linux, Workspace]
 categories: [Workspace]
 ---
 
