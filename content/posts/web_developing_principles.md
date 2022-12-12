@@ -1,5 +1,5 @@
 ---
-title: [WIP] Web前端开发需要注意的一些问题
+title: \[WIP\] Web前端开发需要注意的一些问题
 date: 2022-12-12T10:59:46+08:00
 tags: [Web, Developement]
 categories: [Developement]
