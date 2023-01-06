@@ -48,6 +48,10 @@ title: 朋友们
 - [DX3906](https://blog.dx39061.top/): XDSEC 2022年首席运维, 逆向与开发带师
 - [安权](https://anoquan.cn): Web带师
 
+## [XDSEC](https://www.xdsec.org) where grade = 2022
+
+- [doctor3](https://blog.doctor3.net/): 逆向带师
+
 ## [微软学生俱乐部](https://xdmsc.club)
 
 - [果果](https://orangecheers.top/): 高坂穗乃果, 19级计科的神
