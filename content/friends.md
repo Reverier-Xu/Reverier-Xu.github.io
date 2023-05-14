@@ -39,7 +39,7 @@ title: 朋友们
 - [BlackBird](https://blackbird-bb.github.io/): pwn👴, 太极传人
 - [NoahTie](https://noahtie.github.io/): misc和电子取证带师, 精通各类破解
 - [Wanan](https://blog.wanan.world/): Web带师
-- [Track](https://www.trackonyou.top/): L-team 逆向的中流砥柱
+- [Track](https://blog.trackonyou.top/): L-team 逆向的中流砥柱
 - [Avalon](https://www.4va10n.top/): 另一位逆向中流砥柱
 - [YunZh1Jun](https://www.yunzh1jun.com/): 另另一位逆向中流砥柱, ☁️の🍄
 
