@@ -40,7 +40,7 @@ archlinuxcn中有打包好的wine-wechat应用, 但是该应用启动后有边�
 `xdotool`是一个很方便实用的工具. 我们可以通过它来隐藏某个窗口, 只需要提供`window id`就可以了. 使用方法如下:
 
 ```bash
-$ xdotool windowunmap <window-id>
+xdotool windowunmap <window-id>
 ```
 
 于是我们只要找到`wechat.exe`的`<window-id`然后用`xdotool windowunmap 0xXXXX0014`就可以达成我们的目标了.

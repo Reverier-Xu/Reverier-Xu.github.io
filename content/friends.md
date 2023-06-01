@@ -2,7 +2,7 @@
 title: 朋友们
 ---
 
-旅途还很长, 感谢能遇见你们. 
+旅途还很长, 感谢能遇见你们.
 
 ## 组织
 
@@ -70,6 +70,6 @@ title: 朋友们
 - [巴拉拉小猪猪](https://liuxiaozhu01.github.io/): @ WHU
 - [C3ru1ean](https://c3ru1ean.github.io/): @ HUST
 
-## more..
+## more
 
-希望交换友链的师傅欢迎在这里留言. 
+希望交换友链的师傅欢迎在这里留言.
