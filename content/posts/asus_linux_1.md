@@ -29,7 +29,7 @@ DISK 2: ZHITAI Ti7100 2TB
 
 桌面环境这里我继续选用了 KDE Plasma on Wayland，但是安装完成之后怎么都没法启动，一直以为是显卡问题…… 排查到最后发现是因为没装 `XWayland`，装上之后就好了，检查 `journalctl -b -1` 查看上次开关机 log，相关日志如下：
 
-```log
+```plaintext
 Jun 21 13:39:13 Reverier-Arch dbus-daemon[825]: [session uid=1000 pid=825] Activating via systemd: service name='org.freedesktop.impl.portal.desktop.kde' unit='plasma-xdg-desktop-portal-kde.service' requested by ':1.6' (uid=1000 pid=849 comm="/usr/lib/xdg-desktop-portal")
 Jun 21 13:39:13 Reverier-Arch kwin_wayland[836]: No backend specified, automatically choosing drm
 Jun 21 13:39:13 Reverier-Arch dbus-daemon[572]: [system] Successfully activated service 'org.freedesktop.UPower'
