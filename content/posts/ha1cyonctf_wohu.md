@@ -322,4 +322,3 @@ def base64_stego(lines):
     return flag
 
 ```
-

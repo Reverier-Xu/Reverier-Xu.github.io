@@ -22,7 +22,7 @@ TIM, 微信是差不多是阻止大批量用户使用Linux的原因之最. 我�
 使用微信十分的简单, 无论是wine版本还是网页版都挺优秀的. 在这里我们使用electronic-wechat, 是基于electron和网页版微信的第三方版本, 用户体验可以说是十分优秀的. ArchLinuxCN源里也有这个软件包:
 
 ```bash
-$ sudo pacman -S electronic-wechat
+sudo pacman -S electronic-wechat
 ```
 
 TIM使用的是Deepin团队打包的Deepin-wine来运行的Windows版TIM. 10月24日腾讯发布了LinuxQQ 2.0, 但其代码和2008 1.0版的差别并不大, 使用的还是GTK2.0, 在KDE上的兼容性非常不好, 并且有许多已知BUG. 等腾讯真正静下心来做一个说得过去的QQ for Linux, 或许我会去体验一下.
@@ -56,7 +56,7 @@ sudo pacman -S gnome-settings-daemon
 还有一个叫做ffmpeg的东东, 是堪比Media Encoder的存在, 用来转码十分的方便, 还可以自定义多种需求.
 
 ```bash
-$ sudo pacman -S mplayer ffmpeg netease-cloud-music amrok
+sudo pacman -S mplayer ffmpeg netease-cloud-music amrok
 ```
 
 ##### MarkDown 写作软件
@@ -64,14 +64,15 @@ $ sudo pacman -S mplayer ffmpeg netease-cloud-music amrok
 其实我习惯装个插件然后用Visual Studio Code来撸markdown, 这样写起来挺方便的. 但是如果习惯Word这种图形化操作的话, 也许一个专用的MarkDown编辑器更适合你. 在这里我们使用Typora, 当然还有Notable, 是一款十分优秀的开源md编辑器, 但是嘛... 我找不到安装的办法. Typora的使用体验挺优秀的, 我没体验过Notable, 不知道会不会更好一些.
 
 ```bash
-$ sudo pacman -S typora
+sudo pacman -S typora
 ```
+
 ##### 办公软件
 
 说实话, Manjaro安装的时候带的OpenOffice和LibreOffice都是很优秀的产品, 但是从Windows过来的用户还真不一定用的习惯... 所以! 我们可以安装WPS的Linux版本. 这是继网易云音乐, 搜狗输入法之后第三个肯在Linux上用心的国产软件! 除了不支持宏操作以外, 其他的使用体验几乎和Windows版本保持了一致.
 
 ```bash
-$ sudo pacman -S wps-office
+sudo pacman -S wps-office
 ```
 
 ##### PDF
@@ -79,7 +80,7 @@ $ sudo pacman -S wps-office
 Manjaro带的Okular已经十分优秀了... 但我不知道你的版本有没有带... 索性加上:
 
 ```bash
-$ sudo pacman -S okular
+sudo pacman -S okular
 ```
 
 ##### 游戏
@@ -95,7 +96,7 @@ Minecraft! 作为一名光荣的方块人, 怎么能不想办法玩MC? 其实不
 然后去网上找一个`HMCL.jar`, 和`.minecraft`放在同一个文件夹下面, 然后在终端里进入这个文件夹, 输入
 
 ```bash
-$ java -jar HMCL.jar
+java -jar HMCL.jar
 ```
 
 就可以啦!
@@ -105,9 +106,9 @@ $ java -jar HMCL.jar
 我们在这个文件夹里建一个脚本:
 
 ```bash
-$ touch ./start.sh
+touch ./start.sh
 
-$ vim ./start.sh
+vim ./start.sh
 ```
 
 `start.sh`
@@ -120,7 +121,7 @@ java -jar ./HMCL.jar
 然后保存退出vim, 继续:
 
 ```bash
-$ chmod a+x ./start.sh
+chmod a+x ./start.sh
 ```
 
 然后在文件夹里一点就开啦! 你也可以拖动到桌面上, 然后选择链接到此处, 也可以链接到Latte-dock里.

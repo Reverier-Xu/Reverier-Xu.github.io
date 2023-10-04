@@ -22,7 +22,7 @@ DECIMAL       HEXADECIMAL     DESCRIPTION
 
 ```
 
-在解压出来的文件中包含了kernel镜像以及一个squashfs文件系统镜像. 
+在解压出来的文件中包含了kernel镜像以及一个squashfs文件系统镜像.
 
 使用`firmware-mod-kit`工具包内的`unsquashfs_all.sh`解压文件系统镜像, 这个包在仓库`blackarch`中, 直接安装包名即可. `unsquashfs_all.sh`的位置在`/usr/share/firmware-mod-kit/unsquashfs_all.sh`
 
@@ -72,4 +72,4 @@ MKFS="./src/others/squashfs-4.0-lzma/mksquashfs-lzma"
 
 ![image-20210112230311859](https://i.loli.net/2021/01/12/w4fhtJlqxSFE1mW.png)
 
-成了. 
+成了.

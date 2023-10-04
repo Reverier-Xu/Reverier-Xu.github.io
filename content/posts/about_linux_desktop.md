@@ -46,7 +46,7 @@ categories: [Workspace]
 
 有，问题多了去了，大bug不多，小bug不断。我这几年基本上每个星期都要往不同开源社区提一个issue，某些时候我甚至自己上手修，然后给对应的项目提pr，~~水贡献度~~。在没找到比较符合我使用习惯的音乐播放器之后，我还[自己写了一个](https://github.com/Reverier-Xu/BitWave)。
 
-![](https://files.catbox.moe/92ltln.png)
+![看着还不赖](https://files.catbox.moe/92ltln.png)
 
 ## 建议别人用什么操作系统？
 

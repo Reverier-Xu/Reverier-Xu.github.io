@@ -24,7 +24,7 @@ categories: [Development]
 安装这么做:
 
 ```bash
-$ git clone https://github.com/theme-next/hexo-theme-next themes/next
+git clone https://github.com/theme-next/hexo-theme-next themes/next
 ```
 
 注意哦, 这一定是在你的博客目录下面执行的, 在别的文件夹下面是没有效果的哦!
@@ -44,7 +44,7 @@ theme: next #注意 ‘:’ 后面是有空格的!
 NexT提供了四种主题风格, 分别是Muse、Mist、Pisces、Gemini, 可以在刚打开的`_config.yml`里找到`scheme`这一项进行修改,然后 :
 
 ```bash
-$ hexo s
+hexo s
 ```
 
 浏览器打开 [本地博客](http://localhost:4000) 就能看见你的新主题啦!
@@ -1300,7 +1300,7 @@ deploy:
 
 首先, 大家也看到了笔者的博客, 鼠标点击会出来小红心 ( 别抬杠说不是红的 ), 这个效果怎么设置呢?
 
-在`/themes/next/source/js/src`下新建文件 `clicklove.js` , 接着把下面的代码拷贝粘贴到 `clicklove.js` 文件中: 
+在`/themes/next/source/js/src`下新建文件 `clicklove.js` , 接着把下面的代码拷贝粘贴到 `clicklove.js` 文件中:
 
 ```js
 !function (e, t, a) {
@@ -1325,16 +1325,16 @@ deploy:
 }(window, document);
 ```
 
-在`\themes\next\layout\_layout.swig`文件末尾添加: 
+在`\themes\next\layout\_layout.swig`文件末尾添加:
 
 ```html
 <script type="text/javascript" src="/js/src/clicklove.js"></script>
 ```
 
-然后跑一下 :
+然后跑一下:
 
-```
-$ hexo s
+```bash
+hexo s
 ```
 
 就能看见效果啦!
@@ -1359,8 +1359,8 @@ canvas_nest:
 
 那当然不是啦,去下载一个资源包就好了:
 
-```
-$ git clone https://github.com/theme-next/theme-next-canvas-nest themes/next/source/lib/canvas-nest
+```bash
+git clone https://github.com/theme-next/theme-next-canvas-nest themes/next/source/lib/canvas-nest
 ```
 
 这就OK啦!
@@ -1411,7 +1411,7 @@ avatar:
 </div>
 ```
 
-最后我们打开主题配置文件`_config.yml`,在末尾添加下面的代码: 
+最后我们打开主题配置文件`_config.yml`,在末尾添加下面的代码:
 
 ```yml
 passage_end_tag:

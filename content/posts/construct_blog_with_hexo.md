@@ -30,31 +30,31 @@ categories: [Development]
 DEB系: Debian, Ubuntu, Deepin, Linux Mint以及各种衍生版本,包括Kali Linux和Parrot Sec Linux
 
 ```bash
-$ sudo apt-get install git
+sudo apt-get install git
 ```
 
 RedHat系: Fedora, RHEL, CentOS
 
 ```bash
-$ sudo dnf install git
+sudo dnf install git
 ```
 
 emmm如果是CentOS这种万年不更新的系统的话,用yum就好啦:
 
 ```bash
-$ sudo yum install git
+sudo yum install git
 ```
 
 Open SUSE: 没办法,SUSE自成一派,不过 YasT 确实好用,笔者电脑上就是Windows 10 + Open SUSE
 
 ```bash
-$ sudo zypper install git
+sudo zypper install git
 ```
 
 Arch系:Arch Linux, Manjaro, Gentoo
 
 ```bash
-$ sudo pacman -S git
+sudo pacman -S git
 ```
 
 我猜装个git不需要用AUR吧😨
@@ -86,8 +86,8 @@ Windows用户:
 Linux用户:
 
 ```bash
-$ mkdir ./MyBlog ##你喜欢就好
-$ cd ./MyBlog ##进入这个目录
+mkdir ./MyBlog ##你喜欢就好
+cd ./MyBlog ##进入这个目录
 ```
 
 然后,现在我们就可以把Windows和Linux统一起来说啦.
@@ -95,8 +95,8 @@ $ cd ./MyBlog ##进入这个目录
 先配置一下你刚注册的账户~
 
 ```bash
-$ git config --global user.name "你的GitHub用户名"
-$ git config --global user.email "你的GitHub注册邮箱"
+git config --global user.name "你的GitHub用户名"
+git config --global user.email "你的GitHub注册邮箱"
 ```
 
 ( 啥? 没有一个叫 你的GitHub用户名 的用户? 不至于吧,我说的是你的GitHub的用户名,不是叫"你的GitHub用户名"的用户😓)
@@ -104,7 +104,7 @@ $ git config --global user.email "你的GitHub注册邮箱"
 我们为了避免每次使用都要输入密码登录,可以配置一个叫SSH Key的东西:
 
 ```bash
-$ ssh-keygen -t rsa -C "你的GitHub注册邮箱"
+ssh-keygen -t rsa -C "你的GitHub注册邮箱"
 ```
 
 ( 你不至于连open-ssh都没有吧......那得是一个多么精简的系统 )
@@ -124,14 +124,14 @@ Title随便写,想写啥写啥,然后把刚刚复制的id_rsa.pub的内容粘贴
 然后我们回到Bash ( Linux用户别抬杠, 是个shell都可以, 笔者用的是zsh )
 
 ```bash
-$ ssh git@github.com
+ssh git@github.com
 ```
 
 如果出现了 Hi XXXX! You've successfully......balabala......就说明配置成功啦! 具体原理如下:
 
 引自知乎 [吴润的文章](https://zhuanlan.zhihu.com/p/26625249)
 
-> 这里之所以设置GitHub密钥原因是, 通过非对称加密的公钥与私钥来完成加密, 公钥放置在GitHub上, 私钥放置在自己的电脑里. GitHub要求每次推送代码都是合法用户, 所以每次推送都需要输入账号密码验证推送用户是否是合法用户, 为了省去每次输入密码的步骤, 采用了ssh, 当你推送的时候, git就会匹配你的私钥跟GitHub上面的公钥是否是配对的, 若是匹配就认为你是合法用户, 则允许推送. 这样可以保证每次的推送都是正确合法的. 
+> 这里之所以设置GitHub密钥原因是, 通过非对称加密的公钥与私钥来完成加密, 公钥放置在GitHub上, 私钥放置在自己的电脑里. GitHub要求每次推送代码都是合法用户, 所以每次推送都需要输入账号密码验证推送用户是否是合法用户, 为了省去每次输入密码的步骤, 采用了ssh, 当你推送的时候, git就会匹配你的私钥跟GitHub上面的公钥是否是配对的, 若是匹配就认为你是合法用户, 则允许推送. 这样可以保证每次的推送都是正确合法的.
 
 ## 正式开始
 
@@ -140,7 +140,7 @@ $ ssh git@github.com
 当当当! 我们的主角HEXO要登场啦!
 
 ```bash
-$ npm install -g hexo-cli
+npm install -g hexo-cli
 ```
 
 在我们的Git Bash里使用这条指令来安装hexo!安装会 ~~比较~~ 狠 慢! 因为......我们有伟大的万里长城防火墙啊...... ( 逃
@@ -152,7 +152,7 @@ $ npm install -g hexo-cli
 怎么检查?
 
 ```bash
-$ pwd
+pwd
 ```
 
 然后看输出的路径是不是 xxx/MyBlog 或者其他你取的名字.
@@ -160,7 +160,7 @@ $ pwd
 确认完毕后,输入:
 
 ```bash
-$ hexo init
+hexo init
 ```
 
 开始初始化你的博客吧!
@@ -174,8 +174,8 @@ $ hexo init
 输入:
 
 ```bash
-$ hexo g
-$ hexo s
+hexo g
+hexo s
 ```
 
 然后在浏览器点开 [本地博客](http://localhost:4000) 就能看见我们的博客啦!
@@ -185,23 +185,23 @@ $ hexo s
 现在我们瞅一眼 hexo 的正确使用姿势:
 
 ```bash
-$ npm install hexo -g #安装Hexo
-$ npm update hexo -g #升级
-$ hexo init #初始化博客
+npm install hexo -g #安装Hexo
+npm update hexo -g #升级
+hexo init #初始化博客
 ```
 
 命令简写:
 
 ```bash
-$ hexo n "文章名称" == hexo new "文章名称" #新建文章,注意,""里面是你的文章名称,不是 文章名称 ......
-$ hexo g == hexo generate #生成本地文件
-$ hexo s == hexo server #启动服务预览
-$ hexo d == hexo deploy #部署到远程服务器
-$ hexo server #Hexo会监视文件变动并自动更新, 无须重启服务器
-$ hexo server -s #静态模式
-$ hexo server -p 5000 #更改端口
-$ hexo server -i 192.168.1.1 #自定义 IP
-$ hexo clean #清除缓存, 若是网页正常情况下可以忽略这条命令
+hexo n "文章名称" == hexo new "文章名称" #新建文章,注意,""里面是你的文章名称,不是 文章名称 ......
+hexo g == hexo generate #生成本地文件
+hexo s == hexo server #启动服务预览
+hexo d == hexo deploy #部署到远程服务器
+hexo server #Hexo会监视文件变动并自动更新, 无须重启服务器
+hexo server -s #静态模式
+hexo server -p 5000 #更改端口
+hexo server -i 192.168.1.1 #自定义 IP
+hexo clean #清除缓存, 若是网页正常情况下可以忽略这条命令
 ```
 
 就这样, 我们就可以掌握 hexo 的用法啦!
@@ -238,14 +238,14 @@ deploy:
 回到Bash, 输入下面的指令安装部署插件:
 
 ```bash
-$ npm install hexo-deployer-git --save
+npm install hexo-deployer-git --save
 ```
 
 然后! 我们就可以很方便的部署网站啦! 两条指令搞定!
 
 ```bash
-$ hexo clean #清除上次的缓存
-$ hexo g -d #等价于执行hexo g 后再执行一次 hexo d , 这两个指令已经介绍过了.
+hexo clean #清除上次的缓存
+hexo g -d #等价于执行hexo g 后再执行一次 hexo d , 这两个指令已经介绍过了.
 ```
 
 打开 你的用户名.github.io,你的网站就已经部署好啦!
@@ -257,7 +257,7 @@ $ hexo g -d #等价于执行hexo g 后再执行一次 hexo d , 这两个指令�
 只要打开Git Bash, cd到你的博客文件夹 ( Windows用户可以点开博客文件夹,右键 Git Bash Here)然后输入:
 
 ```bash
-$ hexo new post "文章名称"
+hexo new post "文章名称"
 ```
 
 就能新建一篇文章啦!
@@ -273,8 +273,8 @@ MyBlog\source\_posts
 想更新到GitHub的话,就是:
 
 ```bash
-$ hexo clean
-$ hexo g -d
+hexo clean
+hexo g -d
 ```
 
 然后打开你的博客地址 : 你的用户名.github.io就可以看见你刚写的文章啦!

@@ -28,7 +28,7 @@ categories: [Workspace]
 因为校内网有镜像站, 所以需要修改一下软件源, 这样就可以很方便的安装软件, 进行后面的配置.
 
 ```bash
-$ sudo vi /etc/pacman.d/mirrorlist
+sudo vi /etc/pacman.d/mirrorlist
 ```
 
 在最上面按照格式添加学校的镜像站, 然后打开`/etc/pacman.conf`添加`Archlinuxcn`源:
@@ -41,13 +41,13 @@ Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
 然后执行
 
 ```bash
-$ sudo pacman -Syy
+sudo pacman -Syy
 ```
 
 来刷新软件源缓存, 然后
 
 ```bash
-$ sudo pacman -Syu
+sudo pacman -Syu
 ```
 
 来将系统更新到最新的版本.
@@ -57,7 +57,7 @@ $ sudo pacman -Syu
 因为配置过程中需要大量使用`GitHub`, 所以我们修改一下`/etc/hosts`文件, 以更快的从`GitHub`下载软件.
 
 ```bash
-$ sudo nano /etc/hosts
+sudo nano /etc/hosts
 ```
 
 然后用`dig`或者`nslookup`指令找出`GitHub`相关域名的IP地址. 2019年11月3日可用的IP如下:
@@ -94,7 +94,7 @@ $ sudo nano /etc/hosts
 使用以下指令安装几个比较常见的编译工具:
 
 ```bash
-$ sudo pacman -S gcc clang python python2
+sudo pacman -S gcc clang python python2
 ```
 
 java可以用
@@ -112,7 +112,7 @@ yay jdk
 要安装`Fish`, 只需要:
 
 ```bash
-$ sudo pacman -S fish
+sudo pacman -S fish
 ```
 
 然后在终端里输入`fish`就可以进入然后开启快乐旅程了.
@@ -120,14 +120,14 @@ $ sudo pacman -S fish
 我们把`fish`设为默认的`Shell`. 首先打开`Konsole`的配置方案管理, 编辑配置方案, 启动命令从`/bin/bash`换成`/bin/fish`. 接着重启`Konsole`. 然后把用户的默认`shell`也换成`fish`:
 
 ```bash
-$ sudo chsh -s /usr/bin/fish root
-$ sudo chsh -s /usr/bin/fish [username]
+sudo chsh -s /usr/bin/fish root
+sudo chsh -s /usr/bin/fish [username]
 ```
 
 `fish`每次启动时都会有打招呼内容, 我们用以下命令来自定义这句话:
 
 ```bash
-$ set fish_greeting 'Your Greeting Words'
+set fish_greeting 'Your Greeting Words'
 ```
 
 对`fish`进行配置是十分人性化的, 只需要输入`fish_config`就可以了, 然后`fish`会打开本地的一个端口并启动浏览器, 以可视化的方式呈现出`fish`的各项配置. 功能设置十分的详细. 按照自己的喜好调整好就可了.
@@ -137,13 +137,13 @@ $ set fish_greeting 'Your Greeting Words'
 要充分发挥`Arch`系Linux的强大之处, 没有`AUR`怎么能行呢? 所以我们安装`yay`作为辅助`pacman`的包管理器.
 
 ```bash
-$ sudo pacman -S yay
+sudo pacman -S yay
 ```
 
 今后安装软件如果不清楚名称, 就可以
 
 ```bash
-$ yay [Package Name]
+yay [Package Name]
 ```
 
 来进行搜索, 然后很方便的安装了.
@@ -151,7 +151,7 @@ $ yay [Package Name]
 ##### 终端编辑器: Vim
 
 ```bash
-$ sudo pacman -S vim
+sudo pacman -S vim
 ```
 
 即可安装`vim`. 我大概不用介绍`vim`了吧... 这可是一个很知名的编辑器呀.
@@ -161,7 +161,7 @@ $ sudo pacman -S vim
 ##### 浏览器: Chrome
 
 ```bash
-$ sudo pacman -S google-chrome
+sudo pacman -S google-chrome
 ```
 
 用`Chrome`完全是笔者的个人习惯, `Manjaro`自带的`FireFox`十分的优秀, 如果对浏览器没什么习惯的用`FireFox`完全可以.
@@ -171,7 +171,7 @@ $ sudo pacman -S google-chrome
 经过微软的开源和诸多开发者的贡献之后, Visual Studio Code现在已经无愧于最强代码编辑器的称号了. (当然, 博主并不是在这里引战, 如果你非要用Sublime或者Atom也莫得关系) ArchlinuxCN源中有vscode的二进制版.
 
 ```bash
-$ sudo pacman -S visual-studio-code-bin
+sudo pacman -S visual-studio-code-bin
 ```
 
 装好之后打开插件搜索chinese装一下中文包, 英语超级优秀的同学请忽略此句.
@@ -195,7 +195,7 @@ $ sudo pacman -S visual-studio-code-bin
 虽然我没有用过`Mac OS X`, 但是对其高效的桌面念念不忘. 同时我又想节省一下空间, `Windows`下面, 厚重的任务栏就占去了一部分屏幕, 标题栏又削一层, 菜单栏又削一层... 最后留给应用程序的显示空间就少了不必要的一部分. 于是我想找到一种办法, 把菜单, 标题, 状态栏集中在一个`bar`上面, 任务栏没办法, 要保证同时可用性, 就只能弄一个`dock`当任务栏, 在窗口活动时自动隐藏了. `Latte Dock`原生和KDE集成在一起, 通过它可以享受很棒的`dock`.
 
 ```bash
-$ sudo pacman -S latte-dock
+sudo pacman -S latte-dock
 ```
 
 按照和`tilda`同样的方法把`latte-dock`也设置为自动启动, 然后在快速启动器里面输入`latte`并回车, 就可以看见`dock`了. 然后把任务栏拖动到屏幕上方, 右键任务栏配置面板, 把开始菜单和任务管理器, 虚拟桌面都删掉, 留下显示桌面和状态栏即可. 然后在面板左侧添加空白. 然后添加控件, 选择全屏的应用程序启动面板, 并拖动到`Latte-Dock`的第一个位置. `Latte-Dock`的默认隐藏策略就很智能, 无需单独配置. 在添加控件的侧栏下方安装新控件, 搜索`Application Title`并安装, 然后配置任务栏那一行, 拖动全局菜单到最左侧, 旁边插入空白, 再插入`Application Title`, 再插入空白, 最后是状态栏等控件.
@@ -229,7 +229,7 @@ RollOverDesktops=true
 作为中国人, 配置了这么久才发现自己连中文输入都不能... 那怎么能行, 当然要装一下中文输入法了.
 
 ```bash
-$ sudo pacman -S fcitx-im fcitx-configtool
+sudo pacman -S fcitx-im fcitx-configtool
 ```
 
 这条指令会安装`fcitx`和`fcitx`的图形化管理界面. 但是安装好后依旧无法输入中文, 这个时候先把`fcitx`设为开机启动, 然后终端输入`fcitx-diagnose`运行诊断, 然后按照诊断来进行配置和修复. 一般情况下你只要配置一下`$HOME/.xprofile`这个文件就好了, 在下面添加如下内容 ( 如果没有这个文件就新建一个 ):

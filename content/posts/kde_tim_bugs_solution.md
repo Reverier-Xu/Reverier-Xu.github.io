@@ -23,7 +23,7 @@ categories: [Workspace]
 `dde-file-manager`是Deepin操作系统的文件管理器, 而在KDE里面文件管理器是`dolphin`. 于是想办法:
 
 ```bash
-$ sudo ln -s /bin/dolphin /bin/dde-file-manager
+sudo ln -s /bin/dolphin /bin/dde-file-manager
 ```
 
 试图通过给`dolphin`链接到`dde-file-manager`来伪造一个Deepin文件管理器, 将使用Deepin文件管理器打开的命令链接到`dolphin`上来解决. 但是点击链接依然打不开.
@@ -75,7 +75,7 @@ os.system("dolphin --select "+'"'+path+'"')
 简单的替换掉就可以了. 加上执行权限, 扔到`$HOME/.local/share`目录下面, 然后:
 
 ```bash
-$ sudo ln $HOME/.local/share/dde-file-manager.py /bin/dde-file-manager
+sudo ln $HOME/.local/share/dde-file-manager.py /bin/dde-file-manager
 ```
 
 再然后打开TIM, 接收文件, 点击打开所在文件夹, 就可以非常顺利的用`dolphin`打开文件夹了.

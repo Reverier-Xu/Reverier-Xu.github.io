@@ -9,10 +9,10 @@ categories: [Development]
 
 在内容网站中支持 Markdown 渲染已经是一个很常见的需求了，相比较 [Vditor](https://github.com/Vanessa219/vditor)、[markdown-it](https://github.com/markdown-it/markdown-it) 等重量级 markdown 编辑器与渲染工具来说，用 [marked](https://marked.js.org) 这类更轻量级的渲染库会带来更好的体验，网站的样式也都可以自己控制。但是 [Marked JS](https://marked.js.org) 仅支持将基本 Markdown 语法渲染成 HTML 标记，对于 代码块高亮、数学公式还是无能为力的。有关代码高亮官方给出了与[highlightJS](https://highlightjs.org/)集成的[方式](https://marked.js.org/using_advanced)，但是有关集成数学公式渲染的我只搜到了几个issue和一些奇怪的实现：
 
-- https://github.com/markedjs/marked/issues/722
-- https://github.com/linxiaowu66/marked-kaTex （甚至是直接fork了改的，项目也过期很久了）
-- https://gist.github.com/tajpure/47c65cf72c44cb16f3a5df0ebc045f2f （拦截render实现，并提前渲染，会出一些奇怪的问题）
-- https://www.xiaog.info/blog/post/marked_js_katex （上面那个的中文版，似乎做了一点改进，但还是很奇怪）
+- [https://github.com/markedjs/marked/issues/722](https://github.com/markedjs/marked/issues/722)
+- [https://github.com/linxiaowu66/marked-kaTex](https://github.com/linxiaowu66/marked-kaTex) （甚至是直接fork了改的，项目也过期很久了）
+- [https://gist.github.com/tajpure/47c65cf72c44cb16f3a5df0ebc045f2f](https://gist.github.com/tajpure/47c65cf72c44cb16f3a5df0ebc045f2f) （拦截render实现，并提前渲染，会出一些奇怪的问题）
+- [https://www.xiaog.info/blog/post/marked_js_katex](https://www.xiaog.info/blog/post/marked_js_katex) （上面那个的中文版，似乎做了一点改进，但还是很奇怪）
 
 看了后两个现有方案，基本上是用正则表达式给数学公式提取出来，然后塞到 katex 里一顿处理成 html，然后塞回 marked 当成 html 块无脑再渲染一遍。我试了试是能用的，但是行为很奇怪，marked 在处理已经渲染好的 html 块时还会做一些额外的工作，例如转义什么的，最后某些字符总是显示的有问题。
 
