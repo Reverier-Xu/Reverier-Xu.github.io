@@ -46,7 +46,7 @@ title: 朋友们
 ## [XDSEC](https://www.xdsec.org) where grade = 2021
 
 - [DX3906](https://blog.dx39061.top/): XDSEC 2022年首席运维, 逆向与开发带师
-- [spn](https://mirror.xyz/0x003A594540b8a29A74773E29A71E51fE448dfD89): 区块链👴
+- [spn](https://mirror.xyz/0x003A594540b8a29A74773E29A71E51fE448dfD89): 区块链👴，蒂厨（实际上什么都厨）
 - [安权](https://anoquan.cn): Web带师
 
 ## [XDSEC](https://www.xdsec.org) where grade = 2022
