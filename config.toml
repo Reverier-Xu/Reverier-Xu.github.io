@@ -1,7 +1,7 @@
 baseURL = 'https://blog.woooo.tech/'
 languageCode = 'zh-CN'
 title = "Reverier's Blog"
-theme = "LoveIt"
+theme = "FixIt"
 languageName = "简体中文"
 hasCJKLanguage = true
 defaultContentLanguage = "zh-cn"
@@ -42,20 +42,12 @@ defaultContentLanguage = "zh-cn"
     url = "/categories/"
     title = ""
   [[menu.main]]
-    weight = 4
-    identifier = "rnix"
-    pre = "<span style=\"color: #0078D6\">&gt;&gt;</span>"
-    post = ""
-    name = "World"
-    url = "/rnix"
-    title = ""
-  [[menu.main]]
     weight = 5
     identifier = "friends"
     pre = "<span style=\"color: #0078D6\">&gt;&gt;</span>"
     post = ""
     name = "朋友们"
-    url = "/friends"
+    url = "/friends/"
     title = ""
   [[menu.main]]
     weight = 6
@@ -63,7 +55,7 @@ defaultContentLanguage = "zh-cn"
     pre = "<span style=\"color: #0078D6\">&gt;&gt;</span>"
     post = ""
     name = "关于"
-    url = "/about"
+    url = "/about/"
     title = ""
 
 # Hugo 解析文档的配置
