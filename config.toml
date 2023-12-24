@@ -43,6 +43,14 @@ defaultContentLanguage = "zh-cn"
     title = ""
   [[menu.main]]
     weight = 4
+    identifier = "rnix"
+    pre = "<span style=\"color: #0078D6\">&gt;&gt;</span>"
+    post = ""
+    name = "World"
+    url = "/rnix"
+    title = ""
+  [[menu.main]]
+    weight = 5
     identifier = "friends"
     pre = "<span style=\"color: #0078D6\">&gt;&gt;</span>"
     post = ""
@@ -50,7 +58,7 @@ defaultContentLanguage = "zh-cn"
     url = "/friends"
     title = ""
   [[menu.main]]
-    weight = 5
+    weight = 6
     identifier = "about"
     pre = "<span style=\"color: #0078D6\">&gt;&gt;</span>"
     post = ""
