@@ -68,6 +68,7 @@ title: 朋友们
 
 - [GZTime](https://blog.gztime.cc/): From W4terDr0p @ SYSU
 - [Van1sh](https://jayxv.github.io/): From 0RAYS @ HDU
+- [LOV3](https://lov2.netlify.app/): From W4ntY0u
 
 ## 其他好友博客
 
