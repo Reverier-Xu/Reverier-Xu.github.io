@@ -1,5 +1,5 @@
 ---
-title: 填坑第三集，Katze kit - 1
+title: 填坑第三集，Katze kit
 date: 2023-10-31T03:31:38+08:00
 tags: [CTF, Reverse, Forensics]
 categories: [Development]
