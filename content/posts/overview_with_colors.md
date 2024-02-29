@@ -293,7 +293,7 @@ $$
 
 在[LCH Color Picker & Converter](https://lch.oklch.com/#48.934546402228335,57.11239581426788,269.670268110566,100)中我们可以直观的调整 OKLAB 色彩的参数，以便更好地理解这个色彩空间：
 
-![](oklch_color_picker.png)
+![](oklch_color_picker.webp)
 
 ### 推导
 
