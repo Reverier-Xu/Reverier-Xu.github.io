@@ -13,6 +13,7 @@ title: 关于
 - 运维的网站: [XIDIAN CTF Archive](https://ctf.xidian.edu.cn/)，[XIDIAN Forensics](https://forensics.xidian.edu.cn/)，[XDSEC](https://www.xdsec.org/)；
 - 欢迎和我讨论技术问题，但是请不要牵扯其他话题（尤其是zz方面），也不要人身攻击（你惹到我算是踩到棉花了.jpg）；
 - 常年看番的二次元，喜欢看点小众日常番，流行番剧也看，但类似 Fate/火影/海贼王/柯南/JOJO 这种故事线超长的可能看不下去；
+- 听术力口，东方，以及各种番剧 OP/ED/二创，也听国内唱见，鸟/憨/三无/教主，成分复杂；
 - 二次元手游大概都有玩，忙的时候随机退坑，然后不忙了可能再捡起来，剧情党，不混圈，不吃瓜，不打 PVP；
 - 自卑音游人，Osu! std 1400pp，Phigros 14.63，其他都有在玩，佛系刷分；
 
