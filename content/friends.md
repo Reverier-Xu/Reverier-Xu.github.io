@@ -58,7 +58,7 @@ title: 朋友们
 
 ## [微软学生俱乐部](https://xdmsc.club)
 
-- [果果](https://orangecheers.top/): 高坂穗乃果, 19级计科的神
+- [果果](https://honoka.tech/): 高坂穗乃果, 19级计科的神
 - [hawa130](https://hawa130.com/): 技术部部长, 前端带师
 - [Dimole](https://blog.dml.ink/): 带嘿客, icalingua++维护者
 - [SuperBart](https://www.superbart.xyz/): 水表开发者, 开发带师
