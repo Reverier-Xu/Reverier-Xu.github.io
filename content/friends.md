@@ -17,7 +17,7 @@ title: 朋友们
 
 - [Frank](https://blog.frankli.site/): 2020-2021 会长 & L-team 队长
 - [Konge](https://blog.konge.pw/): 首席运维带师
-- [Wal1et](http://39.105.105.208/): Web & Forensics
+- [Wal1et](http://39.105.105.208/) (已失效): Web & Forensics
 
 ## [XDSEC](https://www.xdsec.org) where grade = 2019
 
