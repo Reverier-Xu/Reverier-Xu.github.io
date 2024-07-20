@@ -5,7 +5,9 @@ tags: [Life]
 categories: [Life]
 ---
 
-![image](banner.jpeg)
+　　大概是最后一篇夜话了，老在博客上写一些负能量的东西也不太好，以后尽力多放点技术内容吧。
+
+　　我想过很多次这个玩意儿快写完的时候我应该发点什么，但是想说的太多了，还是慢慢唠点。
 
 　　{{< music auto="https://music.163.com/#/song?id=1402825200" >}}
 
