@@ -1,5 +1,5 @@
 ---
-title: 绳子上的运维日记 \[WIP\]
+title: 绳子上的运维日记
 date: 2024-09-07T10:08:19+08:00
 tags: [Development]
 categories: [Development]
@@ -60,4 +60,52 @@ Reverier 写过一个工具叫作 [WebSocket Reflector X](https://blog.woooo.tec
 ### 多途径反弹 Shell
 
 \[实现细节已删除\] \[已整改\]
+
+## 死亡迁移
+
+在刚刚接手这台服务器的时候重装过一次系统，为了稍微稳定一点，Reverier 做出了一个令他后悔了好几次的决定：使用 Ext 4 文件系统。虽然 Ext 4 没什么问题，同样也是目前为止最为流行的单机文件系统，但是它还是存在一个巨大的问题：无法跨设备扩展分区。
+
+这本来不应该是个什么大事的，但是前任运维和 Reverier 都低估了这台服务器以后的工作负载和用户数量 ---- 谁能想到一个新生赛能在短短四年里从 200 人规模膨胀到 6000 人啊。
+
+于是这台服务器只申请了 100GB 的硬盘。
+
+毫不意外地满了。
+
+然后去寻求了信息化处的帮助，希望他们能给扩容一下。虽然不太爽快但还是扩容成功了，只是扩容的方式比较抽象，他们直接插了一块 1TB 的新硬盘上来。这下好了，绝大部分的存储负载都在 `/var/lib/docker`，还有相当一部分的负载在平台的题目存储，迁移哪个文件夹都很抽象。
+
+经过深思熟虑后，Reverier 决定冒一次险，在新硬盘上自举一个全新的系统，然后修改 grub 指向新系统，最终完成迁移。
+
+这个风险异常的大 ---- Reverier 手里只有一个 SSH，而这个 SSH 还要依赖 NGINX 和 WebSocket Reflector X 才能连接上来，如果在新系统里有一点配置出错了，那么就又得突袭信息化处了。
+
+虽然如此，但依旧是能做的。
+
+在经过了一些心理建设之后，Reverier 打开了 Arch Linux 的文档，打算自举一个 Arch 上去，然后被群友叫停了。对于一个互联网访问都不稳定的服务器而言，用 Arch 的风险还是太大了。于是掉转目标，使用 [Debootstrap](https://wiki.debian.org/Debootstrap) 来自举一个 Debian 到新硬盘上。
+
+安装过程大抵跟着 [这里](https://www.debian.org/releases/stable/i386/apds03.en.html) 就行，使用 [arch-install-scripts](https://packages.debian.org/bookworm/arch-install-scripts) 简化了少许操作。
+
+![](img2.png)
+
+在通过 `arch-chroot /mnt/new_system` 之后，第一件事是 ~~pacman -Syu（不是）~~ ~~apt update（别惦记着你那系统更新了）~~ 恢复网络配置。这里我只能靠赌新系统启动时能够和旧系统一样采用 BIOS 建议命名了，于是直接把旧系统的 `/etc/network/interfaces` 复制了过来。
+
+接下来是处理 `fstab`，在进系统之前用 genfstab 处理了一下，但是似乎有一些 loop 设备也被生成进来了，得手动删除。
+
+然后是依次配置 account、systemd 服务、NGINX、WebSocket Reflector X 以及 ██████████，最后返回旧系统，运行 `update-grub`，然后在生成的 `grub.cfg` 里手动修改第一启动项。
+
+都完成后，用激动的心颤抖的手敲下 `systemctl reboot` 等待着奇迹发生。
+
+![](img3.png)
+
+![](img1.png)
+
+期间还担心 grub 能不能跨盘引导，找 arch 群友求助了一番。
+
+![](img4.png)
+
+好在是福大命大。
+
+![](img5.png)
+
+## 未完待续……
+
+服务不大事故不少，有空再写罢，给大伙找点乐子看。
 
