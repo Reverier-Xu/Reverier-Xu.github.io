@@ -1,5 +1,5 @@
 ---
-title: 音乐与时间与蓝色星球#06 r2s开发后记
+title: 回归终端 开发后记
 date: 2024-07-21T01:33:07+08:00
 tags: [Life]
 categories: [Life]

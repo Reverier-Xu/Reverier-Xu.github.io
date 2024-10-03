@@ -1,13 +1,9 @@
 ---
-title: 跨平台 Native UI 开发：The Elm Structure for GUI
+title: The Elm Structure for GUI
 date: 2024-01-05T16:55:42+08:00
 tags: [Development, GTK, Rust, Relm]
 categories: [Development]
 ---
-
-> 某 ZeroAurora: 你再搁这儿追求跨平台我就要说 transplatform 了
-> 
-> 👴: 那tm是 crossplatform，cross！😡👊
 
 ## 缘由
 
