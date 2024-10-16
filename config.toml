@@ -46,7 +46,7 @@ defaultContentLanguage = "zh-cn"
     identifier = "friends"
     pre = "<span style=\"color: #0078D6\">&gt;&gt;</span>"
     post = ""
-    name = "朋友们"
+    name = "朋友"
     url = "/friends/"
     title = ""
   [[menu.main]]
@@ -56,6 +56,14 @@ defaultContentLanguage = "zh-cn"
     post = ""
     name = "关于"
     url = "/about/"
+    title = ""
+  [[menu.main]]
+    weight = 7
+    identifier = "thinks"
+    pre = "<span style=\"color: #0078D6\">&gt;&gt;</span>"
+    post = ""
+    name = "树洞"
+    url = "/thinks/"
     title = ""
 
 # Hugo 解析文档的配置
