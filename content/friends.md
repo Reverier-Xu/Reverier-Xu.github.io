@@ -53,7 +53,6 @@ title: 朋友们
 
 - [doctor3](https://blog.doctor3.net/): 逆向带师，音游壬，底力怪物
 - [ZeroAurora](https://hymint.space/): misc&dev人，多索雷斯挡三哥，~~范围式男娘磁化祭坛~~
-- [luo.O](https://luo486.com/): pwn👴，西电otto，自带魔幻现实buff
 - [FUX1A0YUN](https://fux1a0yun.github.io): 逆向带师，☁️神2.0
 
 ## [微软学生俱乐部](https://xdmsc.club)
