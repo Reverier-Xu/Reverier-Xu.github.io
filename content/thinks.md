@@ -4,6 +4,10 @@ title: 音乐与时间与蓝色星球
 
 > 主线之外的胡言乱语
 
+## 2024-10-20
+
+或许就像这样一个人老去也不错。
+
 ## 2024-10-10
 
 《Celeste》
@@ -68,7 +72,7 @@ title: 音乐与时间与蓝色星球
 
 ## 2023-11-24
 
-He Feels good but
+He feels good but
 
 something is wrong.
 
