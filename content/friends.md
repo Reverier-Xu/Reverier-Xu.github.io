@@ -71,6 +71,7 @@ title: 朋友们
 - [LOV3](https://lov2.netlify.app/): From W4ntY0u
 - [LilRan](https://blog.xinshi.fun/): From S1uM4i / W4terDr0p
 - [crazyman_army](https://crazymanarmy.github.io/): From R3
+- [W3nL0u](https://xyy9233.github.io/): From TJU, 画师学姐一枚
 
 ## 其他好友博客
 
