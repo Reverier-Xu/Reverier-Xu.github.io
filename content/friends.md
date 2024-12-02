@@ -72,7 +72,7 @@ title: 朋友们
 - [LilRan](https://blog.xinshi.fun/): From S1uM4i / W4terDr0p
 - [crazyman_army](https://crazymanarmy.github.io/): From R3
 - [W3nL0u](https://xyy9233.github.io/): From TJU, 画师学姐一枚
-- [HydrogenE7](https://www.hz2016.com/): From SZU，猫猫
+- [HydrogenE7](https://www.hz2016.com/): From R3 / Aurora @ SZU，猫猫
 
 ## 其他好友博客
 
