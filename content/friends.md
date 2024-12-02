@@ -66,7 +66,7 @@ title: 朋友们
 
 ## 打CTF认识的师傅们
 
-- [GZTime](https://blog.gztime.cc/): From W4terDr0p @ SYSU / S1uM4i founder
+- [GZTime](https://blog.gztime.cc/): From S1uM4i @ SYSU / Creator of [GZCTF](https://github.com/GZTimeWalker/GZCTF)
 - [Van1sh](https://jayxv.github.io/): From 0RAYS @ HDU
 - [LOV3](https://lov2.netlify.app/): From W4ntY0u
 - [LilRan](https://blog.xinshi.fun/): From S1uM4i / W4terDr0p
